@@ -1,0 +1,74 @@
+#Site nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10vw;
+    background: #fff;
+    box-shadow: 0 0 50px 1px #00000024;
+}
+
+#logo {
+    font-weight: 600;
+    font-family: var(--font7);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#blue {
+    color: var(--blue);
+}
+
+#org {
+    color: var(--org);
+}
+
+nav #links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+#links a {
+    text-decoration: none;
+    color: #181818;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all ease-in-out 0.25s;
+}
+
+#links a:hover {
+    color: var(--org);
+}
+
+.btn {
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--font6);
+    padding: 12.5px 38px;
+    /* background: red; */
+    transition: all ease-in-out 0.25s;
+    cursor: pointer;
+}
+
+.btn-b {
+    color: #fff;
+    background: var(--blue);
+}
+
+.btn-o {
+    color: #fff;
+    background: var(--org);
+}
+
+.btn-b:hover {
+    background: var(--org);
+}
+
+.btn-o:hover {
+    background: var(--blue);
+}
