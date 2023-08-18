@@ -1,0 +1,141 @@
+#gallery {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#gallery .lay {
+    width: 20%;
+    height: 200px;
+    background: gold;
+    overflow: hidden;
+    height: 130px;
+}
+
+#gallery .lay img {
+    height: 100%;
+    width: 100%;
+
+    transition: 0.35s ease-in;
+}
+
+#gallery .lay:hover img {
+    transform: scale(1.1);
+}
+
+footer .logo {
+    font-family: var(--font-9);
+    font-weight: 900;
+    font-size: 2.2rem;
+}
+
+footer {
+    width: 100%;
+    padding: 5vh 10vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+footer .ftr1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.titl {
+    text-align: center;
+    font-size: 1.2rem;
+    /* margin-left: -50px; */
+}
+
+.ftr1 .f1r {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    font-family: var(--font2) !important;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.f1l {
+    display: flex;
+    gap: 15px;
+}
+
+.f1l>a>* {
+    font-size: 2rem !important;
+}
+
+.ftr2 {
+    width: 100%;
+    display: flex;
+    border: 25px solid #ededed;
+}
+
+.ftr2 input:first-child {
+    flex: 1;
+    background: transparent;
+    padding: 13px 25px;
+    font-family: var(--font3);
+    font-size: 0.9rem;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    transition: 0.25s;
+}
+
+.ftr2 input:first-child:hover {
+    border: 2px solid #191919;
+}
+
+.ftr2 input:last-child {
+    /* flex: 1; */
+}
+
+.ftr3 {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+footer .links,
+footer a {
+    display: flex;
+    gap: 25px;
+    color: #121212;
+    font-weight: 600;
+    font-family: var(--font-7);
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+footer .btn {
+    border: none;
+}
+
+.custom-shape-divider-bottom-1679121643 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    /* background: red; */
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1679121643 svg {
+    position: relative;
+    display: block;
+    width: calc(103% + 1.3px);
+    height: 99px;
+    /* color: red; */
+}
+
+.custom-shape-divider-bottom-1679121643 .shape-fill {
+    fill: #234cb4;
+}

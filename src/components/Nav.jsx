@@ -1,5 +1,8 @@
 import React from "react";
 import "../stylesheet/Nav.css";
+import IconButton from "@mui/material/IconButton";
+import CalculateOutlinedIcon from "@mui/icons-material/CalculateOutlined";
+// import CalculateIcon from "@mui/icons-material/Calculate";
 const Nav = () => {
   return (
     <>
@@ -19,8 +22,13 @@ const Nav = () => {
           <a href="/">Shop</a>
           <a href="/">Contact</a>
         </div>
-        <div id="log" className="btn btn-b">
-          Join Now
+        <div className="nav-right">
+          <IconButton aria-label="Cost Calculator">
+            <CalculateOutlinedIcon id="calc-icon" />
+          </IconButton>
+          <div id="log" className="btn btn-b">
+            Sign Up
+          </div>
         </div>
       </nav>
     </>

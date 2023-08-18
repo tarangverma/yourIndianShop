@@ -1,11 +1,27 @@
 import React from "react";
-import Nav from "../../components/Nav";
 import "../../stylesheet/Home.css";
+
+import Tilt from "react-parallax-tilt";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+
+import Nav from "../../components/Nav";
+import Footer from "../../components/Footer";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import AirplanemodeActiveOutlinedIcon from "@mui/icons-material/AirplanemodeActiveOutlined";
 import DirectionsBoatOutlinedIcon from "@mui/icons-material/DirectionsBoatOutlined";
 import WarehouseOutlinedIcon from "@mui/icons-material/WarehouseOutlined";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
+import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination, Autoplay } from "swiper/modules";
+import { HomeSlide } from "../../components/HomeSlide";
+
 const Home = () => {
   return (
     <>
@@ -13,56 +29,92 @@ const Home = () => {
         <header>
           <Nav />
         </header>
-        <section id="hero">
-          <div className="hero-data">
-            <h1>fast and secure courier for all your packages</h1>
-            <h3>
-              We carry clearness to intricacy, separating basic subtleties from
-              confounded data to make modern, direct arrangements.{" "}
-            </h3>
-            <div className="btn btn-o">Explore More</div>
-          </div>
-          <div id="pop-ser">
-            <div className="ps">
-              <div className="ps-l">
-                <LocalShippingOutlinedIcon />
+        <div className="hero-cont">
+          <Swiper
+            pagination={{
+              dynamicBullets: true,
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            modules={[Autoplay, Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <HomeSlide
+                title="fast and secure courier for all your packages"
+                desc="  We carry clearness to intricacy, separating basic subtleties from
+          confounded data to make modern, direct arrangements.
+       "
+                bgimg="./imgs/home1-rev-1.jpg"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <HomeSlide
+                title="fast and secure courier for all your packages"
+                desc="  We carry clearness to intricacy, separating basic subtleties from
+              confounded data to make modern, direct arrangements.
+              "
+                bgimg="./imgs/home1-rev-2.jpg"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <HomeSlide
+                title="fast and secure courier for all your packages"
+                desc="  We carry clearness to intricacy, separating basic subtleties from
+          confounded data to make modern, direct arrangements.
+          "
+                bgimg="./imgs/home1-rev-3.jpg"
+              />
+            </SwiperSlide>
+          </Swiper>
+          {/* <aside>
+            <video src="./videos/hero.mp4" autoPlay loop muted></video>
+          </aside> */}
+        </div>
+        <div id="pop-ser">
+          <div className="ps">
+            <div className="ps-l">
+              <LocalShippingOutlinedIcon />
+            </div>
+            <div className="ps-r">
+              <div className="st">Transport Solutions</div>
+              <div className="s-txt">
+                Our Transport Solutions assist your business with keeping up
+                degrees of administration
               </div>
-              <div className="ps-r">
-                <div className="st">Transport Solutions</div>
-                <div className="s-txt">
-                  Our Transport Solutions assist your business with keeping up
-                  degrees of administration
-                </div>
-                <div className="rm " id="org">
-                  | read more |
-                </div>
+              <div className="rm " id="org">
+                | read more |
               </div>
             </div>
-            <div className="ps">
-              <div className="ps-l">
-                <WarehouseOutlinedIcon />
+          </div>
+          <div className="ps">
+            <div className="ps-l">
+              <WarehouseOutlinedIcon />
+            </div>
+            <div className="ps-r">
+              <div className="st">Warehousing Solutions</div>
+              <div className="s-txt">
+                Our Transport Solutions assist your business with keeping up
+                degrees of administration
               </div>
-              <div className="ps-r">
-                <div className="st">Warehousing Solutions</div>
-                <div className="s-txt">
-                  Our Transport Solutions assist your business with keeping up
-                  degrees of administration
-                </div>
-                <div className="rm " id="org">
-                  | read more |
-                </div>
-                <div className="dis">
-                  <img src="./imgs/home1-service-1.png" alt="" />
-                </div>
+              <div className="rm " id="org">
+                | read more |
+              </div>
+              <div className="dis">
+                <img src="./imgs/home1-service-1.png" alt="" />
               </div>
             </div>
           </div>
-        </section>
+        </div>
         <section id="ship">
           <div id="sec-head">
             <div className="t-title">
-              <span id="blue">SHIP</span>
-              <span id="org"> NOW</span>
+              <span id="blue">How </span>
+              <span id="org">Do We</span>
+              <span id="blue"> Work</span>
             </div>
             <p>
               Packages and pallets, big and small, we can offer you instant
@@ -107,7 +159,7 @@ const Home = () => {
                 <span id="org">| Read More |</span>
               </span>
             </div>
-          </div>
+          </div>{" "}
         </section>
         <section id="service">
           <div className="ser-head">
@@ -127,58 +179,224 @@ const Home = () => {
             </div>
           </div>
           <div className="ser-cards">
-            <div className="sc">
-              <div id="org">
-                <LocalShippingOutlinedIcon />
+            <Tilt
+              glareEnable={true}
+              glareColor="#ebe7ee3f"
+              glarePosition="all"
+              tiltMaxAngleX="24"
+              tiltMaxAngleY="15"
+              className="parallax-effect-glare-scale bggg "
+            >
+              <div className="sc">
+                <div id="org">
+                  <LocalShippingOutlinedIcon />
+                </div>
+                <div className="t-title">Shop and Ship</div>
+                <p>
+                  With a worldwide organization and progressed coordination
+                  arrangements, our airship cargo sending items.
+                </p>
+                <ul>
+                  <li>Part & Full Loads</li>
+                  <li>Multimodal Solutions</li>
+                  <li>Intermodal Solutions</li>
+                </ul>
               </div>
-              <div className="t-title">Land Transport</div>
-              <p>
-                With a worldwide organization and progressed coordination
-                arrangements, our airship cargo sending items.
-              </p>
-              <ul>
-                <li>Part & Full Loads</li>
-                <li>Multimodal Solutions</li>
-                <li>Intermodal Solutions</li>
-              </ul>
-            </div>
-            <div className="sc">
-              <div id="org">
-                <AirplanemodeActiveOutlinedIcon />
+            </Tilt>
+            <Tilt
+              glareEnable={true}
+              glareColor="#ebe7ee3f"
+              glarePosition="all"
+              tiltMaxAngleX="24"
+              tiltMaxAngleY="15"
+              className="parallax-effect-glare-scale bggg "
+            >
+              <div className="sc">
+                <div id="org">
+                  <ShoppingBagOutlinedIcon />
+                  {/* <AirplanemodeActiveOutlinedIcon /> */}
+                </div>
+                <div className="t-title">Assisted Purchase</div>
+                <p>
+                  We help transport your load anyplace on the planet, making
+                  your business run easily regardless of where products.{" "}
+                </p>
+                <ul>
+                  <li>General Air Freight Products</li>
+                  <li>Charter Services</li>
+                  <li>Intermodal Solutions</li>
+                </ul>
               </div>
-              <div className="t-title">Air Freight</div>
-              <p>
-                We help transport your load anyplace on the planet, making your
-                business run easily regardless of where products.{" "}
-              </p>
-              <ul>
-                <li>General Air Freight Products</li>
-                <li>Charter Services</li>
-                <li>Intermodal Solutions</li>
-              </ul>
-            </div>
-            <div className="sc">
-              <div id="org">
-                <DirectionsBoatOutlinedIcon />
+            </Tilt>{" "}
+            <Tilt
+              glareEnable={true}
+              glareColor="#ebe7ee3f"
+              glarePosition="all"
+              tiltMaxAngleX="24"
+              tiltMaxAngleY="15"
+              className="parallax-effect-glare-scale bggg "
+            >
+              <div className="sc">
+                <div id="org">
+                  <EngineeringOutlinedIcon />
+                  {/* <LocalShippingOutlinedIcon /> */}
+                  {/* <DirectionsBoatOutlinedIcon /> */}
+                </div>
+                <div className="t-title">Choose Courier Partner</div>
+                <p>
+                  Sea cargo dispatches in excess of 5,500 holders per day to
+                  ports all around the globe, making us a top forwarder.{" "}
+                </p>
+                <ul>
+                  <li>Less-than-container Load</li>
+                  <li>Full Container Load</li>
+                  <li>Intermodal Solutions</li>
+                </ul>
               </div>
-              <div className="t-title">Ocean Freight</div>
-              <p>
-                Sea cargo dispatches in excess of 5,500 holders per day to ports
-                all around the globe, making us a top forwarder.{" "}
-              </p>
-              <ul>
-                <li>Less-than-container Load</li>
-                <li>Full Container Load</li>
-                <li>Intermodal Solutions</li>
-              </ul>
-            </div>
+            </Tilt>
           </div>
         </section>
-
+        <section id="asA">
+          <div className="t-title">
+            <span id="blue"> Basic</span>
+            <span id="org"> Shipment</span>
+            <span id="org"> Cost</span>
+            <span id="blue"> Calculator</span>
+          </div>
+          {/* <div className="t-title"></div> */}
+          <div className="cal-box">
+            <div className="sh-top">
+              <div className="sh-l">
+                <div className="btn btn-b">Calculate Now</div>
+                <Box
+                  component="form"
+                  sx={{
+                    "& .MuiTextField-root": { m: 1, width: "25ch" },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <div>
+                    <TextField
+                      className="nor-feild"
+                      required
+                      id="outlined-required"
+                      label="Weight (kg)"
+                      defaultValue=""
+                    />{" "}
+                    <TextField
+                      className="err-feild"
+                      error
+                      id="outlined-error-helper-text"
+                      label="How heavy is your item? "
+                      defaultValue=""
+                      helperText="Please enter a weight up to 70 kg."
+                    />
+                  </div>
+                </Box>
+                <h1>Weight</h1>
+                <div className="sh-m">
+                  <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
+                    <img src="./imgs/cur.png" alt="" />
+                  </Tilt>
+                </div>
+              </div>
+              <div className="sh-r">
+                <h1>Dimensions</h1>
+                <div className="dim">
+                  <Box
+                    component="form"
+                    sx={{
+                      "& .MuiTextField-root": { m: 1, width: "20ch" },
+                    }}
+                    noValidate
+                    autoComplete="off"
+                  >
+                    <div>
+                      <TextField
+                        className="nor-feild"
+                        required
+                        id="outlined-required"
+                        label="Length (cm)"
+                        defaultValue=""
+                      />
+                      <TextField
+                        className="err-feild"
+                        error
+                        id="outlined-error-helper-text"
+                        label="How long is your item? "
+                        defaultValue=""
+                        helperText="Please enter a length up to 120 cm to proceed."
+                      />
+                      <strong>X</strong>
+                      <TextField
+                        className="nor-feild"
+                        required
+                        id="outlined-required"
+                        label="Width (cm)"
+                        defaultValue=""
+                      />
+                      <TextField
+                        className="err-feild"
+                        error
+                        id="outlined-error-helper-text"
+                        label="How wide is your item? "
+                        defaultValue=""
+                        helperText="Please enter a width up to 80 cm to proceed."
+                      />
+                      <strong>X</strong>
+                      <TextField
+                        className="nor-feild"
+                        required
+                        id="outlined-required"
+                        label="Length (cm)"
+                        defaultValue=""
+                      />
+                      <TextField
+                        className="err-feild"
+                        error
+                        id="outlined-error-helper-text"
+                        label="How long is your item? "
+                        defaultValue=""
+                        helperText="Please enter a height up to 80 cm to proceed."
+                      />
+                    </div>
+                  </Box>{" "}
+                </div>
+                <h1>Not sure about the sizes?</h1>
+                <div className="demo-box">
+                  <div>
+                    <div className="olay">
+                      <img src="./svg/1.jpg" alt="" />
+                    </div>
+                    <div className="olay">
+                      <img src="./svg/2.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="olay">
+                      <img src="./svg/3.jpg" alt="" />
+                    </div>
+                    <div className="olay">
+                      <img src="./svg/4.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="sh-bot"></div>
+          </div>
+        </section>
+        <section id="comp">
+          <img src="./imgs/c1.svg" alt="" />
+          <img src="./imgs/c2.png" alt="" />
+          <img src="./imgs/c3.png" alt="" />
+          <img src="./imgs/c4.png" alt="" />
+        </section>
         <section id="bl-feature">
           <div className="ftr-cd">
             <div id="org">01</div>
-            <div className="t-title">Quality Management System</div>
+            <div className="t-title">SignUp and register your self</div>
             <p>
               With our worldwide inclusion, strong transportation organization
               and industry driving coordinations experience, our Service and
@@ -190,7 +408,7 @@ const Home = () => {
           </div>
           <div className="ftr-cd">
             <div id="org">02</div>
-            <div className="t-title">E-commerce Logistics Solutions</div>
+            <div className="t-title">Shop from exclusive Indian site</div>
             <p>
               With our worldwide inclusion, strong transportation organization
               and industry driving coordinations experience, our Service and
@@ -202,7 +420,7 @@ const Home = () => {
           </div>
           <div className="ftr-cd">
             <div id="org">03</div>
-            <div className="t-title">Service & Aftermarket Logistics</div>
+            <div className="t-title">Choose plan and shop according to it</div>
             <p>
               With our worldwide inclusion, strong transportation organization
               and industry driving coordinations experience, our Service and
@@ -214,7 +432,7 @@ const Home = () => {
           </div>
           <div className="ftr-cd">
             <div id="org">04</div>
-            <div className="t-title">Industry-Specific Competence</div>
+            <div className="t-title">Get your parcel as fast as possible</div>
             <p>
               With our worldwide inclusion, strong transportation organization
               and industry driving coordinations experience, our Service and
@@ -225,6 +443,21 @@ const Home = () => {
             </div>
           </div>
         </section>
+        <section id="offer">
+          <div className="t-title">
+            <span id="org"> Use </span>
+            exclusive
+            <span id="org"> code </span>
+            for
+            <span id="org"> offers</span>
+          </div>
+          <div id="of-g">
+            <img src="./imgs/of1.png" alt="" />
+            <img src="./imgs/of2.png" alt="" />
+            <img src="./imgs/of3.png" alt="" />
+          </div>
+        </section>{" "}
+        <Footer />
       </div>
     </>
   );

@@ -72,3 +72,28 @@ nav #links {
 .btn-o:hover {
     background: var(--blue);
 }
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-right img {
+    height: 40px;
+}
+
+#calc-icon {
+    color: #181818;
+    font-size: 2.2rem !important;
+}
+
+.lg {
+    align-items: center;
+    gap: 7px;
+    display: flex;
+    font-size: 2rem !important;
+    font-weight: 400;
+    font-family: var(--font3) !important;
+}
+
+.lg {}
