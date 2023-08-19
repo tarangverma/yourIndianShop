@@ -620,14 +620,17 @@ section {
     align-items: center;
     justify-content: space-between;
 }
+#comp a {
+    text-decoration: none;
+}
 
-#comp>* {
+#comp img {
     width: 18%;
     filter: grayscale(100);
     transition: 0.15s ease-in-out;
 }
 
-#comp>*:hover {
+#comp img:hover {
     filter: grayscale(0);
 }
 
