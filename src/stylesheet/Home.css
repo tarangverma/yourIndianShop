@@ -621,11 +621,12 @@ section {
     justify-content: space-between;
 }
 #comp a {
+    width: 18%;
     text-decoration: none;
 }
 
 #comp img {
-    width: 18%;
+    width: 100%;
     filter: grayscale(100);
     transition: 0.15s ease-in-out;
 }
