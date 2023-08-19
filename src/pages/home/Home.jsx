@@ -388,10 +388,18 @@ const Home = () => {
           </div>
         </section>
         <section id="comp">
-          <img src="./imgs/c1.svg" alt="" />
-          <img src="./imgs/c2.png" alt="" />
-          <img src="./imgs/c3.png" alt="" />
-          <img src="./imgs/c4.png" alt="" />
+          <a target="_blank" href="https://www.amazon.in/">
+            <img src="./imgs/c1.svg" alt="" />
+          </a>{" "}
+          <a target="_blank" href="https://www.flipkart.com/">
+            <img src="./imgs/c2.png" alt="" />
+          </a>{" "}
+          <a target="_blank" href="https://www.snapdeal.com/">
+            <img src="./imgs/c3.png" alt="" />
+          </a>
+          <a target="_blank" href="https://www.myntra.com/">
+            <img src="./imgs/c4.png" alt="" />
+          </a>
         </section>
         <section id="bl-feature">
           <div className="ftr-cd">
