@@ -21,29 +21,29 @@ const footer = () => {
           </div>
           <div className="loc">
             <div className="titl">
-              Transforming Ideas <br /> Into Reality
+              <span id="blue">Transforming </span>
+              <span id="org"> Ideas Into </span>
+              <span id="blue"> Reality</span>
             </div>
           </div>
           <div className="tm">
-            connect.qubit@gmail.com <br /> +91 9409259856
+            info@techiota.co.in <br /> +919903581809
           </div>
         </div>
-        <div className="f1l">
-          {/* <FacebookRoundedIcon /> */}
+        {/* <div className="f1l">
           <a href="https://www.instagram.com/_qubit.tech/" target="_blank">
             <InstagramIcon />
           </a>{" "}
           <a href="">
             <LinkedInIcon />
           </a>
-          {/* <YouTubeIcon /> */}{" "}
           <a
             href="https://mail.google.com/mail/u/0/#inbox?compose=CrpPbDzHNDghcrCkVKTtJDrFcvRqPXDMLVMgSLPngxkRqLhmkNKlXpRjDGHRgxQHGfrFbSWxsFSvZVJKdWKg"
             target="_blank"
           >
             <AlternateEmailIcon />
           </a>
-        </div>
+        </div> */}
       </div>
       <div className="ftr2">
         <input
@@ -70,8 +70,8 @@ const footer = () => {
         </div>
         <div className="policy">
           <span>
-            Copyright © QUBIT &nbsp;&nbsp;&nbsp; Privacy Policy &nbsp;&nbsp;
-            &nbsp; Terms & Conditions
+            Copyright © info@techiota.co.in &nbsp;&nbsp;&nbsp; Privacy Policy
+            &nbsp;&nbsp; &nbsp; Terms & Conditions
           </span>
         </div>
       </div>

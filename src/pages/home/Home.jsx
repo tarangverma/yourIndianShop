@@ -420,7 +420,7 @@ const Home = () => {
           </div>
           <div className="ftr-cd">
             <div id="org">03</div>
-            <div className="t-title">Choose plan and shop according to it</div>
+            <div className="t-title">Choose plan & shop according to it</div>
             <p>
               With our worldwide inclusion, strong transportation organization
               and industry driving coordinations experience, our Service and
@@ -432,7 +432,7 @@ const Home = () => {
           </div>
           <div className="ftr-cd">
             <div id="org">04</div>
-            <div className="t-title">Get your parcel as fast as possible</div>
+            <div className="t-title">Get parcel as fast as possible</div>
             <p>
               With our worldwide inclusion, strong transportation organization
               and industry driving coordinations experience, our Service and

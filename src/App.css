@@ -54,10 +54,12 @@ footer .ftr1 {
 .ftr1 .f1r {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 50px;
     font-family: var(--font2) !important;
     font-weight: 400;
     font-size: 1.1rem;
+    width: 100%;
 }
 
 .f1l {
@@ -138,4 +140,9 @@ footer .btn {
 
 .custom-shape-divider-bottom-1679121643 .shape-fill {
     fill: #234cb4;
+}
+.titl>* {
+    font-size: 2rem;
+    font-family: var(--font1) !important;
+
 }
