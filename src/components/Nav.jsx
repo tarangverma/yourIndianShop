@@ -3,6 +3,8 @@ import "../stylesheet/Nav.css";
 import IconButton from "@mui/material/IconButton";
 import CalculateOutlinedIcon from "@mui/icons-material/CalculateOutlined";
 // import CalculateIcon from "@mui/icons-material/Calculate";
+import { Link } from "react-router-dom";
+
 const Nav = () => {
   return (
     <>
@@ -27,7 +29,7 @@ const Nav = () => {
             <CalculateOutlinedIcon id="calc-icon" />
           </IconButton>
           <div id="log" className="btn btn-b">
-            Sign Up
+            <Link to="/signUp">Sign Up</Link>
           </div>
         </div>
       </nav>
