@@ -82,10 +82,14 @@
     background: rgb(254, 181, 11);
     margin-right: 25px;
 }
+#ds1 .row {
+    /* padding: 7.5px; */
+    /* background: linear-gradient(to left, #14231ee1, #14231e89, transparent); */
 
+}
 .ds-info {
     font-size: 1.15rem;
-}
+ }
 
 .ico-g {
     background: rgb(12, 239, 95) !important;
@@ -188,8 +192,10 @@
     width: 100%;
     /* padding: 0 3vw; */
     background: #fff;
+    display: grid;
+    place-items: center;
 }
 
 #ds3 img {
-    width: 100%;
+    width: 80%;
 }

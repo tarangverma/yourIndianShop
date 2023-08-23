@@ -43,7 +43,7 @@ const Sidebar = () => {
               <div className="logo">
                 <span id="org">Ship</span>
                 <img
-                  src="https://github.com/KHUNTPRIYANSH/site_photos/blob/main/shipping/4.png"
+                  src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/4.png"
                   height="40px"
                   alt=""
                 />
@@ -78,19 +78,19 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt">locker</b>
               </Link>
-              <Link to="/">
+              <Link to="/dashboard/ship">
                 <span>
                   <FlightTakeoffOutlinedIcon />
                 </span>
-                <b className="sidebar_nav_txt">curiour shipment</b>
+                <b className="sidebar_nav_txt">courier shipment</b>
               </Link>
-              <Link to="/">
+              <Link to="/dashboard/sites">
                 <span>
                   <StoreMallDirectoryOutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt">indian shops</b>
               </Link>
-              <Link to="/">
+              <Link to="/dashboard/coupon">
                 <span>
                   <DiscountOutlinedIcon />
                 </span>
@@ -109,7 +109,7 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt"> country guide </b>
               </Link>
-              <Link to="/">
+              <Link to="/dashboard/calc">
                 <span>
                   <CalculateOutlinedIcon />
                 </span>

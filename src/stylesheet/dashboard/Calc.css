@@ -1,0 +1,9 @@
+#dash-calc {
+    background: #fff;
+    max-height: 100dvh;
+    overflow-y: scroll;
+}
+
+#dash-calc .sh-r .MuiFormControl-root {
+    width: 25% !important;
+}

@@ -8,6 +8,9 @@ import ArtUp from "./components/ArtUp";
 import ArtistSignIn from "./components/ArtistSignIn";
 import Shipment from "./pages/dashboard/Shipment";
 import Shop from "./pages/dashboard/Shop";
+import Coupon from "./pages/dashboard/Coupon";
+import IndianSites from "./pages/dashboard/IndianSites";
+import Calc from "./pages/dashboard/Calc";
 const App = () => {
   return (
     <div>
@@ -37,7 +40,7 @@ const App = () => {
               <div id="app" className="row">
                 <Sidebar />
                 <main>
-                <Shipment />
+                  <Shipment />
                 </main>
               </div>
             }
@@ -48,7 +51,51 @@ const App = () => {
               <div id="app" className="row">
                 <Sidebar />
                 <main>
-                <Shop/>
+                  <Shop />
+                </main>
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard/coupon"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                  <Coupon />
+                </main>
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard/sites"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                  <IndianSites />
+                </main>
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard/ship"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                  <Shipment />
+                </main>
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard/calc"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                  <Calc />
                 </main>
               </div>
             }

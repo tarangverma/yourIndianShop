@@ -78,7 +78,7 @@ const Dashboard = () => {
           </div> */}
           <div className="work-dia">
             <img
-              src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/work-dia.jpg"
+              src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/work-dia2.png"
               alt=""
             />
           </div>
