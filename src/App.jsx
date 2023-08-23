@@ -1,9 +1,13 @@
 import React from "react";
 import "./App.css";
 import Home from "./pages/home/Home";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./pages/dashboard/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ArtUp from "./components/ArtUp";
 import ArtistSignIn from "./components/ArtistSignIn";
+import Shipment from "./pages/dashboard/Shipment";
+import Shop from "./pages/dashboard/Shop";
 const App = () => {
   return (
     <div>
@@ -14,8 +18,89 @@ const App = () => {
           <Route path="/signIn" element={<ArtistSignIn />} />
         </Routes>
       </Router>
+      <Router>
+        <Routes>
+          <Route
+            path="/dashboard/"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                  <Dashboard />
+                </main>
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard/shipment"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                <Shipment />
+                </main>
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard/shop"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                <Shop/>
+                </main>
+              </div>
+            }
+          />
+          {/* <Route path="/dashboard/shipment" element={<Shipment/>} /> */}
+        </Routes>
+      </Router>
     </div>
   );
 };
 
 export default App;
+// import React from "react";
+// import Sidebar from "./components/Sidebar";
+// import Home from "./pages/Home";
+// import "./App.css";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import Groups from "./pages/Groups";
+// import Forums from "./pages/Forums";
+// import Dashboard from "./pages/Dashboard";
+// import Members from "./pages/Members";
+// import Social from "./pages/Social";
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <div id="app" className="row">
+
+//           <Sidebar />
+
+//         <main>
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/dashboard" element={<Dashboard />} />
+//             <Route path="/groups" element={<Groups />} />
+//             <Route path="/forums" element={<Forums />} />
+//             <Route path="/members" element={<Members />} />
+//             <Route path="/social" element={<Social />} />
+//           </Routes>
+//         </main>
+//       </div>
+//       {/* <div id="app" className="row">
+//         <aside>
+//           <Sidebar />
+//         </aside>
+//         <main>
+//             <Home />
+
+//         </main>
+//       </div> */}
+//     </Router>
+//   );
+// };
+
+// export default App;

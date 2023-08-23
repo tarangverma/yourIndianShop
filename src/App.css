@@ -1,3 +1,5 @@
+
+
 #gallery {
     width: 100%;
     display: flex;
@@ -145,4 +147,8 @@ footer .btn {
     font-size: 2rem;
     font-family: var(--font1) !important;
 
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
