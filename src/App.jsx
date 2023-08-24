@@ -13,6 +13,8 @@ import IndianSites from "./pages/dashboard/IndianSites";
 import Calc from "./components/Calc";
 import AssistedPurchase from "./pages/dashboard/AssistedPurchase";
 import ProductAcceptanceForm from "./pages/dashboard/ProductAcceptanceForm";
+import Profile from "./pages/dashboard/Profile";
+import ProhibitedItems from "./pages/dashboard/ProhibitedItems";
 const App = () => {
   return (
     <div>
@@ -99,6 +101,28 @@ const App = () => {
                 <Sidebar />
                 <main>
                   <IndianSites />
+                </main>
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard/prohibited-items"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                  <ProhibitedItems />
+                </main>
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard/profile"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                  <Profile />
                 </main>
               </div>
             }

@@ -90,12 +90,7 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt">Product Acceptance</b>
               </Link>
-              <Link to="/dashboard/dispatch-request">
-                <span>
-                  <StickyNote2OutlinedIcon />
-                </span>
-                <b className="sidebar_nav_txt">Dispatch Request</b>
-              </Link>
+
               <Link to="/dashboard/ship">
                 <span>
                   <FlightTakeoffOutlinedIcon />
@@ -115,38 +110,38 @@ const Sidebar = () => {
                 <b className="sidebar_nav_txt">coupons available</b>
               </Link>
               <small className="sidebar_nav_txt">Help</small>
-              <Link to="/">
+              <Link to="/dashboard/prohibited-items">
                 <span>
                   <DoNotDisturbAltOutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt"> prohibited items</b>
               </Link>
-              <Link to="/">
+              {/* <Link to="/">
                 <span>
                   <BookOutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt"> country guide </b>
-              </Link>
+              </Link> */}
               <Link to="/dashboard/calc">
                 <span>
                   <CalculateOutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt">shipping calc</b>
               </Link>
-              <Link to="/">
+              {/* <Link to="/">
                 <span>
                   <StickyNote2OutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt"> new blogs</b>
-              </Link>
+              </Link> */}
               <small className="sidebar_nav_txt">your stuff</small>
-              <Link to="/">
+              {/* <Link to="/">
                 <span>
                   <Groups2Icon />
                 </span>
                 <b className="sidebar_nav_txt"> refer and earn</b>
-              </Link>
-              <Link to="/">
+              </Link> */}
+              <Link to="/dashboard/profile">
                 <span>
                   <AccountCircleIcon />
                 </span>
@@ -158,12 +153,12 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt"> wallet</b>
               </Link>
-              <Link to="/">
+              {/* <Link to="/">
                 <span>
                   <ArticleOutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt"> documents</b>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
