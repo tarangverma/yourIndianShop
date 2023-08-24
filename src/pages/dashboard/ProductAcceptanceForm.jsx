@@ -1,15 +1,26 @@
 import React, { useState } from "react";
-import "../../stylesheet/dashboard/DispatchRequestForm.css";
-function Shipment() {
+import "../../stylesheet/dashboard/ProductAcceptanceForm.css"; // Import your CSS file for styling
+
+function ProductAcceptanceForm() {
+  const warehouses = [
+    { id: 1, name: "Warehouse A" },
+    { id: 2, name: "Warehouse B" },
+    { id: 3, name: "Warehouse C" },
+    // Add more warehouses as needed
+  ];
   // State variables to store form data
   const [customerInfo, setCustomerInfo] = useState({
     fullName: "",
     email: "",
     phoneNumber: "",
   });
+  const [productInfo, setProductInfo] = useState({
+    productName: "",
+    productImage: "",
+    productDescription: "",
+  });
   const [deliveryInfo, setDeliveryInfo] = useState({
     deliveryAddress: "",
-    courierService: "",
   });
   const [termsAgreed, setTermsAgreed] = useState(false);
 
@@ -21,8 +32,12 @@ function Shipment() {
   };
 
   return (
-    <div id="dash-dreq" className="shipment-form">
-      <h2>Shipment Request</h2>
+    <div id="dash-pa" className="product-acceptance-form">
+      <h2>
+        <span id="blue">Product </span>
+        <span id="org">Acceptance </span>
+        <span id="blue">Request</span>
+      </h2>
       <form onSubmit={handleSubmit}>
         {/* Customer Information */}
         <div className="form-group">
@@ -56,34 +71,61 @@ function Shipment() {
           />
         </div>
 
-        {/* Delivery Information */}
+        {/* Product Details */}
         <div className="form-group">
           <input
             type="text"
-            placeholder="Delivery Address"
-            value={deliveryInfo.deliveryAddress}
+            placeholder="Product Name"
+            value={productInfo.productName}
             onChange={(e) =>
-              setDeliveryInfo({
-                ...deliveryInfo,
-                deliveryAddress: e.target.value,
+              setProductInfo({ ...productInfo, productName: e.target.value })
+            }
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) =>
+              setProductInfo({
+                ...productInfo,
+                productImage: e.target.files[0],
               })
             }
           />
         </div>
         <div className="form-group">
+          <textarea
+            placeholder="Product Description"
+            value={productInfo.productDescription}
+            onChange={(e) =>
+              setProductInfo({
+                ...productInfo,
+                productDescription: e.target.value,
+              })
+            }
+          />
+        </div>
+
+        {/* Delivery Information */}
+        <div className="form-group">
+          {/* <label>Select Warehouse:</label> */}
           <select
-            value={deliveryInfo.courierService}
+            id="wh-list"
+            value={deliveryInfo.selectedWarehouse}
             onChange={(e) =>
               setDeliveryInfo({
                 ...deliveryInfo,
-                courierService: e.target.value,
+                selectedWarehouse: e.target.value,
               })
             }
           >
-            <option value="">Select Courier Service</option>
-            <option value="ServiceA">Service A</option>
-            <option value="ServiceB">Service B</option>
-            <option value="ServiceC">Service C</option>
+            <option value="">Select Warehouse</option>
+            {warehouses.map((warehouse) => (
+              <option key={warehouse.id} value={warehouse.id}>
+                {warehouse.name}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -101,11 +143,13 @@ function Shipment() {
 
         {/* Submit Button */}
         <div className="form-group">
-          <button type="submit">Submit Request</button>
+          <button className="btn btn-b" type="submit">
+            Submit Request
+          </button>
         </div>
       </form>
     </div>
   );
 }
 
-export default Shipment;
+export default ProductAcceptanceForm;

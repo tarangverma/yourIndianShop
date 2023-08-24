@@ -7,3 +7,38 @@
 #dash-calc .sh-r .MuiFormControl-root {
     width: 25% !important;
 }
+#prc {
+    font-family: var(--font6);
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-top: 5px;
+    color: #1e1e1e;
+}
+
+#dash-calc .btn {
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--font6);
+    padding: 12.5px 38px;
+    /* background: red; */
+    transition: all ease-in-out 0.25s;
+    cursor: pointer;
+}
+
+#dash-calc .btn-b {
+    color: #fff;
+    background: var(--blue);
+}
+
+#dash-calc .btn-o {
+    color: #fff;
+    background: var(--org);
+}
+
+#dash-calc .btn-b:hover {
+    background: var(--org);
+}
+
+#dash-calc .btn-o:hover {
+    background: var(--blue);
+}

@@ -10,7 +10,9 @@ import Shipment from "./pages/dashboard/Shipment";
 import Shop from "./pages/dashboard/Shop";
 import Coupon from "./pages/dashboard/Coupon";
 import IndianSites from "./pages/dashboard/IndianSites";
-import Calc from "./pages/dashboard/Calc";
+import Calc from "./components/Calc";
+import AssistedPurchase from "./pages/dashboard/AssistedPurchase";
+import ProductAcceptanceForm from "./pages/dashboard/ProductAcceptanceForm";
 const App = () => {
   return (
     <div>
@@ -52,6 +54,29 @@ const App = () => {
                 <Sidebar />
                 <main>
                   <Shop />
+                </main>
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard/assisted-purchase"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                  <AssistedPurchase />
+                </main>
+              </div>
+            }
+          />
+
+          <Route
+            path="/dashboard/product-acceptance"
+            element={
+              <div id="app" className="row">
+                <Sidebar />
+                <main>
+                  <ProductAcceptanceForm />
                 </main>
               </div>
             }

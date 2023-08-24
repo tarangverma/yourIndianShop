@@ -21,6 +21,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import { HomeSlide } from "../../components/HomeSlide";
+import Calc from "../../components/Calc";
 
 const Home = () => {
   return (
@@ -257,135 +258,7 @@ const Home = () => {
           </div>
         </section>
         <section id="asA">
-          <div className="t-title">
-            <span id="blue"> Basic</span>
-            <span id="org"> Shipment</span>
-            <span id="org"> Cost</span>
-            <span id="blue"> Calculator</span>
-          </div>
-          {/* <div className="t-title"></div> */}
-          <div className="cal-box">
-            <div className="sh-top">
-              <div className="sh-l">
-                <div className="btn btn-b">Calculate Now</div>
-                <Box
-                  component="form"
-                  sx={{
-                    "& .MuiTextField-root": { m: 1, width: "25ch" },
-                  }}
-                  noValidate
-                  autoComplete="off"
-                >
-                  <div>
-                    <TextField
-                      className="nor-feild"
-                      required
-                      id="outlined-required"
-                      label="Weight (kg)"
-                      defaultValue=""
-                    />{" "}
-                    <TextField
-                      className="err-feild"
-                      error
-                      id="outlined-error-helper-text"
-                      label="How heavy is your item? "
-                      defaultValue=""
-                      helperText="Please enter a weight up to 70 kg."
-                    />
-                  </div>
-                </Box>
-                <h1>Weight</h1>
-                <div className="sh-m">
-                  <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
-                    <img src="./imgs/cur.png" alt="" />
-                  </Tilt>
-                </div>
-              </div>
-              <div className="sh-r">
-                <h1>Dimensions</h1>
-                <div className="dim">
-                  <Box
-                    component="form"
-                    sx={{
-                      "& .MuiTextField-root": { m: 1, width: "20ch" },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                  >
-                    <div>
-                      <TextField
-                        className="nor-feild"
-                        required
-                        id="outlined-required"
-                        label="Length (cm)"
-                        defaultValue=""
-                      />
-                      <TextField
-                        className="err-feild"
-                        error
-                        id="outlined-error-helper-text"
-                        label="How long is your item? "
-                        defaultValue=""
-                        helperText="Please enter a length up to 120 cm to proceed."
-                      />
-                      <strong>X</strong>
-                      <TextField
-                        className="nor-feild"
-                        required
-                        id="outlined-required"
-                        label="Width (cm)"
-                        defaultValue=""
-                      />
-                      <TextField
-                        className="err-feild"
-                        error
-                        id="outlined-error-helper-text"
-                        label="How wide is your item? "
-                        defaultValue=""
-                        helperText="Please enter a width up to 80 cm to proceed."
-                      />
-                      <strong>X</strong>
-                      <TextField
-                        className="nor-feild"
-                        required
-                        id="outlined-required"
-                        label="Length (cm)"
-                        defaultValue=""
-                      />
-                      <TextField
-                        className="err-feild"
-                        error
-                        id="outlined-error-helper-text"
-                        label="How long is your item? "
-                        defaultValue=""
-                        helperText="Please enter a height up to 80 cm to proceed."
-                      />
-                    </div>
-                  </Box>{" "}
-                </div>
-                <h1>Not sure about the sizes?</h1>
-                <div className="demo-box">
-                  <div>
-                    <div className="olay">
-                      <img src="./svg/1.jpg" alt="" />
-                    </div>
-                    <div className="olay">
-                      <img src="./svg/2.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="olay">
-                      <img src="./svg/3.jpg" alt="" />
-                    </div>
-                    <div className="olay">
-                      <img src="./svg/4.jpg" alt="" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="sh-bot"></div>
-          </div>
+          <Calc />
         </section>
         <section id="comp">
           <a target="_blank" href="https://www.amazon.in/">

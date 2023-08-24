@@ -1,15 +1,26 @@
 import React, { useState } from "react";
-import "../../stylesheet/dashboard/DispatchRequestForm.css";
-function Shipment() {
+import "../../stylesheet/dashboard/AssistedPurchase.css";
+function AssistedPurchase() {
   // State variables to store form data
   const [customerInfo, setCustomerInfo] = useState({
     fullName: "",
     email: "",
     phoneNumber: "",
   });
+  const [productInfo, setProductInfo] = useState({
+    productName: "",
+    productURL: "",
+    productImage: "",
+    productDescription: "",
+  });
   const [deliveryInfo, setDeliveryInfo] = useState({
     deliveryAddress: "",
-    courierService: "",
+    deliveryMethod: "",
+  });
+  const [additionalInfo, setAdditionalInfo] = useState({
+    reasonForRequest: "",
+    priceRange: "",
+    specificRequirements: "",
   });
   const [termsAgreed, setTermsAgreed] = useState(false);
 
@@ -21,8 +32,12 @@ function Shipment() {
   };
 
   return (
-    <div id="dash-dreq" className="shipment-form">
-      <h2>Shipment Request</h2>
+    <div id="dash-ap" className="assisted-purchase-form">
+      <h2>
+        <span id="blue">Assisted </span>
+        <span id="org">Purchase </span>
+        <span id="blue">Request</span>
+      </h2>
       <form onSubmit={handleSubmit}>
         {/* Customer Information */}
         <div className="form-group">
@@ -56,36 +71,52 @@ function Shipment() {
           />
         </div>
 
-        {/* Delivery Information */}
+        {/* Product Details */}
         <div className="form-group">
           <input
             type="text"
-            placeholder="Delivery Address"
-            value={deliveryInfo.deliveryAddress}
+            placeholder="Product Name"
+            value={productInfo.productName}
             onChange={(e) =>
-              setDeliveryInfo({
-                ...deliveryInfo,
-                deliveryAddress: e.target.value,
+              setProductInfo({ ...productInfo, productName: e.target.value })
+            }
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="url"
+            placeholder="Product Image URL"
+            value={productInfo.productURL}
+            onChange={(e) =>
+              setProductInfo({ ...productInfo, productURL: e.target.value })
+            }
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) =>
+              setProductInfo({
+                ...productInfo,
+                productImage: e.target.files[0],
               })
             }
           />
         </div>
         <div className="form-group">
-          <select
-            value={deliveryInfo.courierService}
+          <textarea
+            placeholder="Product Description"
+            value={productInfo.productDescription}
             onChange={(e) =>
-              setDeliveryInfo({
-                ...deliveryInfo,
-                courierService: e.target.value,
+              setProductInfo({
+                ...productInfo,
+                productDescription: e.target.value,
               })
             }
-          >
-            <option value="">Select Courier Service</option>
-            <option value="ServiceA">Service A</option>
-            <option value="ServiceB">Service B</option>
-            <option value="ServiceC">Service C</option>
-          </select>
+          />
         </div>
+        {/* ... Add more form groups for other sections */}
 
         {/* Terms and Conditions */}
         <div className="form-group">
@@ -101,11 +132,13 @@ function Shipment() {
 
         {/* Submit Button */}
         <div className="form-group">
-          <button type="submit">Submit Request</button>
+          <button className="btn btn-b" type="submit">
+            Submit Request
+          </button>
         </div>
       </form>
     </div>
   );
 }
 
-export default Shipment;
+export default AssistedPurchase;
