@@ -16,6 +16,8 @@ import ProductAcceptanceForm from "./pages/dashboard/ProductAcceptanceForm";
 import Profile from "./pages/dashboard/Profile";
 import ProhibitedItems from "./pages/dashboard/ProhibitedItems";
 import Nav from "./components/Nav";
+import Plans from "./components/Plans";
+import PlanPage from "./pages/Plan/PlanPage";
 
 export const MyContext = createContext();
 
@@ -38,6 +40,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/signUp" element={<ArtUp />} />
             <Route path="/signIn" element={<ArtistSignIn />} />
+            <Route path="/plan" element={<PlanPage />} />
             {/* <Route path="/dashboard/" element={<Dashboard />} /> */}
             <Route
               path="/dashboard/"
@@ -169,7 +172,6 @@ const App = () => {
                 </main>
               }
             />
-            {/* <Route path="/dashboard/shipment" element={<Shipment/>} /> */}
           </Routes>
         </Router>
       </MyContext.Provider>
@@ -178,46 +180,3 @@ const App = () => {
 };
 
 export default App;
-// import React from "react";
-// import Sidebar from "./components/Sidebar";
-// import Home from "./pages/Home";
-// import "./App.css";
-// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-// import Groups from "./pages/Groups";
-// import Forums from "./pages/Forums";
-// import Dashboard from "./pages/Dashboard";
-// import Members from "./pages/Members";
-// import Social from "./pages/Social";
-
-// const App = () => {
-//   return (
-//     <Router>
-//       <div id="app" className="row">
-
-//           <Sidebar />
-
-//         <main>
-//           <Routes>
-//             <Route path="/" element={<Home />} />
-//             <Route path="/dashboard" element={<Dashboard />} />
-//             <Route path="/groups" element={<Groups />} />
-//             <Route path="/forums" element={<Forums />} />
-//             <Route path="/members" element={<Members />} />
-//             <Route path="/social" element={<Social />} />
-//           </Routes>
-//         </main>
-//       </div>
-//       {/* <div id="app" className="row">
-//         <aside>
-//           <Sidebar />
-//         </aside>
-//         <main>
-//             <Home />
-
-//         </main>
-//       </div> */}
-//     </Router>
-//   );
-// };
-
-// export default App;
