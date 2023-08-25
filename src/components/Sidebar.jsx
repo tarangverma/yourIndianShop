@@ -72,13 +72,19 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt">personal shopper</b>
               </Link>
+              <Link to="/dashboard/single-product">
+                <span>
+                  <ShoppingCartOutlinedIcon />
+                </span>
+                <b className="sidebar_nav_txt">Single Product</b>
+              </Link>
               <Link to="/dashboard/assisted-purchase">
                 <span>
                   <ShoppingCartOutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt">Assisted Purchase</b>
               </Link>
-              <Link to="/">
+              <Link to="/dashboard/locker">
                 <span>
                   <LockClockOutlinedIcon />
                 </span>

@@ -3,7 +3,11 @@
     width: 120%;
 
 }
-
+.locker {
+    padding: 35px !important;
+    max-height: 100dvh;
+    overflow-y: scroll;
+}
 .warehouse-card {
     border: 1px solid #ccc;
     border-radius: 13.5px;

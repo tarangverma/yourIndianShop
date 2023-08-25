@@ -19,6 +19,8 @@ import Nav from "./components/Nav";
 import Plans from "./components/Plans";
 import PlanPage from "./pages/Plan/PlanPage";
 import SelectWareHouse from "./pages/dashboard/SelectWareHouse";
+import SingleProduct from "./components/SingleProduct";
+import Locker from "./pages/dashboard/Locker";
 
 export const MyContext = createContext();
 
@@ -43,7 +45,6 @@ const App = () => {
             <Route path="/signIn" element={<ArtistSignIn />} />
             <Route path="/plan" element={<PlanPage />} />
             <Route path="/select-warehouse" element={<SelectWareHouse />} />
-            {/* <Route path="/dashboard/" element={<Dashboard />} /> */}
             <Route
               path="/dashboard/"
               element={
@@ -67,12 +68,34 @@ const App = () => {
               }
             />
             <Route
+              path="/dashboard/locker"
+              element={
+                <div id="app" className="row">
+                  <Sidebar />
+                  <main>
+                    <Locker />
+                  </main>
+                </div>
+              }
+            />
+            <Route
               path="/dashboard/shop"
               element={
                 <div id="app" className="row">
                   <Sidebar />
                   <main>
                     <Shop />
+                  </main>
+                </div>
+              }
+            />
+            <Route
+              path="/dashboard/single-product"
+              element={
+                <div id="app" className="row">
+                  <Sidebar />
+                  <main>
+                    <SingleProduct />
                   </main>
                 </div>
               }
