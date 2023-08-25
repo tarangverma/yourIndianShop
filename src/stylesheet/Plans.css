@@ -1,11 +1,13 @@
 /* PlanCard.css */
 #plan-cards {
     display: flex;
-    padding: 35px 10vw;
+    padding: 10vh 10vw;
     gap: 35px;
     background: #eee;
     flex-wrap: wrap;
     height: auto;
+    /* min-height: 100dvh; */
+    overflow-y: scroll;
     justify-content: space-evenly;
     width: 100%;
 }

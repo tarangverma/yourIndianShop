@@ -18,6 +18,7 @@ import ProhibitedItems from "./pages/dashboard/ProhibitedItems";
 import Nav from "./components/Nav";
 import Plans from "./components/Plans";
 import PlanPage from "./pages/Plan/PlanPage";
+import SelectWareHouse from "./pages/dashboard/SelectWareHouse";
 
 export const MyContext = createContext();
 
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/signUp" element={<ArtUp />} />
             <Route path="/signIn" element={<ArtistSignIn />} />
             <Route path="/plan" element={<PlanPage />} />
+            <Route path="/select-warehouse" element={<SelectWareHouse />} />
             {/* <Route path="/dashboard/" element={<Dashboard />} /> */}
             <Route
               path="/dashboard/"
