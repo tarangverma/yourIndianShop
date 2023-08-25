@@ -5,18 +5,27 @@ import "../stylesheet/ArtUp.css";
 import AddCardIcon from "@mui/icons-material/AddCard";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { fetchreq} from '../Helper/fetch'
 // import swal from "sweetalert";
 // import emailjs from "@emailjs/browser";
 
 // let otp = Math.round(1000000 * Math.random()).toString();
-const ArtUp = (props) => {
-  //   const nav = useNavigate();
-  //   const { backend } = props;
-  //   const [name, setName] = useState("");
-  //   const [email, setEmail] = useState("");
-  //   const [password, setPassword] = useState("");
-  //   const [mobile, setMobile] = useState("");
-  //   const [submit, setSubmit] = useState("Create Account");
+const ArtUp = () => {
+    const nav = useNavigate();
+    const [otp,setOtp]=useState(null);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [mobile, setMobile] = useState("");
+    const [submit, setSubmit] = useState("Create Account");
+    const [Address, setAddress] = useState(null);
+    const [Address2,addAddress2] = useState(null);
+    const [Landmark, setLandmark] = useState(null);
+    const [City, setCity] = useState(null);
+    const [Country, setCountry] = useState(null);
+    const [pincode, setpincode] = useState(null);
+    const [State, setState] = useState(null);
+    
   //   const [code, setCode] = useState("");
   //   const form = useRef();
 
@@ -71,36 +80,37 @@ const ArtUp = (props) => {
   //     alert("invalid code");
   //   }
   // };
-  // const handlesubmit = async () => {
-  //   if (submit == "Creating...") {
-  //     return;
-  //   }
-  //   setSubmit("Creating...");
-  //   const res = await fetch(`${backend}/api/register`, {
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name,
-  //       email,
-  //       password,
-  //       mobileno: mobile,
-  //     }),
-  //   });
-  //   const data = await res.json();
-  //   if (data.status == "ok") {
-  //     swal({
-  //       title: "Successefully registerd!",
-  //       text: "",
-  //       icon: "success",
-  //     });
-  //     nav("/signIn");
-  //   } else {
-  //     alert(data.status);
-  //   }
-  //   setSubmit("Create Account");
-  // };
+  const submithalf = async (e)=>{
+    e.preventDefault()
+    const res = await fetchreq("GET",`sendVerifyMail/${email}`,{});
+    if(res){
+      setOtp(res.OTP);
+      alert("mail is send to your email")
+    }else{
+      alert("Something went wrong...")
+    }
+  }
+  const handlesubmit = async () => {
+    if (submit == "Creating...") {
+      return;
+    }
+    setSubmit("Creating...");
+    const body=  {
+      Name:name,
+      email,
+      phoneNo:mobile,
+      password,
+      Address,
+      Address2,
+      Landmark,
+      City,
+      Country,
+      State,
+      pincode
+    }
+    const res = fetchreq("POST","addUser",body)
+    setSubmit("Create Account");
+  };
   // useEffect(() => {
   //   document.getElementById("dataverify").style.display = "flex";
   //   document.getElementById("verify").style.display = "none";
@@ -123,63 +133,50 @@ const ArtUp = (props) => {
             </header>
             <h1>Get Started</h1>
             <h2>It's free to SignUp and only takes a minute.</h2>
-            <form action="#">
+            <form onSubmit={submithalf}>
               <h3>Firstname & Lastname</h3>
               <input
                 type="text"
                 placeholder="Enter your first and last name"
-                // value={name}
-                // onChange={(e) => {
-                //   setName(e.target.value);
-                // }}
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
               />
               <h3>Email</h3>
               <input
                 type="text"
                 placeholder="abcd123@xyz.com"
-                // value={email}
-                // onChange={(e) => {
-                //   setEmail(e.target.value);
-                // }}
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
               <h3>Password</h3>
               <input
                 type="password"
                 placeholder="●●●●●●●●●●●"
-                // value={password}
-                // onChange={(e) => {
-                //   setPassword(e.target.value);
-                // }}
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
               <h3>Mobile No</h3>
               <input
                 type="text"
                 placeholder="Enter Your number"
-                // value={mobile}
-                // onChange={(e) => {
-                //   setMobile(e.target.value);
-                // }}
+                value={mobile}
+                onChange={(e) => {
+                  setMobile(e.target.value);
+                }}
               />
               <button
                 type="submit"
                 className="btn"
-                // onClick={(e) => {
-                //   e.preventDefault();
-                //   verifycode();
-                // }}
               >
-                Submit
-                {/* {submit} */}
+                {submit}
               </button>
             </form>
-            <div className="b-box">
-              <div className="btn">
-                SignUp With <FacebookRoundedIcon />
-              </div>
-              <div className="btn">
-                SignUp With <TwitterIcon />
-              </div>
-            </div>
             <p>
               <span className="gray">Already have an account?</span>
               <Link to="/signIn">Sign In</Link>

@@ -1,64 +1,40 @@
-import React, { useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../stylesheet/ArtistSignIn.css";
 import AddCardIcon from "@mui/icons-material/AddCard";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useEffect } from "react";
-const ArtistSignIn = (props) => {
-  // const {backend,setIslogin,setUserId}=props;
-  // const [email,setEmail]=useState("");
-  // const [password,setPassword]=useState("");
-  // const [signin,setSignin]=useState("Sign In")
-  // const nav = useNavigate();
-  // const handlesubmit = async ()=>{
-  //   if(signin=="Just A Sec..."){
-  //     return;
-  //   }
-  //   setSignin("Just A Sec...");
-  //   const res= await fetch(`${backend}/api/login`,{
-  //     method:"POST",
-  //     headers:{
-  //       "Content-type":"application/json"
-  //     },
-  //     body:JSON.stringify({
-  //       email,
-  //       password
-  //     })
-  //   });
-  //   const data = await res.json();
-  //   if(data.status=="ok"){
-  //     setIslogin(true);
-  //     setUserId(data.id);
-  //     window.localStorage.setItem("handleId",data.id);
-  //     setTimeout(() => {
-  //       nav("/");
-  //     }, 1000);
-  //   }else{
-  //     alert(data.status);
-  //   }
-  //   setSignin("Sign In")
-  // }
-  // const othenticate = async (jwt)=>{
-  //   const res = await fetch(`${backend}/profile/${jwt}`,{method:"GET"});
-  //   const data = await res.json();
-  //   if(data.status=="ok"){
-  //     setIslogin(true);
-  //     setUserId(data.id);
-  //     setTimeout(() => {
-  //       nav("/");
-  //     }, 1000);
-  //   }
-  // }
-  // useEffect(()=>{
-  //   const id  = window.localStorage.getItem("handleId");
-  //   if(id){
-  //     setIslogin(true);
-  //     setUserId(id);
-  //     nav("/");
+import { fetchreq, uploadImageAws, jwtauth } from "../Helper/fetch";
+import { MyContext } from "../App";
 
-  //   }
-  // },[])
+const ArtistSignIn = () => {
+  const { user, setUser, setIsLogin } = useContext(MyContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [signin, setSignin] = useState("Sign In");
+  const nav = useNavigate();
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    if (signin == "Just A Sec...") {
+      return;
+    }
+    setSignin("Just A Sec...");
+    const out = await fetchreq("POST", "loginUser", { email, password });
+    if (out) {
+      window.localStorage.setItem("token", JSON.stringify(out.token));
+      setIsLogin(true);
+      setUser(out);
+      nav("/dashboard/");
+    } else {
+      alert("Invalid Credentials...");
+    }
+    setSignin("Sign In");
+  };
+
+  useEffect(() => {
+    window.localStorage.clear();
+  }, []);
   return (
     <>
       <section id="ArtSignIn">
@@ -76,29 +52,27 @@ const ArtistSignIn = (props) => {
             </header>
             <h1>Welcome back!</h1>
             <h2>Please sign in to continue.</h2>
-            <form action="#">
+            <form onSubmit={handlesubmit}>
               <h3>Email</h3>
               <input
-                type="text"
+                type="email"
                 placeholder="abcd123@xyz.com"
-                // value={email} onChange={(d)=>{setEmail(d.target.value)}}
+                value={email}
+                onChange={(d) => {
+                  setEmail(d.target.value);
+                }}
               />
               <h3>Password</h3>
               <input
                 type="password"
                 placeholder="●●●●●●●●●●●"
-                // value={password} onChange={(d)=>{setPassword(d.target.value)}}
+                value={password}
+                onChange={(d) => {
+                  setPassword(d.target.value);
+                }}
               />
-              <button
-                type="submit"
-                className="btn"
-                // onClick={(e)=>{
-                //   e.preventDefault();
-                //   handlesubmit();
-                // }}
-              >
-                {/* {signin} */}
-                SignIn
+              <button type="submit" className="btn">
+                {signin}
               </button>
             </form>
             <div className="b-box">

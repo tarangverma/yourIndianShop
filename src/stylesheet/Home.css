@@ -627,12 +627,13 @@ section {
 
 #comp img {
     width: 100%;
-    filter: grayscale(100);
+    /* filter: grayscale(100); */
     transition: 0.15s ease-in-out;
 }
 
 #comp img:hover {
-    filter: grayscale(0);
+    width: 100%;
+    /* filter: grayscale(0); */
 }
 
 .parallax-effect-glare-scale {

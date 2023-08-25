@@ -257,9 +257,9 @@ const Home = () => {
             </Tilt>
           </div>
         </section>
-        <section id="asA">
+        {/* <section id="asA">
           <Calc />
-        </section>
+        </section> */}
         <section id="comp">
           <a target="_blank" href="https://www.amazon.in/">
             <img src="./imgs/c1.svg" alt="" />

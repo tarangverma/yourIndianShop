@@ -24,10 +24,13 @@ const Nav = () => {
           <a href="/">Shop</a>
           <a href="/">Contact</a>
         </div>
+
         <div className="nav-right">
-          <IconButton aria-label="Cost Calculator">
-            <CalculateOutlinedIcon id="calc-icon" />
-          </IconButton>
+          <Link to="/calc">
+            <IconButton aria-label="Cost Calculator">
+              <CalculateOutlinedIcon id="calc-icon" />
+            </IconButton>
+          </Link>
           <div id="log" className="btn btn-b">
             <Link to="/signUp">Sign Up</Link>
           </div>
