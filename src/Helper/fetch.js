@@ -1,7 +1,10 @@
-// const backend = process.env.REACT_APP_BACKEND;
-const backend = "http://localhost:4000";
-// const header = process.env.REACT_APP_API_CODE;
-const header = "qubit-tech";
+
+
+
+const backend = process.env.REACT_APP_BACKEND;
+// const backend = "http://localhost:4000";
+const header = process.env.REACT_APP_API_CODE;
+// const header = "qubit-tech";
 
 async function fetchreq(type,api,bd){
     console.log(backend)
@@ -30,7 +33,7 @@ async function fetchreq(type,api,bd){
     if(final.status=="ok"){
         return final;
     }else{
-        console.log(final.status)
+        console.log(final.status,final?.err)
         return false;
     }
 }
@@ -66,6 +69,44 @@ async function jwtauth(){
     return false;
     
 }
+function getDate(time){
+    const date = new Date(time);
+    const hours = 5.5;
+    const utcDate = new Date(date.getTime()+ hours*60*60*1000) ;
+    const indianDate = utcDate.toLocaleString("en-Us", {
+        timeZone: "Asia/Kolkata"
+    });
+    return indianDate;
+}
+async function walletTransaction(amount,wid,note,user,setUser,nav){
+    if(user?.Wallete<amount){
+        alert("Please Recharge Your Wallate");
+        nav("/Walete");
+        return false;
+    }else if(amount ==0){
+        return true;
+    }else if(!window.confirm(`₹${amount} will deducted from you wallete...`)){
+        return false;
+    }else{
+        const body2 = {
+            Cid : user.Cid,
+            amount: 0-parseInt(amount),
+            note: note,
+            Wid: wid,
+        }
+        let dt2 = await fetchreq("POST","transaction",body2);
+        if(dt2){
+            await fetchreq("GET",`updateWallate/${user?.Cid}`,{})
+            let us = user;
+            us.Wallete = parseInt(user.Wallete)-parseInt(amount);
+            setUser(us);
+            return true;
+        }else{
+            alert("something Went Wrong...")
+            return false;
+        }
+    }
+}
 
-module.exports ={fetchreq,uploadImageAws,jwtauth};
+module.exports ={fetchreq,uploadImageAws,jwtauth,getDate,walletTransaction};
 //l

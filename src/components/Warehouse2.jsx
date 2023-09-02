@@ -1,35 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../stylesheet/Warehouse.css";
 import Tilt from "react-parallax-tilt";
 import { MyContext } from "../App";
-import { fetchreq, walletTransaction } from "../Helper/fetch";
+import { fetchreq } from "../Helper/fetch";
 import { useNavigate } from "react-router-dom";
 const Warehouse = ({warehouse}) => {
-  const {planId,user,setUser}=useContext(MyContext);
+  const {planId,user,setWh}=useContext(MyContext);
   const nav = useNavigate();
 
-const handleSelect = async ()=>{
-  
-  if(await walletTransaction(planId.Price,warehouse.Wid,"buy Plan",user,setUser,nav)){
-    const body = {
-      cid:user.Cid,
-      pid:planId.Pid,
-      wid:warehouse.Wid,
-      paid:planId.Price,
-      renew:planId.duration==0?-1:planId.duration,
-    }
-    const dt = await fetchreq("POST",'buyplan',body);
-    if(dt){
-      if(user.Status==0){
-        await fetchreq("GET",`upadateUserStatus/${user.Cid}/1`,{});
-      }
-      nav("/dashboard");
-    }
-    else{
-      alert("something went wrong");
-    }
+  const handleSelect = async ()=>{
+    setWh({Name:warehouse.Name,Wid:warehouse.Wid});
+    setTimeout(() => {
+        nav("/warehousedata")
+    }, 500);
   }
-}
   return (
     <Tilt
       glareEnable={true}
@@ -46,6 +30,7 @@ const handleSelect = async ()=>{
         <div className="w-data">
           <h3 className="warehouse-name">{warehouse.Name}</h3>
           <p className="warehouse-details">
+            <strong>WarehouseId:</strong> {warehouse.Wid}<br />
             <strong>Address:</strong> {warehouse.Address}<br />
             <strong>Strit:</strong> {warehouse.Address2}<br />
             <strong>Landmark:</strong> {warehouse.Landmark}<br />
@@ -57,7 +42,7 @@ const handleSelect = async ()=>{
           </p>
         </div>
         <button className="btn btn-b" onClick={handleSelect}>
-          Select {planId.Price!=0 && "And Pay from Wallet"}
+          View
         </button>
       </div>
     </Tilt>

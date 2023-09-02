@@ -1,43 +1,65 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../../stylesheet/dashboard/DispatchRequestForm.css";
+import { MyContext } from "../../App";
+import { fetchreq, walletTransaction } from "../../Helper/fetch";
+import { useNavigate } from "react-router-dom";
 
 function Shipment() {
   // State variables to store form data
-  const [customerInfo, setCustomerInfo] = useState({
-    fullName: "",
-    email: "",
-    phoneNumber: "",
-  });
-  const [deliveryInfo, setDeliveryInfo] = useState({
-    deliveryAddress: "",
-  });
-  const [termsAgreed, setTermsAgreed] = useState(false);
-
-  // New state variables for additional fields
-  const [warehouseId, setWarehouseId] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState("");
-  const [destinationInfo, setDestinationInfo] = useState({
-    destinationContactName: "",
-    destinationContactPhone: "",
-    destinationAddress: "",
+ 
+  const nav = useNavigate()
+  const {did,isLogin,user,setUser,wh}=useContext(MyContext);
+  const [termsAgreed,setTermsAgreed]=useState(false);
+  const [run,setRun]=useState(false);
+  const [pland,setPland]=useState(null);
+  const [form, setForm] = useState({
+    Did:did,
+    fullName: null,
+    email: null,
+    ad: null,
+    ad2: null,
+    phone: null,
+    city: null,
+    state: null,
+    country: null,
+    pincode: null,
+    Di: null,
+    Sp: 1,
   });
 
   // Handle form submissions
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
     // Combine all form data into one object
-    const formData = {
-      customerInfo,
-      deliveryInfo,
-      warehouseId,
-      selectedProduct,
-      destinationInfo,
-      termsAgreed,
-    };
-    // Process and send form data to the server or admin
-    console.log(formData);
+    console.log(form)
+    const allKeysAreNotNull = Object.keys(form).every(key => (form[key] !== null && form[key]!==""));
+    if(!run && termsAgreed && allKeysAreNotNull){
+      if(await walletTransaction(pland?.warehouse_pic,wh?.Wid,"Dispach Request",user,setUser,nav)){
+        const dt = await fetchreq("POST","addDispachReq",{form:form});
+        if(dt){
+          alert("Request Made succesfully...");
+          setForm(null);
+          nav("/warehousedata");
+        }else{
+          alert("something went wrong");
+        }
+      }
+    }else{
+      alert("fill All details...");
+    }
+    setRun(false);
   };
-
+  const loadPlanDetails = async ()=>{
+    const dt = await fetchreq("GET",`getPlan/${user?.Cid}/${wh?.Wid}`,{});
+    dt? setPland(dt.result[0]) : setPland(null);
+  }
+  useEffect(()=>{
+    if(!isLogin){
+      nav("/")
+    }else{
+      loadPlanDetails();
+    }
+  },[])
   return (
     <div id="dash-dreq" className="shipment-form">
       <h2>
@@ -46,113 +68,90 @@ function Shipment() {
       </h2>
       <form onSubmit={handleSubmit}>
         {/* Customer Information */}
+        <h1>Reciver Details</h1>
         <div className="form-group">
           <input
             type="text"
             placeholder="Full Name"
-            value={customerInfo.fullName}
-            onChange={(e) =>
-              setCustomerInfo({ ...customerInfo, fullName: e.target.value })
-            }
+            value={form.fullName}
+            onChange={(e)=>{setForm({...form,fullName:e.target.value})}}
           />
         </div>
         <div className="form-group">
           <input
             type="email"
-            placeholder="Email Address"
-            value={customerInfo.email}
-            onChange={(e) =>
-              setCustomerInfo({ ...customerInfo, email: e.target.value })
-            }
+            placeholder=" Email Address"
+            value={form.email}
+            onChange={(e)=>{setForm({...form,email:e.target.value})}}
           />
         </div>
         <div className="form-group">
           <input
-            type="tel"
+            type="text"
             placeholder="Phone Number"
-            value={customerInfo.phoneNumber}
-            onChange={(e) =>
-              setCustomerInfo({ ...customerInfo, phoneNumber: e.target.value })
-            }
-          />
-        </div>
-
-        {/* Warehouse Selection */}
-        <div className="form-group">
-          <select
-            value={warehouseId}
-            onChange={(e) => setWarehouseId(e.target.value)}
-          >
-            <option value="">Select Warehouse</option>
-            <option value="WarehouseA">Warehouse A</option>
-            <option value="WarehouseB">Warehouse B</option>
-            <option value="WarehouseC">Warehouse C</option>
-          </select>
-        </div>
-
-        {/* Product Selection */}
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Selected Product ID"
-            value={selectedProduct}
-            onChange={(e) => setSelectedProduct(e.target.value)}
-          />
-        </div>
-
-        {/* Delivery Information */}
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Delivery Address"
-            value={deliveryInfo.deliveryAddress}
-            onChange={(e) =>
-              setDeliveryInfo({
-                ...deliveryInfo,
-                deliveryAddress: e.target.value,
-              })
-            }
-          />
-        </div>
-
-        {/* Destination Information */}
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Destination Contact Name"
-            value={destinationInfo.destinationContactName}
-            onChange={(e) =>
-              setDestinationInfo({
-                ...destinationInfo,
-                destinationContactName: e.target.value,
-              })
-            }
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="tel"
-            placeholder="Destination Contact Phone"
-            value={destinationInfo.destinationContactPhone}
-            onChange={(e) =>
-              setDestinationInfo({
-                ...destinationInfo,
-                destinationContactPhone: e.target.value,
-              })
-            }
+            value={form.phone}
+            onChange={(e)=>{setForm({...form,phone:e.target.value})}}
           />
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Destination Address"
-            value={destinationInfo.destinationAddress}
-            onChange={(e) =>
-              setDestinationInfo({
-                ...destinationInfo,
-                destinationAddress: e.target.value,
-              })
-            }
+            placeholder="Address Line 1"
+            value={form.ad}
+            onChange={(e)=>{setForm({...form,ad:e.target.value})}}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Address Line 2"
+            value={form.ad2}
+            onChange={(e)=>{setForm({...form,ad2:e.target.value})}}
+          />
+        </div>
+        
+
+        
+       
+        
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="City "
+            value={form.city}
+            onChange={(e)=>{setForm({...form,city:e.target.value})}}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="State"
+            value={form.state}
+            onChange={(e)=>{setForm({...form,state:e.target.value})}}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Country"
+            value={form.country}
+            onChange={(e)=>{setForm({...form,country:e.target.value})}}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Postal Code" 
+            value={form.pincode}
+            onChange={(e)=>{setForm({...form,pincode:e.target.value})}}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Delivery Instruction" 
+            value={form.Di}
+            onChange={(e)=>{setForm({...form,Di:e.target.value})}}
           />
         </div>
 
@@ -171,7 +170,7 @@ function Shipment() {
         {/* Submit Button */}
         <div className="form-group">
           <button className="btn btn-b" type="submit">
-            Submit Request
+            Submit Request {pland?.warehouse_pic==0?"":`and pay ${pland?.warehouse_pic}`}
           </button>
         </div>
       </form>

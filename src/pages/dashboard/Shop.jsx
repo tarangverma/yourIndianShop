@@ -1,47 +1,46 @@
-import React from "react";
+import React, { useDebugValue, useEffect, useState } from "react";
 import Product from "../../components/Product";
 import "../../stylesheet/dashboard/Shop.css";
+import { Link } from "react-router-dom";
+import { fetchreq } from "../../Helper/fetch";
 const Shop = () => {
   const ar = [1, 2, 3, 4];
   const pr = [1, 2, 3, 4, 4, 5, 6, 7, 8];
+  const [products,setProducts]=useState([]);
+  const url = process.env.REACT_APP_URL;
+  const getProduct = async ()=>{
+    const dt = await fetchreq("GET","Products",{});
+    setProducts(dt.result);
+  }
+  useEffect(()=>{
+    getProduct()
+  },[])
   return (
     <div id="shop-sec">
       <div id="the-gym" style={{ background: "#fff", padding: "0 10vw" }}>
-        <center>
-          <div className="t-title dark">SHOP PRODUCTS</div>
-        </center>
+      <center>
+        <div className="plan-page-title">
+          <span id="blue">SHOP </span>
+          <span id="org">PRODUCTS</span>
+        </div>
+      </center>
       </div>
-
+      <Link className="btn btn-b" to="/dashboard/assisted-purchase">Assisted Purchase Request</Link>
       <div id="displayProducts">
-        {pr.map((e) => {
+        {products.map((p,e) => {
+          const photo = JSON.parse(p.Images);
+          
           return (
             <Product
               // proImg={`./imgs/btt${e}.webp`}
-              proImg={`https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/we_go_gym/sp${e}.webp`}
-              proName={`Sport Bottle ${e}`}
-              proPrice=" $12.00"
+              proImg={`${url}/${photo[0]}`}
+              proName={p.Name}
+              proPrice={` $${p.Price}`}
             />
           );
         })}
       </div>
-      <div id="ad2"></div>
-      <div id="the-gym" style={{ background: "#fff", padding: "0 10vw" }}>
-        <center>
-          <div className="t-title dark">SHOP SPORT ITEMS</div>
-        </center>
-      </div>
-      <div id="displayProducts" style={{ flexDirection: "row-reverse" }}>
-        {ar.map((e) => {
-          return (
-            <Product
-              // proImg={`./imgs/btt${e}.webp`}
-              proImg={`https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/we_go_gym/btt${e}.webp`}
-              proName="Sport Bottle"
-              proPrice=" $12.00"
-            />
-          );
-        })}
-      </div>
+      
     </div>
   );
 };

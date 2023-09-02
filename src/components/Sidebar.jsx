@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import "../stylesheet/Sidebar.css";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
@@ -10,7 +10,7 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import FlightTakeoffOutlinedIcon from "@mui/icons-material/FlightTakeoffOutlined";
 import LockClockOutlinedIcon from "@mui/icons-material/LockClockOutlined";
@@ -26,14 +26,21 @@ import Groups2Icon from "@mui/icons-material/Groups2";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
+import { MyContext } from "../App";
 const Sidebar = () => {
   const [isCollapsedSidebar, setisCollapsedSidebar] = useState(false);
+  const {setIsLogin}=useContext(MyContext);
+  const nav = useNavigate()
 
   const toggleSidebarCollapseHandler = () => {
     setisCollapsedSidebar((prev) => !prev);
     console.log(isCollapsedSidebar);
   };
-
+  const logOut = async ()=>{
+    window.localStorage.clear();
+    setIsLogin(false);
+    nav("/")
+  }
   return (
     <>
       <aside data-collapse={isCollapsedSidebar}>
@@ -65,43 +72,17 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt">dashboard</b>
               </Link>
-
-              <Link to="/dashboard/shop">
-                <span>
-                  <ShoppingCartOutlinedIcon />
-                </span>
-                <b className="sidebar_nav_txt">personal shopper</b>
-              </Link>
-              <Link to="/dashboard/single-product">
-                <span>
-                  <ShoppingCartOutlinedIcon />
-                </span>
-                <b className="sidebar_nav_txt">Single Product</b>
-              </Link>
-              <Link to="/dashboard/assisted-purchase">
-                <span>
-                  <ShoppingCartOutlinedIcon />
-                </span>
-                <b className="sidebar_nav_txt">Assisted Purchase</b>
-              </Link>
               <Link to="/dashboard/locker">
                 <span>
                   <LockClockOutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt">locker</b>
               </Link>
-              <Link to="/dashboard/product-acceptance">
+              <Link to="/dashboard/shop">
                 <span>
-                  <StickyNote2OutlinedIcon />
+                  <ShoppingCartOutlinedIcon />
                 </span>
-                <b className="sidebar_nav_txt">Product Acceptance</b>
-              </Link>
-
-              <Link to="/dashboard/ship">
-                <span>
-                  <FlightTakeoffOutlinedIcon />
-                </span>
-                <b className="sidebar_nav_txt">courier shipment</b>
+                <b className="sidebar_nav_txt">Shopping</b>
               </Link>
               <Link to="/dashboard/sites">
                 <span>
@@ -109,6 +90,13 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt">indian shops</b>
               </Link>
+             
+              {/* <Link to="/dashboard/assisted-purchase">
+                <span>
+                  <StickyNote2OutlinedIcon />
+                </span>
+                <b className="sidebar_nav_txt">Assisted purchase Request</b>
+              </Link> */}
               <Link to="/dashboard/coupon">
                 <span>
                   <DiscountOutlinedIcon />
@@ -120,7 +108,7 @@ const Sidebar = () => {
                 <span>
                   <DoNotDisturbAltOutlinedIcon />
                 </span>
-                <b className="sidebar_nav_txt"> prohibited items</b>
+                <b className="sidebar_nav_txt">prohibited items</b>
               </Link>
               {/* <Link to="/">
                 <span>
@@ -134,12 +122,7 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt">shipping calc</b>
               </Link>
-              {/* <Link to="/">
-                <span>
-                  <StickyNote2OutlinedIcon />
-                </span>
-                <b className="sidebar_nav_txt"> new blogs</b>
-              </Link> */}
+              
               <small className="sidebar_nav_txt">your stuff</small>
               {/* <Link to="/">
                 <span>
@@ -153,18 +136,18 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt"> profile</b>
               </Link>
-              <Link to="/">
+              <Link to="/Walete">
                 <span>
                   <AccountBalanceWalletIcon />
                 </span>
                 <b className="sidebar_nav_txt"> wallet</b>
               </Link>
-              {/* <Link to="/">
+              <a onClick={logOut}>
                 <span>
-                  <ArticleOutlinedIcon />
+                  <AccountBalanceWalletIcon />
                 </span>
-                <b className="sidebar_nav_txt"> documents</b>
-              </Link> */}
+                <b className="sidebar_nav_txt"> LogOut</b>
+              </a>
             </div>
           </div>
         </div>

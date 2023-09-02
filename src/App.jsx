@@ -8,6 +8,7 @@ import ArtUp from "./components/ArtUp";
 import ArtistSignIn from "./components/ArtistSignIn";
 import Shipment from "./pages/dashboard/Shipment";
 import Shop from "./pages/dashboard/Shop";
+import WarehouseData from "./pages/dashboard/WarehouseData";
 import Coupon from "./pages/dashboard/Coupon";
 import IndianSites from "./pages/dashboard/IndianSites";
 import Calc from "./components/Calc";
@@ -21,21 +22,32 @@ import PlanPage from "./pages/Plan/PlanPage";
 import SelectWareHouse from "./pages/dashboard/SelectWareHouse";
 import SingleProduct from "./components/SingleProduct";
 import Locker from "./pages/dashboard/Locker";
+import PAR from "./pages/dashboard/PAR";
+import DispachRequest from "./components/DispachRequest";
+import Wallete from "./pages/dashboard/Wallete";
+import Paypal from "./components/Paypal";
+import YourAssistedReq from "./components/YourAssistedReq";
+import ReturnRequests from "./pages/dashboard/ReturnRequests";
 
 export const MyContext = createContext();
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState(null);
-
+  const [planId,setPlanId]=useState(null);
+  const [wh,setWh]=useState(null);
+  const [wd,setWd]=useState(null);
+  const [did,setDid]=useState(null)
   return (
     <div>
       <MyContext.Provider
         value={{
-          isLogin,
-          setIsLogin,
-          user,
-          setUser,
+          isLogin,setIsLogin,
+          user,setUser,
+          planId ,setPlanId,
+          wh,setWh,
+          wd,setWd,
+          did,setDid
         }}
       >
         <Router>
@@ -57,12 +69,67 @@ const App = () => {
               }
             />
             <Route
+              path="/Walete"
+              element={
+                <div id="app" className="row">
+                  <Sidebar />
+                  <main>
+                    <Wallete />
+                  </main>
+                </div>
+              }
+            />
+            <Route
+              path="/ReturnRequests"
+              element={
+                <div id="app" className="row">
+                  <Sidebar />
+                  <main>
+                    <ReturnRequests />
+                  </main>
+                </div>
+              }
+            />
+            <Route
+              path="/PAR"
+              element={
+                <div id="app" className="row">
+                  <Sidebar />
+                  <main>
+                    <PAR />
+                  </main>
+                </div>
+              }
+            />
+            <Route
+              path="/DispachRequests"
+              element={
+                <div id="app" className="row">
+                  <Sidebar />
+                  <main>
+                    <DispachRequest />
+                  </main>
+                </div>
+              }
+            />
+            <Route
               path="/dashboard/shipment"
               element={
                 <div id="app" className="row">
                   <Sidebar />
                   <main>
                     <Shipment />
+                  </main>
+                </div>
+              }
+            />
+            <Route
+              path="/warehousedata"
+              element={
+                <div id="app" className="row">
+                  <Sidebar />
+                  <main>
+                    <WarehouseData />
                   </main>
                 </div>
               }
@@ -107,6 +174,17 @@ const App = () => {
                   <Sidebar />
                   <main>
                     <AssistedPurchase />
+                  </main>
+                </div>
+              }
+            />
+            <Route
+              path="/YourAssistedReq"
+              element={
+                <div id="app" className="row">
+                  <Sidebar />
+                  <main>
+                    <YourAssistedReq />
                   </main>
                 </div>
               }

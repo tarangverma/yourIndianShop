@@ -1,132 +1,100 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../../stylesheet/dashboard/ProductAcceptanceForm.css"; // Import your CSS file for styling
+import { fetchreq, uploadImageAws, walletTransaction } from "../../Helper/fetch";
+import { MyContext } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 function ProductAcceptanceForm() {
-  const warehouses = [
-    { id: 1, name: "Warehouse A" },
-    { id: 2, name: "Warehouse B" },
-    { id: 3, name: "Warehouse C" },
-    // Add more warehouses as needed
-  ];
   // State variables to store form data
-  const [customerInfo, setCustomerInfo] = useState({
-    fullName: "",
-    email: "",
-    phoneNumber: "",
-  });
-  const [productInfo, setProductInfo] = useState({
-    productName: "",
-    productImage: "",
-    productDescription: "",
-  });
-  const [deliveryInfo, setDeliveryInfo] = useState({
-    deliveryAddress: "",
-  });
+  const {user,wh,isLogin,setUser}=useContext(MyContext);
+  const [pland,setPland]=useState(null);
   const [termsAgreed, setTermsAgreed] = useState(false);
-
+  const [name, setName] = useState(null);
+  const [des,setDes] = useState(null);
+  const [file,setFile]=useState(null);
+  const [run,setRun]=useState(false);
+  const nav = useNavigate();
+  
   // Handle form submissions
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
-    // Process and send form data to the server or admin
-    // ...
+    if( !run && termsAgreed && name.length>1 && file ){
+      setRun(true);
+      if(await walletTransaction(pland?.consolidation,wh?.Wid,"Product Acceptance Request",user,setUser,nav)){
+        const url = await uploadImageAws(file.name,file);
+        const body = {
+          cid: user.Cid,
+          wid: wh.Wid,
+          proof: url,
+          name: name,
+          desc:des
+        }
+        const dt = await fetchreq("POST","makePAR",body);
+        dt?nav("/PAR"): alert("something went wrong");
+        if(dt){
+          alert("Successfully Purchased Plane");
+          nav("/PAR");
+        }else{
+          alert("something went wrong");
+        }
+      }
+    }else if(run){
+      alert("Please Wait");
+    }else{
+      alert("please fill all the details");
+    }
+    setRun(false);
   };
-
+  const loadPlanDetails = async ()=>{
+    const dt = await fetchreq("GET",`getPlan/${user?.Cid}/${wh?.Wid}`,{});
+    dt? setPland(dt.result[0]) : setPland(null);
+  }
+  useEffect(()=>{
+    if(!isLogin){
+      nav("/")
+    }else{
+      loadPlanDetails();
+    }
+  },[])
   return (
+    <>
     <div id="dash-pa" className="product-acceptance-form">
+    
       <h2>
         <span id="blue">Product </span>
         <span id="org">Acceptance </span>
         <span id="blue">Request</span>
       </h2>
       <form onSubmit={handleSubmit}>
-        {/* Customer Information */}
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Full Name"
-            value={customerInfo.fullName}
-            onChange={(e) =>
-              setCustomerInfo({ ...customerInfo, fullName: e.target.value })
-            }
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            value={customerInfo.email}
-            onChange={(e) =>
-              setCustomerInfo({ ...customerInfo, email: e.target.value })
-            }
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            value={customerInfo.phoneNumber}
-            onChange={(e) =>
-              setCustomerInfo({ ...customerInfo, phoneNumber: e.target.value })
-            }
-          />
-        </div>
-
-        {/* Product Details */}
+       
+       {/* Product Details */}
         <div className="form-group">
           <input
             type="text"
             placeholder="Product Name"
-            value={productInfo.productName}
-            onChange={(e) =>
-              setProductInfo({ ...productInfo, productName: e.target.value })
-            }
+            value={name}
+            onChange={(e) =>{setName(e.target.value)}}
+              
           />
         </div>
-        <div className="form-group">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) =>
-              setProductInfo({
-                ...productInfo,
-                productImage: e.target.files[0],
-              })
-            }
-          />
-        </div>
+        
+        
         <div className="form-group">
           <textarea
             placeholder="Product Description"
-            value={productInfo.productDescription}
-            onChange={(e) =>
-              setProductInfo({
-                ...productInfo,
-                productDescription: e.target.value,
-              })
-            }
+            value={des}
+            onChange={(e) =>{setDes(e.target.value)}}
           />
         </div>
 
-        {/* Delivery Information */}
         <div className="form-group">
-          {/* <label>Select Warehouse:</label> */}
-          <select
-            id="wh-list"
-            value={deliveryInfo.selectedWarehouse}
-            onChange={(e) =>
-              setDeliveryInfo({
-                ...deliveryInfo,
-                selectedWarehouse: e.target.value,
-              })
-            }
-          >
-            <option value="">Select Warehouse</option>
-            {warehouses.map((warehouse) => (
-              <option key={warehouse.id} value={warehouse.id}>
-                {warehouse.name}
-              </option>
-            ))}
-          </select>
+          <label htmlFor="photo">Proof</label>
+          <input 
+            name="photo"
+            type="file"
+            accept="image/*"
+            onChange={(e)=>{setFile(e.target.files[0])}}
+          />
         </div>
 
         {/* Terms and Conditions */}
@@ -144,11 +112,12 @@ function ProductAcceptanceForm() {
         {/* Submit Button */}
         <div className="form-group">
           <button className="btn btn-b" type="submit">
-            Submit Request
+            {pland?.consolidation==0 ? "Submit Request" : `Submit Request and Pay ₹${pland?.consolidation}`}
           </button>
         </div>
       </form>
     </div>
+    </>
   );
 }
 

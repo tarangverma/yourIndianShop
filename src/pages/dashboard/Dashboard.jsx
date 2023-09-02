@@ -1,49 +1,57 @@
-import React from "react";
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
 import "../../stylesheet/dashboard/Dashboard.css";
 import WarehouseIcon from "@mui/icons-material/Warehouse";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import { MyContext } from "../../App";
+import { Link, useNavigate } from "react-router-dom";
 const Dashboard = () => {
+  const {user,isLogin}=useContext(MyContext);
+  const nav = useNavigate()
+  useEffect(()=>{
+    if(!isLogin){
+      nav("/")
+    }
+  },[])
   return (
     <div id="dash-cont">
       <div id="dash">
         <div id="ds1">
           <div className="ol-pic">
             <div className="ds-top">
-              <div className="ds-left">
+              <Link to="/dashboard/profile" className="ds-left">
                 <small>Welcome</small>
                 <br />
-                <h1>Priyansh Khunt</h1>
-              </div>
+                <h1>{user?.Name}</h1>
+              </Link>
               <div className="ds-right">
-                <div className="btn btn-b">Upgrade your membership</div>
+                <Link to="/plan" className="btn btn-b">Upgrade your membership</Link>
               </div>
             </div>
             <div className="ds-bot">
               <div className="ds-left">
-                <div className="row">
+                <Link to="/dashboard/locker" className="row">
                   <div className="ico">
                     <WarehouseIcon />
                   </div>
                   <div className="ds-info">
-                    Warehouse Number
-                    <br />
-                    653453981
+                    Warehouses <br />
+                    1
                   </div>
-                </div>
+                </Link>
               </div>
-              <div className="ds-right">
+              <Link to="/Walete"  className="ds-right">
                 <div className="row">
                   <div className="ico ico-g">
                     <AccountBalanceWalletIcon />
                   </div>
                   <div className="ds-info">
                     Wallet Balance
-                    <br />$ 12.7
+                    <br />$ {user?.Wallete}
                   </div>
                 </div>{" "}
-              </div>
+              </Link>
             </div>
           </div>
         </div>

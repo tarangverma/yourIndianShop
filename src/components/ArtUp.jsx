@@ -1,122 +1,112 @@
-import React, { useEffect, useState, useRef } from "react";
+
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../stylesheet/ArtistSignIn.css";
 import "../stylesheet/ArtUp.css";
 import AddCardIcon from "@mui/icons-material/AddCard";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import { fetchreq} from '../Helper/fetch'
-// import swal from "sweetalert";
-// import emailjs from "@emailjs/browser";
+import { fetchreq } from "../Helper/fetch";
+import emailjs from "@emailjs/browser";
+let code =Math.round(1000000 * Math.random()).toString();
 
-// let otp = Math.round(1000000 * Math.random()).toString();
 const ArtUp = () => {
-    const nav = useNavigate();
-    const [otp,setOtp]=useState(null);
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [mobile, setMobile] = useState("");
-    const [submit, setSubmit] = useState("Create Account");
-    const [Address, setAddress] = useState(null);
-    const [Address2,addAddress2] = useState(null);
-    const [Landmark, setLandmark] = useState(null);
-    const [City, setCity] = useState(null);
-    const [Country, setCountry] = useState(null);
-    const [pincode, setpincode] = useState(null);
-    const [State, setState] = useState(null);
-    
-  //   const [code, setCode] = useState("");
-  //   const form = useRef();
+  const nav = useNavigate();
+  const [otp, setOtp] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [submit, setSubmit] = useState("Continue");
+  const [Address, setAddress] = useState("");
+  const [Address2, setAddress2] = useState("");
+  const [Landmark, setLandmark] = useState("");
+  const [City, setCity] = useState("");
+  const [Country, setCountry] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [State, setState] = useState("");
+  const [inputOTP,setInputOTP]=useState("");
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   emailjs
-  //     .sendForm(
-  //       "service_z80kdsc",
-  //       "template_pkan5j9",
-  //       form.current,
-  //       "tAnIMRTGjOth0eHFS"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         alert("code is send to your email");
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  // };
-  // const verifycode = async (e) => {
-  //   document.getElementById("dataverify").style.display = "none";
-  //   document.getElementById("verify").style.display = "flex";
-  //   // e.preventDefault();
-  //   alert("code is sending to your email");
 
-  //   await emailjs
-  //     .sendForm(
-  //       "service_z80kdsc",
-  //       "template_1g6p4vm",
-  //       form.current,
-  //       "tAnIMRTGjOth0eHFS"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //         alert("code is send");
-  //         return true;
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //         return false;
-  //       }
-  //     );
-  // };
-  // const getcodeandverify = (e) => {
-  //   e.preventDefault();
-  //   if (otp == code) {
-  //     handlesubmit();
-  //   } else {
-  //     alert("invalid code");
-  //   }
-  // };
-  const submithalf = async (e)=>{
-    e.preventDefault()
-    const res = await fetchreq("GET",`sendVerifyMail/${email}`,{});
-    if(res){
-      setOtp(res.OTP);
-      alert("mail is send to your email")
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    if(name!="" && email!="" && password!="" && mobile!=""){
+      setSubmit("Sending Verification  Mail...");
+      emailjs.sendForm(
+          "service_p4uzot9",
+          "template_8w5j3hp",
+          form.current,
+          "L-oDXOLv_J9LSWIt2"
+        )
+        .then(
+          (result) => {
+            alert("code is send to your email");
+            setSubmit("Submit Otp");
+            setOtp(2);
+          },
+          (error) => {
+            console.log(error.text);
+            setSubmit("Continue");
+          }
+        );
     }else{
-      alert("Something went wrong...")
+      alert("please Fill all Details");
+    }
+      
+  };
+
+  const submitOTP = ()=>{
+    console.log(code+" "+inputOTP);
+    if(code==inputOTP){
+      setOtp(true);
+    }else{
+      alert("invalid code...")
     }
   }
+
+
   const handlesubmit = async () => {
-    if (submit == "Creating...") {
+    if (submit === "Creating...") {
       return;
     }
     setSubmit("Creating...");
-    const body=  {
-      Name:name,
+    const body = {
+      Name: name,
       email,
-      phoneNo:mobile,
+      phoneNo: mobile,
       password,
       Address,
       Address2,
       Landmark,
       City,
-      Country,
+      Contry: Country,
       State,
-      pincode
+      pincode,
+    };
+    const allKeysAreNotNull = Object.keys(body).every(key => (body[key] !== null && body[key]!==""));
+    if(allKeysAreNotNull && otp){
+      const res = await fetchreq("POST", "addUser", body);
+      if(res){
+        alert("SignUp Successfully");
+        nav("/SignIn");
+      }else{
+        alert("Email Already used");
+      }
+    }else{
+      alert("please Fill all details");
     }
-    const res = fetchreq("POST","addUser",body)
-    setSubmit("Create Account");
   };
-  // useEffect(() => {
-  //   document.getElementById("dataverify").style.display = "flex";
-  //   document.getElementById("verify").style.display = "none";
-  // }, []);
+
   return (
     <>
+    <form style={{display:"none"}} ref={form} onSubmit={sendEmail}>
+        <label>Name</label>
+        <input type="text" value={email} onChange={()=>{}} name="user_name" /><br />
+        <label>Email</label>
+        <input type="email" value={email} onChange={()=>{}} name="user_email" /><br />
+        <label>Message</label>
+        <textarea value={code} onChange={()=>{}} name="message" /><br />
+        <input type="submit" value="Send" />
+    </form>
       <section id="ArtSignIn">
         <div className="left">
           <img
@@ -133,9 +123,10 @@ const ArtUp = () => {
             </header>
             <h1>Get Started</h1>
             <h2>It's free to SignUp and only takes a minute.</h2>
-            <form onSubmit={submithalf}>
+            {!otp && otp!==2 && <form onSubmit={sendEmail}>
               <h3>Firstname & Lastname</h3>
               <input
+                required
                 type="text"
                 placeholder="Enter your first and last name"
                 value={name}
@@ -145,7 +136,8 @@ const ArtUp = () => {
               />
               <h3>Email</h3>
               <input
-                type="text"
+                required
+                type="email"
                 placeholder="abcd123@xyz.com"
                 value={email}
                 onChange={(e) => {
@@ -154,6 +146,7 @@ const ArtUp = () => {
               />
               <h3>Password</h3>
               <input
+                required
                 type="password"
                 placeholder="●●●●●●●●●●●"
                 value={password}
@@ -163,78 +156,91 @@ const ArtUp = () => {
               />
               <h3>Mobile No</h3>
               <input
-                type="text"
+                required
+                type="tel"
                 placeholder="Enter Your number"
                 value={mobile}
                 onChange={(e) => {
                   setMobile(e.target.value);
                 }}
               />
-              <button
-                type="submit"
-                className="btn"
-              >
+              <button type="submit" className="btn">
                 {submit}
               </button>
-            </form>
-            <p>
-              <span className="gray">Already have an account?</span>
-              <Link to="/signIn">Sign In</Link>
-            </p>
+            </form>}
+            {otp==2 && <div>
+              <input  type="number" value={inputOTP} onChange={(e)=>{setInputOTP(e.target.value)}} placeholder="Enter OTP here" />
+              <button onClick={submitOTP} className="btn">Submit OTP</button>
+            </div>}
+            
           </div>
           <div id="verify">
-            {/* <form style={{display:"none"}}  ref={form}>
-                <label>Code</label>
-                <input type="text" value={email} onChange={()=>{}} name="uemail" />
-                <input type="email" value={otp} onChange={()=>{}} name="vcode" /><br />
-              <button>Submit</button>
-            </form> */}
-            <form
-              style={{ display: "none" }}
-              // ref={form} onSubmit={sendEmail}
-            >
-              <label>Name</label>
+            <form style={{ display: otp==true ? "block" : "none" }}>
+              <h3>Address Line 1</h3>
               <input
+                required
                 type="text"
-                // value={email}
-                // onChange={() => {}}
-                name="user_name"
+                placeholder="Enter Address Line 1"
+                value={Address}
+                onChange={(e) => setAddress(e.target.value)}
               />
-              <br />
-              <label>Email</label>
+              <h3>Address Line 2</h3>
               <input
-                type="email"
-                // value={email}
-                // onChange={() => {}}
-                name="user_email"
+                required
+                type="text"
+                placeholder="Enter Address Line 2"
+                value={Address2}
+                onChange={(e) => setAddress2(e.target.value)}
               />
-              <br />
-              <label>Message</label>
-              <textarea
-              // value={otp} onChange={() => {}} name="message"
+              <h3>State</h3>
+              <input
+                required
+                type="text"
+                placeholder="Enter State"
+                value={State}
+                onChange={(e) => setState(e.target.value)}
               />
-              <br />
-              <input type="submit" value="Send" />
-            </form>
-            <form>
-              <div className="otp">
-                <input
-                  // value={code}
-                  // onChange={(e) => {
-                  //   setCode(e.target.value);
-                  // }}
-                  placeholder="Enter the OTP"
-                  type="text"
-                />
-                <button
-                  className="btn"
-                  // onClick={getcodeandverify}
-                >
-                  Verify
-                </button>
-              </div>
+              <h3>Landmark</h3>
+              <input
+                required
+                type="text"
+                placeholder="Enter Landmark"
+                value={Landmark}
+                onChange={(e) => setLandmark(e.target.value)}
+              />
+              <h3>City</h3>
+              <input
+                required
+                type="text"
+                placeholder="Enter City"
+                value={City}
+                onChange={(e) => setCity(e.target.value)}
+              />
+              <h3>Country</h3>
+              <input
+                required
+                type="text"
+                placeholder="Enter Country"
+                value={Country}
+                onChange={(e) => setCountry(e.target.value)}
+              />
+              <h3>Pincode</h3>
+              <input
+                required
+                type="text"
+                placeholder="Enter Pincode"
+                value={pincode}
+                onChange={(e) => setPincode(e.target.value)}
+              />
+              <button type="button" className="btn" onClick={handlesubmit}>
+                Create Account
+              </button>
             </form>
           </div>
+          <p>
+              <span className="gray">Already have an account?</span>
+              <Link to="/signIn">Sign In</Link>
+          </p>
         </div>
       </section>
     </>

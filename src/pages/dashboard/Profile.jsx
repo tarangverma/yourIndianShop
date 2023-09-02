@@ -1,21 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../../stylesheet/dashboard/Profile.css";
+import { MyContext } from "../../App";
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
-
+  const {user}=useContext(MyContext);
   // Sample user data
-  const [userData, setUserData] = useState({
-    name: "John Doe",
-    addressLine1: "123 Main St",
-    addressLine2: "Apt 4B",
-    landmark: "Near Park",
-    city: "New York",
-    state: "NY",
-    pincode: "10001",
-    phoneNumber: "555-123-4567",
-    email: "johndoe@example.com",
-  });
+  // const [userData, setUserData] = useState({
+  //   name: "John Doe",
+  //   addressLine1: "123 Main St",
+  //   addressLine2: "Apt 4B",
+  //   landmark: "Near Park",
+  //   city: "New York",
+  //   state: "NY",
+  //   pincode: "10001",
+  //   phoneNumber: "555-123-4567",
+  //   email: "johndoe@example.com",
+  // });
+  const [userData, setUserData] = useState(user);
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -44,13 +46,13 @@ const Profile = () => {
             {isEditing ? (
               <input
                 type="text"
-                value={userData.name}
+                value={userData.Name}
                 onChange={(e) =>
-                  setUserData({ ...userData, name: e.target.value })
+                  setUserData({ ...userData, Name: e.target.value })
                 }
               />
             ) : (
-              <span className="detail-value">{userData.name}</span>
+              <span className="detail-value">{userData.Name}</span>
             )}
           </div>
           <div className="detail-item">
@@ -58,13 +60,13 @@ const Profile = () => {
             {isEditing ? (
               <input
                 type="text"
-                value={userData.addressLine1}
+                value={userData.Address}
                 onChange={(e) =>
-                  setUserData({ ...userData, addressLine1: e.target.value })
+                  setUserData({ ...userData, Address: e.target.value })
                 }
               />
             ) : (
-              <span className="detail-value">{userData.addressLine1}</span>
+              <span className="detail-value">{userData.Address}</span>
             )}
           </div>
           <div className="detail-item">
@@ -72,13 +74,13 @@ const Profile = () => {
             {isEditing ? (
               <input
                 type="text"
-                value={userData.addressLine2}
+                value={userData.Address2}
                 onChange={(e) =>
-                  setUserData({ ...userData, addressLine2: e.target.value })
+                  setUserData({ ...userData, Address2: e.target.value })
                 }
               />
             ) : (
-              <span className="detail-value">{userData.addressLine2}</span>
+              <span className="detail-value">{userData.Address2}</span>
             )}
           </div>
           <div className="detail-item">
@@ -86,13 +88,13 @@ const Profile = () => {
             {isEditing ? (
               <input
                 type="text"
-                value={userData.landmark}
+                value={userData.Landmark}
                 onChange={(e) =>
-                  setUserData({ ...userData, landmark: e.target.value })
+                  setUserData({ ...userData, Landmark: e.target.value })
                 }
               />
             ) : (
-              <span className="detail-value">{userData.landmark}</span>
+              <span className="detail-value">{userData.Landmark}</span>
             )}
           </div>
           <div className="detail-item">
@@ -100,13 +102,13 @@ const Profile = () => {
             {isEditing ? (
               <input
                 type="text"
-                value={userData.city}
+                value={userData.City}
                 onChange={(e) =>
-                  setUserData({ ...userData, city: e.target.value })
+                  setUserData({ ...userData, City: e.target.value })
                 }
               />
             ) : (
-              <span className="detail-value">{userData.city}</span>
+              <span className="detail-value">{userData.City}</span>
             )}
           </div>
           <div className="detail-item">
@@ -114,13 +116,13 @@ const Profile = () => {
             {isEditing ? (
               <input
                 type="text"
-                value={userData.state}
+                value={userData.State}
                 onChange={(e) =>
-                  setUserData({ ...userData, state: e.target.value })
+                  setUserData({ ...userData, State: e.target.value })
                 }
               />
             ) : (
-              <span className="detail-value">{userData.state}</span>
+              <span className="detail-value">{userData.State}</span>
             )}
           </div>
           <div className="detail-item">
@@ -142,13 +144,13 @@ const Profile = () => {
             {isEditing ? (
               <input
                 type="text"
-                value={userData.phoneNumber}
+                value={userData.phoneNo}
                 onChange={(e) =>
-                  setUserData({ ...userData, phoneNumber: e.target.value })
+                  setUserData({ ...userData, phoneNo: e.target.value })
                 }
               />
             ) : (
-              <span className="detail-value">{userData.phoneNumber}</span>
+              <span className="detail-value">{userData.phoneNo}</span>
             )}
           </div>
           <div className="detail-item">

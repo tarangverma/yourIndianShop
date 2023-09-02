@@ -1,10 +1,11 @@
 import React from "react";
 import "../stylesheet/dashboard/Product.css";
 const Product = (props) => {
+  
   return (
     <div id="prod">
       <div className="proTop">
-        <img src={props.proImg} alt="" />
+        <img src={`${props.proImg}`} alt="" />
       </div>
       <div id="proData">
         <div className="proName">{props.proName}</div>

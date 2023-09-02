@@ -9,7 +9,7 @@ import { fetchreq, uploadImageAws, jwtauth } from "../Helper/fetch";
 import { MyContext } from "../App";
 
 const ArtistSignIn = () => {
-  const { user, setUser, setIsLogin } = useContext(MyContext);
+  const { user, setUser, setIsLogin,setWh,setWd } = useContext(MyContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [signin, setSignin] = useState("Sign In");
@@ -24,8 +24,13 @@ const ArtistSignIn = () => {
     if (out) {
       window.localStorage.setItem("token", JSON.stringify(out.token));
       setIsLogin(true);
-      setUser(out);
-      nav("/dashboard/");
+      const users =out.user;
+      setUser(users);
+      if(users.Status==0){
+        nav('/plan');
+      }else{
+        nav("/dashboard");
+      }
     } else {
       alert("Invalid Credentials...");
     }
@@ -34,6 +39,10 @@ const ArtistSignIn = () => {
 
   useEffect(() => {
     window.localStorage.clear();
+    setUser(null);
+    setIsLogin(false);
+    setWh(null);
+    setWd(null);
   }, []);
   return (
     <>
