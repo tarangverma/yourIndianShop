@@ -2,32 +2,49 @@
 .data * {
   border: 3px solid crimson;
 } */
-#ArtSignIn {
-  height: 100vh;
+#SpSignIn {
+  height: auto;
   width: 100vw;
+  padding: 10vh 10vw;
   display: flex;
   align-items: center;
+  /* overflow: hidden; */
   /* justify-content: space-between; */
 }
-#ArtSignIn .left {
+
+#SpSignIn .left {
   width: 60%;
   overflow: hidden;
   display: grid;
+  /* padding-top: 5vh; */
   height: 100%;
   place-items: center;
   background-color: var(--sup-lft);
 }
-#ArtSignIn .left img {
-  width: 80%;
+
+#SpSignIn .left img {
+  width: 90%;
 }
 
-#ArtSignIn .right {
+
+
+#SpSignIn .right form {
+  height: fit-content;
+  max-height: 70vh;
+  padding-right: 15px;
+  overflow-y: scroll;
+}
+
+#SpSignIn .right {
   flex-shrink: 0 !important;
   width: 40%;
   display: grid;
+  height: 100%;
+  /* overflow: scroll; */
   place-items: center;
 }
-#ArtSignIn .right .data {
+
+#SpSignIn .right .data {
   display: flex;
   width: 84%;
   min-width: 400px;
@@ -35,32 +52,38 @@
   gap: 13px;
   color: var(--color2d) !important;
 }
-#ArtSignIn header {
+
+#SpSignIn header {
   font-size: 2rem;
   font-weight: bolder;
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
 }
-#ArtSignIn #logo {
+
+#SpSignIn #logo {
   font-size: 3rem !important;
 }
-#ArtSignIn .right .data h1 {
+
+#SpSignIn h1 {
   font-size: 2.5rem;
 }
-#ArtSignIn .right .data h2 {
+
+#SpSignIn h2 {
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
-#ArtSignIn .right .data h3 {
+
+#SpSignIn h3 {
   font-size: 0.9rem;
   margin-bottom: 7px;
 }
-#ArtSignIn .right .data input,
+
+#SpSignIn input,
 .otp input {
   font-size: 1.05rem;
-  background-color: var(--dark3);
+  background-color: #eee;
   padding: 13px 25px;
   width: 100%;
   border: 1.05px solid rgba(245, 245, 245, 0.4);
@@ -69,15 +92,18 @@
   margin-bottom: 13px;
   color: var(--color2d);
 }
-#ArtSignIn .right .data input::placeholder,
+
+#SpSignIn .right .data input::placeholder,
 .otp input::placeholder {
   color: var(--color2d);
 }
-#ArtSignIn .right .data form .btn {
+
+#SpSignIn .right .data form .btn {
   width: 100%;
   border-radius: 3px;
 }
-#ArtSignIn .right .data .b-box {
+
+#SpSignIn .right .data .b-box {
   display: flex;
   width: 100%;
   align-items: center;
@@ -85,7 +111,7 @@
   gap: 15px;
 }
 
-#ArtSignIn .right .data .b-box > * {
+#SpSignIn .right .data .b-box>* {
   flex: 0.5;
   font-size: 0.9rem !important;
   display: flex;
@@ -93,58 +119,70 @@
   justify-content: center;
   gap: 3px;
 }
-#ArtSignIn .right .data .b-box .btn:nth-child(1) {
+
+#SpSignIn .right .data .b-box .btn:nth-child(1) {
   /* background-color: #3b5998; */
   background-color: #4267b2;
   color: var(--color2d);
 }
-#ArtSignIn .right .data .b-box .btn:nth-child(2) {
+
+#SpSignIn .right .data .b-box .btn:nth-child(2) {
   /* background-color: #3b5998; */
   background-color: #00b9ff;
   color: var(--color2d);
 }
-#ArtSignIn .right .data p {
+
+#SpSignIn .right .data p {
   margin-top: 15px;
   display: flex;
   gap: 5px;
 }
-#ArtSignIn .right .data .gray {
+
+#SpSignIn .right .data .gray {
   color: var(--gray);
   /* width: 60% !important; */
   flex: 1 !important;
 }
+
 @media (max-width: 1100px) {
-  #ArtSignIn .left {
+  #SpSignIn .left {
     width: 50%;
   }
-  #ArtSignIn .right {
+
+  #SpSignIn .right {
     width: 50%;
   }
 }
+
 @media (max-width: 850px) {
-  #ArtSignIn .left {
+  #SpSignIn .left {
     display: none;
   }
-  #ArtSignIn .right {
+
+  #SpSignIn .right {
     width: 100%;
   }
 }
+
 @media (max-width: 650px) {
-  #ArtSignIn .b-box {
+  #SpSignIn .b-box {
     flex-direction: column;
   }
-  #ArtSignIn .data {
+
+  #SpSignIn .data {
     width: 80% !important;
     min-width: 300px !important;
   }
 
-  #ArtSignIn .b-box > * {
+  #SpSignIn .b-box>* {
     width: 100%;
   }
 }
-#ArtSignIn a {
+
+#SpSignIn a {
   text-decoration: underline;
 }
+
 #test-btn {
   margin: 0;
 }

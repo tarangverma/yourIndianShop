@@ -180,14 +180,7 @@ const Home = () => {
             </div>
           </div>
           <div className="ser-cards">
-            <Tilt
-              glareEnable={true}
-              glareColor="#ebe7ee3f"
-              glarePosition="all"
-              tiltMaxAngleX="24"
-              tiltMaxAngleY="15"
-              className="parallax-effect-glare-scale bggg "
-            >
+            <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
               <div className="sc">
                 <div id="org">
                   <LocalShippingOutlinedIcon />
@@ -204,14 +197,7 @@ const Home = () => {
                 </ul>
               </div>
             </Tilt>
-            <Tilt
-              glareEnable={true}
-              glareColor="#ebe7ee3f"
-              glarePosition="all"
-              tiltMaxAngleX="24"
-              tiltMaxAngleY="15"
-              className="parallax-effect-glare-scale bggg "
-            >
+            <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
               <div className="sc">
                 <div id="org">
                   <ShoppingBagOutlinedIcon />
@@ -229,14 +215,7 @@ const Home = () => {
                 </ul>
               </div>
             </Tilt>{" "}
-            <Tilt
-              glareEnable={true}
-              glareColor="#ebe7ee3f"
-              glarePosition="all"
-              tiltMaxAngleX="24"
-              tiltMaxAngleY="15"
-              className="parallax-effect-glare-scale bggg "
-            >
+            <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
               <div className="sc">
                 <div id="org">
                   <EngineeringOutlinedIcon />

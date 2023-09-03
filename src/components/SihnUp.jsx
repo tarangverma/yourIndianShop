@@ -1,14 +1,13 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../stylesheet/ArtistSignIn.css";
-import "../stylesheet/ArtUp.css";
+import "../stylesheet/SignIn.css";
+import "../stylesheet/SignUp.css";
 import AddCardIcon from "@mui/icons-material/AddCard";
 import { fetchreq } from "../Helper/fetch";
 import emailjs from "@emailjs/browser";
-let code =Math.round(1000000 * Math.random()).toString();
+let code = Math.round(1000000 * Math.random()).toString();
 
-const ArtUp = () => {
+const SignUp = () => {
   const nav = useNavigate();
   const [otp, setOtp] = useState(false);
   const [name, setName] = useState("");
@@ -23,15 +22,15 @@ const ArtUp = () => {
   const [Country, setCountry] = useState("");
   const [pincode, setPincode] = useState("");
   const [State, setState] = useState("");
-  const [inputOTP,setInputOTP]=useState("");
-
+  const [inputOTP, setInputOTP] = useState("");
 
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-    if(name!="" && email!="" && password!="" && mobile!=""){
+    if (name != "" && email != "" && password != "" && mobile != "") {
       setSubmit("Sending Verification  Mail...");
-      emailjs.sendForm(
+      emailjs
+        .sendForm(
           "service_p4uzot9",
           "template_8w5j3hp",
           form.current,
@@ -48,21 +47,19 @@ const ArtUp = () => {
             setSubmit("Continue");
           }
         );
-    }else{
+    } else {
       alert("please Fill all Details");
     }
-      
   };
 
-  const submitOTP = ()=>{
-    console.log(code+" "+inputOTP);
-    if(code==inputOTP){
+  const submitOTP = () => {
+    console.log(code + " " + inputOTP);
+    if (code == inputOTP) {
       setOtp(true);
-    }else{
-      alert("invalid code...")
+    } else {
+      alert("invalid code...");
     }
-  }
-
+  };
 
   const handlesubmit = async () => {
     if (submit === "Creating...") {
@@ -82,100 +79,122 @@ const ArtUp = () => {
       State,
       pincode,
     };
-    const allKeysAreNotNull = Object.keys(body).every(key => (body[key] !== null && body[key]!==""));
-    if(allKeysAreNotNull && otp){
+    const allKeysAreNotNull = Object.keys(body).every(
+      (key) => body[key] !== null && body[key] !== ""
+    );
+    if (allKeysAreNotNull && otp) {
       const res = await fetchreq("POST", "addUser", body);
-      if(res){
+      if (res) {
         alert("SignUp Successfully");
         nav("/SignIn");
-      }else{
+      } else {
         alert("Email Already used");
       }
-    }else{
+    } else {
       alert("please Fill all details");
     }
   };
 
   return (
     <>
-    <form style={{display:"none"}} ref={form} onSubmit={sendEmail}>
+      <form style={{ display: "none" }} ref={form} onSubmit={sendEmail}>
         <label>Name</label>
-        <input type="text" value={email} onChange={()=>{}} name="user_name" /><br />
+        <input type="text" value={email} onChange={() => {}} name="user_name" />
+        <br />
         <label>Email</label>
-        <input type="email" value={email} onChange={()=>{}} name="user_email" /><br />
+        <input
+          type="email"
+          value={email}
+          onChange={() => {}}
+          name="user_email"
+        />
+        <br />
         <label>Message</label>
-        <textarea value={code} onChange={()=>{}} name="message" /><br />
+        <textarea value={code} onChange={() => {}} name="message" />
+        <br />
         <input type="submit" value="Send" />
-    </form>
-      <section id="ArtSignIn">
+      </form>
+      <section id="SpSignIn">
         <div className="left">
-          <img
-            src="https://idcardgenrator.s3.ap-northeast-1.amazonaws.com/siteimage/auppp.png"
-            alt=""
-            id="Aup"
-          />
+          <img src="./videos/lg2.gif" alt="" id="Aup" />
         </div>
         <div className="right">
           <div className="data" id="dataverify">
             <header>
-              <AddCardIcon id="logo" className="gold" />
-              My-ID
+              <span id="blue">SHIP</span>
+              <img
+                src="https://idcardgenrator.s3.ap-northeast-1.amazonaws.com/Curior-service/shipping-site-imgs/logo/3.png"
+                height="50px"
+                alt=""
+              />
+              <span id="org">BOX</span>
             </header>
-            <h1>Get Started</h1>
             <h2>It's free to SignUp and only takes a minute.</h2>
-            {!otp && otp!==2 && <form onSubmit={sendEmail}>
-              <h3>Firstname & Lastname</h3>
-              <input
-                required
-                type="text"
-                placeholder="Enter your first and last name"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-              />
-              <h3>Email</h3>
-              <input
-                required
-                type="email"
-                placeholder="abcd123@xyz.com"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              <h3>Password</h3>
-              <input
-                required
-                type="password"
-                placeholder="●●●●●●●●●●●"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-              <h3>Mobile No</h3>
-              <input
-                required
-                type="tel"
-                placeholder="Enter Your number"
-                value={mobile}
-                onChange={(e) => {
-                  setMobile(e.target.value);
-                }}
-              />
-              <button type="submit" className="btn">
-                {submit}
-              </button>
-            </form>}
-            {otp==2 && <div>
-              <input  type="number" value={inputOTP} onChange={(e)=>{setInputOTP(e.target.value)}} placeholder="Enter OTP here" />
-              <button onClick={submitOTP} className="btn">Submit OTP</button>
-            </div>}
-            
+            {!otp && otp !== 2 && (
+              <form onSubmit={sendEmail}>
+                <h3>Firstname & Lastname</h3>
+                <input
+                  required
+                  type="text"
+                  placeholder="Enter your first and last name"
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                />
+                <h3>Email</h3>
+                <input
+                  required
+                  type="email"
+                  placeholder="abcd123@xyz.com"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <h3>Password</h3>
+                <input
+                  required
+                  type="password"
+                  placeholder="●●●●●●●●●●●"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+                <h3>Mobile No</h3>
+                <input
+                  required
+                  type="tel"
+                  placeholder="Enter Your number"
+                  value={mobile}
+                  onChange={(e) => {
+                    setMobile(e.target.value);
+                  }}
+                />
+                <button type="submit" className="btn btn-b">
+                  {submit}
+                </button>
+              </form>
+            )}
+            {otp == 2 && (
+              <div>
+                <input
+                  type="number"
+                  value={inputOTP}
+                  onChange={(e) => {
+                    setInputOTP(e.target.value);
+                  }}
+                  placeholder="Enter OTP here"
+                />
+                <button onClick={submitOTP} className="btn btn-b">
+                  Submit OTP
+                </button>
+              </div>
+            )}
           </div>
           <div id="verify">
-            <form style={{ display: otp==true ? "block" : "none" }}>
+            <form style={{ display: otp == true ? "block" : "none" }}>
               <h3>Address Line 1</h3>
               <input
                 required
@@ -232,14 +251,18 @@ const ArtUp = () => {
                 value={pincode}
                 onChange={(e) => setPincode(e.target.value)}
               />
-              <button type="button" className="btn" onClick={handlesubmit}>
+              <button
+                type="button"
+                className="btn btn-b"
+                onClick={handlesubmit}
+              >
                 Create Account
               </button>
             </form>
           </div>
           <p>
-              <span className="gray">Already have an account?</span>
-              <Link to="/signIn">Sign In</Link>
+            <span>Already have an account?</span>
+            <Link to="/signIn">Sign In</Link>
           </p>
         </div>
       </section>
@@ -247,4 +270,4 @@ const ArtUp = () => {
   );
 };
 
-export default ArtUp;
+export default SignUp;

@@ -7,35 +7,35 @@ import { Link, useNavigate } from "react-router-dom";
 
 import {fetchreq,uploadImageAws,jwtauth} from "../Helper/fetch";
 import { MyContext } from "../App";
-
-
+// import { IconButton } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 const Nav = () => {
-  const {user,setUser,isLogin,setIsLogin}=useContext(MyContext);
-  const nav  = useNavigate();
-  const [si,setSi]=useState("Sign In");
-  const othenticate = async ()=>{
-    if(isLogin){
+  const { user, setUser, isLogin, setIsLogin } = useContext(MyContext);
+  const nav = useNavigate();
+  const [si, setSi] = useState("Sign In");
+  const othenticate = async () => {
+    if (isLogin) {
       localStorage.clear();
       setIsLogin(false);
       setUser(null);
-    }else{
-      setSi("Sign In...")
+    } else {
+      setSi("Sign In...");
       const a = await jwtauth();
-      if(a){
+      if (a) {
         setIsLogin(true);
         const users = a.result[0];
         setUser(users);
-        if(users.Status==0){
-          nav('/plan')
-        }else{
-          nav("/dashboard")
+        if (users.Status == 0) {
+          nav("/plan");
+        } else {
+          nav("/dashboard");
         }
-      }else{
-        nav("/signIn")
+      } else {
+        nav("/signIn");
       }
-      setSi("Sign In")
+      setSi("Sign In");
     }
-  }
+  };
   return (
     <>
       <nav>
@@ -62,8 +62,13 @@ const Nav = () => {
             </IconButton>
           </Link>
           <div id="log" className="btn btn-b">
-            <a onClick={othenticate}>{isLogin?"LogOut":si}</a>
+            <a onClick={othenticate}>{isLogin ? "LogOut" : si}</a>
           </div>
+        </div>
+        <div id="tog">
+          <IconButton>
+            <MenuIcon />
+          </IconButton>
         </div>
       </nav>
     </>

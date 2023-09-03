@@ -1,11 +1,12 @@
 import React, { createContext, useState } from "react";
 import "./App.css";
+import "./Mq.css";
 import Home from "./pages/home/Home";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ArtUp from "./components/ArtUp";
-import ArtistSignIn from "./components/ArtistSignIn";
+import ArtUp from "./components/SihnUp";
+import ArtistSignIn from "./components/SignIn";
 import Shipment from "./pages/dashboard/Shipment";
 import Shop from "./pages/dashboard/Shop";
 import WarehouseData from "./pages/dashboard/WarehouseData";
