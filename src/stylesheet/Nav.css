@@ -97,3 +97,37 @@ nav #links {
 }
 
 .lg {}
+#side-nav {
+    background: #003a49;
+    backdrop-filter: blur(5px);
+    height: 100dvh;
+    position: absolute;
+    z-index: 111111;
+    right: -300px;
+    padding: 5vh 35px;
+    transition: 0.5s ease-in-out;
+}
+
+#side-nav #links {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12.5px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+#side-nav #links a {
+
+    color: #fff;
+}
+
+.cl>*>* {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.cl {
+    position: relative;
+    top: -15px;
+    left: -15px;
+}

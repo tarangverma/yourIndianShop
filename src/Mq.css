@@ -25,6 +25,19 @@
     .st {
         font-size: 1.3rem !important;
     }
+    .cal-box .sh-top {
+        flex-direction: column !important;
+    }
+
+    .sh-m {
+        width: 100% !important;
+
+    }
+
+    .sh-m>* {
+        margin: auto;
+        width: fit-content !important;
+    }
 
 }
 
@@ -80,6 +93,7 @@
     }
 
     #sec-head .t-title,
+   #dash-calc .t-title,
     #offer .t-title,
     #service .ser-head h1 {
         font-family: var(--font6) !important;
@@ -187,6 +201,13 @@
     footer {
         background: #fff;
     }
+    .demo-box .olay {
+        width: 80% !important;
+    }
+
+    .sh-r .MuiFormControl-root {
+        min-width: 200px !important;
+    }
 }
 
 @media only screen and (max-width: 750px) {
@@ -199,5 +220,27 @@
         align-items: center !important;
         width: 100% !important;
     }
+.demo-box {
+    flex-direction: column;
+}
 
+.demo-box div {
+
+    margin-top: 0 !important;
+    }
+
+    .MuiBox-root>div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #dash-calc .sh-r .MuiFormControl-root {
+        min-width: 100% !important;
+    }
+
+    .sh-m img {
+        margin-top: 30px;
+        width: 100% !important;
+    }
 }

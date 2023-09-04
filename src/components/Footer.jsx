@@ -16,7 +16,11 @@ const footer = () => {
         <div className="f1r">
           <div className="logo lg">
             <span id="blue">SHIP</span>
-            <img src="/imgs/2.png" height="35PX" alt="" />
+            <img
+              src="https://idcardgenrator.s3.ap-northeast-1.amazonaws.com/Curior-service/shipping-site-imgs/logo/2.png"
+              height="35PX"
+              alt=""
+            />
             <span id="org">BOX</span>
           </div>
           <div className="loc">

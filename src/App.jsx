@@ -5,7 +5,7 @@ import Home from "./pages/home/Home";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ArtUp from "./components/SihnUp";
+import ArtUp from "./components/SignUp";
 import ArtistSignIn from "./components/SignIn";
 import Shipment from "./pages/dashboard/Shipment";
 import Shop from "./pages/dashboard/Shop";
@@ -29,33 +29,41 @@ import Wallete from "./pages/dashboard/Wallete";
 import Paypal from "./components/Paypal";
 import YourAssistedReq from "./components/YourAssistedReq";
 import ReturnRequests from "./pages/dashboard/ReturnRequests";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 
 export const MyContext = createContext();
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState(null);
-  const [planId,setPlanId]=useState(null);
-  const [wh,setWh]=useState(null);
-  const [wd,setWd]=useState(null);
-  const [did,setDid]=useState(null)
+  const [planId, setPlanId] = useState(null);
+  const [wh, setWh] = useState(null);
+  const [wd, setWd] = useState(null);
+  const [did, setDid] = useState(null);
   return (
     <div>
       <MyContext.Provider
         value={{
-          isLogin,setIsLogin,
-          user,setUser,
-          planId ,setPlanId,
-          wh,setWh,
-          wd,setWd,
-          did,setDid
+          isLogin,
+          setIsLogin,
+          user,
+          setUser,
+          planId,
+          setPlanId,
+          wh,
+          setWh,
+          wd,
+          setWd,
+          did,
+          setDid,
         }}
       >
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signUp" element={<ArtUp />} />
-            <Route path="/signIn" element={<ArtistSignIn />} />
+            <Route path="/signUp" element={<SignUp />} />
+            <Route path="/signIn" element={<SignIn />} />
             <Route path="/plan" element={<PlanPage />} />
             <Route path="/select-warehouse" element={<SelectWareHouse />} />
             <Route

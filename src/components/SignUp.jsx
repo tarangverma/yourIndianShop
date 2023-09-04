@@ -114,7 +114,7 @@ const SignUp = () => {
         <br />
         <input type="submit" value="Send" />
       </form>
-      <section id="SpSignIn">
+      <section id="SpSignIn" className="spUp">
         <div className="left">
           <img src="./videos/lg2.gif" alt="" id="Aup" />
         </div>
