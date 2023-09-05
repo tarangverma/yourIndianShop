@@ -180,3 +180,48 @@
     color: #191919;
     background: var(--org);
 }
+.tr-record:hover {
+    border-color: var(--org);
+}
+
+.tr-record {
+    background: #eee;
+    width: 350px;
+    height: auto;
+    padding: 35px;
+    transition: 0.15s ease-in;
+    border: 3px solid transparent;
+    /* margin: 35px; */
+    box-shadow: 0 0 35px 1px #00000039;
+}
+
+#record-cont {
+    display: flex;
+    gap: 35px 10px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 25px;
+}
+
+#bal {
+    background: var(--blue);
+    margin: 30px 60px;
+
+    padding: 25px;
+}
+
+#bal h1 {
+    font-size: 3rem;
+}
+
+#bal .btn:hover {
+    background-color: rgb(209, 79, 32);
+}
+
+.bal-lin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+
+}

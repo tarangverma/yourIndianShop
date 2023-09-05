@@ -124,48 +124,109 @@ function Wallete() {
         padding:'50px'
     }
   return (
-    <div>Wallete
-        <h2>Balance: {user?.Wallete}</h2>
-        <h2>Transactions</h2>
-        {isClick && <form style={style}>
-            <button className='btn-b' onClick={()=>{setIsclick(false)}}>Close</button>
-            <h1>Add to Wallet</h1>
-            <input id='amountIn' value={amount} onChange={(e)=>{setAmount(e.target.value);console.log(amount)}} type="number" placeholder='Enter Amount to Add'/>
-            <button onClick={showpaymentButton} className='btn btn-b'>Pay to Wallet</button>
-            
-            {payment && <PayPalScriptProvider
-            options={{
-                'client-id':clientId
-            }}
+    <div>
+      <div id="bal">
+        <div className="bal-lin">
+          <h1>Wallet</h1>
+          <h2>Balance: ${user?.Wallete}</h2>
+        </div>
+        {isClick && (
+          <form style={style}>
+            <button
+              className="btn btn-o"
+              onClick={() => {
+                setIsclick(false);
+              }}
             >
+              Close
+            </button>
+            <h1>Add to Wallet</h1>
+            <input
+              id="amountIn"
+              value={amount}
+              onChange={(e) => {
+                setAmount(e.target.value);
+                console.log(amount);
+              }}
+              type="number"
+              placeholder="Enter Amount to Add"
+            />
+            <button onClick={showpaymentButton} className="btn btn-o">
+              Pay to Wallet
+            </button>
+
+            {payment && (
+              <PayPalScriptProvider
+                options={{
+                  "client-id": clientId,
+                }}
+              >
                 {success && <h1>Payment mad successfully</h1>}
                 {error && <h1>Some Error occurs</h1>}
-                {!success && <PayPalButtons style={{layout:"vertical"}} createOrder={createOrder} onApprove={onApprove} onError={onError}/>}
-            </PayPalScriptProvider>}
-        </form>}
-        {isClick2 && <form onSubmit={handlesubmit2} style={style}>
-            <button onClick={()=>{setIsclick2(false)}}>Close</button>
+                {!success && (
+                  <PayPalButtons
+                    style={{ layout: "vertical" }}
+                    createOrder={createOrder}
+                    onApprove={onApprove}
+                    onError={onError}
+                  />
+                )}
+              </PayPalScriptProvider>
+            )}
+          </form>
+        )}
+        {isClick2 && (
+          <form onSubmit={handlesubmit2} style={style}>
+            <button
+              onClick={() => {
+                setIsclick2(false);
+              }}
+            >
+              Close
+            </button>
             <h1>Transfer to Bank</h1>
-            <input value={amount} onChange={(e)=>{setAmount(e.target.value)}} type="number" placeholder='Enter Amount to Add'/>
-            <button type='submit' className='btn btn-b'>Transfer to Bank</button>
-        </form>}
-        <button onClick={()=>{setIsclick(true);setIsclick2(false)}} className='btn btn-b'>Add Money To Wallet</button> {" "}
-        {/* <button onClick={()=>{setIsclick(false);setIsclick2(true)}} className='btn btn-b'>Transfer to Bank</button> */}
-        <div>
-            {transaction.length !=0 && transaction.map((t)=>{
-                const dt = getDate(t.time);
-                const mode = t.Status==0?"Wallete":"Manual";
-                return <div style={{margin:'15px',border:'2px solid orange'}} key={t.Tid}>
-                    <p>Tid: {t.Tid}</p>
-                    <p>Note: {t.note}</p>
-                    <strong>Amount: {t.amount}</strong>
-                    <p>Date: {dt}</p>
-                    <p>Transaction Mode: {mode}</p>
-                </div>  
-            })}
-        </div>
+            <input
+              value={amount}
+              onChange={(e) => {
+                setAmount(e.target.value);
+              }}
+              type="number"
+              placeholder="Enter Amount to Add"
+            />
+            <button type="submit" className="btn btn-o">
+              Transfer to Bank
+            </button>
+          </form>
+        )}
+        <button
+          onClick={() => {
+            setIsclick(true);
+            setIsclick2(false);
+          }}
+          className="btn btn-o"
+        >
+          Add Money To Wallet
+        </button>{" "}
+      </div>
+      {/* <button onClick={()=>{setIsclick(false);setIsclick2(true)}} className='btn btn-b'>Transfer to Bank</button> */}
+      <div id="record-cont">
+        {transaction.length != 0 &&
+          transaction.map((t) => {
+            const dt = getDate(t.time);
+            const mode = t.Status == 0 ? "Wallete" : "Manual";
+            return (
+              <div className="tr-record" key={t.Tid}>
+                <p>Tid: {t.Tid}</p>
+                <p>Note: {t.note}</p>
+                <strong>Amount: {t.amount}</strong>
+                <p>Date: {dt}</p>
+                <p>Transaction Mode: {mode}</p>
+              </div>
+            );
+          })}
+      </div>
     </div>
-  )
+  );
 }
 
 export default Wallete

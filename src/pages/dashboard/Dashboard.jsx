@@ -26,7 +26,9 @@ const Dashboard = () => {
                 <h1>{user?.Name}</h1>
               </Link>
               <div className="ds-right">
-                <Link to="/plan" className="btn btn-b">Upgrade your membership</Link>
+                <Link to="/plan" className="btn btn-b">
+                  Upgrade your membership
+                </Link>
               </div>
             </div>
             <div className="ds-bot">
@@ -36,12 +38,11 @@ const Dashboard = () => {
                     <WarehouseIcon />
                   </div>
                   <div className="ds-info">
-                    Warehouses <br />
-                    1
+                    Warehouses <br />1
                   </div>
                 </Link>
               </div>
-              <Link to="/Walete"  className="ds-right">
+              <Link to="/Walete" className="ds-right">
                 <div className="row">
                   <div className="ico ico-g">
                     <AccountBalanceWalletIcon />
@@ -61,21 +62,21 @@ const Dashboard = () => {
               <FlightTakeoffIcon />
             </div>
             <small>Shipment</small>
-            <big>7 packages</big>
+            <big>1 packages</big>
           </div>{" "}
           <div className="ds-c">
             <div className="ico ico-g">
               <WarehouseIcon />
             </div>
             <small>Lockers</small>
-            <big>19 packages</big>
+            <big>2 packages</big>
           </div>
           <div className="ds-c">
             <div className="ico ico-r">
               <LocalShippingIcon />
             </div>
             <small>Delivered </small>
-            <big>23 packages</big>
+            <big>0 packages</big>
           </div>
         </div>
         <div id="ds3">

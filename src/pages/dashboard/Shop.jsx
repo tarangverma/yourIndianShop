@@ -18,18 +18,18 @@ const Shop = () => {
   return (
     <div id="shop-sec">
       <div id="the-gym" style={{ background: "#fff", padding: "0 10vw" }}>
-      <center>
-        <div className="plan-page-title">
-          <span id="blue">SHOP </span>
-          <span id="org">PRODUCTS</span>
-        </div>
-      </center>
+        <center>
+          <div className="plan-page-title">
+            <span id="blue">SHOP </span>
+            <span id="org">PRODUCTS</span>
+          </div>
+        </center>
       </div>
-      <Link className="btn btn-b" to="/dashboard/assisted-purchase">Assisted Purchase Request</Link>
+
       <div id="displayProducts">
-        {products.map((p,e) => {
+        {products.map((p, e) => {
           const photo = JSON.parse(p.Images);
-          
+
           return (
             <Product
               // proImg={`./imgs/btt${e}.webp`}
@@ -40,7 +40,11 @@ const Shop = () => {
           );
         })}
       </div>
-      
+      <center>
+        <Link className="btn btn-b" to="/dashboard/assisted-purchase">
+          Assisted Purchase Request
+        </Link>
+      </center>
     </div>
   );
 };
