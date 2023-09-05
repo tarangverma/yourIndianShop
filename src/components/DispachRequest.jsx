@@ -19,28 +19,34 @@ function DispachRequest() {
         }
     },[])
   return (
-    <div>DispachRequest
-        {dr.length!=0 && dr.map((d)=>{
-            const time = getDate(d.Time)
-            return <div style={{margin:"20px",padding:"20px",border:"2px solid orange"}}>
-                <p>ProductId: {d.Did}</p>
-                <p>Name: {d.Name}</p>
-                <p>Address Line1: {d.Address}</p>
-                <p>Address Line2: {d.Address2}</p>
-                <p>City: {d.City}</p>
-                <p>State: {d.State}</p>
-                <p>Country: {d.Country}</p>
-                <p>pincode: {d.pincode}</p>
-                <p>Time: {time}</p>
-                <p>Email: {d.Email}</p>
-                <p>phoneNo: {d.phoneNo}</p>
-                <p>Delivery Instruction: {d.Dinstruct}</p>
-                <p>Status: {d.Status==0?"Not seen":"Dispached"}</p>
+    <div>
+      <div className="t-title">
+        <span id="blue">Dispatch&nbsp;</span>
+        <span id="org">Requests</span>
+      </div>
+      {dr.length != 0 &&
+        dr.map((d) => {
+          const time = getDate(d.Time);
+          return (
+            <div id="drrr">
+              <p>ProductId: {d.Did}</p>
+              <p>Name: {d.Name}</p>
+              <p>Address Line1: {d.Address}</p>
+              <p>Address Line2: {d.Address2}</p>
+              <p>City: {d.City}</p>
+              <p>State: {d.State}</p>
+              <p>Country: {d.Country}</p>
+              <p>pincode: {d.pincode}</p>
+              <p>Time: {time}</p>
+              <p>Email: {d.Email}</p>
+              <p>phoneNo: {d.phoneNo}</p>
+              <p>Delivery Instruction: {d.Dinstruct}</p>
+              <p>Status: {d.Status == 0 ? "Not seen" : "Dispached"}</p>
             </div>
+          );
         })}
     </div>
-
-  )
+  );
 }
 
 export default DispachRequest;

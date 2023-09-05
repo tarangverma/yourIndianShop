@@ -21,25 +21,57 @@ function PAR() {
         }
     },[])
   return (
-    <div>
-        <h1> Your Product Acceptance Requests in {wh?.Name}</h1>
-        <div>
-            {par.length!=0 && par.map((r)=>{
-                const fdt = getDate(r.time)
+    <div id="par-ct">
+      <div className="t-title">
+        <small>
+          <span id="blue"> Your Product Acceptance Requests in</span>&nbsp;
+          <span id="org">{wh?.Name}</span>
+        </small>
+      </div>
+      <br />
 
-                return <div key={r.Rid} style={{border:'2px solid orange',margin:"20px"}}>
-                    <div className="wh-img-ol">
-                        <img src={`${imgurl}/${r.proof}`} alt="Image" className="warehouse-image" />
-                    </div>
-                    <p>Name: {r.productName}</p>
-                    <p>Desc: {r.Description}</p>
-                    <p>Status: {r.Verify==0?"Not Verify":"Verify"}</p>
-                    <p>Date: {fdt}</p>
+      <div id="par-cards-box">
+        {par.length != 0 &&
+          par.map((r) => {
+            const fdt = getDate(r.time);
+
+            return (
+              <div key={r.Rid}>
+                <div className="wh-img-ol">
+                  <img
+                    src={`${imgurl}/${r.proof}`}
+                    alt="Image"
+                    className="warehouse-image"
+                  />
                 </div>
-            })}
-        </div>
+                <div className="par-da">
+                  <p>
+                    {" "}
+                    <span id="org">Name:</span>
+                    {r.productName}
+                  </p>
+                  <p>
+                    {" "}
+                    <span id="org">Desc:</span>
+                    {r.Description}
+                  </p>
+                  <p>
+                    {" "}
+                    <span id="org">Status:</span>
+                    {r.Verify == 0 ? "Not Verify" : "Verify"}
+                  </p>
+                  <p>
+                    {" "}
+                    <span id="org">Date:</span>
+                    {fdt}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+      </div>
     </div>
-  )
+  );
 }
 
 export default PAR

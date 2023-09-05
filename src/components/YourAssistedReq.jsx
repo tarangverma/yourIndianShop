@@ -20,21 +20,23 @@ function YourAssistedReq() {
         }
     },[])
   return (
-    <div>YourAssistedReq
-
-        {apr.length!=0 && apr.map((a)=>{
-            return <div key={a.Aid}>
-                <img src={`${url}/${a.Images}`} alt="" />
-                <p>{a.Name}</p>
-                <p>{a.time}</p>
-                <p>{a.Brand}</p>
-                <p>{a.Description}</p>
-                <p>{a.Other}</p>
+    <div>
+      {apr.length != 0 &&
+        apr.map((a) => {
+          return (
+            <div key={a.Aid}>
+              <img src={`${url}/${a.Images}`} alt="" />
+              <p>{a.Name}</p>
+              <p>{a.time}</p>
+              <p>{a.Brand}</p>
+              <p>{a.Description}</p>
+              <p>{a.Other}</p>
             </div>
+          );
         })}
-        {apr==null && <p>No data found</p> }
+      {apr == null && <p>No data found</p>}
     </div>
-  )
+  );
 }
 
 export default YourAssistedReq
