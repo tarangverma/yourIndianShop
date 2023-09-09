@@ -53,13 +53,13 @@ const SignIn = () => {
         <div className="right">
           <div className="data">
             <header>
-              <span id="blue">SHIP</span>
+              <span id="blue">Your</span>
               <img
-                src="https://idcardgenrator.s3.ap-northeast-1.amazonaws.com/Curior-service/shipping-site-imgs/logo/3.png"
+                src="./imgs/6.png"
                 height="50px"
                 alt=""
               />
-              <span id="org">BOX</span>
+              <span id="org">Shop</span>
             </header>
             <h1>Welcome back!</h1>
             <h2>Please sign in to continue.</h2>

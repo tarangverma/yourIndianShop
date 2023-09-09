@@ -30,7 +30,7 @@ const Home = () => {
         <header>
           <Nav />
         </header>
-        <div className="hero-cont">
+        <div id="homesec" className="hero-cont">
           <Swiper
             pagination={{
               dynamicBullets: true,

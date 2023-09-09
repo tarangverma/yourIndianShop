@@ -48,13 +48,13 @@ const Sidebar = () => {
           <header id="side_header" className="row">
             <span className="sidebar_nav_txt">
               <div className="logo">
-                <span id="org">Ship</span>
+                <span id="org">Your</span>
                 <img
-                  src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/4.png"
+                  src="./imgs/6.png"
                   height="40px"
                   alt=""
                 />
-                <span className="">Box</span>
+                <span className="">Shop</span>
               </div>
             </span>
             <button

@@ -1,12 +1,9 @@
-
-
-
 const backend = process.env.REACT_APP_BACKEND;
 // const backend = "http://localhost:4000";
 const header = process.env.REACT_APP_API_CODE;
 // const header = "qubit-tech";
 
-async function fetchreq(type,api,bd){
+export async function fetchreq(type,api,bd){
     console.log(backend)
     const url = `${backend}/${api}`;
     
@@ -37,7 +34,7 @@ async function fetchreq(type,api,bd){
         return false;
     }
 }
-async function uploadImageAws(name,img){
+export async function uploadImageAws(name,img){
     let fn = name.split(".");
     let filetype = fn[fn.length - 1];
     const urldata = await fetchreq("GET",`geturl/${filetype}`,{});
@@ -57,7 +54,7 @@ async function uploadImageAws(name,img){
         return false;
     }
 }
-async function jwtauth(){
+export async function jwtauth(){
     let jwt = localStorage.getItem("token");
     jwt = JSON.parse(jwt)
     if(jwt){
@@ -69,7 +66,7 @@ async function jwtauth(){
     return false;
     
 }
-function getDate(time){
+export function getDate(time){
     const date = new Date(time);
     const hours = 5.5;
     const utcDate = new Date(date.getTime()+ hours*60*60*1000) ;
@@ -78,7 +75,7 @@ function getDate(time){
     });
     return indianDate;
 }
-async function walletTransaction(amount,wid,note,user,setUser,nav){
+export async function walletTransaction(amount,wid,note,user,setUser,nav){
     if(user?.Wallete<amount){
         alert("Please Recharge Your Wallate");
         nav("/Walete");
@@ -108,5 +105,4 @@ async function walletTransaction(amount,wid,note,user,setUser,nav){
     }
 }
 
-module.exports ={fetchreq,uploadImageAws,jwtauth,getDate,walletTransaction};
-//l
+// module.exports ={uploadImageAws,jwtauth,getDate,walletTransaction};

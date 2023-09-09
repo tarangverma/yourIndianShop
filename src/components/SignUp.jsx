@@ -121,13 +121,12 @@ const SignUp = () => {
         <div className="right">
           <div className="data" id="dataverify">
             <header>
-              <span id="blue">SHIP</span>
+              <span id="blue">Your</span>
               <img
-                src="https://idcardgenrator.s3.ap-northeast-1.amazonaws.com/Curior-service/shipping-site-imgs/logo/3.png"
-                height="50px"
+                src="./imgs/6.png" height="50px"
                 alt=""
               />
-              <span id="org">BOX</span>
+              <span id="org">Shop</span>
             </header>
             <h2>It's free to SignUp and only takes a minute.</h2>
             {!otp && otp !== 2 && (

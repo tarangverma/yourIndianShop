@@ -72,23 +72,23 @@ const Nav = () => {
       </div>
       <nav>
         <div id="logo">
-          <span id="blue">Ship</span>
+          <span id="blue">Your</span>
           &nbsp;
           <img
-            src="https://idcardgenrator.s3.ap-northeast-1.amazonaws.com/Curior-service/shipping-site-imgs/logo/3.png"
+            src="./imgs/6.png"
             height={"35px"}
             alt=""
           />
           &nbsp;
-          <span id="org">Box</span>
+          <span id="org">Shop</span>
         </div>
         <div id="links">
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Service</a>
-          <a href="/">Track</a>
-          <a href="/">Shop</a>
-          <a href="/">Contact</a>
+          <a href="#homesec">Home</a>
+          <a href="#pop-ser">About</a>
+          <a href="#service">Service</a>
+          <a href="#comp">Track</a>
+          <a href="#bl-feature">Shop</a>
+          <a href="#offer">Contact</a>
         </div>
 
         <div className="nav-right">
