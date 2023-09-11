@@ -3,8 +3,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 10vw;
-    background: #fff;
-    box-shadow: 0 0 50px 1px #00000024;
+   background:#003a49;
+   box-shadow: 0 0 50px 1px #06060624;
 }
 
 #logo {
@@ -24,7 +24,9 @@
 #org {
     color: var(--org);
 }
-
+#wt {
+    color: #fff;
+}
 nav #links {
     flex: 1;
     display: flex;
@@ -32,10 +34,12 @@ nav #links {
     justify-content: center;
     gap: 50px;
 }
-
+nav .btn-o:hover {
+    background-color: rgb(218, 98, 12);
+}
 #links a {
     text-decoration: none;
-    color: #181818;
+    color: #fff;
     cursor: pointer;
     font-weight: 500;
     transition: all ease-in-out 0.25s;

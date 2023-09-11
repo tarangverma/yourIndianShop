@@ -13,14 +13,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 const Nav = () => {
   const { user, setUser, isLogin, setIsLogin } = useContext(MyContext);
   const nav = useNavigate();
-  const [si, setSi] = useState("Sign In");
+  const [si, setSi] = useState("Log In");
   const othenticate = async () => {
     if (isLogin) {
       localStorage.clear();
       setIsLogin(false);
       setUser(null);
     } else {
-      setSi("Sign In...");
+      setSi("Log In...");
       const a = await jwtauth();
       if (a) {
         setIsLogin(true);
@@ -34,7 +34,7 @@ const Nav = () => {
       } else {
         nav("/signIn");
       }
-      setSi("Sign In");
+      setSi("Log In");
     }
   };
   const [toggle, setToggle] = useState("off");
@@ -58,48 +58,53 @@ const Nav = () => {
           </IconButton>
         </div>
         <div id="links">
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Service</a>
-          <a href="/">Track</a>
-          <a href="/">Shop</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/service">Service</Link>
+          <Link to="/offers">Offers</Link>
+          <Link to="/in-sites">Indian Sites</Link>
           <a href="/">Contact</a>
         </div>
-
         <div id="log" className="btn btn-o">
           <a onClick={othenticate}>{isLogin ? "LogOut" : si}</a>
         </div>
+        {!isLogin && (
+          <div id="log" className="btn btn-o">
+            <Link to="/signUp">Sign Up</Link>
+          </div>
+        )}
       </div>
       <nav>
         <div id="logo">
-          <span id="blue">Your</span>
+          <span id="wt">Your</span>
           &nbsp;
-          <img
-            src="./imgs/6.png"
-            height={"35px"}
-            alt=""
-          />
+          <img src="./imgs/6.png" height={"35px"} alt="" />
           &nbsp;
           <span id="org">Shop</span>
         </div>
         <div id="links">
-          <a href="#homesec">Home</a>
-          <a href="#pop-ser">About</a>
-          <a href="#service">Service</a>
-          <a href="#comp">Track</a>
-          <a href="#bl-feature">Shop</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/service">Service</Link>
+          <Link to="/offers">Offers</Link>
+          <Link to="/in-sites">Indian Sites</Link>
           <a href="#offer">Contact</a>
         </div>
 
         <div className="nav-right">
-          <Link to="/calc">
+          {/* <Link to="/calc">
             <IconButton aria-label="Cost Calculator">
               <CalculateOutlinedIcon id="calc-icon" />
             </IconButton>
-          </Link>
-          <div id="log" className="btn btn-b">
+          </Link> */}
+          <div id="log" className="btn btn-o">
             <a onClick={othenticate}>{isLogin ? "LogOut" : si}</a>
           </div>
+          {!isLogin && (
+            <div id="log" className="btn btn-o">
+              <Link to="/signUp">Sign Up</Link>
+            </div>
+          )}
         </div>
         <div id="tog" onClick={handleToggle}>
           <IconButton>

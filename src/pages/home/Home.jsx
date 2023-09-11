@@ -4,9 +4,10 @@ import "../../stylesheet/Home.css";
 import Tilt from "react-parallax-tilt";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-
+import SellIcon from "@mui/icons-material/Sell";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import CalculateIcon from "@mui/icons-material/Calculate";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import AirplanemodeActiveOutlinedIcon from "@mui/icons-material/AirplanemodeActiveOutlined";
 import DirectionsBoatOutlinedIcon from "@mui/icons-material/DirectionsBoatOutlined";
@@ -22,6 +23,8 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import { HomeSlide } from "../../components/HomeSlide";
 import Calc from "../../components/Calc";
+import { Calculate } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -78,32 +81,39 @@ const Home = () => {
         <div id="pop-ser">
           <div className="ps">
             <div className="ps-l">
-              <LocalShippingOutlinedIcon />
+              <SellIcon />
+              {/* <LocalShippingOutlinedIcon /> */}
             </div>
             <div className="ps-r">
-              <div className="st">Transport Solutions</div>
+              <div className="st">Plans We Offer</div>
               <div className="s-txt">
-                Our Transport Solutions assist your business with keeping up
-                degrees of administration
+                We offer a range of plans to suit your needs, from basic to
+                premium and business , ensuring affordability and flexibility.
               </div>
               <div className="rm " id="org">
-                | read more |
+                <Link to="/disp-plan" target="_blank" rel="noopener noreferrer">
+                  | read more |
+                </Link>
               </div>
             </div>
           </div>
           <div className="ps">
             <div className="ps-l">
-              <WarehouseOutlinedIcon />
+              <CalculateIcon />
+              {/* <WarehouseOutlinedIcon /> */}
             </div>
             <div className="ps-r">
-              <div className="st">Warehousing Solutions</div>
+              <div className="st">Price Calculator</div>
               <div className="s-txt">
-                Our Transport Solutions assist your business with keeping up
-                degrees of administration
+                A versatile price calculator, factoring in product weight or
+                dimensions, simplifying cost estimation for efficient shipping
+                and pricing.{" "}
               </div>
-              <div className="rm " id="org">
-                | read more |
-              </div>
+              <Link to="/calc" target="_blank" rel="noopener noreferrer">
+                <div className="rm " id="org">
+                  | read more |
+                </div>
+              </Link>
               <div className="dis">
                 <img src="./imgs/home1-service-1.png" alt="" />
               </div>
@@ -132,33 +142,21 @@ const Home = () => {
               <div className="txt">
                 Input departure and arrival. To start shipping
               </div>
-              <span id="rm">
-                <span id="org">| Read More |</span>
-              </span>
             </div>
             <div className="s-cd">
               <div className="num">02</div>
               <div className="st">DESCRIBE YOUR SHIPMENT</div>
               <div className="txt">Specify shipment details as per form.</div>
-              <span id="rm">
-                <span id="org">| Read More |</span>
-              </span>
             </div>
             <div className="s-cd">
               <div className="num">03</div>
               <div className="st">GET DELIVERY PRICES</div>
               <div className="txt">Fetch delivery rates based on pack.</div>
-              <span id="rm">
-                <span id="org">| Read More |</span>
-              </span>
             </div>
             <div className="s-cd">
               <div className="num">04</div>
               <div className="st">PROCEED WITH ONLINE BOOKING</div>
               <div className="txt">Initiate web-based booking process.</div>
-              <span id="rm">
-                <span id="org">| Read More |</span>
-              </span>
             </div>
           </div>{" "}
         </section>
@@ -236,24 +234,128 @@ const Home = () => {
             </Tilt>
           </div>
         </section>
+        <section id="feed">
+          <div id="feed-l">
+            <div className="fd-title">
+              People Say About Our
+              <span id="org">&nbsp;Company</span>
+            </div>
+            <p>
+              E-commerce model where retailers sell products without holding
+              inventory, relying on suppliers to ship directly to customers.
+            </p>
+            <div className="btn btn-b">Join Now</div>
+          </div>
+          <div id="feed-r">
+            <Swiper
+              id="fd-scr"
+              slidesPerView={3}
+              spaceBetween={30}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div className="fd-cd">
+                  <div className="msg-title">"Great Work"</div>
+                  <div className="msg-desc">
+                    I work in project management and joined Unicoach because I
+                    get great courses for less. The instructors are fantastic,
+                    interesting, and helpful. I plan to use for a long time!
+                  </div>
+                  <div className="msg-bot">
+                    <div className="zomm-dp">
+                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
+                    </div>
+                    <div className="feed-info">
+                      <div id="blue">Liza Smith</div>
+                      <div id="org">CLIENT OF COMPANY</div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="fd-cd">
+                  <div className="msg-title">"Great Work"</div>
+                  <div className="msg-desc">
+                    I work in project management and joined Unicoach because I
+                    get great courses for less. The instructors are fantastic,
+                    interesting, and helpful. I plan to use for a long time!
+                  </div>
+                  <div className="msg-bot">
+                    <div className="zomm-dp">
+                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
+                    </div>
+                    <div className="feed-info">
+                      <div id="blue">Liza Smith</div>
+                      <div id="org">CLIENT OF COMPANY</div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="fd-cd">
+                  <div className="msg-title">"Great Work"</div>
+                  <div className="msg-desc">
+                    I work in project management and joined Unicoach because I
+                    get great courses for less. The instructors are fantastic,
+                    interesting, and helpful. I plan to use for a long time!
+                  </div>
+                  <div className="msg-bot">
+                    <div className="zomm-dp">
+                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
+                    </div>
+                    <div className="feed-info">
+                      <div id="blue">Liza Smith</div>
+                      <div id="org">CLIENT OF COMPANY</div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="fd-cd">
+                  <div className="msg-title">"Great Work"</div>
+                  <div className="msg-desc">
+                    I work in project management and joined Unicoach because I
+                    get great courses for less. The instructors are fantastic,
+                    interesting, and helpful. I plan to use for a long time!
+                  </div>
+                  <div className="msg-bot">
+                    <div className="zomm-dp">
+                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
+                    </div>
+                    <div className="feed-info">
+                      <div id="blue">Liza Smith</div>
+                      <div id="org">CLIENT OF COMPANY</div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="fd-cd">
+                  <div className="msg-title">"Great Work"</div>
+                  <div className="msg-desc">
+                    I work in project management and joined Unicoach because I
+                    get great courses for less. The instructors are fantastic,
+                    interesting, and helpful. I plan to use for a long time!
+                  </div>
+                  <div className="msg-bot">
+                    <div className="zomm-dp">
+                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
+                    </div>
+                    <div className="feed-info">
+                      <div id="blue">Liza Smith</div>
+                      <div id="org">CLIENT OF COMPANY</div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </section>
         {/* <section id="asA">
           <Calc />
         </section> */}
-        <section id="comp">
-          <a target="_blank" href="https://www.amazon.in/">
-            <img src="./imgs/c1.svg" alt="" />
-          </a>{" "}
-          <a target="_blank" href="https://www.flipkart.com/">
-            <img src="./imgs/c2.png" alt="" />
-          </a>{" "}
-          <a target="_blank" href="https://www.snapdeal.com/">
-            <img src="./imgs/c3.png" alt="" />
-          </a>
-          <a target="_blank" href="https://www.myntra.com/">
-            <img src="./imgs/c4.png" alt="" />
-          </a>
-        </section>
-        <section id="bl-feature">
+
+        {/* <section id="bl-feature">
           <div className="ftr-cd">
             <div id="org">01</div>
             <div className="t-title">SignUp and register your self</div>
@@ -302,8 +404,8 @@ const Home = () => {
               <ArrowRightAltOutlinedIcon />
             </div>
           </div>
-        </section>
-        <section id="offer">
+        </section> */}
+        {/* <section id="offer">
           <div className="t-title">
             <span id="org"> Use </span>
             exclusive
@@ -316,7 +418,7 @@ const Home = () => {
             <img src="./imgs/of2.png" alt="" />
             <img src="./imgs/of3.png" alt="" />
           </div>
-        </section>{" "}
+        </section>{" "} */}
         <Footer />
       </div>
     </>

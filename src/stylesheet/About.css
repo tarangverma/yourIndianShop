@@ -1,0 +1,33 @@
+#ab-sec-title h1 {
+    font-size: 3rem;
+    color: #fff;
+
+    font-family: var(--font3) !important;
+    text-shadow: 1px 1px 5px #000;
+}
+
+#ab-sec-title>div {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem !important;
+    gap: 9px;
+    text-shadow: 1px 1px 5px #000;
+}
+
+#ab-sec-title {
+    height: 50dvh;
+    background:
+        linear-gradient(to left, #003a49cd, #003a49d8),
+        url('../../public/imgs/home1-section-4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10vh 10vw;
+}
+
+#vidd {
+    padding: 10vh 10vw;
+}

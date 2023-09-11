@@ -21,7 +21,7 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 111;
+    z-index: 111111;
     /* margin-bottom: 100px; */
     }
 
@@ -71,8 +71,8 @@ section {
 #hero {
     background: url("../../public//imgs/home1-rev-2.jpg");
     height: auto;
-    min-height: 105dvh;
-    background-position:-200px center;
+    min-height: 60dvh;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -180,6 +180,7 @@ section {
     font-size: 0.75rem;
     font-family: var(--font6);
     width: fit-content;
+    cursor: pointer;
     text-transform: uppercase;
     font-weight: 500;
     /* padding: 0 5px; */
@@ -250,6 +251,8 @@ section {
 }
 
 #steps .s-cd {
+    /* border: 1px solid #4d4d4d; */
+    /* padding: 35px; */
     min-width:250px;
     display: flex;
     flex-direction: column;
@@ -275,10 +278,10 @@ section {
     display: grid;
     place-items: center;
     /* padding: 35px; */
-    background: #fff;
+    background: var(--org);
     border-radius: 50%;
     margin-bottom: 15px;
-    color: var(--org);
+    color: white;
     box-shadow: 0 0 35px 0 #0000001b;
     position: relative;
     transition: all ease-in-out 0.35s;
@@ -301,18 +304,23 @@ section {
     border-radius: 50%;
     /* display: block; */
 }
+#steps .s-cd .num::after {
+    content: '';
+    height: 75px;
+    border: 15px solid rgba(250, 127, 4, 0.129);
+    width: 75px;
+    position: absolute;
+    z-index: -1;
+    /* background: pink; */
+    border-radius: 50%;
+    /* display: block; */
+}
 
 #steps .txt {
     text-align: center;
     font-size: 1rem;
     font-weight: 300;
 }
-
-#steps .s-cd:nth-child(even) {
-    margin-top: 50px;
-}
-
-
 #steps #rm {
     font-weight: 600;
 }
@@ -386,7 +394,7 @@ section {
 }
 
 .ftr-cd:hover p {
-    bottom: 30vh;
+    bottom: 25vh;
     visibility: visible;
     opacity: 1;
 }
@@ -628,26 +636,22 @@ section {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: space-between;
+    gap:50px 35px;
+    justify-content: space-evenly;
 }
 #comp a {
-    width: 18%;
+    width: 30%;
     min-width: 140px;
     text-decoration: none;
+    display: grid;
+    place-items: center;
 }
 
 #comp img {
-    width: 100%;
+    width: 150px;
     /* filter: grayscale(100); */
     transition: 0.15s ease-in-out;
 }
-
-#comp img:hover {
-    width: 100%;
-    /* filter: grayscale(0); */
-}
-
 .parallax-effect-glare-scale {
     transform-style: preserve-3d;
     width: 410px;
@@ -691,4 +695,93 @@ section {
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+#feed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: #eee;
+}
+
+#feed-r {
+    width: 65%;
+
+    /* justify-content: ; */
+}
+
+#feed-r .swiper-wrapper>* {
+    width: 330px;
+    margin: 50px;
+
+}
+
+#feed-r .swiper-wrapper {
+    display: flex;
+    /* overflow-x: scroll; */
+    align-items: center;
+    gap: 50px;
+}
+
+#feed-l p {
+    font-size: 1rem;
+    font-family: var(--font4);
+    font-weight: 300;
+}
+
+#feed-l {
+    gap: 25px;
+    width: 35%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.fd-title {
+    font-weight: 600;
+    font-size: 2.5rem;
+    /* font-family: var(--font3) !important; */
+}
+
+.msg-title {
+    color: var(--blue);
+    font-size: 1.5rem;
+}
+
+.msg-desc {
+    color: #6c6c6c;
+    font-family: var(--font4);
+}
+
+.fd-cd {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 330px !important;
+    background: #fff;
+    padding: 35px 22px;
+    border-radius: 7px;
+    border-bottom: 5px solid var(--org);
+}
+
+.msg-bot {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.msg-bot .zomm-dp {
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.msg-bot .feed-info #blue {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.msg-bot .feed-info #org {
+    font-size: 0.8rem !important;
+    font-weight: 600;
 }

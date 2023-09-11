@@ -38,6 +38,8 @@ footer {
     padding: 5vh 10vw;
     display: flex;
     align-items: center;
+    background: var(--blue);
+    color: #fff !important;
     flex-direction: column;
     gap: 30px;
 }
@@ -153,4 +155,11 @@ footer .btn {
 a {
     text-decoration: none;
     color: inherit;
+}
+.insite-st {
+    height: 90px;
+    margin-right: 10vw;
+    width: 70%;
+    margin: auto;
+    overflow-y: scroll;
 }

@@ -24,9 +24,10 @@ const Calc = () => {
     const lengthValue = parseFloat(length);
     const widthValue = parseFloat(width);
     const heightValue = parseFloat(height);
-
+    const adminGivenPrice = 10;
     const volumetricWeight = (lengthValue * widthValue * heightValue) / 5000;
-    const calculatedPrice = Math.max(weightValue, volumetricWeight) * 10;
+    const calculatedPrice =
+      Math.max(weightValue, volumetricWeight) * adminGivenPrice;
 
     setPrice(calculatedPrice);
     handleClickOpen();
@@ -81,6 +82,18 @@ const Calc = () => {
                 />
               </div>
             </Box>
+            <select name="" id="">
+              <option value="-1" selected>
+                Choose Country
+              </option>
+              <option value="7">USA</option>
+              <option value="6">INDIA</option>
+              <option value="2">NEPAL</option>
+              <option value="1">PAKISTAN</option>
+              <option value="4">UAE</option>
+              <option value="9">CANADA</option>
+            </select>
+
             <h1>Weight</h1>
             <div className="sh-m">
               <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">

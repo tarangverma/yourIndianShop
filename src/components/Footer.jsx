@@ -5,6 +5,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { Link } from "@mui/material";
 const footer = () => {
   function handleClickScroll() {
     window.scrollTo(0, 0);
@@ -15,19 +16,15 @@ const footer = () => {
       <div className="ftr1">
         <div className="f1r">
           <div className="logo lg">
-            <span id="blue">Your</span>
-            <img
-              src="./imgs/6.png"
-              height="35PX"
-              alt=""
-            />
+            <span id="wt">Your</span>
+            <img src="./imgs/6.png" height="35PX" alt="" />
             <span id="org">Shop</span>
           </div>
           <div className="loc">
             <div className="titl">
-              <span id="blue">Transforming </span>
+              <span id="wt">Transforming </span>
               <span id="org"> Ideas Into </span>
-              <span id="blue"> Reality</span>
+              <span id="wt"> Reality</span>
             </div>
           </div>
           <div className="tm">
@@ -49,28 +46,27 @@ const footer = () => {
           </a>
         </div> */}
       </div>
-      <div className="ftr2">
-        <input
-          type="text"
-          placeholder="Enter your email to contact us via email ..."
-        />
-        <a
-          className="btn btn-b"
-          href="https://mail.google.com/mail/u/0/#inbox?compose=CrpPbDzHNDghcrCkVKTtJDrFcvRqPXDMLVMgSLPngxkRqLhmkNKlXpRjDGHRgxQHGfrFbSWxsFSvZVJKdWKg"
-          target="_blank"
-        >
-          Send Mail
-          {/* <AlternateEmailIcon /> */}
-        </a>
-        {/* <input type="submit" value="Sign Up" className="btn" /> */}
-      </div>
       <div className="ftr3">
         <div className="links">
-          <a href="#home">home</a>
-          <a href="#about">about</a>
-          <a href="#service">services</a>
-          <a href="#tec">PLANS</a>
-          <a href="#contact">contact</a>
+          {/* <Link */}
+          <Link id="wt" to="/">
+            Home
+          </Link>
+          <Link id="wt" to="/about">
+            About
+          </Link>
+          <Link id="wt" to="/service">
+            Service
+          </Link>
+          <Link id="wt" to="/offers">
+            Offers
+          </Link>
+          <Link id="wt" to="/in-sites">
+            Indian Sites
+          </Link>
+          <a id="wt" href="#offer">
+            Contact
+          </a>
         </div>
         <div className="policy">
           <span>

@@ -31,6 +31,11 @@ import YourAssistedReq from "./components/YourAssistedReq";
 import ReturnRequests from "./pages/dashboard/ReturnRequests";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import DispPl from "./pages/home/DispPl";
+import About from "./pages/home/About";
+import Service from "./pages/home/Service";
+import Offer from "./pages/home/Offer";
+import InSites from "./pages/home/InSites";
 
 export const MyContext = createContext();
 
@@ -281,6 +286,46 @@ const App = () => {
               element={
                 <main>
                   <Calc />
+                </main>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <main>
+                  <About />
+                </main>
+              }
+            />
+            <Route
+              path="/service"
+              element={
+                <main>
+                  <Service />
+                </main>
+              }
+            />
+            <Route
+              path="/offers"
+              element={
+                <main>
+                  <Offer />
+                </main>
+              }
+            />
+            <Route
+              path="/in-sites"
+              element={
+                <main>
+                  <InSites />
+                </main>
+              }
+            />
+            <Route
+              path="/disp-plan"
+              element={
+                <main>
+                  <DispPl />
                 </main>
               }
             />
