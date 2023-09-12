@@ -71,7 +71,7 @@ section {
 #hero {
     background: url("../../public//imgs/home1-rev-2.jpg");
     height: auto;
-    min-height: 60dvh;
+    min-height: 70dvh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

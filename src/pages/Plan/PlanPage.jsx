@@ -23,6 +23,7 @@ const PlanPage = () => {
       <div id="plan-cards">
         {plans.length !=0 && plans.map((plan, index) => (
           <PlanCard
+            state={true}
             key={index}
             plan={plan}
           />

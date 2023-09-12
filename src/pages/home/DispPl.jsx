@@ -16,13 +16,18 @@ const DispPl = () => {
     <div>
       <center>
         <div className="plan-page-title">
-          <span id="blue">Choose </span>
+          <span id="blue">Our </span>
           <span id="org">Plan</span>
         </div>
       </center>
       <div id="plan-cards">
-        {plans.length != 0 &&
-          plans.map((plan, index) => <PlanCard key={index} plan={plan} />)}
+        {plans.length !=0 && plans.map((plan, index) => (
+          <PlanCard
+            state={false}
+            key={index}
+            plan={plan}
+          />
+        ))}
       </div>
     </div>
   );

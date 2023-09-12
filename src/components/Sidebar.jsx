@@ -26,6 +26,7 @@ import Groups2Icon from "@mui/icons-material/Groups2";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
+import LogoutIcon from '@mui/icons-material/Logout';
 import { MyContext } from "../App";
 const Sidebar = () => {
   const [isCollapsedSidebar, setisCollapsedSidebar] = useState(false);
@@ -144,7 +145,7 @@ const Sidebar = () => {
               </Link>
               <a onClick={logOut}>
                 <span>
-                  <AccountBalanceWalletIcon />
+                  <LogoutIcon />
                 </span>
                 <b className="sidebar_nav_txt"> LogOut</b>
               </a>

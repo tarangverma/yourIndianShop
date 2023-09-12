@@ -3,7 +3,7 @@ import "../stylesheet/Plans.css";
 import { MyContext } from "../App";
 import { useNavigate } from "react-router-dom";
 
-const Plans = ({ plan }) => {
+const Plans = ({ plan,state }) => {
   const {setPlanId,isLogin,user}=useContext(MyContext);
   const nav  = useNavigate();
   const choseplan = ()=>{
@@ -39,7 +39,7 @@ const Plans = ({ plan }) => {
     // `Assisted Purchase: Actual charges + other charges.`,
 ];
   useEffect(()=>{
-    if(!isLogin){
+    if(!isLogin && state){
       nav("/");
     }
   },[])
@@ -61,11 +61,11 @@ const Plans = ({ plan }) => {
             ))}
           </ul>
         </div>
-        <div id="pc-bot">
+        {state&& <div id="pc-bot">
           <div className="choose-plan">
             <button className="btn btn-b" onClick={choseplan}>Choose Plan</button>
           </div>
-        </div>
+        </div>}
       </div>
     </div>
   );
