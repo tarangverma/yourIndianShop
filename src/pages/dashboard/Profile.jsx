@@ -31,6 +31,7 @@ const Profile = () => {
     setIsEditing(false);
     // Update user data in your database or state management here
   };
+<<<<<<< Updated upstream
 
   const handleCopyClick = (userData) => {
     const virtualAddress = `${userData?.Name},\n${userData?.Address},\n${userData?.Address2},\n${userData?.Landmark},\n${userData?.City}, ${userData?.State} - ${userData?.pincode},\n${userData?.Country}`;
@@ -48,6 +49,13 @@ const Profile = () => {
       loadAddress();
     }
   },[])
+=======
+  const handleCopyClick = () => {
+    // Function to copy the user's virtual address details to the clipboard
+    const virtualAddress = `${userData.Name}\n${userData.Address}\n${userData.Address2}\n${userData.Landmark}\n${userData.City}, ${userData.State} - ${userData.pincode}\nPhone: ${userData.phoneNo}\nEmail: ${userData.email}`;
+    navigator.clipboard.writeText(virtualAddress);
+  };
+>>>>>>> Stashed changes
   return (
     <div className="dashboard-profile">
       <div id="pfl">
