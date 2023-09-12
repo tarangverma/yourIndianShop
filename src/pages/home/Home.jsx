@@ -25,6 +25,8 @@ import { HomeSlide } from "../../components/HomeSlide";
 import Calc from "../../components/Calc";
 import { Calculate } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import PgTitle from "../../components/PgTitle";
+
 
 const Home = () => {
   return (
@@ -234,6 +236,29 @@ const Home = () => {
             </Tilt>
           </div>
         </section>
+        <div id="Site">
+          <div  style={{padding:"30px 0px"}}>
+            <div className="t-title" style={{marginBottom:"20px"}}>
+              <span id="blue">Shop </span>
+              <span id="org">From Following</span>
+              <span id="blue"> Sites</span>
+            </div>
+            <section id="comp" className="insite-st">
+              <a target="_blank" href="https://www.amazon.in/">
+                <img src="./imgs/c1.svg" alt="" />
+              </a>{" "}
+              <a target="_blank" href="https://www.flipkart.com/">
+                <img src="./imgs/c2.png" alt="" />
+              </a>{" "}
+              <a target="_blank" href="https://www.snapdeal.com/">
+                <img src="./imgs/c3.png" alt="" />
+              </a>
+              <a target="_blank" href="https://www.myntra.com/">
+                <img src="./imgs/c4.png" alt="" />
+              </a>
+            </section>
+          </div>
+        </div>
         <section id="feed">
           <div id="feed-l">
             <div className="fd-title">

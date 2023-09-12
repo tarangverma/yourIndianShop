@@ -87,7 +87,7 @@ const Nav = () => {
           <Link to="/about">About</Link>
           <Link to="/service">Service</Link>
           <Link to="/offers">Offers</Link>
-          <Link to="/in-sites">Indian Sites</Link>
+          {/* <Link to="/in-sites">Indian Sites</Link> */}
           <a href="#offer">Contact</a>
         </div>
 

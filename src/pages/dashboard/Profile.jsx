@@ -34,7 +34,7 @@ const Profile = () => {
 
   const handleCopyClick = (userData) => {
     const virtualAddress = `${userData?.Name},\n${userData?.Address},\n${userData?.Address2},\n${userData?.Landmark},\n${userData?.City}, ${userData?.State} - ${userData?.pincode},\n${userData?.Country}`;
-    console.log(virtualAddress)
+    // console.log(virtualAddress)
     navigator.clipboard.writeText(virtualAddress);
   };
   const loadAddress = async ()=>{

@@ -1,6 +1,6 @@
 #ab-sec-title h1 {
     font-size: 3rem;
-    color: #fff;
+    color: black;
 
     font-family: var(--font3) !important;
     text-shadow: 1px 1px 5px #000;
@@ -16,9 +16,9 @@
 
 #ab-sec-title {
     height: 50dvh;
-    background:
-        linear-gradient(to left, #003a49cd, #003a49d8),
-        url('../../public/imgs/home1-section-4.jpg');
+    background: white;
+        /* linear-gradient(to left,white),
+        url('../../public/imgs/home1-section-4.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
