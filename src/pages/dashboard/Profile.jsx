@@ -9,18 +9,7 @@ const Profile = () => {
   const {user,isLogin}=useContext(MyContext);
   const nav = useNavigate();
   const [ad,setAd]=useState(null);
-  // Sample user data
-  // const [userData, setUserData] = useState({
-  //   name: "John Doe",
-  //   addressLine1: "123 Main St",
-  //   addressLine2: "Apt 4B",
-  //   landmark: "Near Park",
-  //   city: "New York",
-  //   state: "NY",
-  //   pincode: "10001",
-  //   phoneNumber: "555-123-4567",
-  //   email: "johndoe@example.com",
-  // });
+  
   const [userData, setUserData] = useState(user);
 
   const handleEditClick = () => {
@@ -31,7 +20,7 @@ const Profile = () => {
     setIsEditing(false);
     // Update user data in your database or state management here
   };
-<<<<<<< Updated upstream
+
 
   const handleCopyClick = (userData) => {
     const virtualAddress = `${userData?.Name},\n${userData?.Address},\n${userData?.Address2},\n${userData?.Landmark},\n${userData?.City}, ${userData?.State} - ${userData?.pincode},\n${userData?.Country}`;
@@ -39,7 +28,7 @@ const Profile = () => {
     navigator.clipboard.writeText(virtualAddress);
   };
   const loadAddress = async ()=>{
-    const dt = await fetchreq('GET',`Warehouse/${user?.Cid}`,{})
+    const dt = await fetchreq('GET',`Warehouse/${user?.Cid}`,{});
     dt?setAd(dt?.result):setAd([]);
   }
   useEffect(()=>{
@@ -49,13 +38,7 @@ const Profile = () => {
       loadAddress();
     }
   },[])
-=======
-  const handleCopyClick = () => {
-    // Function to copy the user's virtual address details to the clipboard
-    const virtualAddress = `${userData.Name}\n${userData.Address}\n${userData.Address2}\n${userData.Landmark}\n${userData.City}, ${userData.State} - ${userData.pincode}\nPhone: ${userData.phoneNo}\nEmail: ${userData.email}`;
-    navigator.clipboard.writeText(virtualAddress);
-  };
->>>>>>> Stashed changes
+
   return (
     <div className="dashboard-profile">
       <div id="pfl">

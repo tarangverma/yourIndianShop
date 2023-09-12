@@ -8,7 +8,7 @@ function Wallete() {
     const nav = useNavigate();
     const clientId = "ASMQ8cIBYPm5-ZaxGZhFpodBXIF0n2PBlfyO8mlmGZxoiH0ejWvXGHuZJ3YMH48nocz-2f28DoMhk-ze"
     const {isLogin,user,setUser}=useContext(MyContext)
-    const [transaction,setTransaction]=useState([]);
+    const [transaction,setTransaction]=useState(null);
     const [isClick,setIsclick]=useState(false);
     const [isClick2,setIsclick2]=useState(false);
     const [payment,setPayment]=useState(false);
@@ -124,7 +124,7 @@ function Wallete() {
         padding:'50px'
     }
   return (
-    <div>
+    <div style={{height:'100dvh',overflowY:'scroll'}} >
       <div id="bal">
         <div className="bal-lin">
           <h1>Wallet</h1>
@@ -210,7 +210,7 @@ function Wallete() {
       </div>
       {/* <button onClick={()=>{setIsclick(false);setIsclick2(true)}} className='btn btn-b'>Transfer to Bank</button> */}
       <div id="record-cont">
-        {transaction.length != 0 &&
+        { transaction && transaction.length != 0 &&
           transaction.map((t) => {
             const dt = getDate(t.time);
             const mode = t.Status == 0 ? "Wallete" : "Manual";
@@ -224,6 +224,8 @@ function Wallete() {
               </div>
             );
           })}
+          {transaction && transaction.length == 0 && <p>No data found</p> }
+          {!transaction && <h1>Loading...</h1> }
       </div>
     </div>
   );

@@ -34,6 +34,7 @@ function Shipment() {
     console.log(form)
     const allKeysAreNotNull = Object.keys(form).every(key => (form[key] !== null && form[key]!==""));
     if(!run && termsAgreed && allKeysAreNotNull){
+      setRun(true)
       if(await walletTransaction(pland?.warehouse_pic,wh?.Wid,"Dispach Request",user,setUser,nav)){
         const dt = await fetchreq("POST","addDispachReq",{form:form});
         if(dt){
@@ -169,8 +170,8 @@ function Shipment() {
 
         {/* Submit Button */}
         <div className="form-group">
-          <button className="btn btn-b" type="submit">
-            Submit Request {pland?.warehouse_pic==0?"":`and pay ${pland?.warehouse_pic}`}
+          <button disabled={run} className="btn btn-b" type="submit">
+            { !run ? (pland ? (pland?.warehouse_pic==0?"Submit Request":`Submit Request and pay ${pland?.warehouse_pic}`): "..."): <p>Please Wait...</p> }
           </button>
         </div>
       </form>

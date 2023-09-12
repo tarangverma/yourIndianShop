@@ -18,7 +18,12 @@ function ReturnRequests() {
         }
     },[])
   return (
-    <div>Return
+    <div>
+        <h1 style={{textAlign:'center'}}>
+            <span id="blue">Your </span>
+            <span id="org">Return </span>
+            <span id="blue">Request</span>
+        </h1>
         {dr && dr.length!=0 && dr.map((d)=>{
             const time = getDate(d.time)
             return <div style={{margin:"20px",padding:"20px",border:"2px solid orange"}}>
@@ -27,6 +32,7 @@ function ReturnRequests() {
             </div>
         })}
         {dr &&dr.length==0 && <p>No request found</p>}
+        {!dr && <p>Loading...</p> }
     </div>
   )
 }

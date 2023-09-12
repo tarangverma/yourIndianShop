@@ -6,7 +6,7 @@ import { fetchreq } from "../../Helper/fetch";
 import { MyContext } from "../../App";
 const Shop = () => {
   const {user,wh,isLogin}=useContext(MyContext);
-  const [wd,setWd]=useState([]);
+  const [wd,setWd]=useState(null);
   const nav = useNavigate();
   const [selectP,setSelectP]=useState([]);
   const ar = [1, 2, 3, 4];
@@ -41,14 +41,14 @@ const Shop = () => {
           <div className="t-title dark">Your Curiors</div>
         </center>
       </div>
-      <div style={{display:'flex',justifyContent:'space-around'}}>
+      <div style={{display:'flex',justifyContent:'space-around',margin:"20px 0"}}>
         <Link className="btn btn-b" to="/dashboard/product-acceptance">Add Products Acceptace Request</Link>
         <Link className="btn btn-b" to="/PAR">Your Product Acceptace Request</Link>
         <Link className="btn btn-b" to="/DispachRequests">Your Dispach Requests</Link> 
         <Link className="btn btn-b" to="/ReturnRequests">Your Return Requests</Link> 
       </div>
       <div id="displayProducts">
-        {wd.map((e) => {
+        {wd && wd.length!=0 && wd.map((e) => {
           const isselect = selectP.includes(e.Did);
           return (
             <div style={{border:`${selectP.includes(e.Did)?"3px solid #FF7D44":"none"}`}}>
@@ -56,9 +56,11 @@ const Shop = () => {
             </div>
           );
         })}
+        {wd && wd.length==0 && <p>No data found</p> }
+        {!wd && <h2>Loading...</h2> }
       </div>
-      <div style={{display:'flex',justifyContent:'space-around'}}>
-        { selectP.length>1 && <button className="btn btn-b" onClick={dispactchAll}>Dispatch all selected</button>}
+      <div style={{display:'flex',justifyContent:'space-around',position:'fixed', right:'10px',bottom:'100px',zIndex:'20'}}>
+        { selectP.length>1  && <button className="btn btn-b" onClick={dispactchAll}>Dispatch all selected</button>}
       </div>
     </div>
   );

@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import Warehouse from "../../components/Warehouse2";
 import { fetchreq } from "../../Helper/fetch";
 import { MyContext } from "../../App";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Locker = () => {
-  const [warehouse,setWareHouses]=useState([]);
+  const [warehouse,setWareHouses]=useState(null);
   const {user,isLogin}=useContext(MyContext);
   const nav = useNavigate()
   const handleSelect = (id) => {
@@ -32,13 +32,18 @@ const Locker = () => {
           <span id="org">WareHouse</span>
         </div>
       </center>
+      <div>
+        <Link to="/plan" className="btn btn-b" style={{float:'right'}}>Add WareHouse</Link>
+      </div>
       <div className="warehouse-container locker">
-        {warehouse.map((warehouse) => (
+        {warehouse && warehouse.length!=0 && warehouse.map((warehouse) => (
           <Warehouse
             key={warehouse.Wid}
             warehouse={warehouse}
           />
         ))}
+        {warehouse && warehouse.length==0 && <p>No data found</p> }
+        {!warehouse && <h2>Loading...</h2> }
       </div>
     </>
   );

@@ -111,8 +111,8 @@ function ProductAcceptanceForm() {
 
         {/* Submit Button */}
         <div className="form-group">
-          <button className="btn btn-b" type="submit">
-            {pland?.consolidation==0 ? "Submit Request" : `Submit Request and Pay ₹${pland?.consolidation}`}
+          <button disabled={!pland} className="btn btn-b" type="submit">
+            {pland ?(!run ? (pland?.consolidation==0 ? "Submit Request" : `Submit Request and Pay ₹${pland?.consolidation}`): <p>Please Wait</p> ): <p>Loading...</p> }
           </button>
         </div>
       </form>

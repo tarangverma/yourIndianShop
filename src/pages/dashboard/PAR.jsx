@@ -6,7 +6,7 @@ const {DateTime} = require('luxon');
 
 function PAR() {
     const imgurl = process.env.REACT_APP_URL;
-    const [par,setPar]=useState([]);
+    const [par,setPar]=useState(null);
     const {user,wh,isLogin}=useContext(MyContext);
     const nav = useNavigate()
     const getReq = async ()=>{
@@ -31,7 +31,7 @@ function PAR() {
       <br />
 
       <div id="par-cards-box">
-        {par.length != 0 &&
+        {par && par.length != 0 &&
           par.map((r) => {
             const fdt = getDate(r.time);
 
@@ -68,7 +68,9 @@ function PAR() {
                 </div>
               </div>
             );
-          })}
+        }) }
+        {par && par.length ==0 && <p>No data found</p> }
+        {!par && <p>Loading...</p> }
       </div>
     </div>
   );

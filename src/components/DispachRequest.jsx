@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function DispachRequest() {
     const {user,wh,isLogin}=useContext(MyContext);
-    const [dr,setDr]=useState([]);
+    const [dr,setDr]=useState(null);
     const nav = useNavigate()
     const loadRequsts = async  ()=> {
         const dt = await fetchreq("GET",`getDispachReq/${user.Cid}/${wh.Wid}`,{})
@@ -19,12 +19,12 @@ function DispachRequest() {
         }
     },[])
   return (
-    <div>
+    <div style={{height:'100dvh' ,overflowY:'scroll'}}>
       <div className="t-title">
         <span id="blue">Dispatch&nbsp;</span>
         <span id="org">Requests</span>
       </div>
-      {dr.length != 0 &&
+      {(dr && dr.length != 0) &&
         dr.map((d) => {
           const time = getDate(d.Time);
           return (
@@ -44,7 +44,9 @@ function DispachRequest() {
               <p>Status: {d.Status == 0 ? "Not seen" : "Dispached"}</p>
             </div>
           );
-        })}
+      }) }
+      {(dr && dr.length == 0) && <p>No data found</p> }
+      {!dr && <p>Loading...</p> }
     </div>
   );
 }
