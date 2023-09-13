@@ -230,15 +230,15 @@ const Home = () => {
                 <ul>
                   <li>Less-than-container Load</li>
                   <li>Full Container Load</li>
-                  <li>Intermodal Solutions</li>
+                  <li>Inter-modal Solutions</li>
                 </ul>
               </div>
             </Tilt>
           </div>
         </section>
         <div id="Site">
-          <div  style={{padding:"30px 0px"}}>
-            <div className="t-title" style={{marginBottom:"20px"}}>
+          <div style={{ padding: "30px 0px" }}>
+            <div className="t-title" style={{ marginBottom: "20px" }}>
               <span id="blue">Shop </span>
               <span id="org">From Following</span>
               <span id="blue"> Sites</span>
@@ -318,7 +318,7 @@ const Home = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div className="fd-cd">
-                  <div className="msg-title">"Great Work"</div>
+                  <div className="msg-title">"Great Work."</div>
                   <div className="msg-desc">
                     I work in project management and joined Unicoach because I
                     get great courses for less. The instructors are fantastic,
