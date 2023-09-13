@@ -1,6 +1,7 @@
 import React, { useContext, useState, useRef } from "react";
 import "../stylesheet/Nav.css";
 import CloseIcon from "@mui/icons-material/Close";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import IconButton from "@mui/material/IconButton";
 import CalculateOutlinedIcon from "@mui/icons-material/CalculateOutlined";
 // import CalculateIcon from "@mui/icons-material/Calculate";
@@ -65,6 +66,7 @@ const Nav = () => {
           <Link to="/in-sites">Indian Sites</Link>
           <a href="/">Contact</a>
         </div>
+
         <div id="log" className="btn btn-o">
           <a onClick={othenticate}>{isLogin ? "LogOut" : si}</a>
         </div>
@@ -85,12 +87,19 @@ const Nav = () => {
         <div id="links">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/service">Service</Link>
+          <Link to="/disp-plan">Our Plans</Link>
           <Link to="/offers">Offers</Link>
           {/* <Link to="/in-sites">Indian Sites</Link> */}
           <a href="#offer">Contact</a>
         </div>
-
+        <a
+          href="https://www.youtube.com/watch?v=YB67y0NepPs&t=2s&pp=ygUbZHJvcHNoaXBwaW5nIGFuaW1hdGVkIHZpZGVv"
+          target="_blank"
+        >
+          <IconButton id="yt-ico">
+            <YouTubeIcon />
+          </IconButton>
+        </a>
         <div className="nav-right">
           {/* <Link to="/calc">
             <IconButton aria-label="Cost Calculator">

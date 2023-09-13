@@ -72,9 +72,9 @@ section {
     background: url("../../public//imgs/home1-rev-2.jpg");
     height: auto;
     min-height: 70dvh;
-    background-position: center;
+    background-position:center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     display: flex;
     align-items: center;
     position: static;
@@ -112,13 +112,15 @@ section {
 }
 
 #pop-ser {
-    position:relative;
+    /* position:relative; */
     display: flex;
     /* display: none; */
     /* background: gold; */
     width: 100%;
     left: 0;
-    bottom: 60px;
+    bottom: -75px;
+    margin-top: 7vh;
+    margin-bottom: 10vh;
     align-items: flex-start;
     justify-content: center;
     z-index: 11;
@@ -209,6 +211,7 @@ section {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 15vh;
     padding: 25px;
     gap: 15px;
     align-items: center;
@@ -640,15 +643,21 @@ section {
     justify-content: space-evenly;
 }
 #comp a {
-    width: 30%;
-    min-width: 140px;
+    /* width: 50%; */
+    /* min-width: 140px; */
     text-decoration: none;
+    width: 330px;
     display: grid;
     place-items: center;
+    border: 1.5px solid rgba(160, 160, 160, 0.473);
+    box-shadow: -5px 0 35px 0px #00000023;
+    height: 95px;
 }
 
 #comp img {
-    width: 150px;
+    /* padding: 30px 50px; */
+    width: 70%;
+    border-radius: 3px;
     /* filter: grayscale(100); */
     transition: 0.15s ease-in-out;
 }

@@ -14,7 +14,7 @@ export const HomeSlide = ({ title, desc, bgimg }) => {
       <div className="hero-data">
         <h1>{title}</h1>
         <h3>{desc}</h3>
-        <div className="btn btn-o">Explore More</div>
+        {/* <div className="btn btn-o">Explore More</div> */}
       </div>
     </section>
   );

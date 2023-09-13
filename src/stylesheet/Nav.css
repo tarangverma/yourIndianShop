@@ -112,6 +112,10 @@ nav .btn-o:hover {
     transition: 0.5s ease-in-out;
 }
 
+ .links>* {
+     text-decoration: none !important;
+     color: #fff !important;
+ }
 #side-nav #links {
     display: flex !important;
     flex-direction: column;
@@ -134,4 +138,12 @@ nav .btn-o:hover {
     position: relative;
     top: -15px;
     left: -15px;
+}
+#yt-ico {
+    color: #fff !important;
+    margin: 0 25px;
+}
+
+#tog {
+    color: #fff !important;
 }

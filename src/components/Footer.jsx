@@ -49,21 +49,10 @@ const footer = () => {
       <div className="ftr3">
         <div className="links">
           {/* <Link */}
-          <Link id="wt" to="/">
-            Home
-          </Link>
-          <Link id="wt" to="/about">
-            About
-          </Link>
-          <Link id="wt" to="/service">
-            Service
-          </Link>
-          <Link id="wt" to="/offers">
-            Offers
-          </Link>
-          <Link id="wt" to="/in-sites">
-            Indian Sites
-          </Link>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/disp-plan">Our Plans</Link>
+          <Link to="/offers">Offers</Link>
           <a id="wt" href="#offer">
             Contact
           </a>
