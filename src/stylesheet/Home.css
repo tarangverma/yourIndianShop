@@ -441,9 +441,30 @@ section {
 
 /*==================service======================*/
 #service {
-    background: url("../../public/imgs/ser-bg.jpg");
+    background: #eee;
+    /* background: url("../../public/imgs/ser-bg.jpg");
     background-position: top right;
     background-size: cover;
+    */
+    }
+
+    .sc span .t-title {
+        font-size: 2rem;
+    }
+
+    .sc span {
+        gap: 35px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    #feed {
+        padding-top: 0 !important;
+    }
+
+    #service {
+        padding-bottom: 0 !important;
 }
 
 #service .ser-head {
@@ -494,7 +515,7 @@ section {
 
 .ser-cards>* {
     /* min-width: 300px; */
-    width: 23%;
+    width: 47%;
 
 }
 
@@ -818,4 +839,17 @@ section {
 .msg-bot .feed-info #org {
     font-size: 0.8rem !important;
     font-weight: 600;
+}
+#cal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 35px 10vw !important;
+    gap: 25px;
+}
+
+#cal .cal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

@@ -25,7 +25,7 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import { HomeSlide } from "../../components/HomeSlide";
 import Calc from "../../components/Calc";
-import { Calculate } from "@mui/icons-material";
+import { Calculate, FlightTakeoff } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import PgTitle from "../../components/PgTitle";
 
@@ -80,92 +80,12 @@ const Home = () => {
           {/* <aside>
             <video src="./videos/hero.mp4" autoPlay loop muted></video>
           </aside> */}
-        </div>
-        <section id="service">
-          <div className="ser-head">
-            <div className="sh1">
-              <h1>
-                Explore Our
-                <span id="org"> Services</span>
-              </h1>
-              <p>
-                SHIPBOX is the world’s driving worldwide coordinations supplier
-                — we uphold industry and exchange the worldwide trade of
-                merchandise through land transport.
-              </p>
-            </div>
-            <div className="sh2">
-              <div className="btn btn-b">Explore More</div>
-            </div>
-          </div>
-          <div className="ser-cards">
-            <div className="sc">
-              <div id="org">
-                <LocalShippingOutlinedIcon />
-              </div>
-              <div className="t-title">Self Customer</div>
-              <p>
-                With a worldwide organization and progressed coordination
-                arrangements, our airship cargo sending items.
-              </p>
-              <ul>
-                <li>Part & Full Loads</li>
-                <li>Multimodal Solutions</li>
-                <li>Intermodal Solutions</li>
-              </ul>
-            </div>
-            <div className="sc">
-              <div id="org">
-                <ShoppingBagOutlinedIcon />
-              </div>
-              <div className="t-title">Assisted Purchase</div>
-              <p>
-                We help transport your load anyplace on the planet, making your
-                business run easily regardless of where products.
-              </p>
-              <ul>
-                <li>Air Freight Products</li>
-                <li>Charter Services</li>
-                <li>Intermodal Solutions</li>
-              </ul>
-            </div>
-            <div className="sc">
-              <div id="org">
-                <EngineeringOutlinedIcon />
-              </div>
-              <div className="t-title">White Labelling</div>
-              <p>
-                Sea cargo dispatches in excess of 5,500 holders per day to ports
-                all around the globe, making us a top forwarder.
-              </p>
-              <ul>
-                <li>Less-than-container Load</li>
-                <li>Full Container Load</li>
-                <li>Inter-modal Solutions</li>
-              </ul>
-            </div>
-            <div className="sc">
-              <div id="org">
-                <ComputerIcon />
-              </div>
-              <div className="t-title">Wholesaler Plan</div>
-              <p>
-                Sea cargo dispatches in excess of 5,500 holders per day to ports
-                all around the globe, making us a top forwarder.
-              </p>
-              <ul>
-                <li>Less-than-container Load</li>
-                <li>Full Container Load</li>
-                <li>Inter-modal Solutions</li>
-              </ul>
-            </div>
-          </div>
-        </section>{" "}
+        </div>{" "}
         <section id="ship">
           <div id="sec-head">
             <div className="t-title">
               <span id="blue">How </span>
-              <span id="org">Do We</span>
+              <span id="org">Does It</span>
               <span id="blue"> Work</span>
             </div>
             <p>
@@ -179,25 +99,87 @@ const Home = () => {
           <div id="steps">
             <div className="s-cd">
               <div className="num">01</div>
-              <div className="st">ENTER ORIGIN AND DESTINATION</div>
+              <div className="st">
+                SIGN-UP AND GET YOUR INDIAN VIRTUAL ADDRESS
+              </div>
               <div className="txt">
                 Input departure and arrival. To start shipping
               </div>
             </div>
             <div className="s-cd">
               <div className="num">02</div>
-              <div className="st">DESCRIBE YOUR SHIPMENT</div>
+              <div className="st">
+                START SHOPPING FROM INDIAN E-COMMERCE SITES
+              </div>
               <div className="txt">Specify shipment details as per form.</div>
             </div>
             <div className="s-cd">
               <div className="num">03</div>
-              <div className="st">GET DELIVERY PRICES</div>
+              <div className="st">
+                SHIP YOUR PARCELS INTO YOUR WAREHOUSE/LOCKER
+              </div>
               <div className="txt">Fetch delivery rates based on pack.</div>
             </div>
             <div className="s-cd">
               <div className="num">04</div>
-              <div className="st">PROCEED WITH ONLINE BOOKING</div>
+              <div className="st">
+                RECEIVE YOUR PARCELS IN 7 / 8 WORKING DAYS
+              </div>
               <div className="txt">Initiate web-based booking process.</div>
+            </div>
+          </div>
+        </section>
+        <section id="service">
+          <div className="ser-head">
+            <div className="sh1">
+              <h1>
+                Services We
+                <span id="org"> Offer</span>
+              </h1>
+              <p>
+                SHIPBOX is the world’s driving worldwide coordinations supplier
+                — we uphold industry and exchange the worldwide trade of
+                merchandise through land transport.
+              </p>
+            </div>
+            <div className="sh2">
+              <div className="btn btn-b">Explore More</div>
+            </div>
+          </div>
+          <div className="ser-cards">
+            <div className="sc">
+              <span>
+                <div id="org">
+                  <LocalShippingOutlinedIcon />
+                </div>
+                <div className="t-title">Self Customer</div>
+              </span>
+              <p>
+                With a worldwide organization and progressed coordination
+                arrangements, our airship cargo sending items.
+              </p>
+              <ul>
+                <li>Part & Full Loads</li>
+                <li>Multimodal Solutions</li>
+                <li>Intermodal Solutions</li>
+              </ul>
+            </div>
+            <div className="sc">
+              <span>
+                <div id="org">
+                  <ShoppingBagOutlinedIcon />
+                </div>
+                <div className="t-title">Assisted Purchase</div>
+              </span>
+              <p>
+                We help transport your load anyplace on the planet, making your
+                business run easily regardless of where products.
+              </p>
+              <ul>
+                <li>Air Freight Products</li>
+                <li>Charter Services</li>
+                <li>Intermodal Solutions</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -222,11 +204,12 @@ const Home = () => {
           </div>
           <div className="ps">
             <div className="ps-l">
-              <CalculateIcon />
+              {/* <CalculateIcon /> */}
+              <FlightTakeoff />
               {/* <WarehouseOutlinedIcon /> */}
             </div>
             <div className="ps-r">
-              <div className="st">Price Calculator</div>
+              <div className="st">International Courier Service</div>
               <div className="s-txt">
                 A versatile price calculator, factoring in product weight or
                 dimensions, simplifying cost estimation for efficient shipping
@@ -246,24 +229,6 @@ const Home = () => {
         <div id="pop-ser" className="pop-2">
           <div className="ps">
             <div className="ps-l">
-              <CardGiftcardOutlinedIcon />
-              {/* <LocalShippingOutlinedIcon /> */}
-            </div>
-            <div className="ps-r">
-              <div className="st">Offer Coupons</div>
-              <div className="s-txt">
-                We offer a range of plans to suit your needs, from basic to
-                premium and business , ensuring affordability and flexibility.
-              </div>
-              <div className="rm " id="org">
-                <Link to="/disp-plan" target="_blank" rel="noopener noreferrer">
-                  | View Coupons |
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="ps">
-            <div className="ps-l">
               <ShoppingCartOutlinedIcon />
               {/* <WarehouseOutlinedIcon /> */}
             </div>
@@ -281,6 +246,24 @@ const Home = () => {
               </Link>
               <div className="dis">
                 <img src="./imgs/home1-service-1.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="ps">
+            <div className="ps-l">
+              <CardGiftcardOutlinedIcon />
+              {/* <LocalShippingOutlinedIcon /> */}
+            </div>
+            <div className="ps-r">
+              <div className="st">Offer Coupons</div>
+              <div className="s-txt">
+                We offer a range of plans to suit your needs, from basic to
+                premium and business , ensuring affordability and flexibility.
+              </div>
+              <div className="rm " id="org">
+                <Link to="/disp-plan" target="_blank" rel="noopener noreferrer">
+                  | View Coupons |
+                </Link>
               </div>
             </div>
           </div>
@@ -466,6 +449,61 @@ const Home = () => {
               </Swiper> */}
           </div>
         </div>
+        <section id="service">
+          <div className="ser-head">
+            <center className="sh1">
+              <h1>
+                Wholesale & Business
+                <span id="org"> Service</span>
+              </h1>
+            </center>
+          </div>
+          <div className="ser-cards">
+            <div className="sc">
+              <span>
+                <div id="org">
+                  <EngineeringOutlinedIcon />
+                </div>
+                <div className="t-title">White Labelling</div>
+              </span>
+              <p>
+                Sea cargo dispatches in excess of 5,500 holders per day to ports
+                all around the globe, making us a top forwarder.
+              </p>
+              <ul>
+                <li>Less-than-container Load</li>
+                <li>Full Container Load</li>
+                <li>Inter-modal Solutions</li>
+              </ul>
+            </div>
+            <div className="sc">
+              <span>
+                <div id="org">
+                  <ComputerIcon />
+                </div>
+                <div className="t-title">Wholesaler Plan</div>
+              </span>
+              <p>
+                Sea cargo dispatches in excess of 5,500 holders per day to ports
+                all around the globe, making us a top forwarder.
+              </p>
+              <ul>
+                <li>Less-than-container Load</li>
+                <li>Full Container Load</li>
+                <li>Inter-modal Solutions</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="cal">
+          <div className="cal-head">
+            <div className="t-title">Calculate Price</div>
+            <Link to="/calc" target="_blank" rel="noopener noreferrer">
+              <div className="btn btn-b">Calculate Now</div>
+            </Link>
+          </div>
+          <img src="./imgs/cc.png" alt="" />
+        </section>
         <section id="feed">
           <div id="feed-l">
             <div className="fd-title">
@@ -588,6 +626,70 @@ const Home = () => {
                 </div>
               </SwiperSlide>
             </Swiper>
+          </div>
+        </section>
+        <section id="fr-in">
+          <div className="fr-title">
+            <div className="t-title">Featured IN </div>
+          </div>
+          <div id="fr-gal">
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={0}
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              modules={[Autoplay]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/1.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/2.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/3.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/4.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/5.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/6.png" alt="" />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </section>
+        <section id="fest-offer">
+          <div id="pop-ser" className="pop-3">
+            <div className="ps">
+              <div className="ps-l">
+                <ShoppingCartOutlinedIcon />
+                {/* <WarehouseOutlinedIcon /> */}
+              </div>
+              <div className="ps-r">
+                <div className="st">View Festival Offers</div>
+
+                <div className="btn btn-o">View Offers</div>
+              </div>
+            </div>
           </div>
         </section>
         {/* <section id="asA">
