@@ -6,7 +6,6 @@ const header = process.env.REACT_APP_API_CODE;
 export async function fetchreq(type,api,bd){
     console.log(backend)
     const url = `${backend}/${api}`;
-    
     let res;
     if(type!="GET"){
         res = await fetch(url,{
@@ -30,7 +29,7 @@ export async function fetchreq(type,api,bd){
     if(final.status=="ok"){
         return final;
     }else{
-        console.log(final.status,final?.err)
+        console.log(final.status,final?.err,final);
         return false;
     }
 }
