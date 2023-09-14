@@ -68,7 +68,13 @@ section {
     position: relative;
 }
 
+.swiper-slide {
+    background: #F5f5f5 !important;
+}
 #hero {
+    /* border: 5px solid red; */
+    width: 80vw;
+    margin: auto;
     background: url("../../public//imgs/home1-rev-2.jpg");
     height: auto;
     min-height: 70dvh;
@@ -79,6 +85,11 @@ section {
     align-items: center;
     position: static;
     margin-top: 75px;
+    /* margin: 75px 10vw; */
+    }
+
+    #hero>* {
+        /* width: 100% !important; */
 }
 .hero-cont {
     display: flex;
@@ -110,7 +121,12 @@ section {
     font-weight: 300;
     font-family: var(--font6);
 }
-
+.pop-2 {
+    flex-direction: row-reverse;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 10vh !important;
+}
 #pop-ser {
     /* position:relative; */
     display: flex;
@@ -119,8 +135,7 @@ section {
     width: 100%;
     left: 0;
     bottom: -75px;
-    margin-top: 7vh;
-    margin-bottom: 10vh;
+    margin-top: 10vh;
     align-items: flex-start;
     justify-content: center;
     z-index: 11;
@@ -233,12 +248,22 @@ section {
 }
 
 #ship #sec-head {
-    /* margin-top: 7vh; */
-}
+    margin-top: 5vh !important;
+    }
 
+    .bkl .client-slider {
+        margin-top: 5vh;
+    }
+
+    .bkl {
+        padding: 5vh 10vw;
+        margin-top: -2.5vh !important;
+        padding-top: 0 !important;
+    }
 #ship {
     background: #fff;
     padding-top: 0;
+    padding-bottom: 0 !important;
 }
 
 #steps {
@@ -458,18 +483,18 @@ section {
 .ser-cards {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 0px;
     margin: 10vh 0;
     margin-top: 12vh;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
 
     }
 
 .ser-cards>* {
-    min-width: 300px;
-    width: 30%;
+    /* min-width: 300px; */
+    width: 23%;
 
 }
 
@@ -477,7 +502,7 @@ section {
     box-shadow: 0 0 25px 0 #00000021;
     background: white;
     display: flex;
-    padding: 50px 30px;
+    padding: 38px 25px;
     border-bottom: 5px solid var(--org);
     gap: 9px !important;
     flex-direction: column;

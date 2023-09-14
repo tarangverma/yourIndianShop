@@ -1,7 +1,9 @@
 import React from "react";
 import "../../stylesheet/Home.css";
-
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ComputerIcon from "@mui/icons-material/Computer";
 import Tilt from "react-parallax-tilt";
+import CardGiftcardOutlinedIcon from "@mui/icons-material/CardGiftcardOutlined";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import SellIcon from "@mui/icons-material/Sell";
@@ -26,7 +28,6 @@ import Calc from "../../components/Calc";
 import { Calculate } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import PgTitle from "../../components/PgTitle";
-
 
 const Home = () => {
   return (
@@ -80,6 +81,126 @@ const Home = () => {
             <video src="./videos/hero.mp4" autoPlay loop muted></video>
           </aside> */}
         </div>
+        <section id="service">
+          <div className="ser-head">
+            <div className="sh1">
+              <h1>
+                Explore Our
+                <span id="org"> Services</span>
+              </h1>
+              <p>
+                SHIPBOX is the world’s driving worldwide coordinations supplier
+                — we uphold industry and exchange the worldwide trade of
+                merchandise through land transport.
+              </p>
+            </div>
+            <div className="sh2">
+              <div className="btn btn-b">Explore More</div>
+            </div>
+          </div>
+          <div className="ser-cards">
+            <div className="sc">
+              <div id="org">
+                <LocalShippingOutlinedIcon />
+              </div>
+              <div className="t-title">Self Customer</div>
+              <p>
+                With a worldwide organization and progressed coordination
+                arrangements, our airship cargo sending items.
+              </p>
+              <ul>
+                <li>Part & Full Loads</li>
+                <li>Multimodal Solutions</li>
+                <li>Intermodal Solutions</li>
+              </ul>
+            </div>
+            <div className="sc">
+              <div id="org">
+                <ShoppingBagOutlinedIcon />
+              </div>
+              <div className="t-title">Assisted Purchase</div>
+              <p>
+                We help transport your load anyplace on the planet, making your
+                business run easily regardless of where products.
+              </p>
+              <ul>
+                <li>Air Freight Products</li>
+                <li>Charter Services</li>
+                <li>Intermodal Solutions</li>
+              </ul>
+            </div>
+            <div className="sc">
+              <div id="org">
+                <EngineeringOutlinedIcon />
+              </div>
+              <div className="t-title">White Labelling</div>
+              <p>
+                Sea cargo dispatches in excess of 5,500 holders per day to ports
+                all around the globe, making us a top forwarder.
+              </p>
+              <ul>
+                <li>Less-than-container Load</li>
+                <li>Full Container Load</li>
+                <li>Inter-modal Solutions</li>
+              </ul>
+            </div>
+            <div className="sc">
+              <div id="org">
+                <ComputerIcon />
+              </div>
+              <div className="t-title">Wholesaler Plan</div>
+              <p>
+                Sea cargo dispatches in excess of 5,500 holders per day to ports
+                all around the globe, making us a top forwarder.
+              </p>
+              <ul>
+                <li>Less-than-container Load</li>
+                <li>Full Container Load</li>
+                <li>Inter-modal Solutions</li>
+              </ul>
+            </div>
+          </div>
+        </section>{" "}
+        <section id="ship">
+          <div id="sec-head">
+            <div className="t-title">
+              <span id="blue">How </span>
+              <span id="org">Do We</span>
+              <span id="blue"> Work</span>
+            </div>
+            <p>
+              Packages and pallets, big and small, we can offer you instant
+              delivery options for your shipping needs, both domestically and
+              internationally. Fill out your shipment details below and we’ll
+              provide services tailored to your specific requirements. Simply
+              pick the option that suits you best, and continue to book.
+            </p>
+          </div>
+          <div id="steps">
+            <div className="s-cd">
+              <div className="num">01</div>
+              <div className="st">ENTER ORIGIN AND DESTINATION</div>
+              <div className="txt">
+                Input departure and arrival. To start shipping
+              </div>
+            </div>
+            <div className="s-cd">
+              <div className="num">02</div>
+              <div className="st">DESCRIBE YOUR SHIPMENT</div>
+              <div className="txt">Specify shipment details as per form.</div>
+            </div>
+            <div className="s-cd">
+              <div className="num">03</div>
+              <div className="st">GET DELIVERY PRICES</div>
+              <div className="txt">Fetch delivery rates based on pack.</div>
+            </div>
+            <div className="s-cd">
+              <div className="num">04</div>
+              <div className="st">PROCEED WITH ONLINE BOOKING</div>
+              <div className="txt">Initiate web-based booking process.</div>
+            </div>
+          </div>
+        </section>
         <div id="pop-ser">
           <div className="ps">
             <div className="ps-l">
@@ -122,126 +243,57 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* <section id="ship">
-          <div id="sec-head">
-            <div className="t-title">
-              <span id="blue">How </span>
-              <span id="org">Do We</span>
-              <span id="blue"> Work</span>
+        <div id="pop-ser" className="pop-2">
+          <div className="ps">
+            <div className="ps-l">
+              <CardGiftcardOutlinedIcon />
+              {/* <LocalShippingOutlinedIcon /> */}
             </div>
-            <p>
-              Packages and pallets, big and small, we can offer you instant
-              delivery options for your shipping needs, both domestically and
-              internationally. Fill out your shipment details below and we’ll
-              provide services tailored to your specific requirements. Simply
-              pick the option that suits you best, and continue to book.
-            </p>
-          </div>
-          <div id="steps">
-            <div className="s-cd">
-              <div className="num">01</div>
-              <div className="st">ENTER ORIGIN AND DESTINATION</div>
-              <div className="txt">
-                Input departure and arrival. To start shipping
+            <div className="ps-r">
+              <div className="st">Offer Coupons</div>
+              <div className="s-txt">
+                We offer a range of plans to suit your needs, from basic to
+                premium and business , ensuring affordability and flexibility.
+              </div>
+              <div className="rm " id="org">
+                <Link to="/disp-plan" target="_blank" rel="noopener noreferrer">
+                  | View Coupons |
+                </Link>
               </div>
             </div>
-            <div className="s-cd">
-              <div className="num">02</div>
-              <div className="st">DESCRIBE YOUR SHIPMENT</div>
-              <div className="txt">Specify shipment details as per form.</div>
-            </div>
-            <div className="s-cd">
-              <div className="num">03</div>
-              <div className="st">GET DELIVERY PRICES</div>
-              <div className="txt">Fetch delivery rates based on pack.</div>
-            </div>
-            <div className="s-cd">
-              <div className="num">04</div>
-              <div className="st">PROCEED WITH ONLINE BOOKING</div>
-              <div className="txt">Initiate web-based booking process.</div>
-            </div>
           </div>
-        </section> */}
-        {/* <section id="service">
-          <div className="ser-head">
-            <div className="sh1">
-              <h1>
-                Explore Our
-                <span id="org"> Services</span>
-              </h1>
-              <p>
-                SHIPBOX is the world’s driving worldwide coordinations supplier
-                — we uphold industry and exchange the worldwide trade of
-                merchandise through land transport.
-              </p>
+          <div className="ps">
+            <div className="ps-l">
+              <ShoppingCartOutlinedIcon />
+              {/* <WarehouseOutlinedIcon /> */}
             </div>
-            <div className="sh2">
-              <div className="btn btn-b">Explore More</div>
-            </div>
-          </div>
-          <div className="ser-cards">
-            <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
-              <div className="sc">
-                <div id="org">
-                  <LocalShippingOutlinedIcon />
+            <div className="ps-r">
+              <div className="st">Indian Shop Cart</div>
+              <div className="s-txt">
+                A versatile price calculator, factoring in product weight or
+                dimensions, simplifying cost estimation for efficient shipping
+                and pricing.
+              </div>
+              <Link to="/calc" target="_blank" rel="noopener noreferrer">
+                <div className="rm " id="org">
+                  | View Sites |
                 </div>
-                <div className="t-title">Shop and Ship</div>
-                <p>
-                  With a worldwide organization and progressed coordination
-                  arrangements, our airship cargo sending items.
-                </p>
-                <ul>
-                  <li>Part & Full Loads</li>
-                  <li>Multimodal Solutions</li>
-                  <li>Intermodal Solutions</li>
-                </ul>
+              </Link>
+              <div className="dis">
+                <img src="./imgs/home1-service-1.png" alt="" />
               </div>
-            </Tilt>
-            <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
-              <div className="sc">
-                <div id="org">
-                  <ShoppingBagOutlinedIcon />
-                </div>
-                <div className="t-title">Assisted Purchase</div>
-                <p>
-                  We help transport your load anyplace on the planet, making
-                  your business run easily regardless of where products.
-                </p>
-                <ul>
-                  <li>General Air Freight Products</li>
-                  <li>Charter Services</li>
-                  <li>Intermodal Solutions</li>
-                </ul>
-              </div>
-            </Tilt>
-            <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
-              <div className="sc">
-                <div id="org">
-                  <EngineeringOutlinedIcon />
-                </div>
-                <div className="t-title">Choose Courier Partner</div>
-                <p>
-                  Sea cargo dispatches in excess of 5,500 holders per day to
-                  ports all around the globe, making us a top forwarder.
-                </p>
-                <ul>
-                  <li>Less-than-container Load</li>
-                  <li>Full Container Load</li>
-                  <li>Inter-modal Solutions</li>
-                </ul>
-              </div>
-            </Tilt>
+            </div>
           </div>
-        </section> */}
-        <div id="Site">
+        </div>
+        <div id="Site" className="bkl">
           <div style={{ padding: "30px 0px" }}>
             <div className="t-title" style={{ marginBottom: "20px" }}>
               <span id="blue">Shop </span>
               <span id="org">From Following</span>
               <span id="blue"> Sites</span>
             </div>
-            <section>
-              {/* <Swiper
+
+            {/* <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
                 autoplay={{
@@ -252,111 +304,111 @@ const Home = () => {
                 modules={[Autoplay]}
                 className="mySwiper"
               > */}
-              <div class="client-slider">
-                <div class="client-slide-track">
-                  <div class="client-slide">
-                    <img src="./comp/1.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/2.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/3.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/4.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/5.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/6.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/7.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/8.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/9.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/10.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/11.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/12.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/13.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/14.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/15.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/16.png" alt="" />
-                  </div>
+            <div class="client-slider">
+              <div class="client-slide-track">
+                <div class="client-slide">
+                  <img src="./comp/1.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/2.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/3.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/4.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/5.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/6.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/7.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/8.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/9.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/10.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/11.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/12.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/13.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/14.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/15.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/16.png" alt="" />
                 </div>
               </div>
-              <div class="client-slider">
-                <div class="client-slide-track">
-                  <div class="client-slide">
-                    <img src="./comp/1.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/2.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/3.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/4.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/5.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/6.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/7.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/8.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/9.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/10.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/11.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/12.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/13.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/14.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/15.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/16.png" alt="" />
-                  </div>
+            </div>
+            <div class="client-slider">
+              <div class="client-slide-track">
+                <div class="client-slide">
+                  <img src="./comp/1.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/2.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/3.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/4.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/5.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/6.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/7.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/8.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/9.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/10.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/11.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/12.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/13.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/14.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/15.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/16.png" alt="" />
                 </div>
               </div>
-              {/* <Swiper
+            </div>
+            {/* <Swiper
                 slidesPerView={3}
                 // spaceBetween={30}
                 speed={1000}
@@ -412,7 +464,6 @@ const Home = () => {
                   </a>
                 </SwiperSlide>
               </Swiper> */}
-            </section>
           </div>
         </div>
         <section id="feed">
@@ -432,7 +483,14 @@ const Home = () => {
               id="fd-scr"
               slidesPerView={3}
               spaceBetween={30}
+              autoplay={{
+                delay: 500,
+                // disableOnInteraction: false,
+              }}
+              loop={true}
+              modules={[Autoplay]}
               className="mySwiper"
+              // loop={true}
             >
               <SwiperSlide>
                 <div className="fd-cd">
@@ -535,7 +593,6 @@ const Home = () => {
         {/* <section id="asA">
           <Calc />
         </section> */}
-
         {/* <section id="bl-feature">
           <div className="ftr-cd">
             <div id="org">01</div>
