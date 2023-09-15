@@ -21,12 +21,15 @@
         --font7: 'Tilt Warp', cursive;
         --font8: 'Kanit', sans-serif;
         --green: #D6FB00;
+        /* --blue: #003B49; */
         --blue: #003B49;
         --grn: #2a9628;
         --org: #FF7D44;
     /* --blue2: #5865F2; */
-    --blue2: #092d35;
-    /* --blue2: #2b9630; */
+    /* --blue2: #092d35; */
+    --blue: #17406C;
+    --blue2: #305e42;
+    /* --blue: #599a5d; */
     }
 
     *::-webkit-scrollbar {

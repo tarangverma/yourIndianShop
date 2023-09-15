@@ -55,7 +55,7 @@ const Home = () => {
                 //           desc="  We carry clearness to intricacy, separating basic subtleties from
                 //     confounded data to make modern, direct arrangements.
                 //  "
-                bgimg="./comp/sld1.jpg"
+                bgimg="./imgs/n-bg-sld.jpg"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -64,7 +64,7 @@ const Home = () => {
                 //   desc="  We carry clearness to intricacy, separating basic subtleties from
                 // confounded data to make modern, direct arrangements.
                 // "
-                bgimg="./comp/sld2.jpg"
+                bgimg="./imgs/n-bg-sld-2.jpg"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -73,7 +73,7 @@ const Home = () => {
                 //       desc="  We carry clearness to intricacy, separating basic subtleties from
                 // confounded data to make modern, direct arrangements.
                 // "
-                bgimg="./comp/sld3.jpg"
+                bgimg="./comp/sld1.jpg"
               />
             </SwiperSlide>
           </Swiper>
@@ -129,7 +129,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section id="service">
+        <section id="service" className="ser-sec-1">
           <div className="ser-head">
             <div className="sh1">
               <h1>
@@ -443,7 +443,7 @@ const Home = () => {
               </Swiper> */}
           </div>
         </div>
-        <section id="service">
+        <section id="service" className="ser-sec-2">
           <div className="ser-head">
             <center className="sh1">
               <h1>
