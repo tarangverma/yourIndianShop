@@ -38,7 +38,7 @@ footer {
   padding: 5vh 10vw;
   display: flex;
   align-items: center;
-  background: var(--blue);
+  background: var(--grn);
   color: #fff !important;
   flex-direction: column;
   gap: 30px;
