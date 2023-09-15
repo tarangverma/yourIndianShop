@@ -194,6 +194,9 @@ const Calc = () => {
                 <br /> dimensions of product({height}cmx{width}cmx{length}cm) is
               </DialogContentText>
               <h1 id="prc">${price.toFixed(2)} </h1>
+              <DialogContentText id="alert-dialog-description">
+                The volumetric weight is {(height * width * length) / 5000}.
+              </DialogContentText>
             </DialogContent>
             <DialogActions>
               <Button onClick={handleClose} autoFocus>

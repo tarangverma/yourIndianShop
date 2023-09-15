@@ -220,9 +220,6 @@ const Home = () => {
                   | Calculate Now|
                 </div>
               </Link>
-              <div className="dis">
-                <img src="./imgs/home1-service-1.png" alt="" />
-              </div>
             </div>
           </div>
         </div>
@@ -244,9 +241,6 @@ const Home = () => {
                   | View Sites |
                 </div>
               </Link>
-              <div className="dis">
-                <img src="./imgs/home1-service-1.png" alt="" />
-              </div>
             </div>
           </div>
           <div className="ps">
@@ -475,6 +469,7 @@ const Home = () => {
                 <li>Full Container Load</li>
                 <li>Inter-modal Solutions</li>
               </ul>
+              <div className="btn btn-o"> Read More </div>
             </div>
             <div className="sc">
               <span>
@@ -492,38 +487,33 @@ const Home = () => {
                 <li>Full Container Load</li>
                 <li>Inter-modal Solutions</li>
               </ul>
+              <div className="btn btn-o"> Read More </div>
             </div>
           </div>
         </section>
         <section id="cal">
           <div className="cal-head">
-            <div className="t-title">Calculate Price</div>
+            <div className="t-title">Shipping Rate Calculator </div>
             <Link to="/calc" target="_blank" rel="noopener noreferrer">
               <div className="btn btn-b">Calculate Now</div>
             </Link>
           </div>
-          <img src="./imgs/cc.png" alt="" />
+          {/* <img src="./imgs/cc.png" alt="" /> */}
         </section>
         <section id="feed">
           <div id="feed-l">
-            <div className="fd-title">
-              People Say About Our
-              <span id="org">&nbsp;Company</span>
-            </div>
-            <p>
-              E-commerce model where retailers sell products without holding
-              inventory, relying on suppliers to ship directly to customers.
-            </p>
-            <div className="btn btn-b">Join Now</div>
+            <center className="fd-title">
+              What People Say About Our Company
+            </center>
           </div>
           <div id="feed-r">
             <Swiper
               id="fd-scr"
               slidesPerView={3}
-              spaceBetween={30}
+              // spaceBetween={30}
               autoplay={{
                 delay: 500,
-                // disableOnInteraction: false,
+                disableOnInteraction: false,
               }}
               loop={true}
               modules={[Autoplay]}

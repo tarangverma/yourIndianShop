@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10vw;
-   background:#003a49;
+    padding: 15px 5vw;
+    /* background:#003a49; */
+    background:var(--blue2);
    box-shadow: 0 0 50px 1px #06060624;
 }
 

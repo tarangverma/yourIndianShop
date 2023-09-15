@@ -61,10 +61,12 @@ html {
     }
 /*===============hero===================*/
 section {
-    width: 100%;
+    width: 90vw;
     overflow-x: hidden;
     height: auto;
-    padding: 10vh 10vw;
+    padding: 5vh 5vw;
+    margin: 5vh 5vw;
+    box-shadow: 0 0 50px 1px #00000034;
     position: relative;
 }
 
@@ -73,7 +75,7 @@ section {
 }
 #hero {
     /* border: 5px solid red; */
-    width: 80vw;
+    width: 90vw;
     margin: auto;
     background: url("../../public//imgs/home1-rev-2.jpg");
     height: auto;
@@ -194,7 +196,7 @@ section {
 }
 
 .rm {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-family: var(--font6);
     width: fit-content;
     cursor: pointer;
@@ -754,21 +756,24 @@ section {
 #feed {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 50px;
     background: #eee;
 }
 
 #feed-r {
-    width: 65%;
+    width: 100%;
 
     /* justify-content: ; */
 }
 
 #feed-r .swiper-wrapper>* {
-    width: 330px;
+    width: fit-content !important;
     margin: 50px;
 
+}
+#feed-r .swiper-slide #feed-r .swiper-slide-next {
+    width: 250px !important;
 }
 
 #feed-r .swiper-wrapper {
@@ -786,7 +791,8 @@ section {
 
 #feed-l {
     gap: 25px;
-    width: 35%;
+    width: 100%;
+    margin-top: 10vh;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -795,6 +801,8 @@ section {
 
 .fd-title {
     font-weight: 600;
+    /* background: pink; */
+    width: 100%;
     font-size: 2.5rem;
     /* font-family: var(--font3) !important; */
 }
@@ -813,7 +821,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    min-width: 330px !important;
+    width: 330px !important;
     background: #fff;
     padding: 35px 22px;
     border-radius: 7px;
