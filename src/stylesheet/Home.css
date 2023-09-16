@@ -82,6 +82,7 @@ section {
 }
 .hero-cont {
     display: flex;
+    margin:0 10vw;
 }
 .hero-data {
     display: flex;
