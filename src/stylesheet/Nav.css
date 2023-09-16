@@ -2,9 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10vw;
-   background:#003a49;
-   box-shadow: 0 0 50px 1px #06060624;
+    padding: 15px 5vw;
+    /* background:#003a49; */
+    background:#17406C;
+    /* background:var(--grn); */
+    box-shadow: 0 0 50px 1px #06060624;
 }
 
 #logo {
@@ -40,13 +42,14 @@ nav .btn-o:hover {
 #links a {
     text-decoration: none;
     color: #fff;
+    /* color:#252525; */
     cursor: pointer;
     font-weight: 500;
     transition: all ease-in-out 0.25s;
 }
 
 #links a:hover {
-    color: var(--org);
+    color: orange;
 }
 
 .btn {

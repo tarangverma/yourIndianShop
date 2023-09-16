@@ -1,7 +1,9 @@
 import React from "react";
 import "../../stylesheet/Home.css";
-
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ComputerIcon from "@mui/icons-material/Computer";
 import Tilt from "react-parallax-tilt";
+import CardGiftcardOutlinedIcon from "@mui/icons-material/CardGiftcardOutlined";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import SellIcon from "@mui/icons-material/Sell";
@@ -23,10 +25,9 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import { HomeSlide } from "../../components/HomeSlide";
 import Calc from "../../components/Calc";
-import { Calculate } from "@mui/icons-material";
+import { Calculate, FlightTakeoff } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import PgTitle from "../../components/PgTitle";
-
 
 const Home = () => {
   return (
@@ -54,7 +55,7 @@ const Home = () => {
                 //           desc="  We carry clearness to intricacy, separating basic subtleties from
                 //     confounded data to make modern, direct arrangements.
                 //  "
-                bgimg="./comp/sld1.jpg"
+                bgimg="./imgs/n-bg-sld.jpg"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -63,7 +64,7 @@ const Home = () => {
                 //   desc="  We carry clearness to intricacy, separating basic subtleties from
                 // confounded data to make modern, direct arrangements.
                 // "
-                bgimg="./comp/sld2.jpg"
+                bgimg="./imgs/n-bg-sld-2.jpg"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -72,14 +73,116 @@ const Home = () => {
                 //       desc="  We carry clearness to intricacy, separating basic subtleties from
                 // confounded data to make modern, direct arrangements.
                 // "
-                bgimg="./comp/sld3.jpg"
+                bgimg="./comp/sld1.jpg"
               />
             </SwiperSlide>
           </Swiper>
           {/* <aside>
             <video src="./videos/hero.mp4" autoPlay loop muted></video>
           </aside> */}
-        </div>
+        </div>{" "}
+        <section id="ship">
+          <div id="sec-head">
+            <div className="t-title">
+              <span id="blue">How </span>
+              <span id="org">Does It</span>
+              <span id="blue"> Work</span>
+            </div>
+            <p>
+              Packages and pallets, big and small, we can offer you instant
+              delivery options for your shipping needs, both domestically and
+              internationally. Fill out your shipment details below and we’ll
+              provide services tailored to your specific requirements. Simply
+              pick the option that suits you best, and continue to book.
+            </p>
+          </div>
+          <div id="steps">
+            <div className="s-cd">
+              <div className="num">01</div>
+              <div className="st">
+                SIGN-UP AND GET YOUR INDIAN VIRTUAL ADDRESS
+              </div>
+              <div className="txt">
+                Input departure and arrival. To start shipping
+              </div>
+            </div>
+            <div className="s-cd">
+              <div className="num">02</div>
+              <div className="st">
+                START SHOPPING FROM INDIAN E-COMMERCE SITES
+              </div>
+              <div className="txt">Specify shipment details as per form.</div>
+            </div>
+            <div className="s-cd">
+              <div className="num">03</div>
+              <div className="st">
+                SHIP YOUR PARCELS INTO YOUR WAREHOUSE/LOCKER
+              </div>
+              <div className="txt">Fetch delivery rates based on pack.</div>
+            </div>
+            <div className="s-cd">
+              <div className="num">04</div>
+              <div className="st">
+                RECEIVE YOUR PARCELS IN 7 / 8 WORKING DAYS
+              </div>
+              <div className="txt">Initiate web-based booking process.</div>
+            </div>
+          </div>
+        </section>
+        <section id="service" className="ser-sec-1">
+          <div className="ser-head">
+            <div className="sh1">
+              <h1>
+                Services We
+                <span id="org"> Offer</span>
+              </h1>
+              <p>
+                SHIPBOX is the world’s driving worldwide coordinations supplier
+                — we uphold industry and exchange the worldwide trade of
+                merchandise through land transport.
+              </p>
+            </div>
+            <div className="sh2">
+              <div className="btn btn-b">Explore More</div>
+            </div>
+          </div>
+          <div className="ser-cards">
+            <div className="sc">
+              <span>
+                <div id="org">
+                  <LocalShippingOutlinedIcon />
+                </div>
+                <div className="t-title">Self Customer</div>
+              </span>
+              <p>
+                With a worldwide organization and progressed coordination
+                arrangements, our airship cargo sending items.
+              </p>
+              <ul>
+                <li>Part & Full Loads</li>
+                <li>Multimodal Solutions</li>
+                <li>Intermodal Solutions</li>
+              </ul>
+            </div>
+            <div className="sc">
+              <span>
+                <div id="org">
+                  <ShoppingBagOutlinedIcon />
+                </div>
+                <div className="t-title">Assisted Purchase</div>
+              </span>
+              <p>
+                We help transport your load anyplace on the planet, making your
+                business run easily regardless of where products.
+              </p>
+              <ul>
+                <li>Air Freight Products</li>
+                <li>Charter Services</li>
+                <li>Intermodal Solutions</li>
+              </ul>
+            </div>
+          </div>
+        </section>
         <div id="pop-ser">
           <div className="ps">
             <div className="ps-l">
@@ -101,11 +204,12 @@ const Home = () => {
           </div>
           <div className="ps">
             <div className="ps-l">
-              <CalculateIcon />
+              {/* <CalculateIcon /> */}
+              <FlightTakeoff />
               {/* <WarehouseOutlinedIcon /> */}
             </div>
             <div className="ps-r">
-              <div className="st">Price Calculator</div>
+              <div className="st">International Courier Service</div>
               <div className="s-txt">
                 A versatile price calculator, factoring in product weight or
                 dimensions, simplifying cost estimation for efficient shipping
@@ -116,132 +220,57 @@ const Home = () => {
                   | Calculate Now|
                 </div>
               </Link>
-              <div className="dis">
-                <img src="./imgs/home1-service-1.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div id="pop-ser" className="pop-2">
+          <div className="ps">
+            <div className="ps-l">
+              <ShoppingCartOutlinedIcon />
+              {/* <WarehouseOutlinedIcon /> */}
+            </div>
+            <div className="ps-r">
+              <div className="st">Indian Shop Cart</div>
+              <div className="s-txt">
+                A versatile price calculator, factoring in product weight or
+                dimensions, simplifying cost estimation for efficient shipping
+                and pricing.
+              </div>
+              <Link to="/calc" target="_blank" rel="noopener noreferrer">
+                <div className="rm " id="org">
+                  | View Sites |
+                </div>
+              </Link>
+            </div>
+          </div>
+          <div className="ps">
+            <div className="ps-l">
+              <CardGiftcardOutlinedIcon />
+              {/* <LocalShippingOutlinedIcon /> */}
+            </div>
+            <div className="ps-r">
+              <div className="st">Offer Coupons</div>
+              <div className="s-txt">
+                We offer a range of plans to suit your needs, from basic to
+                premium and business , ensuring affordability and flexibility.
+              </div>
+              <div className="rm " id="org">
+                <Link to="/disp-plan" target="_blank" rel="noopener noreferrer">
+                  | View Coupons |
+                </Link>
               </div>
             </div>
           </div>
         </div>
-        {/* <section id="ship">
-          <div id="sec-head">
-            <div className="t-title">
-              <span id="blue">How </span>
-              <span id="org">Do We</span>
-              <span id="blue"> Work</span>
-            </div>
-            <p>
-              Packages and pallets, big and small, we can offer you instant
-              delivery options for your shipping needs, both domestically and
-              internationally. Fill out your shipment details below and we’ll
-              provide services tailored to your specific requirements. Simply
-              pick the option that suits you best, and continue to book.
-            </p>
-          </div>
-          <div id="steps">
-            <div className="s-cd">
-              <div className="num">01</div>
-              <div className="st">ENTER ORIGIN AND DESTINATION</div>
-              <div className="txt">
-                Input departure and arrival. To start shipping
-              </div>
-            </div>
-            <div className="s-cd">
-              <div className="num">02</div>
-              <div className="st">DESCRIBE YOUR SHIPMENT</div>
-              <div className="txt">Specify shipment details as per form.</div>
-            </div>
-            <div className="s-cd">
-              <div className="num">03</div>
-              <div className="st">GET DELIVERY PRICES</div>
-              <div className="txt">Fetch delivery rates based on pack.</div>
-            </div>
-            <div className="s-cd">
-              <div className="num">04</div>
-              <div className="st">PROCEED WITH ONLINE BOOKING</div>
-              <div className="txt">Initiate web-based booking process.</div>
-            </div>
-          </div>
-        </section> */}
-        {/* <section id="service">
-          <div className="ser-head">
-            <div className="sh1">
-              <h1>
-                Explore Our
-                <span id="org"> Services</span>
-              </h1>
-              <p>
-                SHIPBOX is the world’s driving worldwide coordinations supplier
-                — we uphold industry and exchange the worldwide trade of
-                merchandise through land transport.
-              </p>
-            </div>
-            <div className="sh2">
-              <div className="btn btn-b">Explore More</div>
-            </div>
-          </div>
-          <div className="ser-cards">
-            <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
-              <div className="sc">
-                <div id="org">
-                  <LocalShippingOutlinedIcon />
-                </div>
-                <div className="t-title">Shop and Ship</div>
-                <p>
-                  With a worldwide organization and progressed coordination
-                  arrangements, our airship cargo sending items.
-                </p>
-                <ul>
-                  <li>Part & Full Loads</li>
-                  <li>Multimodal Solutions</li>
-                  <li>Intermodal Solutions</li>
-                </ul>
-              </div>
-            </Tilt>
-            <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
-              <div className="sc">
-                <div id="org">
-                  <ShoppingBagOutlinedIcon />
-                </div>
-                <div className="t-title">Assisted Purchase</div>
-                <p>
-                  We help transport your load anyplace on the planet, making
-                  your business run easily regardless of where products.
-                </p>
-                <ul>
-                  <li>General Air Freight Products</li>
-                  <li>Charter Services</li>
-                  <li>Intermodal Solutions</li>
-                </ul>
-              </div>
-            </Tilt>
-            <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
-              <div className="sc">
-                <div id="org">
-                  <EngineeringOutlinedIcon />
-                </div>
-                <div className="t-title">Choose Courier Partner</div>
-                <p>
-                  Sea cargo dispatches in excess of 5,500 holders per day to
-                  ports all around the globe, making us a top forwarder.
-                </p>
-                <ul>
-                  <li>Less-than-container Load</li>
-                  <li>Full Container Load</li>
-                  <li>Inter-modal Solutions</li>
-                </ul>
-              </div>
-            </Tilt>
-          </div>
-        </section> */}
-        <div id="Site">
+        <div id="Site" className="bkl">
           <div style={{ padding: "30px 0px" }}>
             <div className="t-title" style={{ marginBottom: "20px" }}>
               <span id="blue">Shop </span>
               <span id="org">From Following</span>
               <span id="blue"> Sites</span>
             </div>
-            <section>
-              {/* <Swiper
+
+            {/* <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
                 autoplay={{
@@ -252,111 +281,111 @@ const Home = () => {
                 modules={[Autoplay]}
                 className="mySwiper"
               > */}
-              <div class="client-slider">
-                <div class="client-slide-track">
-                  <div class="client-slide">
-                    <img src="./comp/1.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/2.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/3.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/4.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/5.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/6.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/7.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/8.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/9.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/10.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/11.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/12.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/13.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/14.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/15.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/16.png" alt="" />
-                  </div>
+            <div class="client-slider">
+              <div class="client-slide-track">
+                <div class="client-slide">
+                  <img src="./comp/1.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/2.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/3.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/4.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/5.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/6.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/7.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/8.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/9.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/10.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/11.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/12.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/13.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/14.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/15.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/16.png" alt="" />
                 </div>
               </div>
-              <div class="client-slider">
-                <div class="client-slide-track">
-                  <div class="client-slide">
-                    <img src="./comp/1.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/2.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/3.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/4.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/5.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/6.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/7.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/8.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/9.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/10.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/11.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/12.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/13.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/14.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/15.png" alt="" />
-                  </div>
-                  <div class="client-slide">
-                    <img src="./comp/16.png" alt="" />
-                  </div>
+            </div>
+            <div class="client-slider">
+              <div class="client-slide-track">
+                <div class="client-slide">
+                  <img src="./comp/1.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/2.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/3.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/4.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/5.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/6.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/7.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/8.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/9.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/10.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/11.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/12.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/13.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/14.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/15.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="./comp/16.png" alt="" />
                 </div>
               </div>
-              {/* <Swiper
+            </div>
+            {/* <Swiper
                 slidesPerView={3}
                 // spaceBetween={30}
                 speed={1000}
@@ -412,27 +441,84 @@ const Home = () => {
                   </a>
                 </SwiperSlide>
               </Swiper> */}
-            </section>
           </div>
         </div>
+        <section id="service" className="ser-sec-2">
+          <div className="ser-head">
+            <center className="sh1">
+              <h1>
+                Wholesale & Business
+                <span id="org"> Service</span>
+              </h1>
+            </center>
+          </div>
+          <div className="ser-cards">
+            <div className="sc">
+              <span>
+                <div id="org">
+                  <EngineeringOutlinedIcon />
+                </div>
+                <div className="t-title">White Labelling</div>
+              </span>
+              <p>
+                Sea cargo dispatches in excess of 5,500 holders per day to ports
+                all around the globe, making us a top forwarder.
+              </p>
+              <ul>
+                <li>Less-than-container Load</li>
+                <li>Full Container Load</li>
+                <li>Inter-modal Solutions</li>
+              </ul>
+              <div className="btn btn-o"> Read More </div>
+            </div>
+            <div className="sc">
+              <span>
+                <div id="org">
+                  <ComputerIcon />
+                </div>
+                <div className="t-title">Wholesaler Plan</div>
+              </span>
+              <p>
+                Sea cargo dispatches in excess of 5,500 holders per day to ports
+                all around the globe, making us a top forwarder.
+              </p>
+              <ul>
+                <li>Less-than-container Load</li>
+                <li>Full Container Load</li>
+                <li>Inter-modal Solutions</li>
+              </ul>
+              <div className="btn btn-o"> Read More </div>
+            </div>
+          </div>
+        </section>
+        <section id="cal">
+          <div className="cal-head">
+            <div className="t-title">Shipping Rate Calculator </div>
+            <Link to="/calc" target="_blank" rel="noopener noreferrer">
+              <div className="btn btn-b">Calculate Now</div>
+            </Link>
+          </div>
+          {/* <img src="./imgs/cc.png" alt="" /> */}
+        </section>
         <section id="feed">
           <div id="feed-l">
-            <div className="fd-title">
-              People Say About Our
-              <span id="org">&nbsp;Company</span>
-            </div>
-            <p>
-              E-commerce model where retailers sell products without holding
-              inventory, relying on suppliers to ship directly to customers.
-            </p>
-            <div className="btn btn-b">Join Now</div>
+            <center className="fd-title">
+              What People Say About Our Company
+            </center>
           </div>
           <div id="feed-r">
             <Swiper
               id="fd-scr"
               slidesPerView={3}
-              spaceBetween={30}
+              // spaceBetween={30}
+              autoplay={{
+                delay: 500,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              modules={[Autoplay]}
               className="mySwiper"
+              // loop={true}
             >
               <SwiperSlide>
                 <div className="fd-cd">
@@ -532,10 +618,73 @@ const Home = () => {
             </Swiper>
           </div>
         </section>
+        <section id="fr-in">
+          <div className="fr-title">
+            <div className="t-title">Featured IN </div>
+          </div>
+          <div id="fr-gal">
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={0}
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              modules={[Autoplay]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/1.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/2.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/3.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/4.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/5.png" alt="" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="frd-img">
+                  <img src="./ftrd/6.png" alt="" />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </section>
+        <section id="fest-offer">
+          <div id="pop-ser" className="pop-3">
+            <div className="ps">
+              <div className="ps-l">
+                <ShoppingCartOutlinedIcon />
+                {/* <WarehouseOutlinedIcon /> */}
+              </div>
+              <div className="ps-r">
+                <div className="st">View Festival Offers</div>
+
+                <div className="btn btn-o">View Offers</div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* <section id="asA">
           <Calc />
         </section> */}
-
         {/* <section id="bl-feature">
           <div className="ftr-cd">
             <div id="org">01</div>

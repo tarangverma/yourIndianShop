@@ -5,7 +5,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { Link } from "@mui/material";
+import { IconButton, Link } from "@mui/material";
 const footer = () => {
   function handleClickScroll() {
     window.scrollTo(0, 0);
@@ -60,7 +60,18 @@ const footer = () => {
         <div className="policy">
           <span>
             Copyright © info@techiota.co.in &nbsp;&nbsp;&nbsp; Privacy Policy
-            &nbsp;&nbsp; &nbsp; Terms & Conditions
+            &nbsp;&nbsp; &nbsp; Terms & Conditions &nbsp;&nbsp; &nbsp;
+            <span className="social-m">
+              <IconButton>
+                <FacebookRoundedIcon />
+              </IconButton>
+              <IconButton>
+                <InstagramIcon />
+              </IconButton>
+              <IconButton>
+                <TwitterIcon />
+              </IconButton>
+            </span>
           </span>
         </div>
       </div>
