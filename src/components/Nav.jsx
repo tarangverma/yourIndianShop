@@ -11,6 +11,7 @@ import { fetchreq, uploadImageAws, jwtauth } from "../Helper/fetch";
 import { MyContext } from "../App";
 // import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { LinkOff } from "@mui/icons-material";
 const Nav = () => {
   const { user, setUser, isLogin, setIsLogin } = useContext(MyContext);
   const nav = useNavigate();
@@ -64,16 +65,15 @@ const Nav = () => {
           <Link to="/service">Service</Link>
           <Link to="/offers">Offers</Link>
           <Link to="/in-sites">Indian Sites</Link>
-          <a href="/">Contact</a>
         </div>
 
-        <div id="log" className="btn btn-o">
-          <a onClick={othenticate}>{isLogin ? "LogOut" : si}</a>
+        <div onClick={othenticate} id="log" className="btn btn-o">
+          <a >{isLogin ? "LogOut" : si}</a>
         </div>
         {!isLogin && (
-          <div id="log" className="btn btn-o">
-            <Link to="/signUp">Sign Up</Link>
-          </div>
+          <Link to="/signUp" id="log" className="btn btn-o">
+            <div>Sign Up</div>
+          </Link>
         )}
       </div>
       <nav>
@@ -90,7 +90,6 @@ const Nav = () => {
           <Link to="/disp-plan">Our Plans</Link>
           <Link to="/offers">Offers</Link>
           {/* <Link to="/in-sites">Indian Sites</Link> */}
-          <a href="#offer">Contact</a>
         </div>
         <a
           href="https://www.youtube.com/watch?v=YB67y0NepPs&t=2s&pp=ygUbZHJvcHNoaXBwaW5nIGFuaW1hdGVkIHZpZGVv"
@@ -106,13 +105,13 @@ const Nav = () => {
               <CalculateOutlinedIcon id="calc-icon" />
             </IconButton>
           </Link> */}
-          <div id="log" className="btn btn-o">
-            <a onClick={othenticate}>{isLogin ? "LogOut" : si}</a>
+          <div onClick={othenticate} id="log" className="btn btn-o">
+            <a >{isLogin ? "LogOut" : si}</a>
           </div>
           {!isLogin && (
-            <div id="log" className="btn btn-o">
-              <Link to="/signUp">Sign Up</Link>
-            </div>
+            <Link to="/signUp"  id="log" className="btn btn-o">
+              <div>Sign Up</div>
+            </Link>
           )}
         </div>
         <div id="tog" onClick={handleToggle}>

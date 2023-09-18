@@ -1,9 +1,10 @@
 import React from "react";
 
+
 const IndianSites = () => {
   return (
-    <div id="dash-site">
-      <div className="t-title">
+    <div id="dash-site" style={{padding:'35px 0'}}>
+      {/* <div className="t-title">
         <span id="blue">Shop </span>
         <span id="org">From </span>
         <span id="org">Below </span>
@@ -15,13 +16,10 @@ const IndianSites = () => {
         address for privacy, protecting personal information. Virtual lockers
         also provide flexibility and real-time tracking, elevating the
         e-commerce experience.
-      </p>{" "}
+      </p>{" "} */}
+      
       <div id="ds3">
-        {/* <div className="t-title">
-            <span id="blue">Start </span>
-            <span id="org">Shopping </span>
-            <span id="blue">Now</span>
-          </div> */}
+        <h1>Shop From Below Sites</h1>
         <div className="work-dia">
           <img
             src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/work-dia2.png"
@@ -29,32 +27,110 @@ const IndianSites = () => {
           />
         </div>
       </div>
-      <section id="comp">
-        <a target="_blank" href="https://www.amazon.in/">
-          <img
-            src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/b3195444926a8ff0a51f6b6e24589d1b6d6b206e/shipping/c1.svg"
-            alt=""
-          />
-        </a>{" "}
-        <a target="_blank" href="https://www.flipkart.com/">
-          <img
-            src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/b3195444926a8ff0a51f6b6e24589d1b6d6b206e/shipping/c2.png"
-            alt=""
-          />
-        </a>{" "}
-        <a target="_blank" href="https://www.snapdeal.com/">
-          <img
-            src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/b3195444926a8ff0a51f6b6e24589d1b6d6b206e/shipping/c3.png"
-            alt=""
-          />
-        </a>
-        <a target="_blank" href="https://www.myntra.com/">
-          <img
-            src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/b3195444926a8ff0a51f6b6e24589d1b6d6b206e/shipping/c4.png"
-            alt=""
-          />
-        </a>
-      </section>
+          <div class="client-slider">
+              <div class="client-slide-track">
+                <div class="client-slide">
+                  <img src="../comp/1.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/2.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/3.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/4.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/5.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/6.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/7.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/8.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/9.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/10.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/11.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/12.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/13.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/14.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/15.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/16.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="client-slider">
+              <div class="client-slide-track">
+                <div class="client-slide">
+                  <img src="../comp/1.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/2.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/3.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/4.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/5.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/6.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/7.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/8.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/9.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/10.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/11.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/12.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/13.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/14.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/15.png" alt="" />
+                </div>
+                <div class="client-slide">
+                  <img src="../comp/16.png" alt="" />
+                </div>
+              </div>
+            </div>
       {/* <div id="gr">.</div> */}
     </div>
   );

@@ -51,7 +51,7 @@ const Sidebar = () => {
               <div className="logo">
                 <span id="org">Your</span>
                 <img
-                  src="./imgs/6.png"
+                  src="../imgs/6.png"
                   height="40px"
                   alt=""
                 />

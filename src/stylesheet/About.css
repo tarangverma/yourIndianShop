@@ -5,7 +5,9 @@
     font-family: var(--font3) !important;
     text-shadow: 1px 1px 5px #000;
 }
-
+#dash-site h1{
+    padding: 0 35px;
+}
 #ab-sec-title>div {
     display: flex;
     align-items: center;

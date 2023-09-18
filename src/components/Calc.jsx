@@ -18,7 +18,9 @@ const Calc = () => {
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
   const [price, setPrice] = useState(0);
-
+  const url = process.env.REACT_APP_URL;
+  // https://idcardgenrator.s3.ap-northeast-1.amazonaws.com/Curior-service/shipping-site-imgs/calculator/1.jpg
+// /calc/1,2,3,4.jpg cur.png
   const calculatePrice = () => {
     const weightValue = parseFloat(weight);
     const lengthValue = parseFloat(length);
@@ -82,7 +84,7 @@ const Calc = () => {
                 />
               </div>
             </Box>
-            <select name="" id="">
+            {/* <select name="" id="">
               <option value="-1" selected>
                 Choose Country
               </option>
@@ -92,13 +94,13 @@ const Calc = () => {
               <option value="1">PAKISTAN</option>
               <option value="4">UAE</option>
               <option value="9">CANADA</option>
-            </select>
+            </select> */}
 
             <h1>Weight</h1>
             <div className="sh-m">
               <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
                 <img
-                  src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/cur.png"
+                  src={`${url}/shipping-site-imgs/calculator/cur.png`}
                   alt=""
                 />
               </Tilt>
@@ -150,13 +152,13 @@ const Calc = () => {
               <div>
                 <div className="olay">
                   <img
-                    src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/svg/1.jpg"
+                    src={`${url}/shipping-site-imgs/calculator/1.jpg`}
                     alt=""
                   />
                 </div>
                 <div className="olay">
                   <img
-                    src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/svg/2.jpg"
+                    src={`${url}/shipping-site-imgs/calculator/2.jpg`}
                     alt=""
                   />
                 </div>
@@ -164,13 +166,13 @@ const Calc = () => {
               <div>
                 <div className="olay">
                   <img
-                    src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/svg/3.jpg"
+                    src={`${url}/shipping-site-imgs/calculator/3.jpg`}
                     alt=""
                   />
                 </div>
                 <div className="olay">
                   <img
-                    src="https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/svg/4.jpg"
+                    src={`${url}/shipping-site-imgs/calculator/4.jpg`}
                     alt=""
                   />
                 </div>

@@ -88,14 +88,14 @@ section {
     position: static;
     margin-top: 75px;
     /* margin: 75px 10vw; */
-    }
+}
 
     #hero>* {
         /* width: 100% !important; */
 }
 .hero-cont {
     display: flex;
-    margin:0 10vw;
+    margin:0 5vw;
 }
 .hero-data {
     display: flex;

@@ -9,6 +9,7 @@
   display: flex;
   min-height: 100dvh;
   align-items: center;
+  margin: 0 !important;
   /* overflow: hidden; */
   /* justify-content: space-between; */
 }
