@@ -215,11 +215,11 @@ const Home = () => {
                 dimensions, simplifying cost estimation for efficient shipping
                 and pricing.
               </div>
-              <Link to="/about"  rel="noopener noreferrer">
+              <a href="/comming_soon"  rel="noopener noreferrer">
                 <div className="rm " id="org">
                   | View More |
                 </div>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -469,7 +469,7 @@ const Home = () => {
                 <li>Full Container Load</li>
                 <li>Inter-modal Solutions</li>
               </ul>
-              <div className="btn btn-o"> Comming Soon </div>
+              <a href="/comming_soon" className="btn btn-o"> Comming Soon</a>
             </div>
             <div className="sc">
               <span>
@@ -487,7 +487,7 @@ const Home = () => {
                 <li>Full Container Load</li>
                 <li>Inter-modal Solutions</li>
               </ul>
-              <div className="btn btn-o"> Comming Soon</div>
+              <a href="/comming_soon" className="btn btn-o"> Comming Soon</a>
             </div>
           </div>
         </section>
