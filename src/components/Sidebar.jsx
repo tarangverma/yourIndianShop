@@ -27,6 +27,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import LogoutIcon from '@mui/icons-material/Logout';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import { MyContext } from "../App";
 const Sidebar = () => {
   const [isCollapsedSidebar, setisCollapsedSidebar] = useState(false);
@@ -98,12 +99,12 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt">Assisted purchase Request</b>
               </Link> */}
-              <Link to="/dashboard/coupon">
+              {/* <Link to="/dashboard/coupon">
                 <span>
                   <DiscountOutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt">coupons available</b>
-              </Link>
+              </Link> */}
               <small className="sidebar_nav_txt">Help</small>
               <Link to="/dashboard/prohibited-items">
                 <span>
@@ -143,7 +144,13 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt"> wallet</b>
               </Link>
-              <a onClick={logOut}>
+              {/* <Link to="/billing">
+                <span>
+                  <AccountBalanceIcon />
+                </span>
+                <b className="sidebar_nav_txt"> billing</b>
+              </Link> */}
+              <a style={{cursor:'pointer'}} onClick={logOut}>
                 <span>
                   <LogoutIcon />
                 </span>

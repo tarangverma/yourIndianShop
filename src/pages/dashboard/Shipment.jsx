@@ -8,12 +8,12 @@ function Shipment() {
   // State variables to store form data
  
   const nav = useNavigate()
-  const {did,isLogin,user,setUser,wh}=useContext(MyContext);
+  const {did,isLogin,user,setUser,wh,wd,muldis}=useContext(MyContext);
   const [termsAgreed,setTermsAgreed]=useState(false);
   const [run,setRun]=useState(false);
   const [pland,setPland]=useState(null);
   const [form, setForm] = useState({
-    Did:did,
+    Did:muldis? muldis[0] :did,
     fullName: null,
     email: null,
     ad: null,
@@ -31,16 +31,28 @@ function Shipment() {
   const handleSubmit =async (e) => {
     e.preventDefault();
     // Combine all form data into one object
-    console.log(form)
+    // console.log(form)
     const allKeysAreNotNull = Object.keys(form).every(key => (form[key] !== null && form[key]!==""));
     if(!run && termsAgreed && allKeysAreNotNull){
       setRun(true)
       if(await walletTransaction(pland?.warehouse_pic,wh?.Wid,"Dispach Request",user,setUser,nav)){
-        const dt = await fetchreq("POST","addDispachReq",{form:form});
+        const dt = await fetchreq("POST",muldis?"addMulDispachReq":"addDispachReq",!muldis?{form:form}:{form:form,dids: JSON.stringify(muldis)});
         if(dt){
           alert("Request Made succesfully...");
-          setForm(null);
-          nav("/warehousedata");
+          if(muldis){
+            const qry = `changeAllBillStatus/(${muldis.join(",")})`;
+            const qry2 = `updateMulWdstatus/1/(${muldis.join(",")})`;
+            const res1= await fetchreq("GET",qry,{});
+            const res2 = await fetchreq("GET",qry2,{});
+            console.log(res1, res2)
+            nav("/DispachRequests");
+            setForm(null);
+          }else{
+            const res1 = await fetchreq("GET",`changeBillStatus/${wd?.Did}`,{});
+            const res2 = await fetchreq("GET",`updateWdstatus/${wd?.Did}/1`,{});
+            nav("/DispachRequests");
+            setForm(null);
+          }
         }else{
           alert("something went wrong");
         }
@@ -56,20 +68,23 @@ function Shipment() {
   }
   useEffect(()=>{
     if(!isLogin){
-      nav("/")
+      nav("/");
     }else{
       loadPlanDetails();
     }
-  },[])
+  },[]);
   return (
     <div id="dash-dreq" className="shipment-form">
       <h2>
+        {!muldis && <span id="org">{wd?.productName} </span>}
         <span id="blue">Shipment </span>
         <span id="org">Request</span>
       </h2>
       <form onSubmit={handleSubmit}>
         {/* Customer Information */}
         <h1>Reciver Details</h1>
+        {!muldis && <h3>ProductId: {wd?.Did}</h3>}
+        {muldis && <h3>Dispach request for {muldis.length} Items. Product Ids {muldis.join(', ')} </h3>}
         <div className="form-group">
           <input
             type="text"

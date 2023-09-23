@@ -4,33 +4,37 @@ const header = process.env.REACT_APP_API_CODE;
 // const header = "qubit-tech";
 
 export async function fetchreq(type,api,bd){
-    console.log(backend)
-    const url = `${backend}/${api}`;
-    let res;
-    if(type!="GET"){
-        res = await fetch(url,{
-            method: type,
-            headers:{
-                "Content-type":"application/json",
-                "token":header
-            },
-            body: JSON.stringify(bd)
-        })
-    }else{
-        res = await fetch(url,{
-            method: type,
-            headers:{
-                "Content-type":"application/json",
-                "token":header
-            }
-        })
-    }
-    const final = await res.json();
-    if(final.status=="ok"){
-        return final;
-    }else{
-        console.log(final.status,final?.err,final);
-        return false;
+    try {
+        console.log(backend)
+        const url = `${backend}/${api}`;
+        let res;
+        if(type!="GET"){
+            res = await fetch(url,{
+                method: type,
+                headers:{
+                    "Content-type":"application/json",
+                    "token":header
+                },
+                body: JSON.stringify(bd)
+            })
+        }else{
+            res = await fetch(url,{
+                method: type,
+                headers:{
+                    "Content-type":"application/json",
+                    "token":header
+                }
+            })
+        }
+        const final = await res.json();
+        if(final.status=="ok"){
+            return final;
+        }else{
+            console.log(final.status,final?.err,final);
+            return false;
+        }
+    } catch (error) {
+        alert("server Error");
     }
 }
 export async function uploadImageAws(name,img){

@@ -26,7 +26,7 @@ const Curiors = ({wd,selectProduct,isselect}) => {
       </div>
       <div style={{display:'flex'}}>
         <button onClick={openproduct} className="atc">Details</button>
-        <button onClick={()=>{selectProduct(wd.Did)}} className="atc">{isselect?"UnSelect":"Select"}</button>
+        {wd?.status==0 && <button onClick={()=>{selectProduct(wd.Did)}} className="atc">{isselect?"UnSelect":"Select"}</button>}
       </div>
     </div>
   );

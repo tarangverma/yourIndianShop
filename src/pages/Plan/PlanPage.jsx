@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PlanCard from "../../components/Plans";
 import {fetchreq} from "../../Helper/fetch"
 
-const PlanPage = () => {
+const PlanPage = ({inBill}) => {
   const [plans,setPlans]=useState([]);
 
   const loadplans = async ()=>{
@@ -10,7 +10,7 @@ const PlanPage = () => {
     pl? setPlans(pl.result): setPlans([])
   }
   useEffect(()=>{
-    loadplans()
+    loadplans();
   },[]) 
   return (
     <div>
@@ -21,13 +21,14 @@ const PlanPage = () => {
         </div>
       </center>
       <div id="plan-cards">
-        {plans.length !=0 && plans.map((plan, index) => (
-          <PlanCard
-            state={true}
+        {plans.length !=0 && plans.map((plan, index) => {
+          const hide = inBill && plan.Price==0;
+          return !hide && <PlanCard
+            state={inBill?2:true}
             key={index}
             plan={plan}
           />
-        ))}
+        })}
       </div>
     </div>
   );

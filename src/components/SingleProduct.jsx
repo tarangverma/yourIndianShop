@@ -23,7 +23,9 @@ const SingleProduct = () => {
   // Initialize state to manage the selected image
   const [photos,setPhotos]=useState([]);
   // const Time = wd.time.split("T");
-  const nav = useNavigate()
+  const nav = useNavigate();
+  const [isdp,setIsdp]=useState(false);
+  const [isrp,setIsrp]=useState(false);
 
   const date = new Date(wd?.time);
   const utcDate = new Date(date.getTime());
@@ -35,7 +37,8 @@ const SingleProduct = () => {
     setSelectedImage(image);
   };
   // const [quantity, setQuantity] = useState(1);
-  const status = wd?.status==0?"In WareHouse":"Dispached"
+  const s1 = ["In WareHouse","Dispached Request in Procedure","Return Request In Procedure","Dispached","Returned"];
+  const status = s1[wd?.status];       
 
   // const handleIncrement = () => {
   //   setQuantity(quantity + 1);
@@ -46,35 +49,51 @@ const SingleProduct = () => {
   //     setQuantity(quantity - 1);
   //   }
   // };
-  const navigatesipment = ()=>{
-    setDid(wd?.Did);
-    setTimeout(() => {
-      nav("/dashboard/shipment")
-    }, 500);
+  const navigatesipment =async ()=>{
+    setIsdp(true);
+    const dt = await fetchreq("GET",`getPayableAmount/${wd?.Did}`,{});
+    if(dt && dt.result[0].amount==0){
+      setDid(wd?.Did);
+      setTimeout(() => {
+        nav("/dashboard/shipment");
+      }, 500);
+    }else{
+      alert("Your bill Is pending First Complete Payment...");
+      nav("/Billing");
+    }
+    setIsdp(false);
   }
   const returnReq = async ()=>{
-    console.log(wh?.Wid);
-    if(await walletTransaction(pland?.package_ret,wh?.Wid,"Return Request",user,setUser,nav)){
-      const rt = await fetchreq("GET",`returnReq/${wd?.Did}`,{});
-      if(rt){
-        alert("request Mad Successfully");
-        setIsdispach(true);
-      }else{
-        alert("something Went Wrong...");
+    setIsrp(true)
+    const dt = await fetchreq("GET",`getPayableAmount/${wd?.Did}`,{});
+    if(dt && dt.result[0].amount==0){
+      if(await walletTransaction(pland?.package_ret,wh?.Wid,"Return Request",user,setUser,nav)){
+        const rt = await fetchreq("GET",`returnReq/${wd?.Did}`,{});
+        if(rt){
+          await fetchreq("GET",`changeBillStatus/${wd?.Did}`,{});
+          alert("request Mad Successfully");
+          setIsdispach(true);
+        }else{
+          alert("something Went Wrong...");
+        }
       }
+    }else{
+      alert("Your bill Is pending First Complete Payment...");
+      nav("/Billing");
     }
+    setIsrp(false)
   }
   const loadReqdata =async ()=>{
-    const dt = await fetchreq("GET",`checkDispcah/${wd.Did}`,{});
-    const dt2 = await fetchreq("GET",`checkReturn/${wd.Did}`,{});
-    if(dt && dt2){
-      if(parseInt(dt.result[0].num)==0 && parseInt(dt2?.result[0].num)==0){
-        const dt = await fetchreq("GET",`getPlan/${user?.Cid}/${wh?.Wid}`,{});
-        dt? setPland(dt.result[0]) : setPland(null);
-        setIsdispach(false);
-      }else{
-        setIsdispach(true);
-      }
+    // const dt = await fetchreq("GET",`checkDispcah/${wd.Did}`,{});
+    // const dt2 = await fetchreq("GET",`checkReturn/${wd.Did}`,{});
+    if(wd?.status==0){
+      const dt = await fetchreq("GET",`getPlan/${user?.Cid}/${wh?.Wid}`,{});
+      dt? setPland(dt.result[0]) : setPland(null);
+      // if(parseInt(dt.result[0].num)==0 && parseInt(dt2?.result[0].num)==0){
+      //   setIsdispach(false);
+      // }else{
+      //   setIsdispach(true);
+      // }
     }
   }
   useEffect(()=>{
@@ -95,6 +114,7 @@ const SingleProduct = () => {
     <>
     <center >
         <div className="plan-page-title" >
+          <span> ProductId: {wd?.Did} </span>
           <span id="org">{wd?.productName}</span>
         </div>
     </center>
@@ -118,9 +138,9 @@ const SingleProduct = () => {
             <p className="description">Recive Time: {indianDate}</p>
             <p className="description">Status: {status}</p>
 
-            {!isDispach && <div className="row">
-              <button onClick={navigatesipment} className="btn btn-o">Dispach Now</button>
-              <button onClick={returnReq} className="btn btn-o">Return ₹{pland?.package_ret}</button>
+            {wd?.status==0 && pland && <div className="row">
+              <button onClick={navigatesipment} className="btn btn-o">{isdp?"Processing...":"Dispach Now"}</button>
+              <button onClick={returnReq} className="btn btn-o">{isrp?"Processing":`Return ${pland?.package_ret}`}</button>
             </div>}
             <button className="description" onClick={()=>{
               setSelectedImage(`${url}/${wd.proof}`);

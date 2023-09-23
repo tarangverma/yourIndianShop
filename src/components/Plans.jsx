@@ -1,11 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../stylesheet/Plans.css";
 import { MyContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import { fetchreq, walletTransaction } from "../Helper/fetch";
 
 const Plans = ({ plan,state }) => {
-  const {setPlanId,isLogin,user}=useContext(MyContext);
+  const {setPlanId,isLogin,user,wh,setUser}=useContext(MyContext);
   const nav  = useNavigate();
+  const [ispro,setIspro]=useState(false);
   const choseplan = ()=>{
     const given = {
       Pid: plan.Pid,
@@ -20,6 +22,24 @@ const Plans = ({ plan,state }) => {
     }else{
       alert("You have not Sufficient Amount to buy plan Add Balace to the Wallete...");
       nav("/Walete")
+    }
+  }
+  const upgradeplan = async ()=>{
+    if(!ispro){
+      setIspro(true);
+      const dt = await walletTransaction(plan.Price,wh?.Wid,`Upgrade plan in ${wh?.Name} `,user,setUser,nav);;
+      if(dt){
+        const res = await fetchreq("POST","upgradePlan",{plan,tid: 13});
+        if(res){
+          alert("upgrade sussfully");
+          nav('/warehousedata');
+        }else{
+          alert("Something Went Wrong...")
+        }
+      }else{
+        alert("Payment Canceled")
+      }
+      setIspro(false);
     }
   }
   const planDetails = [
@@ -61,9 +81,9 @@ const Plans = ({ plan,state }) => {
             ))}
           </ul>
         </div>
-        {state&& <div id="pc-bot">
+        {state && <div id="pc-bot">
           <div className="choose-plan">
-            <button className="btn btn-b" onClick={choseplan}>Choose Plan</button>
+            <button className="btn btn-b" onClick={state==true?choseplan:upgradeplan}>{ispro?"Processing...":(state==true?"Choose Plan":"Upgrade Plan")}</button>
           </div>
         </div>}
       </div>

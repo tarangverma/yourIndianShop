@@ -42,7 +42,7 @@ const Warehouse = ({warehouse}) => {
           </p>
         </div>
         <button className="btn btn-b" onClick={handleSelect}>
-          View
+          Manage
         </button>
       </div>
     </Tilt>

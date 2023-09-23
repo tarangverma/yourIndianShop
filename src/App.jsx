@@ -36,6 +36,7 @@ import About from "./pages/home/About";
 import Service from "./pages/home/Service";
 import Offer from "./pages/home/Offer";
 import InSites from "./pages/home/InSites";
+import Billing from "./pages/dashboard/Billing";
 
 export const MyContext = createContext();
 
@@ -46,6 +47,7 @@ const App = () => {
   const [wh, setWh] = useState(null);
   const [wd, setWd] = useState(null);
   const [did, setDid] = useState(null);
+  const [muldis,setMuldis]=useState(null);
   return (
     <div>
       <MyContext.Provider
@@ -62,6 +64,7 @@ const App = () => {
           setWd,
           did,
           setDid,
+          muldis, setMuldis
         }}
       >
         <Router>
@@ -69,7 +72,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/signUp" element={<SignUp />} />
             <Route path="/signIn" element={<SignIn />} />
-            <Route path="/plan" element={<PlanPage />} />
+            <Route path="/plan" element={<PlanPage isBill={false} />} />
             <Route path="/select-warehouse" element={<SelectWareHouse />} />
             <Route
               path="/dashboard/"
@@ -89,6 +92,17 @@ const App = () => {
                   <Sidebar />
                   <main>
                     <Wallete />
+                  </main>
+                </div>
+              }
+            />
+            <Route
+              path="/Billing"
+              element={
+                <div id="app" className="row">
+                  <Sidebar />
+                  <main>
+                    <Billing />
                   </main>
                 </div>
               }

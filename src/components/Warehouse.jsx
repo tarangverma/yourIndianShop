@@ -17,6 +17,7 @@ const handleSelect = async ()=>{
       wid:warehouse.Wid,
       paid:planId.Price,
       renew:planId.duration==0?-1:planId.duration,
+      fs: planId.storage
     }
     const dt = await fetchreq("POST",'buyplan',body);
     if(dt){
