@@ -88,6 +88,7 @@ function DispachRequest() {
         {yrpkt && yrpkt.length!=0 && yrpkt.map((p)=>{
           return <div key={p.Pid} style={{margin:"20px",padding:"20px",backgroundColor:'gray'}}>
             <p>packageId: {p.Pid}</p>
+            <p>Shipment Ids: {p.Sid.slice(2,-2)}</p>
             <p>time: {getDate(p.time)}</p>
             <p>status: {p.status==0?"pending":"Dispatched"}</p>
             <p>Hight: {p.height} Cm</p>
