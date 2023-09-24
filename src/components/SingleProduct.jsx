@@ -52,6 +52,7 @@ const SingleProduct = () => {
   const navigatesipment =async ()=>{
     setIsdp(true);
     const dt = await fetchreq("GET",`getPayableAmount/${wd?.Did}`,{});
+    // console.log(dt)
     if(dt && dt.result[0].amount==0){
       setDid(wd?.Did);
       setTimeout(() => {
@@ -64,24 +65,28 @@ const SingleProduct = () => {
     setIsdp(false);
   }
   const returnReq = async ()=>{
-    setIsrp(true)
-    const dt = await fetchreq("GET",`getPayableAmount/${wd?.Did}`,{});
-    if(dt && dt.result[0].amount==0){
-      if(await walletTransaction(pland?.package_ret,wh?.Wid,"Return Request",user,setUser,nav)){
-        const rt = await fetchreq("GET",`returnReq/${wd?.Did}`,{});
-        if(rt){
-          await fetchreq("GET",`changeBillStatus/${wd?.Did}`,{});
-          alert("request Mad Successfully");
-          setIsdispach(true);
-        }else{
-          alert("something Went Wrong...");
+    if(await window.confirm("Are you Sure to return this Item?")){
+      setIsrp(true);
+      const dt = await fetchreq("GET",`getPayableAmount/${wd?.Did}`,{});
+      if(dt && dt.result[0].amount==0){
+        if(await walletTransaction(pland?.package_ret,wh?.Wid,"Return Request",user,setUser,nav)){
+          const rt = await fetchreq("GET",`returnReq/${wd?.Did}`,{});
+          if(rt){
+            await fetchreq("GET",`changeBillStatus/${wd?.Did}`,{});
+            await fetchreq("GET",`updateWdstatus/${wd?.Did}/2`,{});
+            alert("request Mad Successfully");
+            setIsdispach(true);
+            nav("/ReturnRequests");
+          }else{
+            alert("something Went Wrong..."); 
+          }
         }
+      }else{
+        alert("Your bill Is pending First Complete Payment...");
+        nav("/Billing");
       }
-    }else{
-      alert("Your bill Is pending First Complete Payment...");
-      nav("/Billing");
+      setIsrp(false)
     }
-    setIsrp(false)
   }
   const loadReqdata =async ()=>{
     // const dt = await fetchreq("GET",`checkDispcah/${wd.Did}`,{});
@@ -140,7 +145,7 @@ const SingleProduct = () => {
 
             {wd?.status==0 && pland && <div className="row">
               <button onClick={navigatesipment} className="btn btn-o">{isdp?"Processing...":"Dispach Now"}</button>
-              <button onClick={returnReq} className="btn btn-o">{isrp?"Processing":`Return ${pland?.package_ret}`}</button>
+              <button onClick={returnReq} className="btn btn-o">{isrp?"Processing":`Return ${pland?.package_ret==0?"":pland?.package_ret}`}</button>
             </div>}
             <button className="description" onClick={()=>{
               setSelectedImage(`${url}/${wd.proof}`);

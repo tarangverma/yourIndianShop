@@ -19,6 +19,8 @@ const handleSelect = async ()=>{
       renew:planId.duration==0?-1:planId.duration,
       fs: planId.storage
     }
+    console.log("free stor",planId.storage)
+    console.log(planId)
     const dt = await fetchreq("POST",'buyplan',body);
     if(dt){
       if(user.Status==0){

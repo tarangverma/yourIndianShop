@@ -113,7 +113,7 @@ function DispachRequest() {
                   ? "Curior Service Selected"
                   : "In procedure..."}
               </p>
-              {!p.Sp && pid != p.Pid && (
+              {!p.status && !p.Sp && pid != p.Pid && (
                 <button
                   className="btn-o btn"
                   onClick={() => {

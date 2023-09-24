@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../stylesheet/Home.css";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import ComputerIcon from "@mui/icons-material/Computer";
@@ -36,7 +36,27 @@ import PgTitle from "../../components/PgTitle";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { IconButton } from "@mui/material";
 import PopAd from "../../components/PopAd";
+import { fetchreq } from "../../Helper/fetch";
 const Home = () => {
+  const [photos,setPhotos]=useState([]);
+  const loadlandingPhoto = async ()=>{
+    const dt = await fetchreq("GET","landingpagePhotos",{});
+    dt?setPhotos(JSON.parse(dt.result[0].Details)):setPhotos([]);
+    console.log(JSON.parse(dt.result[0].Details))
+  }
+  const url = process.env.REACT_APP_URL;
+  const temp = ['./imgs/sd1.png','./imgs/sd2.png']
+  useEffect(()=>{
+    loadlandingPhoto()
+  },[]);
+  // useEffect(()=>{
+  //   var swiper = new Swiper(".mySwiper", {
+  //     pagination: {
+  //       el: ".swiper-pagination",
+  //       dynamicBullets: true,
+  //     },
+  //   });
+  // })
   return (
     <>
       <div id="Site">
@@ -60,45 +80,27 @@ const Home = () => {
             <Link to="/signIn">LOG IN </Link>
             <Link to="/signUp">SIGN UP </Link>
           </div>
+          {/* <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div> */}
           <Swiper
-            pagination={{
-              dynamicBullets: true,
-            }}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
             loop={true}
-            modules={[Autoplay, Pagination]}
-            className="mySwiper"
           >
-            <SwiperSlide>
-              <HomeSlide
-                //           title="fast and secure courier for all your packages"
-                //           desc="  We carry clearness to intricacy, separating basic subtleties from
-                //     confounded data to make modern, direct arrangements.
-                //  "
-                bgimg="./imgs/sd1.png"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <HomeSlide
-                //   title="fast and secure courier for all your packages"
-                //   desc="  We carry clearness to intricacy, separating basic subtleties from
-                // confounded data to make modern, direct arrangements.
-                // "
-                bgimg="./imgs/sd2.png"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <HomeSlide
-                //       title="fast and secure courier for all your packages"
-                //       desc="  We carry clearness to intricacy, separating basic subtleties from
-                // confounded data to make modern, direct arrangements.
-                // "
-                bgimg="./comp/sld1.jpg"
-              />
-            </SwiperSlide>
+            {photos.map((pt, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <HomeSlide bgimg={`${url}/${pt}`} />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
           {/* <aside>
             <video src="./videos/hero.mp4" autoPlay loop muted></video>

@@ -12,7 +12,8 @@ const Plans = ({ plan,state }) => {
     const given = {
       Pid: plan.Pid,
       duration: plan.duration,
-      Price: plan.Price
+      Price: plan.Price,
+      storage: plan.storage
     }
     if(user?.Wallete>=plan?.Price){
       setPlanId(given);
