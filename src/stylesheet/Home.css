@@ -121,7 +121,7 @@ section {
 #ver-in>* {
     color: #fff;
     cursor: pointer;
-    font-family: var(--font5) !important;
+    font-family: var(--font4) !important;
 }
 
 #ver-in {
@@ -133,16 +133,16 @@ section {
     top: 0;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 35px;
     justify-content: center;
     height: 100%;
-    font-size: 2rem;
+    font-size: 1.7rem;
     /* width: 100%; */
     z-index: 22;
 }
 
 #soc {
-    gap: 25px;
+    gap: 30px;
     position: absolute;
     margin-left: 25px;
     display: flex;

@@ -51,18 +51,19 @@
 
 .close-button:hover {
     background-color: #aa001f;
-    /* Darker color on hover */
 }
 
 .btn-v-o {
 
     background: var(--org);
     color: #fff;
+cursor: pointer;
 }
 
 .btn-v-r {
     background: crimson;
     color: #fff;
+    cursor: pointer;
 }
 
 .btn-v-o,
@@ -70,4 +71,9 @@
 .btn-v-r {
     font-size: 0.8rem;
     padding: 8px 22px !important;
+}
+.invis {
+    visibility: hidden;
+    /* transition: all 0.3s ease-in-out; */
+
 }

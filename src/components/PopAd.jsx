@@ -55,6 +55,7 @@ const PopAd = () => {
   const handleClosePopup = () => {
     // Close the popup
     setShowPopup(false);
+    console.log("bandh : ", showPopup);
   };
 
   const handleViewMore = () => {
@@ -64,21 +65,18 @@ const PopAd = () => {
 
   return (
     <div>
-      <div className={`popup-ads ${showPopup ? "show" : ""}`}>
+      <div className={`popup-ads ${showPopup ? "show" : "invis"}`}>
         <div className="popup-content">
           <h2>{adsData[currentAdIndex].title}</h2>
           <p>{adsData[currentAdIndex].description}</p>
           <div className="popup-buttons">
             <button
-              className="view-more-button btn btn-v-o"
+              className="view-more-button btn-v-o"
               onClick={handleViewMore}
             >
               View More
             </button>
-            <button
-              className="close-button btn btn-v-r"
-              onClick={handleClosePopup}
-            >
+            <button className="close-button btn-v-r" onClick={handleClosePopup}>
               Close
             </button>
           </div>
