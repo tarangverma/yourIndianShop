@@ -86,29 +86,67 @@ function DispachRequest() {
         {!yrpkt && <h3>Loading...</h3> }
         {(yrpkt && yrpkt.length == 0) && <p>No data found</p> }
         {yrpkt && yrpkt.length!=0 && yrpkt.map((p)=>{
-          return <div key={p.Pid} style={{margin:"20px",padding:"20px",backgroundColor:'gray'}}>
-            <p>packageId: {p.Pid}</p>
-            <p>Shipment Ids: {p.Sid.slice(1,-1)}</p>
-            <p>time: {getDate(p.time)}</p>
-            <p>status: {p.status==0?"pending":"Dispatched"}</p>
-            <p>Hight: {p.height} Cm</p>
-            <p>Width: {p.width} Cm</p>
-            <p>Length: {p.length} Cm</p>
-            <p>Wight: {p.wight} Kg</p>
-            <p>Payment: ${p.payment}</p>
-            {p.Sp && <p>Curiour Service ProviderId: {p.Sp}</p> }
-           <p>Status: {p.status?"Dispatched":(p.Sp?"Curior Service Selected":"In procedure...")}</p> 
-            { !p.Sp && pid!=p.Pid  && <button className='btn-o btn' onClick={()=>{setPid(pid?null:p.Pid)}}>{pid?"hide ":"Select "}Curior Service Provider</button>}
-            {pid==p.Pid && <>
-              <h3>Select Curiour Service and Pay ${p.payment}</h3>
-              {sp && sp.map((s)=>(
-                <div key={s.Sp} onClick={()=>selectSpAndPay(p,s)} className='btn-b' style={{border:'2px solid orange',display:'inline-block',cursor:'pointer',marginRight:'20px'}}>
-                  <img src={s.logo} alt={s.Name} width="100px" />
-                  <p style={{textAlign:'center'}}>{s.Name}</p>
-                </div>
-              ))}
-            </> }
-          </div>
+          return (
+            <div
+              key={p.Pid}
+              style={{
+                margin: "20px",
+                padding: "20px",
+                backgroundColor: "gray",
+              }}
+            >
+              <p>packageId: {p.Pid}</p>
+              <p>Shipment Ids: {p.Sid}</p>
+              <p>time: {getDate(p.time)}</p>
+              <p>status: {p.status == 0 ? "pending" : "Dispatched"}</p>
+              <p>Hight: {p.height} Cm</p>
+              <p>Width: {p.width} Cm</p>
+              <p>Length: {p.length} Cm</p>
+              <p>Wight: {p.wight} Kg</p>
+              <p>Payment: ${p.payment}</p>
+              {p.Sp && <p>Curiour Service ProviderId: {p.Sp}</p>}
+              <p>
+                Status:{" "}
+                {p.status
+                  ? "Dispatched"
+                  : p.Sp
+                  ? "Curior Service Selected"
+                  : "In procedure..."}
+              </p>
+              {!p.Sp && pid != p.Pid && (
+                <button
+                  className="btn-o btn"
+                  onClick={() => {
+                    setPid(pid ? null : p.Pid);
+                  }}
+                >
+                  {pid ? "hide " : "Select "}Curior Service Provider
+                </button>
+              )}
+              {pid == p.Pid && (
+                <>
+                  <h3>Select Curiour Service and Pay ${p.payment}</h3>
+                  {sp &&
+                    sp.map((s) => (
+                      <div
+                        key={s.Sp}
+                        onClick={() => selectSpAndPay(p, s)}
+                        className="btn-b"
+                        style={{
+                          border: "2px solid orange",
+                          display: "inline-block",
+                          cursor: "pointer",
+                          marginRight: "20px",
+                        }}
+                      >
+                        <img src={s.logo} alt={s.Name} width="100px" />
+                        <p style={{ textAlign: "center" }}>{s.Name}</p>
+                      </div>
+                    ))}
+                </>
+              )}
+            </div>
+          );
         })}
       </div> }
     </div>

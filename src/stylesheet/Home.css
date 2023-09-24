@@ -347,6 +347,7 @@ section {
         width: 100dvw;
         padding: 0 !important;
         margin: 0 !important;
+        background-attachment: fixed !important;
         background: url('../../public/imgs/pop.jpg');
     }
 
