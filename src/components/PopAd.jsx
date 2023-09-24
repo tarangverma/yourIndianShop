@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./PopAd.css";
 import { IconButton } from "@mui/material";
 import { WhatsApp } from "@mui/icons-material";
+import Tilt from "react-parallax-tilt";
 
 const PopAd = () => {
   const adsData = [
@@ -65,7 +66,11 @@ const PopAd = () => {
 
   return (
     <div>
-      <div className={`popup-ads ${showPopup ? "show" : "invis"}`}>
+      <Tilt
+        tiltMaxAngleX="9"
+        tiltMaxAngleY="9"
+        className={`popup-ads ${showPopup ? "show" : "invis"}`}
+      >
         <div className="popup-content">
           <h2>{adsData[currentAdIndex].title}</h2>
           <p>{adsData[currentAdIndex].description}</p>
@@ -81,7 +86,7 @@ const PopAd = () => {
             </button>
           </div>
         </div>
-      </div>
+      </Tilt>
       <div id="wts">
         <div className="i">
           <WhatsApp />
