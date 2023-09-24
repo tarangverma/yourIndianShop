@@ -13,6 +13,34 @@ const footer = () => {
   return (
     <footer>
       {" "}
+      <div className="ftr3">
+        <div className="links">
+          {/* <Link */}
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/disp-plan">Our Plans</Link>
+          <Link to="/offers">Offers</Link>
+          <a id="wt" href="#offer">
+            Contact
+          </a>
+        </div>
+        <div className="policy">
+          <span>
+            <span className="social-m">
+              <IconButton>
+                <FacebookRoundedIcon />
+              </IconButton>
+              <IconButton>
+                <InstagramIcon />
+              </IconButton>
+              <IconButton>
+                <TwitterIcon />
+              </IconButton>
+            </span>
+          </span>
+        </div>
+        {/* <div></div> */}
+      </div>
       <div className="ftr1">
         <div className="f1r">
           <div className="logo lg">
@@ -46,35 +74,10 @@ const footer = () => {
           </a>
         </div> */}
       </div>
-      <div className="ftr3">
-        <div className="links">
-          {/* <Link */}
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/disp-plan">Our Plans</Link>
-          <Link to="/offers">Offers</Link>
-          <a id="wt" href="#offer">
-            Contact
-          </a>
-        </div>
-        <div className="policy">
-          <span>
-            Copyright © info@techiota.co.in &nbsp;&nbsp;&nbsp; Privacy Policy
-            &nbsp;&nbsp; &nbsp; Terms & Conditions &nbsp;&nbsp; &nbsp;
-            <span className="social-m">
-              <IconButton>
-                <FacebookRoundedIcon />
-              </IconButton>
-              <IconButton>
-                <InstagramIcon />
-              </IconButton>
-              <IconButton>
-                <TwitterIcon />
-              </IconButton>
-            </span>
-          </span>
-        </div>
-      </div>
+      <center>
+        Copyright © info@techiota.co.in &nbsp;&nbsp;&nbsp; Privacy Policy
+        &nbsp;&nbsp; &nbsp; Terms & Conditions &nbsp;&nbsp; &nbsp;
+      </center>
     </footer>
   );
 };

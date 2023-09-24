@@ -25,10 +25,17 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import { HomeSlide } from "../../components/HomeSlide";
 import Calc from "../../components/Calc";
-import { Calculate, FlightTakeoff } from "@mui/icons-material";
+import {
+  Calculate,
+  FlightTakeoff,
+  Instagram,
+  Twitter,
+} from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import PgTitle from "../../components/PgTitle";
-
+import FacebookIcon from "@mui/icons-material/Facebook";
+import { IconButton } from "@mui/material";
+import PopAd from "../../components/PopAd";
 const Home = () => {
   return (
     <>
@@ -36,7 +43,23 @@ const Home = () => {
         <header>
           <Nav />
         </header>
+        <PopAd />
         <div id="homesec" className="hero-cont">
+          <div id="soc">
+            <IconButton>
+              <FacebookIcon />
+            </IconButton>
+            <IconButton>
+              <Instagram />
+            </IconButton>
+            <IconButton>
+              <Twitter />
+            </IconButton>
+          </div>
+          <div id="ver-in">
+            <Link to="/signIn">LOG IN </Link>
+            <Link to="/signUp">SIGN UP </Link>
+          </div>
           <Swiper
             pagination={{
               dynamicBullets: true,
@@ -55,7 +78,7 @@ const Home = () => {
                 //           desc="  We carry clearness to intricacy, separating basic subtleties from
                 //     confounded data to make modern, direct arrangements.
                 //  "
-                bgimg="./imgs/n-bg-sld.jpg"
+                bgimg="./imgs/sd1.png"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -64,7 +87,7 @@ const Home = () => {
                 //   desc="  We carry clearness to intricacy, separating basic subtleties from
                 // confounded data to make modern, direct arrangements.
                 // "
-                bgimg="./imgs/n-bg-sld-2.jpg"
+                bgimg="./imgs/sd2.png"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -84,48 +107,63 @@ const Home = () => {
         <section id="ship">
           <div id="sec-head">
             <div className="t-title">
-              <span id="blue">How </span>
-              <span id="org">Does It</span>
-              <span id="blue"> Work</span>
+              <span id="org">How </span>
+              <span>Does It</span>
+              <span id="lime"> Work</span>
             </div>
-            <p>
+            {/* <p>
               Packages and pallets, big and small, we can offer you instant
               delivery options for your shipping needs, both domestically and
               internationally. Fill out your shipment details below and we’ll
               provide services tailored to your specific requirements. Simply
               pick the option that suits you best, and continue to book.
-            </p>
+            </p> */}
           </div>
           <div id="steps">
             <div className="s-cd">
-              <div className="num">01</div>
-              <div className="st">
-                SIGN-UP AND GET YOUR INDIAN VIRTUAL ADDRESS
+              <div className="pin">
+                <img src="./imgs/pin.png" alt="" />
               </div>
-              <div className="txt">
+              {/* <div className="txt">
                 Input departure and arrival. To start shipping
-              </div>
+              </div> */}
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsk5oYdrz90ep76a9y96qlXMHnaLpb4ZBpg1TEcrh74lsYfe6KbGUHfJOJ3o6ntf6y1No"
+                alt=""
+              />
+
+              <div className="st">SIGN-UP TO GET VIRTUAL ADDRESS</div>
             </div>
             <div className="s-cd">
-              <div className="num">02</div>
-              <div className="st">
-                START SHOPPING FROM INDIAN E-COMMERCE SITES
+              <div className="pin">
+                <img src="./imgs/pin.png" alt="" />
               </div>
-              <div className="txt">Specify shipment details as per form.</div>
+              <img
+                src="https://unblast.com/wp-content/uploads/2021/09/Online-App-Shopping-Illustration.jpg"
+                alt=""
+              />
+              <div className="st">SHOP FROM INDIAN SITES</div>
+              {/* <div className="txt">Specify shipment details as per form.</div> */}
             </div>
             <div className="s-cd">
-              <div className="num">03</div>
-              <div className="st">
-                SHIP YOUR PARCELS INTO YOUR WAREHOUSE/LOCKER
+              <div className="pin">
+                <img src="./imgs/pin.png" alt="" />
               </div>
-              <div className="txt">Fetch delivery rates based on pack.</div>
+              <img
+                src="https://images.template.net/77281/Warehouse-Cartoon-Illustration-1.jpg"
+                alt=""
+              />
+              <div className="st">SHIP PARCELS TO YOUR WAREHOUSE</div>
             </div>
             <div className="s-cd">
-              <div className="num">04</div>
-              <div className="st">
-                RECEIVE YOUR PARCELS IN 7 / 8 WORKING DAYS
+              <div className="pin">
+                <img src="./imgs/pin.png" alt="" />
               </div>
-              <div className="txt">Initiate web-based booking process.</div>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2848/2848906.png"
+                alt=""
+              />
+              <div className="st">RECEIVE WITHIN 7 / 8 WORKING DAYS</div>
             </div>
           </div>
         </section>
@@ -183,85 +221,86 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <div id="pop-ser">
-          <div className="ps">
-            <div className="ps-l">
-              <SellIcon />
-              {/* <LocalShippingOutlinedIcon /> */}
-            </div>
-            <div className="ps-r">
-              <div className="st">Plans We Offer</div>
-              <div className="s-txt">
-                We offer a range of plans to suit your needs, from basic to
-                premium and business , ensuring affordability and flexibility.
+        <section id="lnl">
+          <div id="pop-ser">
+            <div className="ps">
+              <div className="ps-l">
+                <SellIcon />
+                {/* <LocalShippingOutlinedIcon /> */}
               </div>
-              <div className="rm " id="org">
-                <Link to="/disp-plan"  rel="noopener noreferrer">
-                  | View Plans |
+              <div className="ps-r">
+                <div className="st">Plans We Offer</div>
+                <div className="s-txt">
+                  We offer a range of plans to suit your needs, from basic to
+                  premium and business , ensuring affordability and flexibility.
+                </div>
+                <div className="rm " id="org">
+                  <Link to="/disp-plan" rel="noopener noreferrer">
+                    | View Plans |
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="ps">
+              <div className="ps-l">
+                {/* <CalculateIcon /> */}
+                <FlightTakeoff />
+                {/* <WarehouseOutlinedIcon /> */}
+              </div>
+              <div className="ps-r">
+                <div className="st">International Courier</div>
+                <div className="s-txt">
+                  A versatile price calculator, factoring in product weight or
+                  dimensions, simplifying cost estimation for efficient shipping
+                </div>
+                <a href="/comming_soon" rel="noopener noreferrer">
+                  <div className="rm " id="org">
+                    | View More |
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="pop-ser" className="pop-2">
+            <div className="ps">
+              <div className="ps-l">
+                <ShoppingCartOutlinedIcon />
+                {/* <WarehouseOutlinedIcon /> */}
+              </div>
+              <div className="ps-r">
+                <div className="st">Indian Shop Cart</div>
+                <div className="s-txt">
+                  A versatile price calculator, factoring in product weight or
+                  dimensions, simplifying cost estimation for efficient shipping
+                  and pricing.
+                </div>
+                <Link to="/in-sites" rel="noopener noreferrer">
+                  <div className="rm " id="org">
+                    | View Sites |
+                  </div>
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="ps">
-            <div className="ps-l">
-              {/* <CalculateIcon /> */}
-              <FlightTakeoff />
-              {/* <WarehouseOutlinedIcon /> */}
-            </div>
-            <div className="ps-r">
-              <div className="st">International Courier Service</div>
-              <div className="s-txt">
-                A versatile price calculator, factoring in product weight or
-                dimensions, simplifying cost estimation for efficient shipping
-                and pricing.
+            <div className="ps">
+              <div className="ps-l">
+                <CardGiftcardOutlinedIcon />
+                {/* <LocalShippingOutlinedIcon /> */}
               </div>
-              <a href="/comming_soon"  rel="noopener noreferrer">
-                <div className="rm " id="org">
-                  | View More |
+              <div className="ps-r">
+                <div className="st">Offer Coupons</div>
+                <div className="s-txt">
+                  We offer a range of plans to suit your needs, from basic to
+                  premium and business , ensuring affordability and flexibility.
                 </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div id="pop-ser" className="pop-2">
-          <div className="ps">
-            <div className="ps-l">
-              <ShoppingCartOutlinedIcon />
-              {/* <WarehouseOutlinedIcon /> */}
-            </div>
-            <div className="ps-r">
-              <div className="st">Indian Shop Cart</div>
-              <div className="s-txt">
-                A versatile price calculator, factoring in product weight or
-                dimensions, simplifying cost estimation for efficient shipping
-                and pricing.
-              </div>
-              <a href="#indianshopcart"  rel="noopener noreferrer">
                 <div className="rm " id="org">
-                  | View Sites |
+                  <Link to="/offers" rel="noopener noreferrer">
+                    | View Coupons |
+                  </Link>
                 </div>
-              </a>
-            </div>
-          </div>
-          <div className="ps">
-            <div className="ps-l">
-              <CardGiftcardOutlinedIcon />
-              {/* <LocalShippingOutlinedIcon /> */}
-            </div>
-            <div className="ps-r">
-              <div className="st">Offer Coupons</div>
-              <div className="s-txt">
-                We offer a range of plans to suit your needs, from basic to
-                premium and business , ensuring affordability and flexibility.
-              </div>
-              <div className="rm " id="org">
-                <Link to="/offers"  rel="noopener noreferrer">
-                  | View Coupons |
-                </Link>
               </div>
             </div>
           </div>
-        </div>
+        </section>
         <div id="Site" className="bkl">
           <div id="indianshopcart" style={{ padding: "30px 0px" }}>
             <div className="t-title" style={{ marginBottom: "20px" }}>
@@ -469,7 +508,10 @@ const Home = () => {
                 <li>Full Container Load</li>
                 <li>Inter-modal Solutions</li>
               </ul>
-              <a href="/comming_soon" className="btn btn-o"> Comming Soon</a>
+              <a href="/comming_soon" className="btn btn-o">
+                {" "}
+                Comming Soon
+              </a>
             </div>
             <div className="sc">
               <span>
@@ -487,14 +529,17 @@ const Home = () => {
                 <li>Full Container Load</li>
                 <li>Inter-modal Solutions</li>
               </ul>
-              <a href="/comming_soon" className="btn btn-o"> Comming Soon</a>
+              <a href="/comming_soon" className="btn btn-o">
+                {" "}
+                Comming Soon
+              </a>
             </div>
           </div>
         </section>
         <section id="cal">
           <div className="cal-head">
             <div className="t-title">Shipping Rate Calculator </div>
-            <Link to="/calc"  rel="noopener noreferrer">
+            <Link to="/calc" rel="noopener noreferrer">
               <div className="btn btn-b">Calculate Now</div>
             </Link>
           </div>
@@ -522,95 +567,120 @@ const Home = () => {
             >
               <SwiperSlide>
                 <div className="fd-cd">
-                  <div className="msg-title">"Great Work"</div>
+                  <div className="feed-info">
+                    <div id="blue" className="btn btn-b">
+                      Liza Smith
+                    </div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                  </div>
                   <div className="msg-desc">
                     I work in project management and joined Unicoach because I
                     get great courses for less. The instructors are fantastic,
                     interesting, and helpful. I plan to use for a long time!
                   </div>
+                  <div className="msg-title">"Great Work"</div>
                   <div className="msg-bot">
                     <div className="zomm-dp">
-                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
-                    </div>
-                    <div className="feed-info">
-                      <div id="blue">Liza Smith</div>
-                      <div id="org">CLIENT OF COMPANY</div>
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9aZ69I4WPZL_Cc4m890a_QgDjr2iR_BuNYg"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="fd-cd">
-                  <div className="msg-title">"Great Work"</div>
+                  <div className="feed-info">
+                    <div id="blue" className="btn btn-b">
+                      Liza Smith
+                    </div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                  </div>
                   <div className="msg-desc">
                     I work in project management and joined Unicoach because I
                     get great courses for less. The instructors are fantastic,
                     interesting, and helpful. I plan to use for a long time!
                   </div>
-                  <div className="msg-bot">
-                    <div className="zomm-dp">
-                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
-                    </div>
-                    <div className="feed-info">
-                      <div id="blue">Liza Smith</div>
-                      <div id="org">CLIENT OF COMPANY</div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="fd-cd">
                   <div className="msg-title">"Great Work."</div>
-                  <div className="msg-desc">
-                    I work in project management and joined Unicoach because I
-                    get great courses for less. The instructors are fantastic,
-                    interesting, and helpful. I plan to use for a long time!
-                  </div>
                   <div className="msg-bot">
                     <div className="zomm-dp">
-                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
-                    </div>
-                    <div className="feed-info">
-                      <div id="blue">Liza Smith</div>
-                      <div id="org">CLIENT OF COMPANY</div>
+                      <img
+                        src="https://images.statusfacebook.com/profile_pictures/indian_boys/indian_boys_24.jpg"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="fd-cd">
-                  <div className="msg-title">"Great Work"</div>
+                  <div className="feed-info">
+                    <div id="blue" className="btn btn-b">
+                      Liza Smith
+                    </div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                  </div>
                   <div className="msg-desc">
                     I work in project management and joined Unicoach because I
                     get great courses for less. The instructors are fantastic,
                     interesting, and helpful. I plan to use for a long time!
                   </div>
+                  <div className="msg-title">"Great Work"</div>
                   <div className="msg-bot">
                     <div className="zomm-dp">
-                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
-                    </div>
-                    <div className="feed-info">
-                      <div id="blue">Liza Smith</div>
-                      <div id="org">CLIENT OF COMPANY</div>
+                      <img
+                        src="https://images.statusfacebook.com/profile_pictures/indian_boys/indian_boys_13.jpg"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="fd-cd">
-                  <div className="msg-title">"Great Work"</div>
+                  <div className="feed-info">
+                    <div id="blue" className="btn btn-b">
+                      Liza Smith
+                    </div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                  </div>
                   <div className="msg-desc">
                     I work in project management and joined Unicoach because I
                     get great courses for less. The instructors are fantastic,
                     interesting, and helpful. I plan to use for a long time!
                   </div>
+                  <div className="msg-title">"Great Work"</div>
                   <div className="msg-bot">
                     <div className="zomm-dp">
-                      <img src="./imgs/user-bg-80x80.jpg" alt="" />
+                      <img
+                        src="https://e1.pxfuel.com/desktop-wallpaper/82/1002/desktop-wallpaper-cute-girl-foreign-girl.jpg"
+                        alt=""
+                      />
                     </div>
-                    <div className="feed-info">
-                      <div id="blue">Liza Smith</div>
-                      <div id="org">CLIENT OF COMPANY</div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="fd-cd">
+                  <div className="feed-info">
+                    <div id="blue" className="btn btn-b">
+                      Liza Smith
+                    </div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                  </div>
+                  <div className="msg-desc">
+                    I work in project management and joined Unicoach because I
+                    get great courses for less. The instructors are fantastic,
+                    interesting, and helpful. I plan to use for a long time!
+                  </div>
+                  <div className="msg-title">"Great Work"</div>
+                  <div className="msg-bot">
+                    <div className="zomm-dp">
+                      <img
+                        src="https://images.unsplash.com/photo-1612383543328-7033bcbaf8a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwbWVufGVufDB8fDB8fHww&w=1000&q=80"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>

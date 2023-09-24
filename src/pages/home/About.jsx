@@ -6,12 +6,11 @@ import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined
 import PgTitle from "../../components/PgTitle";
 const About = () => {
   return (
-    <div id="Site">
+    <div id="Site" className="sttt">
       <header>
         <Nav />
       </header>
-      <br />
-      <br />
+
       <PgTitle
         pageName="About Us"
         tabName="ABOUT"

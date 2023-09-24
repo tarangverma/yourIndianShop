@@ -12,11 +12,14 @@
         width: 70% !important;
     }
 
-    #pop-ser {
+    #pop-ser,
+    .pop-2 {
         flex-direction: column;
-        padding: 0 10vw;
+        padding: 0 10vw !important;
     }
-
+.pop-3 {
+    padding: 0 !important;
+}
     .ps {
         width: 100% !important;
         /* gap: 0px !important; */

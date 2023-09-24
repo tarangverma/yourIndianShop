@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import "../stylesheet/Nav.css";
 import CloseIcon from "@mui/icons-material/Close";
 import YouTubeIcon from "@mui/icons-material/YouTube";
@@ -39,8 +39,14 @@ const Nav = () => {
       setSi("Log In");
     }
   };
+  //  const { user, setUser, isLogin, setIsLogin } = useContext(MyContext);
+  //  const nav = useNavigate();
+  //  const [si, setSi] = useState("Log In");
+  const [scrolled, setScrolled] = useState(false); // State to track if user has scrolled
   const [toggle, setToggle] = useState("off");
   const sideNav = useRef();
+  const navElement = useRef(null);
+
   const handleToggle = () => {
     if (toggle === "off") {
       setToggle("on");
@@ -50,6 +56,34 @@ const Nav = () => {
       sideNav.current.style.right = "-300px";
     }
   };
+  // const [scrolled, setScrolled] = useState(false);
+
+  // Function to handle scroll events
+  const handleScroll = () => {
+    // Calculate the scroll position in vh
+    const scrollPosition = (window.scrollY / window.innerHeight) * 100;
+
+    // Check if the user has scrolled down to 70vh
+    if (scrollPosition >= 75) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove scroll event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Define the CSS class based on the 'scrolled' state
+  const navClass = scrolled ? "nav-scrolled" : "nav-default";
+
   return (
     <>
       {" "}
@@ -68,7 +102,7 @@ const Nav = () => {
         </div>
 
         <div onClick={othenticate} id="log" className="btn btn-o">
-          <a >{isLogin ? "LogOut" : si}</a>
+          <a>{isLogin ? "LogOut" : si}</a>
         </div>
         {!isLogin && (
           <Link to="/signUp" id="log" className="btn btn-o">
@@ -76,7 +110,7 @@ const Nav = () => {
           </Link>
         )}
       </div>
-      <nav>
+      <nav ref={navElement} className={navClass}>
         <div id="logo">
           <span id="wt">Your</span>
           &nbsp;
@@ -91,29 +125,25 @@ const Nav = () => {
           <Link to="/offers">Offers</Link>
           {/* <Link to="/in-sites">Indian Sites</Link> */}
         </div>
-        <a
+        {/* <a
           href="https://www.youtube.com/watch?v=YB67y0NepPs&t=2s&pp=ygUbZHJvcHNoaXBwaW5nIGFuaW1hdGVkIHZpZGVv"
           target="_blank"
         >
           <IconButton id="yt-ico">
             <YouTubeIcon />
           </IconButton>
-        </a>
-        <div className="nav-right">
-          {/* <Link to="/calc">
-            <IconButton aria-label="Cost Calculator">
-              <CalculateOutlinedIcon id="calc-icon" />
-            </IconButton>
-          </Link> */}
+        </a> */}
+        {/* <div className="nav-right">
+         
           <div onClick={othenticate} id="log" className="btn btn-o">
-            <a >{isLogin ? "LogOut" : si}</a>
+            <a>{isLogin ? "LogOut" : si}</a>
           </div>
           {!isLogin && (
-            <Link to="/signUp"  id="log" className="btn btn-o">
+            <Link to="/signUp" id="log" className="btn btn-o">
               <div>Sign Up</div>
             </Link>
           )}
-        </div>
+        </div> */}
         <div id="tog" onClick={handleToggle}>
           <IconButton>
             <MenuIcon />

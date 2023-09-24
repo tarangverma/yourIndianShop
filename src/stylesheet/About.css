@@ -18,9 +18,8 @@
 
 #ab-sec-title {
     height: 50dvh;
-    background: white;
-        /* linear-gradient(to left,white),
-        url('../../public/imgs/home1-section-4.jpg'); */
+    background: linear-gradient(to left, white),
+    url('../../public/imgs/home1-section-4.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

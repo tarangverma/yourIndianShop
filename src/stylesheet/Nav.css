@@ -3,13 +3,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 5vw;
-    /* background:#003a49; */
-    background:#17406C;
+    /* background:var(--blue); */
+    /* background:#17406c37; */
+    /* margin: 0 3.8vw 0 5vw; */
     /* background:var(--grn); */
-    box-shadow: 0 0 50px 1px #06060624;
+    /* box-shadow: 0 0 50px 1px #06060624; */
 }
 
 #logo {
+margin-left: 15px;
     font-weight: 600;
     font-family: var(--font7);
     text-transform: uppercase;
@@ -33,7 +35,7 @@ nav #links {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 50px;
 }
 nav .btn-o:hover {
@@ -49,7 +51,7 @@ nav .btn-o:hover {
 }
 
 #links a:hover {
-    color: orange;
+    color: rgb(33, 29, 90);
 }
 
 .btn {
@@ -149,4 +151,30 @@ nav .btn-o:hover {
 
 #tog {
     color: #fff !important;
+}
+.nav-default {
+    background-color: transparent;
+    /* Set your default background color */
+    /* Add other default styles */
+}
+
+/* Define styles for your navigation bar when scrolled */
+.nav-scrolled {
+    background-color: var(--blue);
+    /* Set your desired background color when scrolled */
+    /* Add other styles for the scrolled state */
+}
+
+.nav-scrolled #links a:hover {
+    color: var(--org) !important;
+    /* Set your desired background color when scrolled */
+    /* Add other styles for the scrolled state */
+}
+
+.sttt header nav {
+    background: var(--blue) !important;
+}
+
+.sttt header nav #links a:hover {
+    color: var(--org) !important;
 }

@@ -75,18 +75,19 @@ section {
 }
 #hero {
     /* border: 5px solid red; */
-    width: 90vw;
+    width: 100vw;
     margin: auto;
     background: url("../../public//imgs/home1-rev-2.jpg");
     height: auto;
-    min-height: 75dvh;
-    background-position:0 -100px;
+    min-height: 85dvh;
+    background-position:center;
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
     align-items: center;
     position: static;
-    margin-top: 75px;
+    margin-top: 0 !important;
+    margin-top: -25px !important;
     /* margin: 75px 10vw; */
 }
 
@@ -95,7 +96,7 @@ section {
 }
 .hero-cont {
     display: flex;
-    margin:0 5vw;
+    /* margin:0 5vw; */
 }
 .hero-data {
     display: flex;
@@ -107,6 +108,49 @@ section {
     height: fit-content;
     gap: 25px;
     margin-top: -12.5vh;
+}
+#homesec {
+    position: relative;
+}
+
+#soc>*>* {
+    font-size: 2.5rem !important;
+    color: #fff !important;
+}
+
+#ver-in>* {
+    color: #fff;
+    cursor: pointer;
+    font-family: var(--font5) !important;
+}
+
+#ver-in {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    position: absolute;
+    margin-right: 50px;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    height: 100%;
+    font-size: 2rem;
+    /* width: 100%; */
+    z-index: 22;
+}
+
+#soc {
+    gap: 25px;
+    position: absolute;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    z-index: 22;
+    height: 100%;
+    justify-content: center;
+
 }
 
 .hero-data h1 {
@@ -149,13 +193,15 @@ section {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 30%;
+    width: 35%;
+    /* flex: 1 !important; */
+    height: 100% !important;
     /* border: 5px solid red; */
     padding: 35px 22px;
     gap: 25px;
+    min-height: 220px;
     box-shadow: 0 0 50px 0px #00000023;
 }
-
 .ps:last-child {
     background: var(--blue);
     color: #fff;
@@ -171,7 +217,9 @@ section {
     position: relative;
     display: inline-block;
 }
-
+.pop-3 .ps {
+    min-height: fit-content !important;
+}
 .ps-l::before {
     content: '';
     height: 37px;
@@ -189,6 +237,7 @@ section {
 .st {
     font-size: 1.5rem;
     font-weight: 600;
+    bottom: 0 !important;
     font-family: var(--font3);
 }
 
@@ -249,6 +298,9 @@ section {
     padding: 0 7vw;
     text-align: center;
 }
+#lime {
+    color: rgb(71, 230, 71) !important;
+}
 
 #ship #sec-head {
     margin-top: 5vh !important;
@@ -265,13 +317,38 @@ section {
     }
 #ship {
     background: #fff;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    /* background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
     url('https://static.vecteezy.com/system/resources/previews/021/232/067/non_2x/hand-drawn-india-doodles-clip-art-cartoon-elements-isolated-on-white-background-print-coloring-book-scrapbooking-stationary-stickers-sublimation-design-eps-10-vector.jpg');
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+    url('../../public/imgs/ex.png');
+    */
     background-position: center;
     background-repeat: no-repeat;
+    background-size:cover;
     padding-top: 0;
-    padding-bottom: 0 !important;
-}
+    padding-bottom: 5vh !important;
+    }
+
+    #cal .t-title {
+        font-weight: 600;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.726) !important;
+        color: var(--blue) !important;
+    }
+
+    #cal {
+        width: 100dvw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+            url('../../public/imgs/pop.jpg');
+    }
+
+    #lnl {
+        width: 100dvw;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: url('../../public/imgs/pop.jpg');
+    }
 
 #steps {
 
@@ -288,37 +365,53 @@ section {
 #steps .s-cd {
     /* border: 1px solid #4d4d4d; */
     /* padding: 35px; */
+    background: #fff;
+    padding: 25px 12px;
+    border-radius: 7px;
+    box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.311);
     min-width:250px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 350px;
     /* border: 5px solid red; */
     width: 250px;
-    gap: 15.5px;
+    /* gap: 15.5px; */
+    }
+
+    .s-cd img {
+        width: 100%;
 }
 
 #steps .st {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
     padding: 0 15px;
     text-align: center;
 }
-
+.num img {
+    margin-top: -50px;
+    margin-right: -50px;
+}
 #steps .num {
     font-size: 1.25rem;
-    height: 75px;
-    width: 75px;
+    height: 45px;
+    width: 45px;
     z-index: 111;
     display: grid;
+    margin-top: -50px;
     place-items: center;
+    position: absolute;
     /* padding: 35px; */
-    background: var(--org);
+    background: white;
     border-radius: 50%;
     margin-bottom: 15px;
     color: white;
+    top: 30px;
     box-shadow: 0 0 35px 0 #0000001b;
-    position: relative;
+    /* position: relative; */
     transition: all ease-in-out 0.35s;
 }
 
@@ -327,12 +420,25 @@ section {
     background: var(--blue);
 
 }
+.pin {
+    position: absolute;
+    top: -30px;
+    margin-left: 5px;
+    /* right: -15px; */
+
+}
+
+
+
+.pin img {
+    width: 50px;
+}
 
 #steps .s-cd:hover .num::after {
     content: '';
-    height: 75px;
+    height: 45px;
     border: 15px solid rgba(18, 18, 18, 0.129);
-    width: 75px;
+    width: 45px;
     position: absolute;
     z-index: -1;
     /* background: pink; */
@@ -341,9 +447,9 @@ section {
 }
 #steps .s-cd .num::after {
     content: '';
-    height: 75px;
-    border: 15px solid rgba(250, 127, 4, 0.129);
-    width: 75px;
+    height: 45px;
+    border: 15px solid rgba(250, 4, 4, 0.129);
+    width: 45px;
     position: absolute;
     z-index: -1;
     /* background: pink; */
@@ -452,7 +558,7 @@ section {
     background: linear-gradient(to left, rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.60)),
     /* url('https://img.freepik.com/premium-vector/indian-people-group-traditional-clothes_48369-10176.jpg') !important; */
     url('../../public/imgs/in-bz.jpg') !important;
-    background-position: 0 530px !important;
+    background-position: 0 560px !important;
     background-repeat: repeat-x !important;
     background-size: 260px !important;
     }
@@ -460,7 +566,7 @@ section {
     .ser-sec-1 {
         background: #eee;
         background: url('https://media.istockphoto.com/id/1281211874/vector/indian-famous-monuments.jpg?s=170667a&w=0&k=20&c=AhJ6iQ7VJiuKXbCnuOP2TxMLgS-BL2fVFH16SVNI4Lc=');
-        background-position: 0 400px !important;
+        background-position: 0 430px !important;
         background-repeat: repeat-x;
 
         /* background-repeat: repeat-x !important; */
@@ -705,8 +811,16 @@ section {
 .sh-l .btn {
     text-align: center;
 }
-
+#vidd {
+    background: url('https://img.freepik.com/free-vector/indian-tricolor-theme-watercolor-texture-patriotic-background-vector_1055-11952.jpg?w=900&t=st=1695532205~exp=1695532805~hmac=edb355164af7de1a8fec179300d078566b1954c7fa3f246fc574b361070a506d');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
 #comp {
+    background: url('https://img.freepik.com/free-vector/indian-tricolor-theme-watercolor-texture-patriotic-background-vector_1055-11952.jpg?w=900&t=st=1695532205~exp=1695532805~hmac=edb355164af7de1a8fec179300d078566b1954c7fa3f246fc574b361070a506d');
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -720,9 +834,10 @@ section {
     width: 330px;
     display: grid;
     place-items: center;
+    background: #fff;
     border: 1.5px solid rgba(160, 160, 160, 0.473);
-    box-shadow: -5px 0 35px 0px #00000023;
-    height: 95px;
+    box-shadow: -5px 0 35px 0px #0000004c;
+    height: 120px;
 }
 
 #comp img {
@@ -844,10 +959,12 @@ section {
 
 .msg-title {
     color: var(--blue);
+        padding: 5px 22px;
     font-size: 1.5rem;
 }
 
 .msg-desc {
+        padding: 5px 22px;
     color: #6c6c6c;
     font-family: var(--font4);
 }
@@ -858,7 +975,7 @@ section {
     gap: 12px;
     width: 330px !important;
     background: #fff;
-    padding: 35px 22px;
+flex-direction: column-reverse;
     border-radius: 7px;
     /* margin: 25px 0; */
     border-bottom: 5px solid var(--org);
@@ -868,21 +985,38 @@ section {
     display: flex;
     align-items: center;
     gap: 25px;
+    flex-direction: column;
 }
 
 .msg-bot .zomm-dp {
-    overflow: hidden;
-    border-radius: 50%;
-}
+    width: 100%;
+    height: 300px;
 
-.msg-bot .feed-info #blue {
-    font-size: 1.2rem;
+    overflow: hidden;
+    /* border-radius: 50%; */
+    }
+
+    .feed-info {
+        display: flex;
+        /* padding: 0 22px; */
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row !important;
+    }
+
+    .feed-info #blue {
+        margin: auto;
+        width: 100% !important;
+        font-size: 1rem !important;
+        color: #fff !important;
     font-weight: 500;
 }
 
-.msg-bot .feed-info #org {
+ .feed-info #org {
     font-size: 0.8rem !important;
     font-weight: 600;
+    display: none !important;
 }
 #cal {
     display: flex;

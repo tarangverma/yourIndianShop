@@ -50,15 +50,21 @@
 }
 
 #pl-ol:nth-child(1) .plan-card {
-    background-image: url('https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/shapes-img.png');
-    background-position: right -70px;
-    background-repeat: no-repeat;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)),
+    /* url('https://img.freepik.com/premium-vector/indian-people-group-traditional-clothes_48369-10176.jpg') !important; */
+    url('../../public/imgs/in-bz.jpg') !important;
+    background-position: 0 430px !important;
+    background-repeat: repeat-x !important;
+    background-size: 460px !important;
 }
 
 #pl-ol:nth-child(3) .plan-card {
-    background-image: url('https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/shapes-img.png');
-    background-position: right 420px;
-    background-repeat: no-repeat;
+    background: #eee;
+    background:linear-gradient(to left, rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)),
+    url('https://media.istockphoto.com/id/1281211874/vector/indian-famous-monuments.jpg?s=170667a&w=0&k=20&c=AhJ6iQ7VJiuKXbCnuOP2TxMLgS-BL2fVFH16SVNI4Lc=');
+    background-size: 700px !important;
+    background-position: -200px 230px !important;
+    background-repeat: repeat-x;
 }
 
 #pl-ol:nth-child(2) .plan-name {
