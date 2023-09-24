@@ -7,19 +7,14 @@ import Tilt from "react-parallax-tilt";
 const PopAd = () => {
   const adsData = [
     {
-      title: "Buy Plans",
-      description: "Check out our latest plans and offers.",
-      link: "/plans",
-    },
-    {
       title: "Get Discounts",
       description: "Hurry! Limited-time discounts available.",
-      link: "/discounts",
+      link: "/offers",
     },
     {
-      title: "Explore Our Services",
-      description: "Discover a wide range of services we offer.",
-      link: "/services",
+      title: "Buy Plans",
+      description: "Check out our latest plans and offers.",
+      link: "/disp-plan",
     },
   ];
 
