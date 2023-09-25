@@ -3,120 +3,149 @@ import "../../stylesheet/dashboard/ProductAcceptanceForm.css"; // Import your CS
 import { fetchreq, uploadImageAws, walletTransaction } from "../../Helper/fetch";
 import { MyContext } from "../../App";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 function ProductAcceptanceForm() {
   // State variables to store form data
-  const {user,wh,isLogin,setUser}=useContext(MyContext);
-  const [pland,setPland]=useState(null);
+  const { user, wh, isLogin, setUser } = useContext(MyContext);
+  const [pland, setPland] = useState(null);
   const [termsAgreed, setTermsAgreed] = useState(false);
   const [name, setName] = useState(null);
-  const [des,setDes] = useState(null);
-  const [file,setFile]=useState(null);
-  const [run,setRun]=useState(false);
+  const [des, setDes] = useState(null);
+  const [file, setFile] = useState(null);
+  const [run, setRun] = useState(false);
   const nav = useNavigate();
-  
+
   // Handle form submissions
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if( !run && termsAgreed && name.length>1 && file ){
+    if (!run && termsAgreed && name.length > 1 && file) {
       setRun(true);
-      if(await walletTransaction(pland?.consolidation,wh?.Wid,"Product Acceptance Request",user,setUser,nav)){
-        const url = await uploadImageAws(file.name,file);
+      if (
+        await walletTransaction(
+          pland?.consolidation,
+          wh?.Wid,
+          "Product Acceptance Request",
+          user,
+          setUser,
+          nav
+        )
+      ) {
+        const url = await uploadImageAws(file.name, file);
         const body = {
           cid: user.Cid,
           wid: wh.Wid,
           proof: url,
           name: name,
-          desc:des
-        }
-        const dt = await fetchreq("POST","makePAR",body);
-        dt?nav("/PAR"): alert("something went wrong");
-        if(dt){
+          desc: des,
+        };
+        const dt = await fetchreq("POST", "makePAR", body);
+        dt ? nav("/PAR") : alert("something went wrong");
+        if (dt) {
           alert("Successfully Purchased Plane");
           nav("/PAR");
-        }else{
+        } else {
           alert("something went wrong");
         }
       }
-    }else if(run){
+    } else if (run) {
       alert("Please Wait");
-    }else{
+    } else {
       alert("please fill all the details");
     }
     setRun(false);
   };
-  const loadPlanDetails = async ()=>{
-    const dt = await fetchreq("GET",`getPlan/${user?.Cid}/${wh?.Wid}`,{});
-    dt? setPland(dt.result[0]) : setPland(null);
-  }
-  useEffect(()=>{
-    if(!isLogin){
-      nav("/")
-    }else{
+  const loadPlanDetails = async () => {
+    const dt = await fetchreq("GET", `getPlan/${user?.Cid}/${wh?.Wid}`, {});
+    dt ? setPland(dt.result[0]) : setPland(null);
+  };
+  useEffect(() => {
+    if (!isLogin) {
+      nav("/");
+    } else {
       loadPlanDetails();
     }
-  },[])
+  }, []);
   return (
     <>
-    <div id="dash-pa" className="product-acceptance-form">
-    
-      <h2>
-        <span id="blue">Product </span>
-        <span id="org">Acceptance </span>
-        <span id="blue">Request</span>
-      </h2>
-      <form onSubmit={handleSubmit}>
-       
-       {/* Product Details */}
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Product Name"
-            value={name}
-            onChange={(e) =>{setName(e.target.value)}}
-              
-          />
+      <div id="dash-pa" className="product-acceptance-form">
+        <div id="l-title" className="no-mar">
+          <div className="plan-page-title">
+            <span id="org">Product </span>
+            <span id="wt">Acceptance </span>
+            <span id="lime">Request</span>
+          </div>
+          <Link className="btn btn-o-1" to="/PAR">
+            Add Products Acceptance Request
+          </Link>
         </div>
-        
-        
-        <div className="form-group">
-          <textarea
-            placeholder="Product Description"
-            value={des}
-            onChange={(e) =>{setDes(e.target.value)}}
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="photo">Proof</label>
-          <input 
-            name="photo"
-            type="file"
-            accept="image/*"
-            onChange={(e)=>{setFile(e.target.files[0])}}
-          />
-        </div>
-
-        {/* Terms and Conditions */}
-        <div className="form-group">
-          <label>
+        <br />
+        <form onSubmit={handleSubmit}>
+          {/* Product Details */}
+          <div className="form-group">
             <input
-              type="checkbox"
-              checked={termsAgreed}
-              onChange={() => setTermsAgreed(!termsAgreed)}
+              type="text"
+              placeholder="Product Name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
             />
-            I agree to the Terms and Conditions
-          </label>
-        </div>
+          </div>
 
-        {/* Submit Button */}
-        <div className="form-group">
-          <button disabled={!pland} className="btn btn-b" type="submit">
-            {pland ?(!run ? (pland?.consolidation==0 ? "Submit Request" : `Submit Request and Pay ₹${pland?.consolidation}`): <p>Please Wait</p> ): <p>Loading...</p> }
-          </button>
-        </div>
-      </form>
-    </div>
+          <div className="form-group">
+            <textarea
+              placeholder="Product Description"
+              value={des}
+              onChange={(e) => {
+                setDes(e.target.value);
+              }}
+            />
+          </div>
+
+          <div className="form-group bw">
+            <label htmlFor="photo">Proof</label>
+            <input
+              name="photo"
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                setFile(e.target.files[0]);
+              }}
+            />
+          </div>
+
+          {/* Terms and Conditions */}
+          <div className="form-group bw">
+            <label>
+              <input
+                type="checkbox"
+                checked={termsAgreed}
+                onChange={() => setTermsAgreed(!termsAgreed)}
+              />
+              I agree to the Terms and Conditions
+            </label>
+          </div>
+
+          {/* Submit Button */}
+          <div className="form-group">
+            <button disabled={!pland} className="btn btn-b" type="submit">
+              {pland ? (
+                !run ? (
+                  pland?.consolidation == 0 ? (
+                    "Submit Request"
+                  ) : (
+                    `Submit Request and Pay ₹${pland?.consolidation}`
+                  )
+                ) : (
+                  <p>Please Wait</p>
+                )
+              ) : (
+                <p>Loading...</p>
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

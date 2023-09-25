@@ -15,37 +15,37 @@ const Warehouse = ({warehouse}) => {
     }, 500);
   }
   return (
-    <Tilt
-      glareEnable={true}
-      glareColor="#ebe7ee3f"
-      glarePosition="all"
-      tiltMaxAngleX="12"
-      tiltMaxAngleY="12"
-      className="parallax-effect-glare-scale-wh bggg "
-    >
-      <div className="warehouse-card">
-        {/* <div className="wh-img-ol">
+    <div className="warehouse-card">
+      {/* <div className="wh-img-ol">
           <img src={a.image} alt={warehouse.Name} className="warehouse-image" />
         </div> */}
-        <div className="w-data">
-          <h3 className="warehouse-name">{warehouse.Name}</h3>
-          <p className="warehouse-details">
-            <strong>WarehouseId:</strong> {warehouse.Wid}<br />
-            <strong>Address:</strong> {warehouse.Address}<br />
-            <strong>Strit:</strong> {warehouse.Address2}<br />
-            <strong>Landmark:</strong> {warehouse.Landmark}<br />
-            <strong>City:</strong> {warehouse.City}<br />
-            <strong>Pincode:</strong> {warehouse.pincode}<br />
-            <strong>State:</strong> {warehouse.State}<br />
-            <strong>Country:</strong> {warehouse.Country}<br />
-            <strong>Capacity:</strong> {warehouse.Capacity}<br />
-          </p>
-        </div>
-        <button className="btn btn-b" onClick={handleSelect}>
-          Manage
-        </button>
+      <div className="w-data">
+        <h3 className="warehouse-name">{warehouse.Name}</h3>
+        <p className="warehouse-details">
+          <strong>WarehouseId:</strong> {warehouse.Wid}
+          <br />
+          <strong>Address:</strong> {warehouse.Address}
+          <br />
+          <strong>Strit:</strong> {warehouse.Address2}
+          <br />
+          <strong>Landmark:</strong> {warehouse.Landmark}
+          <br />
+          <strong>City:</strong> {warehouse.City}
+          <br />
+          <strong>Pincode:</strong> {warehouse.pincode}
+          <br />
+          <strong>State:</strong> {warehouse.State}
+          <br />
+          <strong>Country:</strong> {warehouse.Country}
+          <br />
+          <strong>Capacity:</strong> {warehouse.Capacity}
+          <br />
+        </p>
       </div>
-    </Tilt>
+      <button className="btn btn-b" onClick={handleSelect}>
+        Manage
+      </button>
+    </div>
   );
 };
 

@@ -26,24 +26,26 @@ const Locker = () => {
   },[])
   return (
     <>
-      <center>
+      <div id="l-title">
         <div className="plan-page-title">
-          <span id="blue">Your </span>
+          <span id="wt">Your&nbsp;</span>
           <span id="org">WareHouse</span>
         </div>
-      </center>
-      <div>
-        <Link to="/plan" className="btn btn-b" style={{float:'right'}}>Add WareHouse</Link>
+        <div>
+          <Link to="/plan" className="btn btn-o-1" style={{ float: "right" }}>
+            Add WareHouse
+          </Link>
+        </div>
       </div>
+
       <div className="warehouse-container locker">
-        {warehouse && warehouse.length!=0 && warehouse.map((warehouse) => (
-          <Warehouse
-            key={warehouse.Wid}
-            warehouse={warehouse}
-          />
-        ))}
-        {warehouse && warehouse.length==0 && <p>No data found</p> }
-        {!warehouse && <h2>Loading...</h2> }
+        {warehouse &&
+          warehouse.length != 0 &&
+          warehouse.map((warehouse) => (
+            <Warehouse key={warehouse.Wid} warehouse={warehouse} />
+          ))}
+        {warehouse && warehouse.length == 0 && <p>No data found</p>}
+        {!warehouse && <h2>Loading...</h2>}
       </div>
     </>
   );

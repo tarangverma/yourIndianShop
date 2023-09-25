@@ -47,43 +47,81 @@ const Shop = () => {
   return (
     <div>
       <div id="shop-sec">
-        <div id="the-gym" style={{ background: "#fff", padding: "0 10vw" }}>
-          <center>
-            <div className="t-title dark">Your Curiors in {wh?.Name}</div>
-          </center>
-        </div>
-        <div id="bal">
-          <div className="bal-lin">
-              <h2>Your Bills</h2>
+        <div id="the-gym">
+          <div id="l-title">
+            <div className="plan-page-title">
+              <span id="org">Your</span> Couriers in{" "}
+              <span id="lime">{wh?.Name}</span>
+            </div>
+            <div>
               <div>
-                <Link to="/Billing" className="btn btn-b">Show</Link>
+                <Link to="/Billing" className="btn btn-o-1">
+                  Pending Bills
+                </Link>
               </div>
+            </div>
           </div>
         </div>
         <div id="bal">
-          <div className="bal-lin" style={{display:'flex',justifyContent:'space-around'}}>
-            <Link className="btn btn-b" to="/dashboard/product-acceptance">Add Products Acceptace Request</Link>
-            <Link className="btn btn-b" to="/PAR">Your Product Acceptace Request</Link>
-            <Link className="btn btn-b" to="/DispachRequests">Your Dispach Requests</Link> 
-            <Link className="btn btn-b" to="/ReturnRequests">Your Return Requests</Link> 
+          <div
+            className="bal-lin"
+            style={{ display: "flex", justifyContent: "space-around" }}
+          >
+            <Link className="btn btn-o-1" to="/dashboard/product-acceptance">
+              Add Products Acceptance Request
+            </Link>
+            <Link className="btn btn-o-1" to="/PAR">
+              Your Product Acceptance Request
+            </Link>
+            <Link className="btn btn-o-1" to="/DispachRequests">
+              Your Dispatch Requests
+            </Link>
+            <Link className="btn btn-o-1" to="/ReturnRequests">
+              Your Return Requests
+            </Link>
           </div>
         </div>
         <div id="displayProducts">
-          {wd && wd.length!=0 && wd.map((e) => {
-            const isselect = selectP.includes(e.Did);
-            return (
-              <div style={{border:`${selectP.includes(e.Did)?"3px solid #FF7D44":"none"}`}}>
-                <Product  wd={e} selectProduct={selectProduct} isselect={isselect} />
-              </div>
-            );
-          })}
-          {wd && wd.length==0 && <p>No data found</p> }
-          {!wd && <h2>Loading...</h2> }
+          {wd &&
+            wd.length != 0 &&
+            wd.map((e) => {
+              const isselect = selectP.includes(e.Did);
+              return (
+                <div
+                  style={{
+                    border: `${
+                      selectP.includes(e.Did) ? "3px solid #FF7D44" : "none"
+                    }`,
+                  }}
+                >
+                  <Product
+                    wd={e}
+                    selectProduct={selectProduct}
+                    isselect={isselect}
+                  />
+                </div>
+              );
+            })}
+          {wd && wd.length == 0 && <p>No data found</p>}
+          {!wd && <h2>Loading...</h2>}
         </div>
-        <div style={{display:'flex',justifyContent:'space-around',position:'fixed', right:'10px',bottom:'100px',zIndex:'20'}}>
-          { selectP.length>1  && <button className="btn btn-b" onClick={dispactchAll}>{isproc?"Proceding...":"Dispatch all selected"}</button>}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            position: "fixed",
+            right: "10px",
+            bottom: "100px",
+            zIndex: "20",
+          }}
+        >
+          {selectP.length > 1 && (
+            <button className="btn btn-b" onClick={dispactchAll}>
+              {isproc ? "Proceding..." : "Dispatch all selected"}
+            </button>
+          )}
         </div>
-      </div> 
+      </div>
     </div>
   );
 };

@@ -15,13 +15,17 @@
     /* max-height: 50vh; */
     overflow: hidden;
     position: relative;
-    width: 250px;
+    width: 270px;
+    box-shadow: 0 0 35px 1px #0000003e;
 
 }
 
 .proTop {
     width: 100%;
+    height: 250px;
     overflow: hidden;
+    display: grid;
+    place-items: center;
 }
 
 .proTop img {
@@ -36,11 +40,11 @@
 #proData {
     /* position: absolute; */
     margin-top: -50px;
-    background: #fff;
+    background: #f4f4f4;
     display: flex;
     position: relative;
     z-index: 11 !important;
-    bottom: -50px;
+    /* bottom: -50px; */
     flex-direction: column;
     transition: 0.25s ease-in-out;
     padding: 25px 30px;
@@ -76,6 +80,7 @@
     text-transform: uppercase;
     font-weight: bold;
     transition: 0.25s ease-in-out;
+    cursor: pointer;
     /* background-color: var(--green);
      */
     color: white;

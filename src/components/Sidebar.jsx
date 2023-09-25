@@ -51,11 +51,7 @@ const Sidebar = () => {
             <span className="sidebar_nav_txt">
               <div className="logo">
                 <span id="org">Your</span>
-                <img
-                  src="../imgs/6.png"
-                  height="40px"
-                  alt=""
-                />
+                <img src="../imgs/6.png" height="40px" alt="" />
                 <span className="">Shop</span>
               </div>
             </span>
@@ -86,13 +82,13 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt">Shopping</b>
               </Link>
-              <Link to="/dashboard/sites">
+              <Link to="/in-sites">
                 <span>
                   <StoreMallDirectoryOutlinedIcon />
                 </span>
                 <b className="sidebar_nav_txt">indian shops</b>
               </Link>
-             
+
               {/* <Link to="/dashboard/assisted-purchase">
                 <span>
                   <StickyNote2OutlinedIcon />
@@ -124,7 +120,7 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt">shipping calc</b>
               </Link>
-              
+
               <small className="sidebar_nav_txt">your stuff</small>
               {/* <Link to="/">
                 <span>
@@ -150,7 +146,7 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt"> billing</b>
               </Link> */}
-              <a style={{cursor:'pointer'}} onClick={logOut}>
+              <a style={{ cursor: "pointer" }} onClick={logOut}>
                 <span>
                   <LogoutIcon />
                 </span>

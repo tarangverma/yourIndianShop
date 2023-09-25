@@ -56,6 +56,9 @@
     gap: 5vh;
 }
 
+.ds-top>* {
+    color: #fff !important
+}
 .ds-top,
 .ds-bot {
     display: flex;
@@ -89,6 +92,7 @@
 }
 .ds-info {
     font-size: 1.15rem;
+    color: #fff;
  }
 
 .ico-g {

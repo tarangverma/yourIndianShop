@@ -116,19 +116,27 @@ const SingleProduct = () => {
     }
   },[])
   return (
-    <>
-    <center >
-        <div className="plan-page-title" >
+    <div id="height-of">
+      <div id="l-title">
+        <div className="plan-page-title">
           <span> ProductId: {wd?.Did} </span>
           <span id="org">{wd?.productName}</span>
-        </div>
-    </center>
+        </div>{" "}
+        <a
+          className="description btn btn-o-1"
+          href={`${url}/${wd.proof}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          View Proof
+        </a>
+      </div>
       <div id="single-product">
         {/* <Link style={{position:'absolute',top:'0',scale:'2'}} to={"/warehousedata"}>🔙</Link> */}
         <div className="product-images">
           <div className="big-image">
             <img src={selectedImage} alt={wd?.ProductName} />
-          </div>  
+          </div>
         </div>
         <div className="product-details">
           <div id="pd-t">
@@ -143,13 +151,20 @@ const SingleProduct = () => {
             <p className="description">Recive Time: {indianDate}</p>
             <p className="description">Status: {status}</p>
 
-            {wd?.status==0 && pland && <div className="row">
-              <button onClick={navigatesipment} className="btn btn-o">{isdp?"Processing...":"Dispach Now"}</button>
-              <button onClick={returnReq} className="btn btn-o">{isrp?"Processing":`Return ${pland?.package_ret==0?"":pland?.package_ret}`}</button>
-            </div>}
-            <button className="description" onClick={()=>{
-              setSelectedImage(`${url}/${wd.proof}`);
-            }}>View Proof</button>
+            {wd?.status == 0 && pland && (
+              <div className="row">
+                <button onClick={navigatesipment} className="btn btn-g">
+                  {isdp ? "Processing..." : "Dispach Now"}
+                </button>
+                <button onClick={returnReq} className="btn btn-r">
+                  {isrp
+                    ? "Processing"
+                    : `Return ${
+                        pland?.package_ret == 0 ? "" : pland?.package_ret
+                      }`}
+                </button>
+              </div>
+            )}
           </div>
           <div className="small-images">
             {photos.map((image, index) => (
@@ -163,8 +178,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-    </>
-    
+    </div>
   );
 };
 

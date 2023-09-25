@@ -90,3 +90,97 @@
 .btn {
     cursor: pointer;
 }
+#l-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blue);
+    margin: 25px;
+    padding: 12px 35px;
+    box-shadow: 0 0 35px 1px #00000027;
+}
+
+.btn-o-1 {
+    display: block;
+    color: #fff;
+    background-color: var(--org);
+}
+
+.btn-o-1:hover {
+    background-color: rgb(223, 101, 31);
+
+}
+
+#l-title>.plan-page-title {
+    color: white;
+    display: flex;
+    gap: 7px;
+}
+
+#bal {
+    background-color: var(--blue);
+    margin: 25px;
+    padding: 12px 35px;
+    box-shadow: 0 0 35px 1px #00000027;
+}
+
+#bal h1 {
+    font-size: 3rem;
+}
+
+#bal .btn:hover {
+    background-color: rgb(209, 79, 32);
+}
+
+.bal-lin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+
+}
+
+#drrr:hover {
+    border-color: var(--org);
+}
+
+#drrr p {
+    font-size: 1rem;
+    font-family: var(--font3);
+    font-weight: 400;
+}
+
+#dis-req-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+#drrr {
+    width: 32%;
+    /* margin: 25px; */
+    padding: 22.5px;
+    background: #eee;
+    border: 3px solid transparent;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 0 35px 1px #0000002e;
+}
+
+.btn-g {
+    background: limegreen;
+    color: #fff;
+}
+
+.btn-g:hover {
+    background: rgb(61, 184, 61);
+}
+
+.btn-r {
+    background: crimson;
+    color: #fff;
+}
+
+.btn-r:hover {
+    background: rgb(192, 34, 66);
+}

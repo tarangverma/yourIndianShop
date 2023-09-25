@@ -4,10 +4,9 @@
 #single-product {
   display: flex;
   justify-content: space-between;
-  padding: 10vh 10vw;
+  padding: 5vh 35px;
   gap: 50px;
-  height: 91dvh;
-  overflow-y: scroll;
+  margin: 35px;
   background: #fff;
 }
 
@@ -25,7 +24,7 @@
   display: grid;
   place-items: center;
   position: relative;
-//   border: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
 
 #single-product .big-image img {

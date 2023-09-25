@@ -17,13 +17,22 @@ const Shop = () => {
   },[])
   return (
     <div id="shop-sec">
-      <div id="the-gym" style={{ background: "#fff", padding: "0 10vw" }}>
-        <center>
+      <div id="the-gym">
+        <div id="l-title">
           <div className="plan-page-title">
-            <span id="blue">SHOP </span>
-            <span id="org">PRODUCTS</span>
+            <span id="wt">Available&nbsp;</span>
+            <span id="org">Products</span>
           </div>
-        </center>
+          <div>
+            <Link
+              to="/dashboard/assisted-purchase"
+              className="btn btn-o-1"
+              style={{ float: "right" }}
+            >
+              Assisted Purchase Request
+            </Link>
+          </div>
+        </div>
       </div>
 
       <div id="displayProducts">
@@ -40,11 +49,6 @@ const Shop = () => {
           );
         })}
       </div>
-      <center>
-        <Link className="btn btn-b" to="/dashboard/assisted-purchase">
-          Assisted Purchase Request
-        </Link>
-      </center>
     </div>
   );
 };

@@ -81,7 +81,7 @@ section {
     height: auto;
     min-height: 85dvh;
     background-size: cover;
-    background-position: 0 -100px;
+    background-position: center;
     background-repeat: no-repeat;
     /* background-size: 100%; */
     display: flex;
