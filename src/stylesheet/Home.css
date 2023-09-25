@@ -34,7 +34,7 @@ html {
     .swiper-slide {
         text-align: center;
         font-size: 18px;
-        background: #fff;
+        /* background: #00ff73; */
 
         /* Center slide text vertically */
         display: flex;
@@ -75,14 +75,15 @@ section {
 }
 #hero {
     /* border: 5px solid red; */
-    width: 100vw;
+    width: 100%;
     margin: auto;
     background: url("../../public//imgs/home1-rev-2.jpg");
     height: auto;
     min-height: 85dvh;
-    background-position:center;
+    background-size: cover;
+    background-position: 0 -100px;
     background-repeat: no-repeat;
-    background-size: 100%;
+    /* background-size: 100%; */
     display: flex;
     align-items: center;
     position: static;
@@ -114,8 +115,8 @@ section {
 }
 
 #soc>*>* {
-    font-size: 2.5rem !important;
-    color: #fff !important;
+    font-size: 2.5rem;
+    color: #fff;
 }
 
 #ver-in>* {
@@ -191,7 +192,7 @@ section {
 .ps {
     background: #fff;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     width: 35%;
     /* flex: 1 !important; */
@@ -217,7 +218,19 @@ section {
     position: relative;
     display: inline-block;
 }
+.ps-l {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex: 1 !important;
+}
+
+.pop-3 {
+    margin-top: 35px !important;
+    width: 100% !important;
+}
 .pop-3 .ps {
+    width: 100% !important;
     min-height: fit-content !important;
 }
 .ps-l::before {
@@ -239,6 +252,7 @@ section {
     font-weight: 600;
     bottom: 0 !important;
     font-family: var(--font3);
+    color: #292929;
 }
 
 .s-txt {
@@ -278,7 +292,7 @@ section {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 15vh;
+    margin-top: 5vh;
     padding: 25px;
     gap: 15px;
     align-items: center;
@@ -303,7 +317,7 @@ section {
 }
 
 #ship #sec-head {
-    margin-top: 5vh !important;
+    margin-top: 5vh;
     }
 
     .bkl .client-slider {
@@ -344,7 +358,7 @@ section {
     }
 
     #lnl {
-        width: 100dvw;
+        width: 100dvw !important;
         padding: 0 !important;
         margin: 0 !important;
         background-attachment: fixed !important;
@@ -472,7 +486,7 @@ section {
     background: url("../../public//imgs/services-bg-1.jpg");
     /* background: url("../../public//imgs/home1-rev-3.jpg"); */
     /* background: url("../../public//imgs/home1-section-4.jpg"); */
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff !important;
@@ -559,7 +573,8 @@ section {
     background: linear-gradient(to left, rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.60)),
     /* url('https://img.freepik.com/premium-vector/indian-people-group-traditional-clothes_48369-10176.jpg') !important; */
     url('../../public/imgs/in-bz.jpg') !important;
-    background-position: 0 560px !important;
+    /* background-position: 0 560px !important; */
+    background-position: 0 100% !important;
     background-repeat: repeat-x !important;
     background-size: 260px !important;
     }
@@ -567,7 +582,8 @@ section {
     .ser-sec-1 {
         background: #eee;
         background: url('https://media.istockphoto.com/id/1281211874/vector/indian-famous-monuments.jpg?s=170667a&w=0&k=20&c=AhJ6iQ7VJiuKXbCnuOP2TxMLgS-BL2fVFH16SVNI4Lc=');
-        background-position: 0 430px !important;
+        /* background-position: 0 430px !important; */
+        background-position: 0 135%;
         background-repeat: repeat-x;
 
         /* background-repeat: repeat-x !important; */
@@ -659,9 +675,12 @@ section {
     gap: 9px !important;
     flex-direction: column;
     margin-bottom: 10vh;
+    min-width: 350px;
 
 }
-
+.wt {
+    color: white !important;
+}
 .sc #org>* {
     font-size: 3.8rem;
 }
@@ -904,30 +923,42 @@ section {
     background: linear-gradient(to left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
     url('https://static.vecteezy.com/system/resources/thumbnails/013/867/897/small/online-education-training-with-students-and-tutor-free-vector.jpg');
 }
-
 #feed-r {
     width: 100%;
 
     /* justify-content: ; */
 }
+#feed-r .swiper {
+    background-color: transparent !important;
+}
+
+.fd-cd {
+
+    box-shadow: 0 0 25px 0px rgba(128, 128, 128, 0.591) !important;
+}
 
 #feed-r .swiper-wrapper>* {
-    width: fit-content !important;
-    box-shadow: 0 0 25px 0px rgba(128, 128, 128, 0.591) !important;
+    background-color: transparent !important;
+    /* width: fit-content !important; */
     margin: 25px 0;
+    /* width: 30%; */
+    display: grid;
+    place-items: center;
     /* margin: 0px; */
 
 }
 #feed-r .swiper-slide #feed-r .swiper-slide-next {
+    background-color: transparent !important;
     width: 250px !important;
     /* height: fit-content !important; */
 }
 
 #feed-r .swiper-wrapper {
+    background-color: transparent !important;
     display: flex;
     /* overflow-x: scroll; */
     align-items: center;
-    gap: 90px;
+    /* gap: 25px; */
 
 }
 

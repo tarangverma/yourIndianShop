@@ -90,7 +90,7 @@ const Nav = () => {
       <div id="side-nav" ref={sideNav}>
         <div className="cl" onClick={handleToggle}>
           <IconButton>
-            <CloseIcon />
+            <CloseIcon className="wt" />
           </IconButton>
         </div>
         <div id="links">
@@ -104,9 +104,10 @@ const Nav = () => {
         <div onClick={othenticate} id="log" className="btn btn-o">
           <a>{isLogin ? "LogOut" : si}</a>
         </div>
+        <br />
         {!isLogin && (
           <Link to="/signUp" id="log" className="btn btn-o">
-            <div>Sign Up</div>
+            Sign Up
           </Link>
         )}
       </div>
@@ -146,7 +147,7 @@ const Nav = () => {
         </div> */}
         <div id="tog" onClick={handleToggle}>
           <IconButton>
-            <MenuIcon />
+            <MenuIcon className="wt" />
           </IconButton>
         </div>
       </nav>

@@ -107,12 +107,14 @@ nav .btn-o:hover {
 
 .lg {}
 #side-nav {
-    background: #003a49;
+    /* background: #003a49; */
+    background: var(--blue);
     backdrop-filter: blur(5px);
     height: 100dvh;
     position: absolute;
     z-index: 111111;
     right: -300px;
+    box-shadow: 0 0 35px 1px #0000004d;
     padding: 5vh 35px;
     transition: 0.5s ease-in-out;
 }

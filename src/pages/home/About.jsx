@@ -11,11 +11,11 @@ const About = () => {
         <Nav />
       </header>
 
-      <PgTitle
+      {/* <PgTitle
         pageName="About Us"
         tabName="ABOUT"
         bgImg="./imgs/home1-section-4.jpg"
-      />
+      /> */}
       <div id="vidd">
         <iframe
           width="100%"
