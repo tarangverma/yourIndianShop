@@ -41,7 +41,7 @@ function ProductAcceptanceForm() {
         const dt = await fetchreq("POST", "makePAR", body);
         dt ? nav("/PAR") : alert("something went wrong");
         if (dt) {
-          alert("Successfully Purchased Plane");
+          alert("Request Made Successfully... ");
           nav("/PAR");
         } else {
           alert("something went wrong");
