@@ -209,8 +209,8 @@ function Billing() {
               <div id="l-title">
                 <div className="plan-page-title">
                   <span id="org">Your</span>
-                  <span id="wt">Bills Till</span>
-                  <span id="lime">Yesterday</span>
+                  <span id="wt">Due</span>
+                  <span id="lime">Amount</span>
                 </div>
               </div>
               {bills ? (

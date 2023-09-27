@@ -9,6 +9,119 @@
     /* background:var(--grn); */
     /* box-shadow: 0 0 50px 1px #06060624; */
 }
+#con-pop {
+    position: fixed;
+    bottom: 100px;
+    z-index: 111111;
+    right: 35px;
+    /* width: 350px !important; */
+    height: auto;
+    padding: 35px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #F2994A;
+    padding-bottom: 10vh;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F2C94C, #F2994A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #44A08D;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #093637, #44A08D, #44A08D);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #093637, #44A08D, #44A08D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#fq-bt {
+    position: fixed;
+    bottom: 35px;
+    z-index: 111;
+    right: 35px;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 1px #00000047;
+    background: linear-gradient(to right, #F2C94C, #F2994A);
+    background: #44A08D;
+
+}
+
+.cp-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.cp-bd .cp-hd-title h1 {
+    -webkit-text-stroke: 0.5px black !important;
+}
+
+.cp-bd .cp-hd-title {
+    margin: 7vh 0;
+    color: #fff;
+}
+
+.khokha {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.khokhu {
+    background: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 22.5px;
+    border-radius: 23px;
+    justify-content: space-between;
+}
+
+.kh-l {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.kh-r {
+    width: 10%;
+}
+
+#con-pop .cls {
+    color: #ffffff;
+    font-size: 1.2rem;
+    height: 35px;
+    width: 35px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-weight: 200 !important;
+    font-family: var(--font4);
+    /* padding: 35px; */
+    background: #eeeeee37;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 1px #00000028;
+    /* border-radius: ; */
+}
+
+#con-pop .lg {
+    font-size: 1.75rem !important;
+    color: #fff;
+    font-family: var(--font9) !important;
+}
+
 
 #logo {
 margin-left: 15px;
@@ -17,7 +130,10 @@ margin-left: 15px;
     text-transform: uppercase;
     font-size: 1.3rem;
     cursor: pointer;
+    flex: 1;
+    /* margin: auto; */
     display: flex;
+    margin-left:20%;
     align-items: center;
 }
 
@@ -31,8 +147,11 @@ margin-left: 15px;
 #wt {
     color: #fff;
 }
+#smd>*>* {
+    color: #fff !important;
+}
 nav #links {
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -51,7 +170,8 @@ nav .btn-o:hover {
 }
 
 #links a:hover {
-    color: rgb(33, 29, 90);
+    color: var(--org);
+    /* color: rgb(33, 29, 90); */
 }
 
 .btn {
@@ -154,8 +274,40 @@ nav .btn-o:hover {
 #tog {
     color: #fff !important;
 }
+#drop-hd:hover .drop-list {
+    visibility: visible;
+}
+
+#drop-hd {
+    position: relative;
+}
+
+.drop-list>*:hover {
+    color: var(--org) !important;
+}
+
+.drop-list>* {
+    font-size: 0.9rem;
+    transition: none !important;
+    color: #353535 !important;
+}
+
+.drop-list {
+    position: absolute;
+    background: #fff;
+    /* border-radius: 7px; */
+    top: 40px;
+    padding: 17px;
+    box-shadow: 0 0 25px 1px #0000004f;
+    transition: 0.3s ease-in-out;
+    visibility: hidden;
+    left: -40px;
+    display: flex;
+    flex-direction: column;
+}
 .nav-default {
     background-color: transparent;
+    /* background-color: var(--blue); */
     /* Set your default background color */
     /* Add other default styles */
 }
@@ -163,6 +315,10 @@ nav .btn-o:hover {
 /* Define styles for your navigation bar when scrolled */
 .nav-scrolled {
     background-color: var(--blue);
+    background: -webkit-linear-gradient(to right #fedd39, #ee7e34) !important;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fedd39, #ec843f) !important;
+
     /* Set your desired background color when scrolled */
     /* Add other styles for the scrolled state */
 }
@@ -174,7 +330,10 @@ nav .btn-o:hover {
 }
 
 .sttt header nav {
-    background: var(--blue) !important;
+    /* background: var(--blue) !important;
+      background: -webkit-linear-gradient(to right #fedd39, #ee7e34) !important;
+      /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fedd39, #ec843f) !important;
 }
 
 .sttt header nav #links a:hover {

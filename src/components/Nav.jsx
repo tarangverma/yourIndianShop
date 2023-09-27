@@ -12,6 +12,9 @@ import { MyContext } from "../App";
 // import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { LinkOff } from "@mui/icons-material";
+import Facebook from "@mui/icons-material/Facebook";
+import Instagram from "@mui/icons-material/Instagram";
+import Twitter from "@mui/icons-material/Twitter";
 const Nav = () => {
   const { user, setUser, isLogin, setIsLogin } = useContext(MyContext);
   const nav = useNavigate();
@@ -112,6 +115,21 @@ const Nav = () => {
         )}
       </div>
       <nav ref={navElement} className={navClass}>
+        <div id="links">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <a id="drop-hd">
+            Services
+            <div className="drop-list">
+              <Link to="/disp-plan">Plans</Link>
+              <Link to="/calc">Shipping Rate Calculator</Link>
+              <Link to="/offers">Festive Offers </Link>
+              <Link to="#">Delivery Partners</Link>
+            </div>
+          </a>
+          <Link to="/offers">Offers</Link>
+          {/* <Link to="/in-sites">Indian Sites</Link> */}
+        </div>
         <div id="logo">
           <span id="wt">Your</span>
           &nbsp;
@@ -119,12 +137,16 @@ const Nav = () => {
           &nbsp;
           <span id="org">Shop</span>
         </div>
-        <div id="links">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/disp-plan">Our Plans</Link>
-          <Link to="/offers">Offers</Link>
-          {/* <Link to="/in-sites">Indian Sites</Link> */}
+        <div id="smd">
+          <IconButton>
+            <Facebook />
+          </IconButton>
+          <IconButton>
+            <Instagram />
+          </IconButton>
+          <IconButton>
+            <Twitter />
+          </IconButton>
         </div>
         {/* <a
           href="https://www.youtube.com/watch?v=YB67y0NepPs&t=2s&pp=ygUbZHJvcHNoaXBwaW5nIGFuaW1hdGVkIHZpZGVv"

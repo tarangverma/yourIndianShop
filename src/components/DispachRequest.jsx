@@ -186,7 +186,7 @@ function DispachRequest() {
                 <th>Payment</th>
                 <th>Courier Service ProviderId</th>
                 <th>Status</th>
-                <th>Actions</th>
+                <th>Courier Partner</th>
               </tr>
             </thead>
             <tbody>
@@ -213,7 +213,7 @@ function DispachRequest() {
                           : "In procedure..."}
                       </td>
                       <td>
-                        {/* {!p.status && !p.Sp && pid !== p.Pid && (
+                        {!p.status && !p.Sp && pid !== p.Pid && (
                           <button
                             className="btn-o-1 btn"
                             onClick={() => {
@@ -222,7 +222,7 @@ function DispachRequest() {
                           >
                             {pid ? "Hide " : "Select "}Courier Partner
                           </button>
-                        )} */}
+                        )}
                         {pid === p.Pid && (
                           <>
                             {/* <h3>Select Courier Service and Pay ${p.payment}</h3> */}

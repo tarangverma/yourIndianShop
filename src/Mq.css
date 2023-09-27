@@ -51,6 +51,15 @@
     .ser-sec-2 {
         /* background-position: bottom !important; */
     }
+    #lnl {
+        min-height: 130vh;
+    }
+
+    #lnl #bc-video {
+        width: auto;
+
+        height: 140vh !important;
+    }
     #tog {
         display: flex;
     }
@@ -114,6 +123,8 @@ section {
     /* width: 100% - 50px !important; */
     margin: 0 !important;
 }
+
+/* #main-video>* {} */
 
 #hero {
     /* background-position: -200px center !important; */

@@ -13,8 +13,15 @@
     /* Choose an appropriate Indian-themed font */
 }
 
-#wts>*>* {
-    color: lime !important;
+/* #wts {
+
+    background: var(--blue2) !important;
+    padding: 35px !important;
+    border-radius: 50% !important;
+} */
+
+/* #wts>* {
+    color: #000 !important;
     z-index: 1111111;
     position: fixed;
     right: 15px;
@@ -22,6 +29,8 @@
     bottom: 15px;
 
 }
+
+*/
 
 .popup-content {
     /* text-align: center; */

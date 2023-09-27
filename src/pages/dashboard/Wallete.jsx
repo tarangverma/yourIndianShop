@@ -115,117 +115,136 @@ function Wallete() {
             loadTransaction()
         }
     },[])
-    const style={
-        border:'2px solid orange',
-        position:'absolute',
-        backgroundColor:'white',
-        top:'200px',
-        right:"500px",
-        padding:'50px'
-    }
+    
   return (
-    <div style={{height:'100dvh',overflowY:'scroll'}} >
-      <div id="bal">
-        <div className="bal-lin">
-          <h1>Wallet</h1>
-          <h2>Balance: ${user?.Wallete}</h2>
-        </div>
-        {isClick && (
-          <form style={style}>
-            <button
-              className="btn btn-o"
-              onClick={() => {
-                setIsclick(false);
-              }}
-            >
-              Close
-            </button>
-            <h1>Add to Wallet</h1>
-            <input
-              id="amountIn"
-              value={amount}
-              onChange={(e) => {
-                setAmount(e.target.value);
-                console.log(amount);
-              }}
-              type="number"
-              placeholder="Enter Amount to Add"
-            />
-            <button onClick={showpaymentButton} className="btn btn-o">
-              Pay to Wallet
-            </button>
+    <div id="height-op" style={{ padding: "25px" }}>
+      <div>
+        <div id="l-title" className="no-mar">
+          <div className="plan-page-title">
+            <span id="org">Wallet</span>
+            <span id="wt">Balance:</span>
+            <span id="lime">${user?.Wallete}</span>
+          </div>
+          <div>
+            {isClick && (
+              <form className="pay-cd">
+                <button
+                  className="btn-r"
+                  onClick={() => {
+                    setIsclick(false);
+                  }}
+                >
+                  x
+                </button>
+                <h1>Add to Wallet</h1>
+                <input
+                  id="amountIn"
+                  value={amount}
+                  onChange={(e) => {
+                    setAmount(e.target.value);
+                    console.log(amount);
+                  }}
+                  type="number"
+                  placeholder="Enter Amount to Add"
+                />
+                <button onClick={showpaymentButton} className="btn btn-o-1">
+                  Pay to Wallet
+                </button>
 
-            {payment && (
-              <PayPalScriptProvider
-                options={{
-                  "client-id": clientId,
-                }}
-              >
-                {success && <h1>Payment mad successfully</h1>}
-                {error && <h1>Some Error occurs</h1>}
-                {!success && (
-                  <PayPalButtons
-                    style={{ layout: "vertical" }}
-                    createOrder={createOrder}
-                    onApprove={onApprove}
-                    onError={onError}
-                  />
+                {payment && (
+                  <PayPalScriptProvider
+                    options={{
+                      "client-id": clientId,
+                    }}
+                  >
+                    {success && <h1>Payment mad successfully</h1>}
+                    {error && <h1>Some Error occurs</h1>}
+                    {!success && (
+                      <PayPalButtons
+                        style={{ layout: "vertical" }}
+                        createOrder={createOrder}
+                        onApprove={onApprove}
+                        onError={onError}
+                      />
+                    )}
+                  </PayPalScriptProvider>
                 )}
-              </PayPalScriptProvider>
+              </form>
             )}
-          </form>
-        )}
-        {isClick2 && (
-          <form onSubmit={handlesubmit2} style={style}>
+            {isClick2 && (
+              <form onSubmit={handlesubmit2} className="pay-cd">
+                <button
+                  onClick={() => {
+                    setIsclick2(false);
+                  }}
+                >
+                  X
+                </button>
+                <h1>Transfer to Bank</h1>
+                <input
+                  value={amount}
+                  onChange={(e) => {
+                    setAmount(e.target.value);
+                  }}
+                  type="number"
+                  placeholder="Enter Amount to Add"
+                />
+                <button type="submit" className="btn btn-o-1">
+                  Transfer to Bank
+                </button>
+              </form>
+            )}
             <button
               onClick={() => {
+                setIsclick(true);
                 setIsclick2(false);
               }}
+              className="btn btn-o-1"
             >
-              Close
+              Add Money To Wallet
             </button>
-            <h1>Transfer to Bank</h1>
-            <input
-              value={amount}
-              onChange={(e) => {
-                setAmount(e.target.value);
-              }}
-              type="number"
-              placeholder="Enter Amount to Add"
-            />
-            <button type="submit" className="btn btn-o">
-              Transfer to Bank
-            </button>
-          </form>
-        )}
-        <button
-          onClick={() => {
-            setIsclick(true);
-            setIsclick2(false);
-          }}
-          className="btn btn-o"
-        >
-          Add Money To Wallet
-        </button>{" "}
-      </div>
-      {/* <button onClick={()=>{setIsclick(false);setIsclick2(true)}} className='btn btn-b'>Transfer to Bank</button> */}
-      <div id="record-cont">
-        { transaction && transaction.length != 0 &&
-          transaction.map((t) => {
-            const dt = getDate(t.time);
-            const mode = t.Status == 0 ? "Wallete" : "Manual";
-            return (
-              <div className="tr-record" key={t.Tid}>
-                <p>Tid: {t.Tid}</p>
-                <p>Note: {t.note}</p>
-                <strong>Amount: {t.amount}</strong>
-                <p>Date: {dt}</p>
-                <p>Transaction Mode: {mode}</p>
-              </div>
-            );
-          })}
-          {transaction && transaction.length == 0 && <p>No data found</p> }
-          {!transaction && <h1>Loading...</h1> }
+          </div>
+        </div>
+        <br />
+        {/* <button onClick={()=>{setIsclick(false);setIsclick2(true)}} className='btn btn-b'>Transfer to Bank</button> */}
+        <table className="transaction-table">
+          <thead>
+            <tr>
+              <th>Tid</th>
+              <th>Note</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Transaction Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            {transaction &&
+              transaction.length !== 0 &&
+              transaction.map((t) => {
+                const dt = getDate(t.time);
+                const mode = t.Status === 0 ? "Wallet" : "Manual";
+                return (
+                  <tr key={t.Tid}>
+                    <td>{t.Tid}</td>
+                    <td>{t.note}</td>
+                    <td>{t.amount}</td>
+                    <td>{dt}</td>
+                    <td>{mode}</td>
+                  </tr>
+                );
+              })}
+            {transaction && transaction.length === 0 && (
+              <tr>
+                <td colSpan="5">No data found</td>
+              </tr>
+            )}
+            {!transaction && (
+              <tr>
+                <td colSpan="5">Loading...</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );

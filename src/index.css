@@ -5,12 +5,20 @@
     scroll-behavior: smooth
     }
 
-    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Michroma&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Russo+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&family=Tilt+Warp&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Michroma&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Russo+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&family=Tilt+Warp&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Michroma&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Russo+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&family=Tilt+Warp&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Michroma&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Russo+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Michroma&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Russo+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Michroma&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Russo+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Marcellus&family=Michroma&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=Russo+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+#dgw {
+
+    color: #fff !important;
+    font-family: var(--font9) !important;
+}
+
+#dg {
+    color: rgb(43, 52, 43) !important;
+    font-family: var(--font9) !important;
+}
     :root {
         --font1: 'Anton', sans-serif;
         --font2: 'Michroma', sans-serif;
@@ -20,15 +28,20 @@
         --font6: 'Saira', sans-serif;
         --font7: 'Tilt Warp', cursive;
         --font8: 'Kanit', sans-serif;
+         --font9: 'Marcellus',
+         serif;
         --green: #D6FB00;
         /* --blue: #003B49; */
-        --blue: #003B49;
+        /* --blue: #003B49; */
+        --blue: #ee7e34;
         --grn: #2a9628;
-        --org: #FF7D44;
+        --org: #263326;
     /* --blue2: #5865F2; */
     /* --blue2: #092d35; */
-    --blue: #17406C;
-    --blue2: #17406C;
+    /* --blue: #17406C; */
+    /* --blue: #1e5999; */
+    /* --blue2: #17406C; */
+    --blue2: #eb8f17;
     /* --blue: #599a5d; */
     }
 
@@ -47,7 +60,7 @@
         /* outline: 1px solid slategrey; */
     }
     body::-webkit-scrollbar {
-        width: 5mm !important;
+        width: 3mm !important;
     }
 
     body::-webkit-scrollbar-track {

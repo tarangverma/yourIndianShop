@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./PopAd.css";
 import { IconButton } from "@mui/material";
-import { WhatsApp } from "@mui/icons-material";
+import {
+  AttachEmailRounded,
+  LiveHelpOutlined,
+  Mail,
+  WhatsApp,
+} from "@mui/icons-material";
 import Tilt from "react-parallax-tilt";
+import AlternateEmailOutlinedIcon from "@mui/icons-material/AlternateEmailOutlined";
+import MessageOutlinedIcon from "@mui/icons-material/MessageOutlined";
 
 const PopAd = () => {
   const adsData = [
@@ -20,6 +27,7 @@ const PopAd = () => {
 
   const [currentAdIndex, setCurrentAdIndex] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
+  const [showConPop, setShowConPop] = useState(true); // Add this state
 
   useEffect(() => {
     const adDisplayDuration = 5000; // 5 seconds
@@ -51,7 +59,6 @@ const PopAd = () => {
   const handleClosePopup = () => {
     // Close the popup
     setShowPopup(false);
-    console.log("bandh : ", showPopup);
   };
 
   const handleViewMore = () => {
@@ -59,34 +66,55 @@ const PopAd = () => {
     window.location.href = adsData[currentAdIndex].link;
   };
 
+  const toggleConPopVisibility = () => {
+    // Toggle the visibility of #con-pop
+    setShowConPop(!showConPop);
+  };
+
   return (
     <div>
-      <Tilt
-        tiltMaxAngleX="9"
-        tiltMaxAngleY="9"
-        className={`popup-ads ${showPopup ? "show" : "invis"}`}
-      >
-        <div className="popup-content">
-          <h2>{adsData[currentAdIndex].title}</h2>
-          <p>{adsData[currentAdIndex].description}</p>
-          <div className="popup-buttons">
-            <button
-              className="view-more-button btn-v-o"
-              onClick={handleViewMore}
-            >
-              View More
-            </button>
-            <button className="close-button btn-v-r" onClick={handleClosePopup}>
-              Close
-            </button>
+      <div id="fq-bt" onClick={toggleConPopVisibility}>
+        <MessageOutlinedIcon />
+      </div>
+
+      {showConPop && (
+        <div id="con-pop">
+          <div className="cp-hd">
+            <div className="lg">YOUR INDIAN SHOP</div>
+            <div className="cls" onClick={toggleConPopVisibility}>
+              x
+            </div>
+          </div>
+          <div className="cp-bd">
+            <div className="cp-hd-title">
+              <h1>Hi👋</h1>
+              <h1>HOW CAN WE HELP?</h1>
+            </div>
+            <div className="khokha">
+              <div className="khokhu">
+                <div className="kh-l">
+                  <strong>Contact Us</strong>
+                  <small>We are here to help !</small>
+                </div>
+                <div className="kh-r">
+                  <AlternateEmailOutlinedIcon />
+                </div>
+              </div>
+              <div className="khokhu">
+                <div className="kh-l">
+                  <strong>FAQ?</strong>
+                  <small>Your questions answers !</small>
+                </div>
+                <div className="kh-r">
+                  <LiveHelpOutlined />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </Tilt>
-      <div id="wts">
-        <div className="i">
-          <WhatsApp />
-        </div>
-      </div>
+      )}
+
+      {/* The rest of your component */}
     </div>
   );
 };

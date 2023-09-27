@@ -46,12 +46,12 @@ const footer = () => {
           <div className="logo lg">
             <span id="wt">Your</span>
             <img src="./imgs/6.png" height="35PX" alt="" />
-            <span id="org">Shop</span>
+            <span id="">Shop</span>
           </div>
           <div className="loc">
             <div className="titl">
               <span id="wt">Transforming </span>
-              <span id="org"> Ideas Into </span>
+              <span id=""> Ideas Into </span>
               <span id="wt"> Reality</span>
             </div>
           </div>

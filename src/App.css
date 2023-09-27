@@ -44,7 +44,9 @@ footer {
   padding: 5vh 10vw;
   display: flex;
   align-items: center;
-  background: var(--blue);
+  background: -webkit-linear-gradient(to right #fedd39, #ee7e34) !important;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fedd39, #ec843f) !important;
   color: #fff !important;
   flex-direction: column;
   gap: 30px;
@@ -221,10 +223,10 @@ a {
       top: 0;
   }
 
-  .client-slider:last-child .client-slide-track {
-      -webkit-animation: scroll 20s reverse linear infinite;
-      animation: scroll 20s reverse linear infinite;
-      flex-direction: row-reverse;
+.cl-cd-2 .client-slide-track {
+  -webkit-animation: scroll 20s reverse linear infinite !important;
+  animation: scroll 20s reverse linear infinite !important;
+  flex-direction: row-reverse !important;
   }
 
   .client-slider .client-slide-track {

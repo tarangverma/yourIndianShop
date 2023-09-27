@@ -237,3 +237,7 @@ table .btn {
     padding: 25px;
     margin: 25px;
 }
+.transaction-table {
+    width: 100%;
+    /* margin: 25px; */
+}

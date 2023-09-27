@@ -203,3 +203,54 @@
 #ds3 img {
     width: 80%;
 }
+.pay-cd .btn-r:hover {
+    background-color: crimson;
+    /* font-size: 1.2rem; */
+}
+
+.pay-cd h1 {
+    /* margin-: ; */
+    font-family: var(--font2) !important;
+}
+
+.pay-cd .btn-r {
+    height: 30px;
+    width: 30px;
+    display: grid;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    background-color: #ffffff61;
+    color: white;
+    right: 15px;
+    transition: 0.35s ease-in-out;
+    place-items: center;
+}
+
+.pay-cd input {
+    border: none;
+    outline: none;
+    padding: 7px 15px;
+    font-size: 1rem;
+    border-bottom: 5px solid var(--org);
+}
+
+.pay-cd {
+    border-radius: 7px;
+    /* border: 3px solid orange; */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: #5C258D;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4389A2, #5C258D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    top: 200px;
+    right: 500px;
+    box-shadow: 0 0 30px 1px #0000006a;
+    padding: 50px;
+    color: #fff !important;
+}
