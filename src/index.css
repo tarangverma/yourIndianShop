@@ -31,18 +31,13 @@
          --font9: 'Marcellus',
          serif;
         --green: #D6FB00;
-        /* --blue: #003B49; */
-        /* --blue: #003B49; */
-        --blue: #ee7e34;
+        --blue: #00a1b8;
         --grn: #2a9628;
-        --org: #263326;
-    /* --blue2: #5865F2; */
-    /* --blue2: #092d35; */
-    /* --blue: #17406C; */
-    /* --blue: #1e5999; */
-    /* --blue2: #17406C; */
+        --org: #00e0e1;
+        --og: #ff5d4b;
+        --db: #54646e;
+        --db2: #283c48;
     --blue2: #eb8f17;
-    /* --blue: #599a5d; */
     }
 
     *::-webkit-scrollbar {
@@ -50,7 +45,7 @@
     }
 
     *::-webkit-scrollbar-track {
-        background: var(--blue);
+        background: var(--db);
         /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
     }
 
@@ -64,7 +59,7 @@
     }
 
     body::-webkit-scrollbar-track {
-        background: var(--blue);
+        background: var(--db);
         /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
     }
 
@@ -194,7 +189,7 @@
     }
 
     body::-webkit-scrollbar-track {
-        background: var(--blue);
+        background: var(--db);
         /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
     }
 
@@ -340,5 +335,9 @@
 }
 
 .social-m>* {
+    transition: 0.2s ease;
     color: #fff !important;
+}
+.social-m>*:hover {
+    color: var(--org) !important;
 }

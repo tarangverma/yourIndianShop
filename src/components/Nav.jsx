@@ -115,6 +115,9 @@ const Nav = () => {
         )}
       </div>
       <nav ref={navElement} className={navClass}>
+        <div id="logo">
+          <div id="dg">YOUR INDIAN SHOP</div>
+        </div>
         <div id="links">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
@@ -130,14 +133,7 @@ const Nav = () => {
           <Link to="/offers">Offers</Link>
           {/* <Link to="/in-sites">Indian Sites</Link> */}
         </div>
-        <div id="logo">
-          <span id="wt">Your</span>
-          &nbsp;
-          <img src="./imgs/6.png" height={"35px"} alt="" />
-          &nbsp;
-          <span id="org">Shop</span>
-        </div>
-        <div id="smd">
+        {/* <div id="smd">
           <IconButton>
             <Facebook />
           </IconButton>
@@ -147,7 +143,7 @@ const Nav = () => {
           <IconButton>
             <Twitter />
           </IconButton>
-        </div>
+        </div> */}
         {/* <a
           href="https://www.youtube.com/watch?v=YB67y0NepPs&t=2s&pp=ygUbZHJvcHNoaXBwaW5nIGFuaW1hdGVkIHZpZGVv"
           target="_blank"
@@ -156,17 +152,16 @@ const Nav = () => {
             <YouTubeIcon />
           </IconButton>
         </a> */}
-        {/* <div className="nav-right">
-         
-          <div onClick={othenticate} id="log" className="btn btn-o">
+        <div className="nav-right">
+          <div onClick={othenticate} id="log" className="btn btn-og">
             <a>{isLogin ? "LogOut" : si}</a>
           </div>
-          {!isLogin && (
-            <Link to="/signUp" id="log" className="btn btn-o">
+          {/* {!isLogin && (
+            <Link to="/signUp" id="log" className="btn btn-og">
               <div>Sign Up</div>
             </Link>
-          )}
-        </div> */}
+          )} */}
+        </div>
         <div id="tog" onClick={handleToggle}>
           <IconButton>
             <MenuIcon className="wt" />

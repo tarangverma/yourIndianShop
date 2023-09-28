@@ -44,16 +44,10 @@ const footer = () => {
       <div className="ftr1">
         <div className="f1r">
           <div className="logo lg">
-            <span id="wt">Your</span>
-            <img src="./imgs/6.png" height="35PX" alt="" />
-            <span id="">Shop</span>
+            <div id="dg">YOUR INDIAN SHOP</div>
           </div>
           <div className="loc">
-            <div className="titl">
-              <span id="wt">Transforming </span>
-              <span id=""> Ideas Into </span>
-              <span id="wt"> Reality</span>
-            </div>
+            <div className="titl">Transforming Ideas Into Reality</div>
           </div>
           <div className="tm">
             info@techiota.co.in <br /> +919903581809

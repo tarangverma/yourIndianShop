@@ -51,7 +51,7 @@
     display: grid;
     place-items: center;
     width: 100dvw;
-    height: 70vh;
+    height: 80vh;
     overflow: hidden !important;
 }
 body,
@@ -143,7 +143,7 @@ section {
 }
 .hero-cont {
     width: 100dvw;
-    height: 70vh;
+    height: 80vh;
     overflow: hidden !important;
     display: flex;
     /* margin:0 5vw; */
@@ -158,6 +158,14 @@ section {
     height: fit-content;
     gap: 25px;
     margin-top: -12.5vh;
+}
+#homesec::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    z-index: 111;
+    background: #283c488c;
+    position: absolute;
 }
 #homesec {
     position: relative;
@@ -232,8 +240,8 @@ section {
 
 #hero-log-pop {
     position: absolute;
-    z-index: 11;
-    bottom: 10vh;
+    z-index: 112;
+    bottom: 17vh;
     display: flex;
     flex-direction: column;
     gap: 7px;
@@ -245,10 +253,15 @@ section {
     font-weight: 300;
     font-family: var(--font6);
 }
+.pp2 {
+    margin-top: 10vh;
+}
 .pop-2 {
     flex-direction: row-reverse;
-    margin: 0 !important;
-    padding: 0 !important;
+    /* margin: 0 !important; */
+    padding: 0 10vw !important;
+    /* margin-top: 10vh; */
+
     margin-bottom: 10vh !important;
 }
 #pop-ser {
@@ -260,9 +273,10 @@ section {
     width: 100%;
     left: 0;
     bottom: -75px;
+    padding: 0 10vw;
     /* margin-top: 10vh; */
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     z-index: 11;
 }
 
@@ -271,7 +285,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 35%;
+    width: 47%;
     /* flex: 1 !important; */
     height: 100% !important;
     /* border: 5px solid red; */
@@ -281,7 +295,7 @@ section {
     box-shadow: 0 0 50px 0px #00000023;
 }
 .ps:last-child {
-    background: var(--blue);
+    background: var(--db2);
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -289,7 +303,7 @@ section {
 }
 
 .ps-l>* {
-    color: var(--org);
+    color: var(--blue);
     z-index: 1;
     font-size: 2.5rem !important;
     position: relative;
@@ -303,8 +317,9 @@ section {
 }
 
 .pop-3 {
-    margin-top: 35px !important;
-    width: 100% !important;
+    /* margin-top: 35px !important; */
+    width: 100%;
+    margin: 35px 5vw !important;
 }
 .pop-3 .ps {
     width: 100% !important;
@@ -319,7 +334,7 @@ section {
     margin: 10px 0 0 10px;
     z-index: 0;
     border-radius: 50%;
-    background: rgba(255, 132, 0, 0.158);
+    background: rgba(0, 255, 255, 0.158);
     position: absolute;
     display: block;
 }
@@ -387,12 +402,7 @@ section {
     height: 80px;
 }
 .btn-gd {
-    background: #e65c00;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F9D423, #e65c00);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F9D423, #e65c00);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: var(--blue);
     border-radius: 50px;
     color: #fff;
 
@@ -424,11 +434,12 @@ section {
     justify-content: space-between;
     gap: 10vw;
     padding: 0 5vw;
-    background: #e65c00;
+    padding-top: 5vh;
+    background: var(--db2);
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom #fedd39, #ff7315);
+    background: -webkit-linear-gradient(to bottom, var(--blue), var(--db2));
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #fedd39, #ff7315);
+    background: linear-gradient(to bottom, var(--blue), var(--db2));
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -443,7 +454,7 @@ section {
 .sup {
     /* border: 1px solid black; */
     padding: 17px 45px;
-    background: rgb(52, 69, 52);
+    background: var(--blue);
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 5vh;
@@ -457,6 +468,7 @@ section {
     font-size: 1.6rem;
     /* margin-top: -15vh; */
     font-family: var(--font3);
+    color: #ddd6d0 !important;
     font-weight: 400 !important;
 
 }
@@ -465,6 +477,7 @@ section {
     font-size: 5.5rem;
     /* margin-top: -15vh; */
     font-family: var(--font6);
+    color: #fff !important;
     font-weight: 300 !important;
 
 }
@@ -523,7 +536,7 @@ section {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
     padding: 25px;
     gap: 15px;
     align-items: center;
@@ -556,13 +569,16 @@ section {
     }
 
     .bkl {
-        padding: 5vh 10vw;
+        padding: 5vh 0;
         position: relative;
         padding-bottom: 0 !important;
-        margin-top: -2.5vh !important;
+        /* margin-top: -2.5vh !important; */
      background-repeat: no-repeat !important;
         padding-top: 0 !important;
         background: #eee;
+    }
+    .sh1>#dg {
+        text-align: left !important;
     }
 #ship {
     background: #fff;
@@ -593,7 +609,8 @@ section {
         width: 100dvw !important;
         margin: 0 !important;
         padding: 0 !important;
-        background: url('https://png.pngtree.com/thumb_back/fw800/background/20230525/pngtree-different-brown-paper-shopping-bags-on-a-dark-background-image_2624565.jpg');
+        background: linear-gradient(to top, rgba(107, 79, 30, 0.097), rgba(33, 36, 115, 0.426)),
+        url('https://png.pngtree.com/thumb_back/fw800/background/20230525/pngtree-different-brown-paper-shopping-bags-on-a-dark-background-image_2624565.jpg');
     }
 
     #lnl {
@@ -627,7 +644,7 @@ section {
     /* background: rgb(134, 250, 114); */
     align-items: flex-start;
     justify-content: space-evenly;
-    margin: 7vh 0;
+    margin-top: 7vh;
     flex-wrap: wrap;
     gap: 25px 0;
 }
@@ -636,6 +653,7 @@ section {
     /* border: 1px solid #4d4d4d; */
     /* padding: 35px; */
     background: #fff;
+    /* background: var(--db); */
     padding: 25px 12px;
     border-radius: 7px;
     box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.311);
@@ -826,7 +844,7 @@ section {
 #service-we-offer {
     width: 100%;
     margin: 0;
-    padding: 10vh 10vw;
+    padding: 10vh 10vw 0 10vw;
     position: relative;
 }
 
@@ -896,15 +914,17 @@ section {
     align-self: flex-end;
     gap: 15px;
 }
+#indianshopcart {
+    padding: 0 !important;
+}
 .ser-sec-2 {
-    background: #eee;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.60)),
-    /* url('https://img.freepik.com/premium-vector/indian-people-group-traditional-clothes_48369-10176.jpg') !important; */
+    background: #fff;
+    /* background: linear-gradient(to left, rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.60)),
     url('../../public/imgs/in-bz.jpg') !important;
-    /* background-position: 0 560px !important; */
-    background-position: 0 100% !important;
+  background-position: 0 100% !important;
     background-repeat: repeat-x !important;
     background-size: 260px !important;
+    */
     padding-top: 0 !important;
 
     }
@@ -1308,6 +1328,45 @@ section {
     justify-content: flex-start;
     flex-direction: column;
 }
+.fd-cd:hover .feed-info {
+    bottom: 0;
+}
+
+.feed-info .msg-title {
+    /* margin-top: 10px; */
+}
+
+.feed-info .msg-desc {
+    /* margin-top: 50px; */
+    color: #fff !important;
+}
+
+.feed-info #blue {
+    margin-top: -60px !important;
+    /* position: relative; */
+    /* top: 0 !important; */
+}
+
+.sitara>* {
+    color: var(--org);
+}
+
+.sitara {
+    justify-content: center;
+    display: flex;
+    gap: 7px;
+
+}
+
+.feed-info {
+    width: 330px !important;
+    background: rgba(35, 43, 56, 0.838);
+    bottom: -500px;
+    transition: 0.3s ease;
+
+    height: 330px;
+    position: absolute !important;
+}
 
 .fd-title {
     font-weight: 600;
@@ -1337,6 +1396,8 @@ section {
     flex-direction: column;
     gap: 12px;
     width: 330px !important;
+    height: 330px;
+    overflow: hidden;
     background: #fff;
 flex-direction: column-reverse;
     border-radius: 7px;
@@ -1353,7 +1414,7 @@ flex-direction: column-reverse;
 
 .msg-bot .zomm-dp {
     width: 100%;
-    height: 300px;
+    height: 330px;
 
     overflow: hidden;
     /* border-radius: 50%; */
@@ -1462,21 +1523,24 @@ flex-direction: column-reverse;
     .col-r input::placeholder,
     .col-r textarea::placeholder {
         font-size: 1rem;
-        color: #252525;
+        color: #fff;
     }
 
     .col-r input,
     .col-r textarea {
         padding: 12px 22px;
-        background: rgb(222, 209, 197);
+        color: #fff !important;
+        background: var(--db2);
         outline: none;
         border: none;
     }
 
+    .soneri::placeholder {
+        color: white !important;
+    }
     .soneri {
-        background: -webkit-linear-gradient(to right #fedd39, #ee7e34) !important;
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #fedd39, #ec843f) !important;
+background: var(--db) !important;
+color: #fff !important;
     }
 
     .col-r .btn {

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5vw;
+    padding: 25px 5vw;
     /* background:var(--blue); */
     /* background:#17406c37; */
     /* margin: 0 3.8vw 0 5vw; */
@@ -23,17 +23,12 @@
     gap: 15px;
     background: #F2994A;
     padding-bottom: 10vh;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F2C94C, #F2994A);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: #44A08D;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #093637, #44A08D, #44A08D);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #093637, #44A08D, #44A08D);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     /* background: -webkit-linear-gradient(to right, #F2C94C, #F2994A); */
+     /* background: linear-gradient(to right, #F2C94C, #F2994A); */
+     /* background: #44A08D; */
+     /* background: -webkit-linear-gradient(to top, #093637, #44A08D, #44A08D); */
+     /* background: linear-gradient(to top, #093637, #44A08D, #44A08D); */
+     background: linear-gradient(to bottom, var(--blue), var(--db2));
 
 }
 
@@ -128,12 +123,12 @@ margin-left: 15px;
     font-weight: 600;
     font-family: var(--font7);
     text-transform: uppercase;
-    font-size: 1.3rem;
+    font-size: 1.75rem;
     cursor: pointer;
     flex: 1;
     /* margin: auto; */
     display: flex;
-    margin-left:20%;
+    /* margin-left:20%; */
     align-items: center;
 }
 
@@ -142,7 +137,7 @@ margin-left: 15px;
 }
 
 #org {
-    color: var(--org);
+    color: var(--blue);
 }
 #wt {
     color: #fff;
@@ -153,6 +148,7 @@ margin-left: 15px;
 nav #links {
     /* flex: 1; */
     display: flex;
+    margin-right: 10vw;
     align-items: center;
     justify-content: flex-end;
     gap: 50px;
@@ -160,18 +156,29 @@ nav #links {
 nav .btn-o:hover {
     background-color: rgb(218, 98, 12);
 }
+.btn-db {
+    color: #fff;
+    background-color: var(--db);
+}
 #links a {
     text-decoration: none;
-    color: #fff;
-    /* color:#252525; */
+    /* color: #fff; */
+    color:var(--db);
     cursor: pointer;
     font-weight: 500;
+    font-size: 1.1rem;
     transition: all ease-in-out 0.25s;
 }
 
 #links a:hover {
     color: var(--org);
     /* color: rgb(33, 29, 90); */
+}
+
+.btn-og {
+    background: var(--og) !important;
+    border-radius: 50px;
+    color: #fff;
 }
 
 .btn {
@@ -241,7 +248,7 @@ nav .btn-o:hover {
 
  .links>* {
      text-decoration: none !important;
-     color: #fff !important;
+     color: #252525 !important;
  }
 #side-nav #links {
     display: flex !important;
@@ -306,7 +313,7 @@ nav .btn-o:hover {
     flex-direction: column;
 }
 .nav-default {
-    background-color: transparent;
+    background-color: #fff;
     /* background-color: var(--blue); */
     /* Set your default background color */
     /* Add other default styles */
@@ -314,26 +321,42 @@ nav .btn-o:hover {
 
 /* Define styles for your navigation bar when scrolled */
 .nav-scrolled {
-    background-color: var(--blue);
-    background: -webkit-linear-gradient(to right #fedd39, #ee7e34) !important;
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #fedd39, #ec843f) !important;
+    background-color: var(--db2);
 
     /* Set your desired background color when scrolled */
     /* Add other styles for the scrolled state */
-}
+    }
+
+    .nav-scrolled #links a {
+        color: #dbdbdb;
+    }
+
+    .nav-scrolled #logo #dg {
+        color: #fff !important
+    }
 
 .nav-scrolled #links a:hover {
     color: var(--org) !important;
     /* Set your desired background color when scrolled */
     /* Add other styles for the scrolled state */
 }
+#lambo-ln {
+    filter: hue-rotate(170deg);
+}
 
+.sttt #dg {
+    color: #fff !important;
+}
+
+.sttt a {
+    color: #fff !important;
+}
 .sttt header nav {
     /* background: var(--blue) !important;
       background: -webkit-linear-gradient(to right #fedd39, #ee7e34) !important;
       /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #fedd39, #ec843f) !important;
+    /* background: linear-gradient(to right, #fedd39, #ec843f) !important; */
+    background: var(--db2);
 }
 
 .sttt header nav #links a:hover {

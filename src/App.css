@@ -44,12 +44,10 @@ footer {
   padding: 5vh 10vw;
   display: flex;
   align-items: center;
-  background: -webkit-linear-gradient(to right #fedd39, #ee7e34) !important;
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fedd39, #ec843f) !important;
-  color: #fff !important;
+ color: #fff !important;
   flex-direction: column;
   gap: 30px;
+background: var(--db2);
 }
 
 footer .ftr1 {
@@ -117,12 +115,27 @@ footer .ftr1 {
   justify-content: space-between;
   display: flex;
 }
+footer #dg {
+  color: #fff !important;
+  /* font-size: 3rem; */
+}
 
+footer .links>* {
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: #dfd9d5 !important;
+
+}
+
+footer .links>*:hover {
+  color: var(--org) !important;
+
+}
 footer .links,
 footer a {
   display: flex;
   gap: 25px;
-  color: #121212;
+  color: #dfd9d5 !important;
   font-weight: 600;
   font-family: var(--font-7);
   font-size: 1.2rem;
