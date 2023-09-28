@@ -137,7 +137,7 @@ function Billing() {
               <div className="plan-page-title">
                 <span id="org">{wh?.Name}'s</span>
                 <span id="wt">Pending</span>
-                <span id="lime">Bills(${amount})</span>
+                <span id="lime">Bills(₹{amount})</span>
               </div>
               <div>
                 <button
@@ -145,7 +145,7 @@ function Billing() {
                   onClick={paymentall}
                   className="btn btn-o-1"
                 >
-                  Pay ${amount}{" "}
+                  Pay ₹{amount}{" "}
                 </button>
               </div>
             </div>{" "}
@@ -190,7 +190,7 @@ function Billing() {
                   no. of days after completing plan:{" "}
                   {pc[0].freeStorage > dtl ? "0" : dtl - pc[0].freeStorage} Days
                 </p>
-                <p>Price Per Item per Day: ${dt[0].storage_price} </p>
+                <p>Price Per Item per Day: ₹{dt[0].storage_price} </p>
                 <p>Total Item In WareHouse : {ic}</p>
               </div>
               {/* <p>Total Bill: ${amount}</p> */}
@@ -238,7 +238,7 @@ function Billing() {
                           }}
                           className="btn  btn-b"
                         >
-                          Pay ${b.amount}
+                          Pay ₹{b.amount}
                         </button>
                       )}{" "}
                       <button

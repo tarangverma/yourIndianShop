@@ -195,7 +195,7 @@ const Calc = () => {
                 The estimated price is based on Product weight ({weight}kgs) &
                 <br /> dimensions of product({height}cmx{width}cmx{length}cm) is
               </DialogContentText>
-              <h1 id="prc">${price.toFixed(2)} </h1>
+              <h1 id="prc">₹{price.toFixed(2)} </h1>
               <DialogContentText id="alert-dialog-description">
                 The volumetric weight is {(height * width * length) / 5000}.
               </DialogContentText>

@@ -49,7 +49,7 @@ const Dashboard = () => {
                   </div>
                   <div className="ds-info">
                     Wallet Balance
-                    <br />$ {user?.Wallete}
+                    <br /> ₹{user?.Wallete}
                   </div>
                 </div>{" "}
               </Link>

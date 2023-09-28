@@ -204,7 +204,7 @@ function DispachRequest() {
                         {p.height}*{p.width}*{p.length} CM
                       </td>
                       <td>{p.wight} Kg</td>
-                      <td>${p.payment}</td>
+                      <td>₹{p.payment}</td>
                       <td>{p.Sp || "N/A"}</td>
                       <td>
                         {p.status

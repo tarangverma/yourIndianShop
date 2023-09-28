@@ -123,7 +123,7 @@ function Wallete() {
           <div className="plan-page-title">
             <span id="org">Wallet</span>
             <span id="wt">Balance:</span>
-            <span id="lime">${user?.Wallete}</span>
+            <span id="lime">₹{user?.Wallete}</span>
           </div>
           <div>
             {isClick && (

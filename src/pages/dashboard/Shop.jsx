@@ -44,7 +44,7 @@ const Shop = () => {
               // proImg={`./imgs/btt${e}.webp`}
               proImg={`${url}/${photo[0]}`}
               proName={p.Name}
-              proPrice={` $${p.Price}`}
+              proPrice={` ₹${p.Price}`}
             />
           );
         })}
