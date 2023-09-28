@@ -17,6 +17,7 @@ function DispachRequest() {
     dt ? setDr(dt.result) : setDr([]);
     const dt2 = await fetchreq("GET", "getSp", {});
     dt2 ? setSp(dt2.result) : setSp([]);
+    console.log(dt2)
   };
   const loadpkt = async () => {
     const dt = await fetchreq("GET", `packages/${user.Cid}/${wh.Wid}`, {});

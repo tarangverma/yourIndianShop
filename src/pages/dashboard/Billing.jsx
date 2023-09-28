@@ -60,6 +60,7 @@ function Billing() {
     const dt = await fetchreq("GET", `getBills/${user?.Cid}/${wh?.Wid}`, {});
     if (dt) {
       const bs = dt.result;
+      console.log(bs,user?.Cid,wh?.Wid);
       setBills(bs);
       const totalAmount = bs.reduce((total, b) => total + b.amount, 0);
       setAmount(totalAmount);

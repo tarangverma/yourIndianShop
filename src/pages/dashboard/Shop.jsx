@@ -37,7 +37,7 @@ const Shop = () => {
 
       <div id="displayProducts">
         {products.map((p, e) => {
-          const photo = JSON.parse(p.Images);
+          const photo = (p.Images)
 
           return (
             <Product

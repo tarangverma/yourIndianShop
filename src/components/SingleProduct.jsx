@@ -103,7 +103,7 @@ const SingleProduct = () => {
   }
   useEffect(()=>{
     if(isLogin){
-      const pt = JSON.parse(wd?.photos);
+      const pt = (wd?.photos);
       let photos = [];
       pt.forEach(element => {
         photos.push(`${url}/${element}`);

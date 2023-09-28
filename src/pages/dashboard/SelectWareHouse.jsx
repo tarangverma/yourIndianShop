@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { fetchreq } from "../../Helper/fetch";
 
 const SelectWareHouse = () => {
-  const [warehouse,setWareHouses]=useState([]);
+  const [warehouse,setWareHouses]=useState(null);
   const {planId,user,isLogin}=useContext(MyContext);
   const nav = useNavigate()
 
@@ -33,12 +33,13 @@ const SelectWareHouse = () => {
         </div>
       </center>
       <div className="warehouse-container">
-        {warehouse.length!=0 && warehouse.map((warehouse) => (
+        {warehouse && (warehouse.length!=0 ? warehouse.map((warehouse) => (
           <Warehouse
             key={warehouse.Wid}
             warehouse={warehouse}
           />
-        ))}
+        )): <h3>No Warehouse Available</h3> )}
+        {!warehouse && <img src="./videos/Loading_2.gif"  alt="Loading..."/> }
       </div>
     </>
   );

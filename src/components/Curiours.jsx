@@ -5,13 +5,13 @@ import { MyContext } from "../App";
 const Curiors = ({wd,selectProduct,isselect}) => {
   const {setWd}=useContext(MyContext);
   const url = process.env.REACT_APP_URL;
-  
-  const pt = JSON.parse(wd.photos);
+  console.log(wd)
+  const pt = wd?.photos;
   const nav= useNavigate();
   const openproduct=()=>{
     setWd(wd);
     setTimeout(() => {
-        nav('/dashboard/single-product');
+        nav('/dashboard/single-product'); 
     }, 500);
   }
   return (

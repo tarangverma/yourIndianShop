@@ -45,7 +45,7 @@ const Locker = () => {
             <Warehouse key={warehouse.Wid} warehouse={warehouse} />
           ))}
         {warehouse && warehouse.length == 0 && <p>No data found</p>}
-        {!warehouse && <h2>Loading...</h2>}
+        {!warehouse && <img src="./videos/Loading_2.gif"  alt="Loading..."/>}
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import "./App.css";
 import "./Mq.css";
 import Home from "./pages/home/Home";
@@ -48,6 +48,7 @@ const App = () => {
   const [wd, setWd] = useState(null);
   const [did, setDid] = useState(null);
   const [muldis,setMuldis]=useState(null);
+  
   return (
     <div>
       <MyContext.Provider

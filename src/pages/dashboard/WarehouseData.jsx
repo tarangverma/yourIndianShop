@@ -71,13 +71,13 @@ const Shop = () => {
               Add Products Acceptance Request
             </Link>
             <Link className="btn btn-o-1" to="/PAR">
-              Your Product Acceptance Request
+              Product Acceptance Requests
             </Link>
             <Link className="btn btn-o-1" to="/DispachRequests">
-              Your Dispatch Requests
+              Dispatch Requests
             </Link>
             <Link className="btn btn-o-1" to="/ReturnRequests">
-              Your Return Requests
+              Return Requests
             </Link>
           </div>
         </div>
@@ -103,7 +103,7 @@ const Shop = () => {
               );
             })}
           {wd && wd.length == 0 && <p>No data found</p>}
-          {!wd && <h2>Loading...</h2>}
+          {!wd && <img src="./videos/Loading_2.gif"  alt="Loading..."/>}
         </div>
         <div
           style={{
