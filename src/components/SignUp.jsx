@@ -5,7 +5,6 @@ import "../stylesheet/SignUp.css";
 import AddCardIcon from "@mui/icons-material/AddCard";
 import { fetchreq } from "../Helper/fetch";
 import emailjs from "@emailjs/browser";
-let code = Math.round(1000000 * Math.random()).toString();
 
 const SignUp = () => {
   const nav = useNavigate();
@@ -23,30 +22,24 @@ const SignUp = () => {
   const [pincode, setPincode] = useState("");
   const [State, setState] = useState("");
   const [inputOTP, setInputOTP] = useState("");
-
+  const [code,setCode]=useState(null);
   const form = useRef();
-  const sendEmail = (e) => {
+  const sendEmail =async (e) => {
     e.preventDefault();
     if (name != "" && email != "" && password != "" && mobile != "") {
       setSubmit("Sending Verification  Mail...");
-      emailjs
-        .sendForm(
-          "service_p4uzot9",
-          "template_8w5j3hp",
-          form.current,
-          "L-oDXOLv_J9LSWIt2"
-        )
-        .then(
-          (result) => {
-            alert("code is send to your email");
-            setSubmit("Submit Otp");
-            setOtp(2);
-          },
-          (error) => {
-            console.log(error.text);
-            setSubmit("Continue");
-          }
-        );
+      let tempcode = Math.round(1000000 * Math.random()).toString();
+      const dt = await fetchreq("POST","sendMail",{email,subject:"Verification Mail",html:`<p>Your Verification Code is ${tempcode}</p>`});
+      if(dt){
+        setSubmit("Submit Otp");
+        setCode(tempcode); 
+        setOtp(2);
+        alert("email is send to Your Email");
+      }else{
+        alert("Something Went Wrong...");
+        setSubmit("Continue");
+      }
+     
     } else {
       alert("please Fill all Details");
     }
@@ -97,23 +90,7 @@ const SignUp = () => {
 
   return (
     <div id="mcd">
-      <form style={{ display: "none" }} ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" value={email} onChange={() => {}} name="user_name" />
-        <br />
-        <label>Email</label>
-        <input
-          type="email"
-          value={email}
-          onChange={() => {}}
-          name="user_email"
-        />
-        <br />
-        <label>Message</label>
-        <textarea value={code} onChange={() => {}} name="message" />
-        <br />
-        <input type="submit" value="Send" />
-      </form>
+     
       <section id="SpSignIn" className="spUp">
         <div className="left">
           <img src="./imgs/sup.png" alt="" />

@@ -1,10 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { MyContext } from '../App';
 import { fetchreq, getDate, walletTransaction } from '../Helper/fetch';
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "../stylesheet/dashboard/Table.css";
+import { useReactToPrint } from "react-to-print";
 function DispachRequest() {
+  const componentRef = useRef();
+  const printDocument = useReactToPrint({
+    content: () => componentRef.current,
+  });
+  const [doc,setDoc]=useState(null);
+  // ref={componentRef} 
   const { user, wh, isLogin, setUser } = useContext(MyContext);
   const [dr, setDr] = useState(null);
   const [yrpkt, setYrpkt] = useState(null);
@@ -213,7 +220,7 @@ function DispachRequest() {
                           ? "Courier Service Selected"
                           : "In procedure..."}
                       </td>
-                      <td>
+                      { !p.status? <td>
                         {!p.status && !p.Sp && pid !== p.Pid && (
                           <button
                             className="btn-o-1 btn"
@@ -245,6 +252,7 @@ function DispachRequest() {
                             </select>
                           </>
                         )}{" "}
+
                         {/* {pid === p.Pid && (
                           <>
                             <h3>Select Courier Service and Pay ${p.payment}</h3>
@@ -273,7 +281,12 @@ function DispachRequest() {
                               ))}
                           </>
                         )} */}
-                      </td>
+                      </td>: <td> <button className='btn btn-b' onClick={()=>{
+                        setDoc(p);
+                        setTimeout(() => {
+                          printDocument();
+                        }, 1000);
+                      }}>Print Details</button> </td> }
                     </tr>
                   );
                 })}
@@ -289,6 +302,17 @@ function DispachRequest() {
               )}
             </tbody>
           </table>
+              {doc &&  <div ref={componentRef} style={{padding:"2",margin:"30px",borderRadius:"8px",fontSize:'1.2rem',border:'2px solid cyan',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                <h2>YourIndianShop</h2> <hr style={{color:'cyan'}}/><br /> 
+                <p>PacketId: {doc?.Pid}</p>
+                <p>ShipmentId: {doc?.Sid}</p>
+                <p>Time: {getDate(doc?.time)}</p>
+                <p>Time: {getDate(doc?.time)}</p>
+                <p>Dimensions (Cm): {doc?.height}*{doc?.width}*{doc?.length} CM</p>
+                <p>Wight: {doc?.wight} Kg</p>
+                <p>Payment: ₹{doc?.payment}</p>
+                <p>Curior Service Provider: DHL</p>
+              </div> }
 
           {/* {!yrpkt && <h3>Loading...</h3>}
           {yrpkt && yrpkt.length == 0 && <p>No data found</p>}

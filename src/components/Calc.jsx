@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import "../stylesheet/dashboard/Calc.css";
@@ -10,29 +10,37 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
+import {fetchreq} from "../Helper/fetch"
 import { TransitionProps } from "@mui/material/transitions";
 
 const Calc = () => {
-  const [weight, setWeight] = useState("");
-  const [length, setLength] = useState("");
-  const [width, setWidth] = useState("");
-  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState(null);
+  const [length, setLength] = useState(null);
+  const [width, setWidth] = useState(null);
+  const [height, setHeight] = useState(null);
   const [price, setPrice] = useState(0);
+  const [cp,setCp]=useState(-1);
   const url = process.env.REACT_APP_URL;
+  const [ctr,setCtr]=useState([]);
   // https://idcardgenrator.s3.ap-northeast-1.amazonaws.com/Curior-service/shipping-site-imgs/calculator/1.jpg
 // /calc/1,2,3,4.jpg cur.png
   const calculatePrice = () => {
-    const weightValue = parseFloat(weight);
-    const lengthValue = parseFloat(length);
-    const widthValue = parseFloat(width);
-    const heightValue = parseFloat(height);
-    const adminGivenPrice = 10;
-    const volumetricWeight = (lengthValue * widthValue * heightValue) / 5000;
-    const calculatedPrice =
-      Math.max(weightValue, volumetricWeight) * adminGivenPrice;
-
-    setPrice(calculatedPrice);
-    handleClickOpen();
+    if(cp==-1){
+      alert("please Select Coutry...");
+    }else if(!weight || !length || !width || !height){
+      alert("fill all the fields...")
+    }else{
+      const weightValue = parseFloat(weight);
+      const lengthValue = parseFloat(length);
+      const widthValue = parseFloat(width);
+      const heightValue = parseFloat(height);
+      const adminGivenPrice = 10;
+      const volumetricWeight = (lengthValue * widthValue * heightValue) / 5000;
+      const calculatedPrice =
+        Math.max(weightValue, volumetricWeight) * cp;
+      setPrice(calculatedPrice);
+      handleClickOpen();
+    }
   };
 
   const [open, setOpen] = React.useState(false);
@@ -44,6 +52,14 @@ const Calc = () => {
   const handleClose = () => {
     setOpen(false);
   };
+  const fetchContrys=async ()=>{
+    const dt = await fetchreq("GET","getCounty",{});
+    dt? setCtr(dt.result): setCtr([]);
+    console.log(dt)
+  }
+  useEffect(()=>{
+    fetchContrys();
+  },[])
   return (
     <div id="dash-calc">
       <div className="t-title">
@@ -84,17 +100,14 @@ const Calc = () => {
                 />
               </div>
             </Box>
-            {/* <select name="" id="">
+            <select name="" id="" value={cp} onChange={(e)=>{setCp(e.target.value)}}>
               <option value="-1" selected>
                 Choose Country
               </option>
-              <option value="7">USA</option>
-              <option value="6">INDIA</option>
-              <option value="2">NEPAL</option>
-              <option value="1">PAKISTAN</option>
-              <option value="4">UAE</option>
-              <option value="9">CANADA</option>
-            </select> */}
+              {ctr.map((c)=>{
+                return <option value={c.Price}>{c.Name}</option>
+              })}
+            </select>
 
             <h1>Weight</h1>
             <div className="sh-m">

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "../stylesheet/SingleProduct.scss"; // Import your CSS file
 import { MyContext } from "../App";
 import { Link, useNavigate } from "react-router-dom";
-import { fetchreq, walletTransaction } from "../Helper/fetch";
+import { fetchreq, getDate, walletTransaction } from "../Helper/fetch";
 const product = {
   name: "Sample Product",
   price: 19.99,
@@ -27,11 +27,11 @@ const SingleProduct = () => {
   const [isdp,setIsdp]=useState(false);
   const [isrp,setIsrp]=useState(false);
 
-  const date = new Date(wd?.time);
-  const utcDate = new Date(date.getTime());
-  const indianDate = utcDate.toLocaleString("en-IN", {
-    timeZone: "Asia/Kolkata"
-  });
+  const indianDate = new Date(wd?.time);
+  const currentDate = new Date();
+  const timeDifference = indianDate.getTime() - currentDate.getTime();
+  const dayDifference = (Math.abs(Math.floor(timeDifference / (24 * 60 * 60 * 1000))))
+  const setbyadmin=  2;
   // Handle image selection
   const handleImageClick = (image) => {
     setSelectedImage(image);
@@ -148,7 +148,7 @@ const SingleProduct = () => {
             <p className="description">Width: {wd?.width}</p>
             <p className="description">Higth: {wd?.height}</p>
             <p className="description">LokerId: {wd?.LokerId}</p>
-            <p className="description">Recive Time: {indianDate}</p>
+            <p className="description">Recive Time: {getDate(wd?.time)}</p>
             <p className="description">Status: {status}</p>
 
             {wd?.status == 0 && pland && (
@@ -156,13 +156,13 @@ const SingleProduct = () => {
                 <button onClick={navigatesipment} className="btn btn-g">
                   {isdp ? "Processing..." : "Dispach Now"}
                 </button>
-                <button onClick={returnReq} className="btn btn-r">
+                { (dayDifference<=setbyadmin) && <button onClick={returnReq} className="btn btn-r">
                   {isrp
                     ? "Processing"
                     : `Return ${
                         pland?.package_ret == 0 ? "" : pland?.package_ret
                       }`}
-                </button>
+                </button>}
               </div>
             )}
           </div>
