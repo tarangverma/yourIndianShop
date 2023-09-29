@@ -96,7 +96,7 @@ const SignUp = () => {
   };
 
   return (
-    <>
+    <div id="mcd">
       <form style={{ display: "none" }} ref={form} onSubmit={sendEmail}>
         <label>Name</label>
         <input type="text" value={email} onChange={() => {}} name="user_name" />
@@ -116,16 +116,13 @@ const SignUp = () => {
       </form>
       <section id="SpSignIn" className="spUp">
         <div className="left">
-          <img src="./videos/lg2.gif" alt="" id="Aup" />
+          <img src="./imgs/sup.png" alt="" />
         </div>
         <div className="right">
           <div className="data" id="dataverify">
             <header>
               <span id="blue">Your</span>
-              <img
-                src="./imgs/6.png" height="50px"
-                alt=""
-              />
+              <img src="./imgs/6.png" height="50px" alt="" />
               <span id="org">Shop</span>
             </header>
             <h2>It's free to SignUp and only takes a minute.</h2>
@@ -265,7 +262,7 @@ const SignUp = () => {
           </p>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

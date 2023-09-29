@@ -92,22 +92,12 @@ const Home = () => {
         </header>
         <PopAd />
         <div id="homesec" className="hero-cont">
-          {/* <div id="soc">
-            <IconButton>
-              <FacebookIcon />
-            </IconButton>
-            <IconButton>
-              <Instagram />
-            </IconButton>
-            <IconButton>
-              <Twitter />
-            </IconButton>
-          </div> */}
           <div id="hero-log-pop">
-            <h1>Start your journey now !</h1>
+            <h1>STOP SEARCHING FOR THE PERFECT br INDIAN STORE !</h1>
             <h2>
-              Get Amazing Offer this festive season with Your India Shop. <br />{" "}
-              Offers Valid This October Season{" "}
+              WE PROVIDE YOU WITH THE BEST POSSIBLE ONLINE SHOPPING EXPERIENCE &
+              GREAT DEALS ON INTERNATIONAL SHIPPING. SAVE UPTO 80% ON SHIPPING
+              CHARGES.
             </h2>
             <div className="lg-btn">
               <div className="btn btn-og">Sign up</div>
@@ -120,39 +110,48 @@ const Home = () => {
             <Link to="/signUp">SIGN UP </Link>
           </div> */}
           <div id="main-video">
-            <video
+            {/* <video
               src="./imgs/main-vd-1.webm"
               muted
               loop
               autoPlay
               // controls
-            ></video>
+            ></video> */}
+            <Swiper
+              pagination={{
+                dynamicBullets: true,
+                clickable: true,
+              }}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              // spaceBetween={30}
+              slidesPerView={1}
+              navigation
+              loop={true}
+              modules={[Autoplay, Pagination]}
+              className="mySwiper"
+            >
+              {photos.map((pt, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <HomeSlide bgimg={`${url}/${pt}`} />
+                  </SwiperSlide>
+                );
+              })}
+              {/* <SwiperSlide>
+                <HomeSlide bgimg="./imgs/sd1.png" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HomeSlide bgimg="./imgs/sd3.png" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HomeSlide bgimg="./imgs/sd2.png" />
+              </SwiperSlide> */}
+            </Swiper>{" "}
           </div>
-          {/* <Swiper
-            pagination={{
-              dynamicBullets: true,
-              clickable: true,
-            }}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            // spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            loop={true}
-            modules={[Autoplay, Pagination]}
-            className="mySwiper"
-          >
-            {photos.map((pt, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <HomeSlide bgimg={`${url}/${pt}`} />
-                </SwiperSlide>
-              );
-            })}
-          </Swiper> */}
-        </div>{" "}
+        </div>
         <section>
           <div id="sec-head">
             <div className="t-title" id="dg">
@@ -169,7 +168,11 @@ const Home = () => {
                 alt=""
               />
 
-              <div className="st">SIGN-UP TO GET VIRTUAL ADDRESS</div>
+              {/* <div className="st">SIGN-UP TO GET VIRTUAL ADDRESS</div> */}
+              <div className="st">
+                WE PROVIDE A FREE INDIAN VIRTUAL ADDRESS. SIMPLY SIGN UP & GET
+                IT TODAY.
+              </div>
             </div>
             <div className="s-cd">
               {/* <div className="pin">
@@ -179,7 +182,11 @@ const Home = () => {
                 src="https://unblast.com/wp-content/uploads/2021/09/Online-App-Shopping-Illustration.jpg"
                 alt=""
               />
-              <div className="st">SHOP FROM INDIAN SITES</div>
+              {/* <div className="st">SHOP FROM INDIAN SITES</div> */}
+              <div className="st">
+                BROWSE AND SHOP FROM TOP INDIAN E-COMMERCE STORES AND AMAZING
+                BRANDS.
+              </div>
             </div>
             <div className="s-cd">
               {/* <div className="pin">
@@ -189,7 +196,10 @@ const Home = () => {
                 src="https://images.template.net/77281/Warehouse-Cartoon-Illustration-1.jpg"
                 alt=""
               />
-              <div className="st">SHIP PARCELS TO YOUR WAREHOUSE</div>
+              {/* <div className="st">SHIP PARCELS TO YOUR WAREHOUSE</div> */}
+              <div className="st">
+                SHIP YOUR CONSOLIDATED PARCELS TO YOUR ANY GLOBAL ADDRESS.
+              </div>
             </div>
             <div className="s-cd">
               {/* <div className="pin">
@@ -199,7 +209,12 @@ const Home = () => {
                 src="https://cdn-icons-png.flaticon.com/512/2848/2848906.png"
                 alt=""
               />
-              <div className="st">RECEIVE WITHIN 7 / 8 WORKING DAYS</div>
+              {/* <div className="st">RECEIVE WITHIN 7 / 8 WORKING DAYS</div> */}
+              <div className="st">
+                {" "}
+                GET YOUR PARCELS AT YOUR ADDRESS WITHIN 3-6 WORKING DAYS FROM
+                INDIA.
+              </div>
             </div>
           </div>
           <br />
@@ -400,7 +415,15 @@ const Home = () => {
           </svg>
         </section>*/}
         <div id="service-we-offer">
-          <h1 id="dg">SERVICES WE OFFER</h1>
+          <div className="ser-head">
+            <center className="sh1">
+              <h1 id="dg">
+                Services We
+                <span id="org"> Offer</span>
+              </h1>
+            </center>
+          </div>
+          {/* <h1 id="dg">SERVICES WE OFFER</h1> */}
           {/* <div className="swo">
             <div className="ck-it">
               <h2 id="org">CHECK IT</h2>
@@ -554,8 +577,8 @@ const Home = () => {
               <div className="ps-r">
                 <div className="st wt">International Courier</div>
                 <div className="s-txt">
-                  A versatile price calculator, factoring in product weight or
-                  dimensions, simplifying cost estimation for efficient shipping
+                  WE OFFER A HASSLE FREE, RELIABLE AND LOW-COST COURIER SERVICE
+                  FROM INDIA INTERNATIONALLY.{" "}
                 </div>
                 <a href="/comming_soon" rel="noopener noreferrer">
                   <div className="rm " id="org">
@@ -573,9 +596,8 @@ const Home = () => {
               <div className="ps-r">
                 <div className="st">Indian Shop Cart</div>
                 <div className="s-txt">
-                  A versatile price calculator, factoring in product weight or
-                  dimensions, simplifying cost estimation for efficient shipping
-                  and pricing.
+                  SHOP FROM THE BEST OF INDIA’S BRANDS, AND GET THEM DELIVERED
+                  FROM INDIA INTERNATIONALLY.
                 </div>
                 <Link to="/in-sites" rel="noopener noreferrer">
                   <div className="rm " id="org">
@@ -592,8 +614,9 @@ const Home = () => {
               <div className="ps-r">
                 <div className="st wt">Offer Coupons</div>
                 <div className="s-txt">
-                  We offer a range of plans to suit your needs, from basic to
-                  premium and business , ensuring affordability and flexibility.
+                  WE PROVIDE SEVERAL OFFER COUPONS. ALL YOU HAVE TO DO IS BROWSE
+                  AND APPLY THE COUPON CODE OF YOUR CHOICE IN ORDER TO REDEEM
+                  IT.{" "}
                 </div>
                 <div className="rm " id="org">
                   <Link to="/offers" rel="noopener noreferrer">
@@ -625,7 +648,7 @@ const Home = () => {
           <div className="ser-head">
             <center className="sh1">
               <h1 id="dg">
-                Our Enterprise & Business
+                Our Enterprise And Business
                 <span id="org"> Plans</span>
               </h1>
             </center>
@@ -728,13 +751,6 @@ const Home = () => {
                         <Star />
                         <Star />
                       </div>{" "}
-                      <div className="sitara">
-                        <StarBorder />
-                        <StarHalf />
-                        <Star />
-                        <Star />
-                        <Star />
-                      </div>
                     </div>{" "}
                   </div>{" "}
                   <div className="msg-bot">
@@ -897,7 +913,7 @@ const Home = () => {
           </div>
           <div id="fr-gal">
             <Swiper
-              slidesPerView={3}
+              slidesPerView={5}
               spaceBetween={0}
               autoplay={{
                 delay: 1500,

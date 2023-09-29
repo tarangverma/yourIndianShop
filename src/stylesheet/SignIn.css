@@ -1,18 +1,9 @@
 /* .data,
 .data * {
   border: 3px solid crimson;
-} */
-#SpSignIn {
-  height: auto;
-  width: 100vw;
-  padding: 10vh 10vw;
-  display: flex;
-  min-height: 100dvh;
-  align-items: center;
-  margin: 0 !important;
-  /* overflow: hidden; */
-  /* justify-content: space-between; */
 }
+
+*/
 
 #SpSignIn .left {
   width: 60%;
@@ -25,7 +16,7 @@
 }
 
 .spUp .left img {
-  width: 100% !important;
+  width: 80% !important;
 }
 #SpSignIn .left img {
   width: 80%;
@@ -44,7 +35,9 @@
   flex-shrink: 0 !important;
   width: 40%;
   display: grid;
-  height: 100%;
+  /* background: #eee; */
+  /* min-height: 5vh; */
+  height: 100% !important;
   /* overflow: scroll; */
   place-items: center;
 }
@@ -71,6 +64,13 @@
   font-size: 3rem !important;
 }
 
+/* #SpSignIn {
+  background: var(--db2);
+} */
+
+#SpSignIn * {
+  color: #fff;
+}
 #SpSignIn h1 {
   font-size: 2.5rem;
 }
@@ -88,7 +88,7 @@
 #SpSignIn input,
 .otp input {
   font-size: 1.05rem;
-  background-color: #eee;
+  background-color: var(--db);
   padding: 13px 25px;
   width: 100%;
   border: 1.05px solid rgba(245, 245, 245, 0.4);
@@ -190,4 +190,26 @@
 
 #test-btn {
   margin: 0;
+}
+#SpSignIn {
+  height: auto;
+  width: 100%;
+  box-shadow: 0 0 50px 1px rgba(45, 45, 45, 0.316);
+  padding: 5vh 5vw !important;
+  display: flex;
+  min-height: 100dvh;
+  align-items: center;
+  background-color: var(--db2);
+  margin: 0 !important;
+  /* overflow: hidden; */
+  /* justify-content: space-between; */
+}
+
+#mcd {
+  /* width: 100vw;
+  height: auto;
+  background: var(--db2);
+  display: grid;
+  place-items: center;
+  padding: 5vw 5vw; */
 }

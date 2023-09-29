@@ -45,20 +45,16 @@ const SignIn = () => {
     setWd(null);
   }, []);
   return (
-    <>
+    <div id="mcd">
       <section id="SpSignIn">
         <div className="left">
-          <img src="./videos/lg.gif" alt="" />
+          <img src="./imgs/sup.png" alt="" />
         </div>
         <div className="right">
           <div className="data">
             <header>
               <span id="blue">Your</span>
-              <img
-                src="./imgs/6.png"
-                height="50px"
-                alt=""
-              />
+              <img src="./imgs/6.png" height="50px" alt="" />
               <span id="org">Shop</span>
             </header>
             <h1>Welcome back!</h1>
@@ -94,7 +90,7 @@ const SignIn = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

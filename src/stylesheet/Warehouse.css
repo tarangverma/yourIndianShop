@@ -94,7 +94,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--blue);
+    background-color: var(--db2);
     margin: 25px;
     padding: 12px 35px;
     box-shadow: 0 0 35px 1px #00000027;
@@ -118,7 +118,7 @@
 }
 
 #bal {
-    background-color: var(--blue);
+    background-color: var(--db2);
     margin: 25px;
     padding: 12px 35px;
     box-shadow: 0 0 35px 1px #00000027;
