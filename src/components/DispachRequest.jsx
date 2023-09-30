@@ -285,7 +285,7 @@ function DispachRequest() {
                         setDoc(p);
                         setTimeout(() => {
                           printDocument();
-                        }, 1000);
+                        }, 500);
                       }}>Print Details</button> </td> }
                     </tr>
                   );

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../../stylesheet/dashboard/ProductAcceptanceForm.css"; // Import your CSS file for styling
-import { fetchreq, uploadImageAws, walletTransaction } from "../../Helper/fetch";
+import { fetchreq, uploadImage, uploadImageAws, walletTransaction } from "../../Helper/fetch";
 import { MyContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -31,20 +31,24 @@ function ProductAcceptanceForm() {
         )
       ) {
         const url = await uploadImageAws(file.name, file);
-        const body = {
-          cid: user.Cid,
-          wid: wh.Wid,
-          proof: url,
-          name: name,
-          desc: des,
-        };
-        const dt = await fetchreq("POST", "makePAR", body);
-        dt ? nav("/PAR") : alert("something went wrong");
-        if (dt) {
-          alert("Request Made Successfully... ");
-          nav("/PAR");
-        } else {
-          alert("something went wrong");
+        if(url){
+          const body = {
+            cid: user.Cid,
+            wid: wh.Wid,
+            proof: url,
+            name: name,
+            desc: des,
+          };
+          const dt = await fetchreq("POST", "makePAR", body);
+          dt ? nav("/PAR") : alert("something went wrong");
+          if (dt) {
+            alert("Request Made Successfully... ");
+            nav("/PAR");
+          } else {
+            alert("something went wrong");
+          }
+        }else{
+          alert("File Not uploaded...")
         }
       }
     } else if (run) {

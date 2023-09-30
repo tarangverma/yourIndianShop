@@ -1,7 +1,6 @@
 const backend = process.env.REACT_APP_BACKEND;
-// const backend = "http://localhost:4000";
 const header = process.env.REACT_APP_API_CODE;
-// const header = "qubit-tech";
+
 
 export async function fetchreq(type,api,bd){
     try {
@@ -15,7 +14,8 @@ export async function fetchreq(type,api,bd){
                     "Content-type":"application/json",
                     "token":header
                 },
-                body: JSON.stringify(bd)
+                body: JSON.stringify(bd),
+                
             })
         }else{
             res = await fetch(url,{
@@ -37,23 +37,73 @@ export async function fetchreq(type,api,bd){
         alert("server Error");
     }
 }
-export async function uploadImageAws(name,img){
-    let fn = name.split(".");
-    let filetype = fn[fn.length - 1];
-    const urldata = await fetchreq("GET",`geturl/${filetype}`,{});
-    if(urldata){
-        const url = urldata.url;
-        const imgurl = url.split("?")[0];
-        const finalurl = imgurl.split("/");
-        await fetch(url, {
-            method: "PUT",
+// export async function uploadImageAws(name,img){
+//     let fn = name.split(".");
+//     let filetype = fn[fn.length - 1];
+//     const urldata = await fetchreq("GET",`geturl/${filetype}`,{});
+//     if(urldata){
+//         const url = urldata.url;
+//         const imgurl = url.split("?")[0];
+//         const finalurl = imgurl.split("/");
+//         await fetch(url, {
+//             method: "PUT",
+//             headers: {
+//                 "content-type": "multipart/form-data",
+//             },
+//             body: img,
+//         });
+//         return finalurl[finalurl.length-1];
+//     }else{
+//         return false;
+//     }
+// }
+export async function uploadImageAws(name,image){
+    try {
+        const formdata= new FormData();
+        formdata.append('image',image);
+        const url= process.env.REACT_APP_FILES;
+        const response = await fetch("https://yourindianshop.com/upload", {
+            method: "POST",
             headers: {
-                "content-type": "multipart/form-data",
+                "token":header
             },
-            body: img,
+            body: formdata,
         });
-        return finalurl[finalurl.length-1];
-    }else{
+        console.log("after request",response);
+        if(response.status==200){
+            const dt = await response.json();
+            return dt.name;
+        }else{
+            alert(response.statusText);
+            return false;
+        }
+    } catch (error) {
+        console.log("error",error);
+        return false;
+    }
+}
+export async function uploadMultipleImage(imgs){
+    try {
+        const formdata= new FormData();
+        formdata.append('images',imgs);
+        const url= process.env.REACT_APP_FILES;
+        const response = await fetch("https://yourindianshop.com/upload", {
+            method: "POST",
+            headers: {
+                "token":header
+            },
+            body: formdata,
+        });
+        // console.log("after request",response);
+        if(response.status==200){
+            const dt = await response.json();
+            return dt.name;
+        }else{
+            alert(response.statusText);
+            return false;
+        }
+    } catch (error) {
+        console.log("error",error);
         return false;
     }
 }

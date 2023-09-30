@@ -113,7 +113,7 @@ const Calc = () => {
             <div className="sh-m">
               <Tilt tiltMaxAngleX="24" tiltMaxAngleY="15">
                 <img
-                  src={`${url}/shipping-site-imgs/calculator/cur.png`}
+                  src={`/imgs/cur.png`}
                   alt=""
                 />
               </Tilt>
@@ -165,13 +165,13 @@ const Calc = () => {
               <div>
                 <div className="olay">
                   <img
-                    src={`${url}/shipping-site-imgs/calculator/1.jpg`}
+                    src={`svg/1.jpg`}
                     alt=""
                   />
                 </div>
                 <div className="olay">
                   <img
-                    src={`${url}/shipping-site-imgs/calculator/2.jpg`}
+                    src={`svg/2.jpg`}
                     alt=""
                   />
                 </div>
@@ -179,13 +179,13 @@ const Calc = () => {
               <div>
                 <div className="olay">
                   <img
-                    src={`${url}/shipping-site-imgs/calculator/3.jpg`}
+                    src={`svg/3.jpg`}
                     alt=""
                   />
                 </div>
                 <div className="olay">
                   <img
-                    src={`${url}/shipping-site-imgs/calculator/4.jpg`}
+                    src={`svg/4.jpg`}
                     alt=""
                   />
                 </div>

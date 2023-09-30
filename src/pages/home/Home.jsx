@@ -45,7 +45,6 @@ const Home = () => {
   const loadlandingPhoto = async () => {
     const dt = await fetchreq("GET", "landingpagePhotos", {});
     dt ? setPhotos(JSON.parse(dt.result[0].Details)) : setPhotos([]);
-    console.log(JSON.parse(dt.result[0].Details));
   };
   const url = process.env.REACT_APP_URL;
   const temp = ["./imgs/sd1.png", "./imgs/sd2.png"];
@@ -134,6 +133,7 @@ const Home = () => {
               className="mySwiper"
             >
               {photos.map((pt, index) => {
+                console.log(`${url}/${pt}`)
                 return (
                   <SwiperSlide key={index}>
                     <HomeSlide bgimg={`${url}/${pt}`} />
