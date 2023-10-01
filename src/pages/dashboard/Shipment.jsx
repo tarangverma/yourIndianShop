@@ -84,13 +84,20 @@ function Shipment() {
         {/* Customer Information */}
         <h1>Reciver Details</h1>
         {!muldis && <h3>ProductId: {wd?.Did}</h3>}
-        {muldis && <h3>Dispach request for {muldis.length} Items. Product Ids {muldis.join(', ')} </h3>}
+        {muldis && (
+          <h3>
+            Dispach request for {muldis.length} Items. Product Ids{" "}
+            {muldis.join(", ")}{" "}
+          </h3>
+        )}
         <div className="form-group">
           <input
             type="text"
             placeholder="Full Name"
             value={form.fullName}
-            onChange={(e)=>{setForm({...form,fullName:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, fullName: e.target.value });
+            }}
           />
         </div>
         <div className="form-group">
@@ -98,7 +105,9 @@ function Shipment() {
             type="email"
             placeholder=" Email Address"
             value={form.email}
-            onChange={(e)=>{setForm({...form,email:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, email: e.target.value });
+            }}
           />
         </div>
         <div className="form-group">
@@ -106,7 +115,9 @@ function Shipment() {
             type="text"
             placeholder="Phone Number"
             value={form.phone}
-            onChange={(e)=>{setForm({...form,phone:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, phone: e.target.value });
+            }}
           />
         </div>
         <div className="form-group">
@@ -114,7 +125,9 @@ function Shipment() {
             type="text"
             placeholder="Address Line 1"
             value={form.ad}
-            onChange={(e)=>{setForm({...form,ad:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, ad: e.target.value });
+            }}
           />
         </div>
         <div className="form-group">
@@ -122,20 +135,20 @@ function Shipment() {
             type="text"
             placeholder="Address Line 2"
             value={form.ad2}
-            onChange={(e)=>{setForm({...form,ad2:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, ad2: e.target.value });
+            }}
           />
         </div>
-        
 
-        
-       
-        
         <div className="form-group">
           <input
             type="text"
             placeholder="City "
             value={form.city}
-            onChange={(e)=>{setForm({...form,city:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, city: e.target.value });
+            }}
           />
         </div>
         <div className="form-group">
@@ -143,7 +156,9 @@ function Shipment() {
             type="text"
             placeholder="State"
             value={form.state}
-            onChange={(e)=>{setForm({...form,state:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, state: e.target.value });
+            }}
           />
         </div>
         <div className="form-group">
@@ -151,23 +166,29 @@ function Shipment() {
             type="text"
             placeholder="Country"
             value={form.country}
-            onChange={(e)=>{setForm({...form,country:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, country: e.target.value });
+            }}
           />
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Postal Code" 
+            placeholder="Postal Code"
             value={form.pincode}
-            onChange={(e)=>{setForm({...form,pincode:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, pincode: e.target.value });
+            }}
           />
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Delivery Instruction" 
+            placeholder="Delivery Instruction"
             value={form.Di}
-            onChange={(e)=>{setForm({...form,Di:e.target.value})}}
+            onChange={(e) => {
+              setForm({ ...form, Di: e.target.value });
+            }}
           />
         </div>
 
@@ -179,14 +200,26 @@ function Shipment() {
               checked={termsAgreed}
               onChange={() => setTermsAgreed(!termsAgreed)}
             />
-            I agree to the Terms and Conditions
+            &nbsp; I agree to the Terms and Conditions
           </label>
         </div>
 
         {/* Submit Button */}
         <div className="form-group">
           <button disabled={run} className="btn btn-b" type="submit">
-            { !run ? (pland ? (pland?.warehouse_pic==0?"Submit Request":`Submit Request and pay ${pland?.warehouse_pic}`): "..."): <p>Please Wait...</p> }
+            {!run ? (
+              pland ? (
+                pland?.warehouse_pic == 0 ? (
+                  "Submit Request"
+                ) : (
+                  `Submit Request and pay ${pland?.warehouse_pic}`
+                )
+              ) : (
+                "..."
+              )
+            ) : (
+              <p>Please Wait...</p>
+            )}
           </button>
         </div>
       </form>

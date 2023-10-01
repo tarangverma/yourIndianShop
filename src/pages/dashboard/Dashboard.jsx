@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
 import "../../stylesheet/dashboard/Dashboard.css";
+import "../../stylesheet/dashboard/Dmq.css";
 import WarehouseIcon from "@mui/icons-material/Warehouse";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
@@ -7,13 +8,13 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { MyContext } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
 const Dashboard = () => {
-  const {user,isLogin}=useContext(MyContext);
-  const nav = useNavigate()
-  useEffect(()=>{
-    if(!isLogin){
-      nav("/")
+  const { user, isLogin } = useContext(MyContext);
+  const nav = useNavigate();
+  useEffect(() => {
+    if (!isLogin) {
+      nav("/");
     }
-  },[])
+  }, []);
   return (
     <div id="dash-cont">
       <div id="dash">
@@ -38,7 +39,7 @@ const Dashboard = () => {
                     <WarehouseIcon />
                   </div>
                   <div className="ds-info">
-                    Warehouses <br />1
+                    Warehouses ID <br />1
                   </div>
                 </Link>
               </div>

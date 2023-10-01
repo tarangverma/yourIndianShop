@@ -49,12 +49,19 @@ function AssistedPurchase() {
 
   return (
     <div id="dash-ap" className="assisted-purchase-form">
-      <Link  style={{marginBottom:"20px"}} className='btn btn-b' to="/YourAssistedReq">Your Requsts</Link>
-      <h2>
-        <span id="blue">Assisted </span>
-        <span id="org">Purchase </span>
-        <span id="blue">Request</span>
-      </h2>
+      <div id="l-title" className="no-mar">
+        <div className="plan-page-title">
+          <span id="wt">Assisted Purchase</span>
+          <span id="blue"> Request</span>
+        </div>
+        <div>
+          <div>
+            <Link className="btn btn-b" to="/YourAssistedReq">
+              Your Requsts
+            </Link>
+          </div>
+        </div>
+      </div>
       <form ref={form} onSubmit={handleSubmit}>
         <div className="form-group">
           <input
@@ -94,7 +101,14 @@ function AssistedPurchase() {
 
         <div className="form-group">
           <label htmlFor="imges">Product Image</label>
-          <input type="file" accept="image/*" name="imges" onChange={(e)=>{setImg(e.target.files[0])}} />
+          <input
+            type="file"
+            accept="image/*"
+            name="imges"
+            onChange={(e) => {
+              setImg(e.target.files[0]);
+            }}
+          />
         </div>
 
         {/* Terms and Conditions */}
@@ -105,7 +119,7 @@ function AssistedPurchase() {
               checked={termsAgreed}
               onChange={() => setTermsAgreed(!termsAgreed)}
             />
-            I agree to the Terms and Conditions
+            &nbsp; I agree to the Terms and Conditions
           </label>
         </div>
 

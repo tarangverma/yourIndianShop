@@ -23,7 +23,6 @@ function PAR() {
   }, []);
   return (
     <div id="par-ct">
-      <br />
       <div id="l-title" className="no-mar">
         <div className="plan-page-title">
           <span id="org">Your Past</span>
@@ -59,7 +58,7 @@ function PAR() {
               return (
                 <tr className="rr" key={r.Rid}>
                   <td>{r.productName}</td>
-                  <td>{r.Description}</td>
+                  <td className="ds-tb">{r.Description}</td>
                   <td>{r.Verify === 0 ? "Not Verify" : "Verify"}</td>
                   <td>{fdt}</td>
                 </tr>

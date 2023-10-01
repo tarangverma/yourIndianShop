@@ -68,7 +68,7 @@ const Shop = () => {
             style={{ display: "flex", justifyContent: "space-around" }}
           >
             <Link className="btn btn-o-1" to="/dashboard/product-acceptance">
-              Add Products Acceptance Request
+              Add PAR
             </Link>
             <Link className="btn btn-o-1" to="/PAR">
               Product Acceptance Requests
@@ -103,24 +103,15 @@ const Shop = () => {
               );
             })}
           {wd && wd.length == 0 && <p>No data found</p>}
-          {!wd && <img src="./videos/Loading_2.gif"  alt="Loading..."/>}
+          {!wd && <img src="./videos/Loading_2.gif" alt="Loading..." />}
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            position: "fixed",
-            right: "10px",
-            bottom: "100px",
-            zIndex: "20",
-          }}
-        >
+        <center style={{ marginBottom: "35px" }}>
           {selectP.length > 1 && (
-            <button className="btn btn-b" onClick={dispactchAll}>
+            <button className="btn btn-og" onClick={dispactchAll}>
               {isproc ? "Proceding..." : "Dispatch all selected"}
             </button>
           )}
-        </div>
+        </center>
       </div>
     </div>
   );

@@ -15,18 +15,29 @@ const Curiors = ({wd,selectProduct,isselect}) => {
     }, 500);
   }
   return (
-    <div id="prod" >
+    <div id="prod">
       <div className="proTop">
         <img src={`${url}/${pt[0]}`} alt="" />
       </div>
       <div id="proData">
         <div className="proName">Name: {wd.productName}</div>
         <div>ProductId: {wd.Did}</div>
-        <div >Desc: {wd.Description}</div>
+        <div className="pro-description">Desc: {wd.Description}</div>
       </div>
-      <div style={{display:'flex'}}>
-        <button onClick={openproduct} className="atc">Details</button>
-        {wd?.status==0 && <button onClick={()=>{selectProduct(wd.Did)}} className="atc">{isselect?"UnSelect":"Select"}</button>}
+      <div style={{ display: "flex" }}>
+        <button onClick={openproduct} className="atc">
+          Details
+        </button>
+        {wd?.status == 0 && (
+          <button
+            onClick={() => {
+              selectProduct(wd.Did);
+            }}
+            className="atc"
+          >
+            {isselect ? "UnSelect" : "Select"}
+          </button>
+        )}
       </div>
     </div>
   );

@@ -126,7 +126,7 @@ function ProductAcceptanceForm() {
                 checked={termsAgreed}
                 onChange={() => setTermsAgreed(!termsAgreed)}
               />
-              I agree to the Terms and Conditions
+              &nbsp; I agree to the Terms and Conditions
             </label>
           </div>
 

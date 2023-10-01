@@ -141,6 +141,15 @@ td {
     td {
         border-bottom: 1px solid #e5e5e5;
     }
+    td {
+        max-width: 150px !important;
+
+        /* color: red; */
+        overflow-x: hidden;
+        height: fit-content !important;
+
+    }
+
 }
 
 .filters {
@@ -236,8 +245,4 @@ table .btn {
     box-shadow: 0 0 25px 1px #0000002e;
     padding: 25px;
     margin: 25px;
-}
-.transaction-table {
-    width: 100%;
-    /* margin: 25px; */
 }

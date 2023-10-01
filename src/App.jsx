@@ -65,7 +65,8 @@ const App = () => {
           setWd,
           did,
           setDid,
-          muldis, setMuldis
+          muldis,
+          setMuldis,
         }}
       >
         <Router>
@@ -78,143 +79,169 @@ const App = () => {
             <Route
               path="/dashboard/"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Dashboard />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Dashboard />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/Walete"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Wallete />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Wallete />
+                    </main>
+                  </div>
                 </div>
               }
             />
             <Route
               path="/Billing"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Billing />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Billing />
+                    </main>
+                  </div>
                 </div>
               }
             />
             <Route
               path="/ReturnRequests"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <ReturnRequests />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <ReturnRequests />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/PAR"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <PAR />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <PAR />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/DispachRequests"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <DispachRequest />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <DispachRequest />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/shipment"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Shipment />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Shipment />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/warehousedata"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <WarehouseData />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <WarehouseData />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/locker"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Locker />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Locker />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/shop"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Shop />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Shop />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/single-product"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <SingleProduct />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <SingleProduct />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/assisted-purchase"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <AssistedPurchase />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <AssistedPurchase />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/YourAssistedReq"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <YourAssistedReq />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <YourAssistedReq />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
@@ -222,77 +249,91 @@ const App = () => {
             <Route
               path="/dashboard/product-acceptance"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <ProductAcceptanceForm />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <ProductAcceptanceForm />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/coupon"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Coupon />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Coupon />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/sites"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <IndianSites />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <IndianSites />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/prohibited-items"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <ProhibitedItems />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <ProhibitedItems />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/profile"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Profile />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Profile />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/ship"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Shipment />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Shipment />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />
             <Route
               path="/dashboard/calc"
               element={
-                <div id="app" className="row">
-                  <Sidebar />
-                  <main>
-                    <Calc />
-                  </main>
+                <div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <Calc />
+                    </main>
+                  </div>{" "}
                 </div>
               }
             />

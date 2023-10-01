@@ -117,135 +117,133 @@ function Wallete() {
     },[])
     
   return (
-    <div id="height-op" style={{ padding: "25px" }}>
-      <div>
-        <div id="l-title" className="no-mar">
-          <div className="plan-page-title">
-            <span id="org">Wallet</span>
-            <span id="wt">Balance:</span>
-            <span id="lime">₹{user?.Wallete}</span>
-          </div>
-          <div>
-            {isClick && (
-              <form className="pay-cd">
-                <button
-                  className="btn-r"
-                  onClick={() => {
-                    setIsclick(false);
-                  }}
-                >
-                  x
-                </button>
-                <h1>Add to Wallet</h1>
-                <input
-                  id="amountIn"
-                  value={amount}
-                  onChange={(e) => {
-                    setAmount(e.target.value);
-                    console.log(amount);
-                  }}
-                  type="number"
-                  placeholder="Enter Amount to Add"
-                />
-                <button onClick={showpaymentButton} className="btn btn-o-1">
-                  Pay to Wallet
-                </button>
-
-                {payment && (
-                  <PayPalScriptProvider
-                    options={{
-                      "client-id": clientId,
-                    }}
-                  >
-                    {success && <h1>Payment mad successfully</h1>}
-                    {error && <h1>Some Error occurs</h1>}
-                    {!success && (
-                      <PayPalButtons
-                        style={{ layout: "vertical" }}
-                        createOrder={createOrder}
-                        onApprove={onApprove}
-                        onError={onError}
-                      />
-                    )}
-                  </PayPalScriptProvider>
-                )}
-              </form>
-            )}
-            {isClick2 && (
-              <form onSubmit={handlesubmit2} className="pay-cd">
-                <button
-                  onClick={() => {
-                    setIsclick2(false);
-                  }}
-                >
-                  X
-                </button>
-                <h1>Transfer to Bank</h1>
-                <input
-                  value={amount}
-                  onChange={(e) => {
-                    setAmount(e.target.value);
-                  }}
-                  type="number"
-                  placeholder="Enter Amount to Add"
-                />
-                <button type="submit" className="btn btn-o-1">
-                  Transfer to Bank
-                </button>
-              </form>
-            )}
-            <button
-              onClick={() => {
-                setIsclick(true);
-                setIsclick2(false);
-              }}
-              className="btn btn-o-1"
-            >
-              Add Money To Wallet
-            </button>
-          </div>
+    <div id="par-ct">
+      <div id="l-title" className="no-mar">
+        <div className="plan-page-title">
+          <span id="org">Wallet</span>
+          <span id="wt">Balance:</span>
+          <span id="lime">₹{user?.Wallete}</span>
         </div>
-        <br />
-        {/* <button onClick={()=>{setIsclick(false);setIsclick2(true)}} className='btn btn-b'>Transfer to Bank</button> */}
-        <table className="transaction-table">
-          <thead>
-            <tr>
-              <th>Tid</th>
-              <th>Note</th>
-              <th>Amount</th>
-              <th>Date</th>
-              <th>Transaction Mode</th>
-            </tr>
-          </thead>
-          <tbody>
-            {transaction &&
-              transaction.length !== 0 &&
-              transaction.map((t) => {
-                const dt = getDate(t.time);
-                const mode = t.Status === 0 ? "Wallet" : "Manual";
-                return (
-                  <tr key={t.Tid}>
-                    <td>{t.Tid}</td>
-                    <td>{t.note}</td>
-                    <td>{t.amount}</td>
-                    <td>{dt}</td>
-                    <td>{mode}</td>
-                  </tr>
-                );
-              })}
-            {transaction && transaction.length === 0 && (
-              <tr>
-                <td colSpan="5">No data found</td>
-              </tr>
-            )}
-            {!transaction && (
-              <tr>
-                <td colSpan="5">Loading...</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+        <div>
+          {isClick && (
+            <form className="pay-cd">
+              <button
+                className="btn-r"
+                onClick={() => {
+                  setIsclick(false);
+                }}
+              >
+                x
+              </button>
+              <h1>Add to Wallet</h1>
+              <input
+                id="amountIn"
+                value={amount}
+                onChange={(e) => {
+                  setAmount(e.target.value);
+                  console.log(amount);
+                }}
+                type="number"
+                placeholder="Enter Amount to Add"
+              />
+              <button onClick={showpaymentButton} className="btn btn-o-1">
+                Pay to Wallet
+              </button>
+
+              {payment && (
+                <PayPalScriptProvider
+                  options={{
+                    "client-id": clientId,
+                  }}
+                >
+                  {success && <h1>Payment mad successfully</h1>}
+                  {error && <h1>Some Error occurs</h1>}
+                  {!success && (
+                    <PayPalButtons
+                      style={{ layout: "vertical" }}
+                      createOrder={createOrder}
+                      onApprove={onApprove}
+                      onError={onError}
+                    />
+                  )}
+                </PayPalScriptProvider>
+              )}
+            </form>
+          )}
+          {isClick2 && (
+            <form onSubmit={handlesubmit2} className="pay-cd">
+              <button
+                onClick={() => {
+                  setIsclick2(false);
+                }}
+              >
+                X
+              </button>
+              <h1>Transfer to Bank</h1>
+              <input
+                value={amount}
+                onChange={(e) => {
+                  setAmount(e.target.value);
+                }}
+                type="number"
+                placeholder="Enter Amount to Add"
+              />
+              <button type="submit" className="btn btn-o-1">
+                Transfer to Bank
+              </button>
+            </form>
+          )}
+          <button
+            onClick={() => {
+              setIsclick(true);
+              setIsclick2(false);
+            }}
+            className="btn btn-o-1"
+          >
+            Add Money To Wallet
+          </button>
+        </div>
       </div>
+      <br />
+      {/* <button onClick={()=>{setIsclick(false);setIsclick2(true)}} className='btn btn-b'>Transfer to Bank</button> */}
+      <table className="par-table">
+        <thead>
+          <tr>
+            <th>Tid</th>
+            <th>Note</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Transaction Mode</th>
+          </tr>
+        </thead>
+        <tbody>
+          {transaction &&
+            transaction.length !== 0 &&
+            transaction.map((t) => {
+              const dt = getDate(t.time);
+              const mode = t.Status === 0 ? "Wallet" : "Manual";
+              return (
+                <tr key={t.Tid}>
+                  <td>{t.Tid}</td>
+                  <td>{t.note}</td>
+                  <td>{t.amount}</td>
+                  <td>{dt}</td>
+                  <td>{mode}</td>
+                </tr>
+              );
+            })}
+          {transaction && transaction.length === 0 && (
+            <tr>
+              <td colSpan="5">No data found</td>
+            </tr>
+          )}
+          {!transaction && (
+            <tr>
+              <td colSpan="5">Loading...</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   );
 }

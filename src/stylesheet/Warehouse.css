@@ -96,6 +96,7 @@
     justify-content: space-between;
     background-color: var(--db2);
     margin: 25px;
+    flex-wrap: wrap;
     padding: 12px 35px;
     box-shadow: 0 0 35px 1px #00000027;
 }
@@ -107,7 +108,7 @@
 }
 
 .btn-o-1:hover {
-    background-color: rgb(223, 101, 31);
+    background-color: var(--blue) !important;
 
 }
 
@@ -132,11 +133,22 @@
     background-color: rgb(209, 79, 32);
 }
 
+.bal-lin>* {
+    width: 21%;
+    min-width: 270px;
+    /* flex: 0.25 !important; */
+    flex-shrink: 0 !important;
+    /* min-width: 150px !important; */
+}
+
+.bal-lin>* {}
 .bal-lin {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
+    gap: 15px ;
     color: #fff;
 
 }

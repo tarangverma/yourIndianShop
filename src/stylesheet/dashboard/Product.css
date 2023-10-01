@@ -56,7 +56,10 @@
     /* position: absolute; */
     /* margin-top: 0px; */
 }
-
+.pro-description{
+    height: 70px;
+    overflow-y: scroll;
+}
 .proName {
     font-family: var(--font8);
     font-weight: 600;
