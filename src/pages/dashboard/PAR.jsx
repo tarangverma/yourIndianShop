@@ -40,7 +40,7 @@ function PAR() {
       </div>
 
       <br />
-      <table className="par-table">
+      <table className="par-table par-req-tb">
         <thead>
           <tr>
             <th>Name</th>
@@ -77,7 +77,7 @@ function PAR() {
         </tbody>
       </table>
 
-      {/* <div id="par-cards-box">
+      <div id="par-cards-box">
         {par &&
           par.length != 0 &&
           par.map((r) => {
@@ -85,13 +85,13 @@ function PAR() {
 
             return (
               <div key={r.Rid}>
-                 <div className="wh-img-ol">
+                {/* <div className="wh-img-ol">
                   <img
                     src={`${imgurl}/${r.proof}`}
                     alt="Image"
                     className="warehouse-image"
                   />
-                </div> 
+                </div> */}
                 <div className="par-da">
                   <p>
                     {" "}
@@ -119,7 +119,7 @@ function PAR() {
           })}
         {par && par.length == 0 && <p>No data found</p>}
         {!par && <p>Loading...</p>}
-      </div> */}
+      </div>
     </div>
   );
 }

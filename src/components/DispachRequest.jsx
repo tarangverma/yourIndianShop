@@ -40,7 +40,7 @@ function DispachRequest() {
       nav
     );
     if (dt) {
-      const qry = `addSptoPackets/${pd.Pid}/${s.Sp}`;
+      const qry = `addSptoPackets/${pd.Pid}/${s}`;
       console.log(qry);
       const res = await fetchreq("GET", qry, {});
       if (res) {
@@ -61,7 +61,7 @@ function DispachRequest() {
     }
   }, []);
   return (
-    <div id="height-of" style={{ padding: "35px" }}>
+    <div id="height-of" style={{ padding: "0px" }}>
       {!showpkt && (
         <div>
           <div id="l-title" className="no-mar">
@@ -82,7 +82,7 @@ function DispachRequest() {
               </button>
             </div>
           </div>
-          <table className="table-mar">
+          <table className="table-mar table-dis">
             <thead>
               <tr>
                 <th>Id</th>
@@ -135,7 +135,7 @@ function DispachRequest() {
               )}
             </tbody>
           </table>
-          {/* <div id="dis-req-grid">
+          <div id="dis-req-grid">
             {dr &&
               dr.length != 0 &&
               dr.map((d) => {
@@ -161,11 +161,11 @@ function DispachRequest() {
               })}
             {dr && dr.length == 0 && <p>No data found</p>}
             {!dr && <p>Loading...</p>}
-          </div> */}
+          </div>
         </div>
       )}
       {showpkt && (
-        <div>
+        <div id="par-ct">
           <div id="l-title" className="no-mar">
             <div className="plan-page-title">
               <span id="org">Your</span>
@@ -182,7 +182,7 @@ function DispachRequest() {
               </button>
             </div>
           </div>
-          <table className="cur-pt-table">
+          <table className="par-table pck-tb">
             <thead>
               <tr>
                 <th>PackageId</th>
@@ -192,7 +192,7 @@ function DispachRequest() {
                 <th>Dimensions (Cm)</th>
                 <th>Weight (Kg)</th>
                 <th>Payment</th>
-                <th>Courier Service ProviderId</th>
+                <th>Courier ProviderId</th>
                 <th>Status</th>
                 <th>Courier Partner</th>
               </tr>
@@ -220,40 +220,38 @@ function DispachRequest() {
                           ? "Courier Service Selected"
                           : "In procedure..."}
                       </td>
-                      { !p.status? <td>
-                        {!p.status && !p.Sp && pid !== p.Pid && (
-                          <button
-                            className="btn-o-1 btn"
-                            onClick={() => {
-                              setPid(pid ? null : p.Pid);
-                            }}
-                          >
-                            {pid ? "Hide " : "Select "}Courier Partner
-                          </button>
-                        )}
-                        {pid === p.Pid && (
-                          <>
-                            {/* <h3>Select Courier Service and Pay ${p.payment}</h3> */}
-                            <select
-                              onChange={(e) =>
-                                selectSpAndPay(p, e.target.value)
-                              }
-                              // value={.Sp}
+                      {!p.status ? (
+                        <td>
+                          {!p.status && !p.Sp && pid !== p.Pid && (
+                            <button
+                              className="btn-o-1 btn"
+                              onClick={() => {
+                                setPid(pid ? null : p.Pid);
+                              }}
                             >
-                              <option value="">
-                                Select a Courier Service Provider
-                              </option>
-                              {sp &&
-                                sp.map((s) => (
-                                  <option key={s.Sp} value={s.Sp}>
-                                    {s.Name}
-                                  </option>
-                                ))}
-                            </select>
-                          </>
-                        )}{" "}
-
-                        {/* {pid === p.Pid && (
+                              {pid ? "Hide " : "Select "}Courier Partner
+                            </button>
+                          )}
+                          {pid === p.Pid && (
+                            <>
+                              {/* <h3>Select Courier Service and Pay ${p.payment}</h3> */}
+                              <select
+                                onChange={(e) =>
+                                  selectSpAndPay(p, e.target.value)
+                                }
+                                // value={.Sp}
+                              >
+                                <option value="">Select Courier Partner</option>
+                                {sp &&
+                                  sp.map((s) => (
+                                    <option key={s.Sp} value={s.Sp}>
+                                      {s.Name}
+                                    </option>
+                                  ))}
+                              </select>
+                            </>
+                          )}{" "}
+                          {/* {pid === p.Pid && (
                           <>
                             <h3>Select Courier Service and Pay ${p.payment}</h3>
                             {sp &&
@@ -281,12 +279,23 @@ function DispachRequest() {
                               ))}
                           </>
                         )} */}
-                      </td>: <td> <button className='btn btn-b' onClick={()=>{
-                        setDoc(p);
-                        setTimeout(() => {
-                          printDocument();
-                        }, 500);
-                      }}>Print Details</button> </td> }
+                        </td>
+                      ) : (
+                        <td>
+                          {" "}
+                          <button
+                            className="btn btn-b"
+                            onClick={() => {
+                              setDoc(p);
+                              setTimeout(() => {
+                                printDocument();
+                              }, 500);
+                            }}
+                          >
+                            Print Details
+                          </button>{" "}
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
@@ -302,85 +311,124 @@ function DispachRequest() {
               )}
             </tbody>
           </table>
-              {doc &&  <div ref={componentRef} style={{padding:"2",margin:"30px",borderRadius:"8px",fontSize:'1.2rem',border:'2px solid cyan',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-                <h2>YourIndianShop</h2> <hr style={{color:'cyan'}}/><br /> 
-                <p>PacketId: {doc?.Pid}</p>
-                <p>ShipmentId: {doc?.Sid}</p>
-                <p>Time: {getDate(doc?.time)}</p>
-                <p>Time: {getDate(doc?.time)}</p>
-                <p>Dimensions (Cm): {doc?.height}*{doc?.width}*{doc?.length} CM</p>
-                <p>Wight: {doc?.wight} Kg</p>
-                <p>Payment: ₹{doc?.payment}</p>
-                <p>Curior Service Provider: DHL</p>
-              </div> }
+          {doc && (
+            <div
+              ref={componentRef}
+              style={{
+                padding: "2",
+                margin: "30px",
+                borderRadius: "8px",
+                fontSize: "1.2rem",
+                border: "2px solid cyan",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <h2>YourIndianShop</h2> <hr style={{ color: "cyan" }} />
+              <br />
+              <p>PacketId: {doc?.Pid}</p>
+              <p>ShipmentId: {doc?.Sid}</p>
+              <p>Time: {getDate(doc?.time)}</p>
+              <p>Time: {getDate(doc?.time)}</p>
+              <p>
+                Dimensions (Cm): {doc?.height}*{doc?.width}*{doc?.length} CM
+              </p>
+              <p>Wight: {doc?.wight} Kg</p>
+              <p>Payment: ₹{doc?.payment}</p>
+              <p>Curior Service Provider: DHL</p>
+            </div>
+          )}
 
-          {/* {!yrpkt && <h3>Loading...</h3>}
+          {!yrpkt && <h3>Loading...</h3>}
           {yrpkt && yrpkt.length == 0 && <p>No data found</p>}
           {yrpkt &&
             yrpkt.length != 0 &&
             yrpkt.map((p) => {
               return (
-                <div
-                  key={p.Pid}
-                  style={{
-                    margin: "20px",
-                    padding: "20px",
-                    backgroundColor: "gray",
-                  }}
-                >
-                  <p>packageId: {p.Pid}</p>
-                  <p>Shipment Ids: {p.Sid}</p>
-                  <p>time: {getDate(p.time)}</p>
-                  <p>status: {p.status == 0 ? "pending" : "Dispatched"}</p>
-                  <p>Hight: {p.height} Cm</p>
-                  <p>Width: {p.width} Cm</p>
-                  <p>Length: {p.length} Cm</p>
-                  <p>Wight: {p.wight} Kg</p>
-                  <p>Payment: ${p.payment}</p>
-                  {p.Sp && <p>Curiour Service ProviderId: {p.Sp}</p>}
-                  <p>
-                    Status:{" "}
-                    {p.status
-                      ? "Dispatched"
-                      : p.Sp
-                      ? "Curior Service Selected"
-                      : "In procedure..."}
-                  </p>
-                  {!p.status && !p.Sp && pid != p.Pid && (
-                    <button
-                      className="btn-o btn"
-                      onClick={() => {
-                        setPid(pid ? null : p.Pid);
-                      }}
-                    >
-                      {pid ? "hide " : "Select "}Curior Service Provider
-                    </button>
-                  )}
-                  {pid == p.Pid && (
-                    <>
-                      <h3>Select Curiour Service and Pay ${p.payment}</h3>
-                      {sp &&
-                        sp.map((s) => (
-                          <div
-                            key={s.Sp}
-                            onClick={() => selectSpAndPay(p, s)}
-                            className="btn-b"
-                            style={{
-                              border: "2px solid orange",
-                              display: "inline-block",
-                              cursor: "pointer",
-                              marginRight: "20px",
-                            }}
+                <div key={p.Pid} id="dis-req-grid">
+                  <div id="drrr">
+                    <p>packageId: {p.Pid}</p>
+                    <p>Shipment Ids: {p.Sid}</p>
+                    <p>time: {getDate(p.time)}</p>
+                    <p>status: {p.status == 0 ? "pending" : "Dispatched"}</p>
+                    <p>Hight: {p.height} Cm</p>
+                    <p>Width: {p.width} Cm</p>
+                    <p>Length: {p.length} Cm</p>
+                    <p>Wight: {p.wight} Kg</p>
+                    <p>Payment: ${p.payment}</p>
+                    {p.Sp && <p>Curiour Service ProviderId: {p.Sp}</p>}
+                    <p>
+                      Status:{" "}
+                      {p.status
+                        ? "Dispatched"
+                        : p.Sp
+                        ? "Curior Service Selected"
+                        : "In procedure..."}
+                    </p>
+                    {!p.status && !p.Sp && pid != p.Pid && (
+                      <button
+                        className="btn-o btn"
+                        onClick={() => {
+                          setPid(pid ? null : p.Pid);
+                        }}
+                      >
+                        {pid ? "hide " : "Select "}Curior Service Provider
+                      </button>
+                    )}
+
+                    <div>
+                      {pid === p.Pid && (
+                        <>
+                          {/* <h3>Select Courier Service and Pay ${p.payment}</h3> */}
+                          <select
+                            onChange={(e) => selectSpAndPay(p, e.target.value)}
+                            // value={.Sp}
                           >
-                            <img src={s.logo} alt={s.Name} width="100px" />
-                            <p style={{ textAlign: "center" }}>{s.Name}</p>
-                          </div>
-                        ))}
-                    </>
-                  )}
+                            <option value="">Select Courier Partner</option>
+                            {sp &&
+                              sp.map((s) => (
+                                <option key={s.Sp} value={s.Sp}>
+                                  {s.Name}
+                                </option>
+                              ))}
+                          </select>
+                        </>
+                      )}{" "}
+                      {/* {pid === p.Pid && (
+                          <>
+                            <h3>Select Courier Service and Pay ${p.payment}</h3>
+                            {sp &&
+                              sp.map((s) => (
+                                <div
+                                  key={s.Sp}
+                                  onClick={() => selectSpAndPay(p, s)}
+                                  className="btn-b"
+                                  style={{
+                                    border: "2px solid orange",
+                                    display: "inline-block",
+                                    cursor: "pointer",
+                                    marginRight: "20px",
+                                  }}
+                                >
+                                  <img
+                                    src={s.logo}
+                                    alt={s.Name}
+                                    width="100px"
+                                  />
+                                  <p style={{ textAlign: "center" }}>
+                                    {s.Name}
+                                  </p>
+                                </div>
+                              ))}
+                          </>
+                        )} */}
+                    </div>
+                  </div>
                 </div>
               );
-            })} */}
+            })}
         </div>
       )}
     </div>

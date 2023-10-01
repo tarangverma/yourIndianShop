@@ -213,7 +213,7 @@ function Wallete() {
             <th>Note</th>
             <th>Amount</th>
             <th>Date</th>
-            <th>Transaction Mode</th>
+            <th>Mode</th>
           </tr>
         </thead>
         <tbody>

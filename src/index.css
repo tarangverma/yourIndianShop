@@ -237,7 +237,8 @@
 
 #par-cards-box>* {
     transition: 0.2s ease-in-out;
-    width: 31%;
+    
+    min-width: 100%;
     background: #f4f4f4;
     /* padding: 30px 22.5px; */
     box-shadow: 0 0 22px 1px #2a2a2a30;
@@ -250,7 +251,7 @@
 
 #par-cards-box {
     width: 100%;
-    gap: 35px;
+    gap: 9px;
     height: auto;
     display: flex;
     align-items: flex-start;

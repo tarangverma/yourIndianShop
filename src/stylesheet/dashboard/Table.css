@@ -149,7 +149,53 @@ td {
         height: fit-content !important;
 
     }
+    td select{
+        font-size: 0.7rem;
+        padding: 3px;
+    }
+    td .btn{
+        background: var(--db2);
+        padding: 2px 5px !important;
+        font-size: 0.7rem !important;
+    }
+    .table-dis ,.par-req-tb{
+        display: none !important;
+    }
+    #par-cards-box{
+        display: flex !important;
+    }
 
+
+}
+#as-req{
+    display: flex;
+    padding: 35px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#as-req div{
+    background: rgb(99, 101, 117);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    gap: 5px;
+    width: 250px;
+    box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.267);
+}
+@media all and (max-width: 1250px) {
+
+     #dis-req-grid
+  {
+        display: flex !important;
+    }.table-dis,
+    .pck-tb {
+        display: none !important;
+    }
+}
+#dis-req-grid,
+#par-cards-box{
+    display: none ; 
 }
 
 .filters {

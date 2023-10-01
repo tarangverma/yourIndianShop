@@ -166,11 +166,13 @@
 #dis-req-grid {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 7.5px;
     justify-content: space-evenly;
 }
 
 #drrr {
-    width: 32%;
+    width: 100%;
     /* margin: 25px; */
     padding: 22.5px;
     background: #eee;
