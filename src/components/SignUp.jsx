@@ -8,10 +8,11 @@ import emailjs from "@emailjs/browser";
 
 const SignUp = () => {
   const nav = useNavigate();
-  const [otp, setOtp] = useState(false);
+  const [otp, setOtp] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
   const [mobile, setMobile] = useState("");
   const [submit, setSubmit] = useState("Continue");
   const [Address, setAddress] = useState("");
@@ -26,7 +27,10 @@ const SignUp = () => {
   const form = useRef();
   const sendEmail =async (e) => {
     e.preventDefault();
-    if (name != "" && email != "" && password != "" && mobile != "") {
+    if(password!=password2){
+      alert("password not Matched...")
+      return;
+    }else if (name != "" && email != "" && password != "" && mobile != "") {
       setSubmit("Sending Verification  Mail...");
       let tempcode = Math.round(1000000 * Math.random()).toString();
       const dt = await fetchreq("POST","sendMail",{email,subject:"Verification Mail",html:`<p>Your Verification Code is ${tempcode}</p>`});
@@ -54,7 +58,8 @@ const SignUp = () => {
     }
   };
 
-  const handlesubmit = async () => {
+  const handlesubmit = async (e) => {
+    e.preventDefault();
     if (submit === "Creating...") {
       return;
     }
@@ -107,6 +112,7 @@ const SignUp = () => {
               <form onSubmit={sendEmail}>
                 <h3>Firstname & Lastname</h3>
                 <input
+                  minLength={2}
                   required
                   type="text"
                   placeholder="Enter your first and last name"
@@ -118,6 +124,8 @@ const SignUp = () => {
                 <h3>Email</h3>
                 <input
                   required
+                  maxLength={45}
+                  minLength={4}
                   type="email"
                   placeholder="abcd123@xyz.com"
                   value={email}
@@ -127,6 +135,8 @@ const SignUp = () => {
                 />
                 <h3>Password</h3>
                 <input
+                  maxLength={25}
+                  minLength={4}
                   required
                   type="password"
                   placeholder="●●●●●●●●●●●"
@@ -135,9 +145,23 @@ const SignUp = () => {
                     setPassword(e.target.value);
                   }}
                 />
+                <h3>Confirm Password</h3>
+                <input
+                  maxLength={25}
+                  minLength={4}
+                  required
+                  type="password"
+                  placeholder="●●●●●●●●●●●"
+                  value={password2}
+                  onChange={(e) => {
+                    setPassword2(e.target.value);
+                  }}
+                />
                 <h3>Mobile No</h3>
                 <input
                   required
+                  maxLength={10}
+                  minLength={10}
                   type="tel"
                   placeholder="Enter Your number"
                   value={mobile}
@@ -167,7 +191,7 @@ const SignUp = () => {
             )}
           </div>
           <div id="verify">
-            <form style={{ display: otp == true ? "block" : "none" }}>
+            <form style={{ display: otp == true ? "block" : "none" }} onSubmit={handlesubmit}>
               <h3>Address Line 1</h3>
               <input
                 required
@@ -225,9 +249,8 @@ const SignUp = () => {
                 onChange={(e) => setPincode(e.target.value)}
               />
               <button
-                type="button"
+                type="submit"
                 className="btn btn-b"
-                onClick={handlesubmit}
               >
                 Create Account
               </button>

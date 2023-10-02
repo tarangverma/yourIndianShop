@@ -114,7 +114,7 @@ const Sidebar = () => {
                 </span>
                 <b className="sidebar_nav_txt"> country guide </b>
               </Link> */}
-              <Link to="/dashboard/calc">
+              <Link to="/calc">
                 <span>
                   <CalculateOutlinedIcon />
                 </span>

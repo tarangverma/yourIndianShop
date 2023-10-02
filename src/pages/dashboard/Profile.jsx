@@ -47,6 +47,20 @@ const Profile = () => {
         </div>
         <div className="profile-details">
           <div className="detail-item">
+            <span className="detail-label">Id:</span>
+            {isEditing ? (
+              <input
+                type="text"
+                value={userData?.email}
+                onChange={(e) =>
+                  setUserData({ ...userData, email: e.target.value })
+                }
+              />
+            ) : (
+              <span className="detail-value">{userData?.email}</span>
+            )}
+          </div>
+          <div className="detail-item">
             <span className="detail-label">Name:</span>
             {isEditing ? (
               <input
@@ -74,20 +88,7 @@ const Profile = () => {
               <span className="detail-value">{userData?.phoneNo}</span>
             )}
           </div>
-          <div className="detail-item">
-            <span className="detail-label">Email:</span>
-            {isEditing ? (
-              <input
-                type="text"
-                value={userData?.email}
-                onChange={(e) =>
-                  setUserData({ ...userData, email: e.target.value })
-                }
-              />
-            ) : (
-              <span className="detail-value">{userData?.email}</span>
-            )}
-          </div>
+          
           <h1>Your Virtual address</h1>
 
           { ad && ad.length!=0 && ad.map((a)=>{

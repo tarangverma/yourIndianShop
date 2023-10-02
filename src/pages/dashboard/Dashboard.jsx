@@ -7,12 +7,20 @@ import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { MyContext } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
+import { fetchreq } from "../../Helper/fetch";
 const Dashboard = () => {
   const { user, isLogin } = useContext(MyContext);
+  const [pktinfo,setPktinfo]=useState(null);
   const nav = useNavigate();
+  const loadpkt= async ()=>{
+    const dt = await fetchreq("GET",`getpktinfo/${user?.Cid}`,{});
+    dt?setPktinfo(dt.result[0]):setPktinfo(null);
+  }
   useEffect(() => {
     if (!isLogin) {
       nav("/");
+    }else{
+      loadpkt()
     }
   }, []);
   return (
@@ -63,21 +71,21 @@ const Dashboard = () => {
               <FlightTakeoffIcon />
             </div>
             <small>Shipment</small>
-            <big>1 packages</big>
+            {pktinfo && <big>{pktinfo.Dispatched} packages</big>}
           </div>{" "}
           <div className="ds-c">
             <div className="ico ico-g">
               <WarehouseIcon />
             </div>
-            <small>Lockers</small>
-            <big>2 packages</big>
+            <small>Locker</small>
+            {pktinfo && <big>{pktinfo.Locker} packages</big>}
           </div>
           <div className="ds-c">
             <div className="ico ico-r">
               <LocalShippingIcon />
             </div>
             <small>Delivered </small>
-            <big>0 packages</big>
+            {pktinfo && <big>{pktinfo.Delivered} packages</big>}
           </div>
         </div>
         <div id="ds3">

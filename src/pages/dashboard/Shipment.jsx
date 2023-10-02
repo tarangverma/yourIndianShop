@@ -93,6 +93,7 @@ function Shipment() {
         <div className="form-group">
           <input
             type="text"
+            required
             placeholder="Full Name"
             value={form.fullName}
             onChange={(e) => {
@@ -103,6 +104,7 @@ function Shipment() {
         <div className="form-group">
           <input
             type="email"
+            required
             placeholder=" Email Address"
             value={form.email}
             onChange={(e) => {
@@ -113,6 +115,7 @@ function Shipment() {
         <div className="form-group">
           <input
             type="text"
+            required
             placeholder="Phone Number"
             value={form.phone}
             onChange={(e) => {
@@ -123,6 +126,7 @@ function Shipment() {
         <div className="form-group">
           <input
             type="text"
+            required
             placeholder="Address Line 1"
             value={form.ad}
             onChange={(e) => {
@@ -132,6 +136,7 @@ function Shipment() {
         </div>
         <div className="form-group">
           <input
+            required
             type="text"
             placeholder="Address Line 2"
             value={form.ad2}
@@ -143,6 +148,7 @@ function Shipment() {
 
         <div className="form-group">
           <input
+            required
             type="text"
             placeholder="City "
             value={form.city}
@@ -153,6 +159,7 @@ function Shipment() {
         </div>
         <div className="form-group">
           <input
+            required
             type="text"
             placeholder="State"
             value={form.state}
@@ -163,6 +170,7 @@ function Shipment() {
         </div>
         <div className="form-group">
           <input
+            required
             type="text"
             placeholder="Country"
             value={form.country}
@@ -173,6 +181,7 @@ function Shipment() {
         </div>
         <div className="form-group">
           <input
+            required
             type="text"
             placeholder="Postal Code"
             value={form.pincode}
@@ -183,6 +192,7 @@ function Shipment() {
         </div>
         <div className="form-group">
           <input
+            required
             type="text"
             placeholder="Delivery Instruction"
             value={form.Di}
@@ -196,6 +206,7 @@ function Shipment() {
         <div className="form-group">
           <label>
             <input
+              required
               type="checkbox"
               checked={termsAgreed}
               onChange={() => setTermsAgreed(!termsAgreed)}

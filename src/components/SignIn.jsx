@@ -14,6 +14,7 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const [signin, setSignin] = useState("Sign In");
   const nav = useNavigate();
+  const [check,setCheck]=useState(false);
   const handlesubmit = async (e) => {
     e.preventDefault();
     if (signin == "Just A Sec...") {
@@ -62,6 +63,9 @@ const SignIn = () => {
             <form onSubmit={handlesubmit}>
               <h3>Email</h3>
               <input
+                required
+                maxLength={50}
+                minLength={4}
                 type="email"
                 placeholder="abcd123@xyz.com"
                 value={email}
@@ -71,13 +75,20 @@ const SignIn = () => {
               />
               <h3>Password</h3>
               <input
-                type="password"
-                placeholder="●●●●●●●●●●●"
+                required
+                maxLength={30}
+                minLength={4}
+                type={check?"text":"password"}
+                placeholder="Enter Password"
                 value={password}
                 onChange={(d) => {
                   setPassword(d.target.value);
                 }}
               />
+              {password.length>=4 &&<div style={{display:"flex",justifyContent:'flex-start',alignItems:'center',alignContent:"flex-start"}}>
+                <input type="checkbox" checked={check} onClick={()=>{setCheck(!check)}} style={{width:'20px'}}/> 
+                <span>Show Password</span>
+              </div>}
               <button type="submit" className="btn btn-b">
                 {signin}
               </button>

@@ -48,8 +48,10 @@ function ReturnRequests() {
                 border: "2px solid orange",
               }}
             >
+              <p>RquestId: {d.Rid}</p>
               <p>ProductId: {d.Did}</p>
               <p>Time: {time}</p>
+              <p>Status: {d.status?"Returned":"Not Returned"}</p>
             </div>
           );
         })}

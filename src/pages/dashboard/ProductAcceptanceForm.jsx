@@ -19,36 +19,43 @@ function ProductAcceptanceForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!run && termsAgreed && name.length > 1 && file) {
-      setRun(true);
-      if (
-        await walletTransaction(
-          pland?.consolidation,
-          wh?.Wid,
-          "Product Acceptance Request",
-          user,
-          setUser,
-          nav
-        )
-      ) {
-        const url = await uploadImageAws(file.name, file);
-        if(url){
-          const body = {
-            cid: user.Cid,
-            wid: wh.Wid,
-            proof: url,
-            name: name,
-            desc: des,
-          };
-          const dt = await fetchreq("POST", "makePAR", body);
-          dt ? nav("/PAR") : alert("something went wrong");
-          if (dt) {
-            alert("Request Made Successfully... ");
-            nav("/PAR");
-          } else {
-            alert("something went wrong");
+      const sizekb = file.size / 1024;
+      // console.log("file size:",sizekb," KB");
+      if(sizekb>1000){
+        alert("file size must be less than 1 MB");
+        setFile(null);
+      }else{
+        setRun(true);
+        if (
+          await walletTransaction(
+            pland?.consolidation,
+            wh?.Wid,
+            "Product Acceptance Request",
+            user,
+            setUser,
+            nav
+          )
+        ) {
+          const url = await uploadImageAws(file.name, file);
+          if(url){
+            const body = {
+              cid: user.Cid,
+              wid: wh.Wid,
+              proof: url,
+              name: name,
+              desc: des,
+            };
+            const dt = await fetchreq("POST", "makePAR", body);
+            dt ? nav("/PAR") : alert("something went wrong");
+            if (dt) {
+              alert("Request Made Successfully... ");
+              nav("/PAR");
+            } else {
+              alert("something went wrong");
+            }
+          }else{
+            alert("File Not uploaded...")
           }
-        }else{
-          alert("File Not uploaded...")
         }
       }
     } else if (run) {
@@ -87,8 +94,11 @@ function ProductAcceptanceForm() {
           {/* Product Details */}
           <div className="form-group">
             <input
+              required
               type="text"
               placeholder="Product Name"
+              maxLength={30}
+              minLength={2}
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
@@ -98,7 +108,10 @@ function ProductAcceptanceForm() {
 
           <div className="form-group">
             <textarea
+              required
               placeholder="Product Description"
+              minLength={10}
+              maxLength={500}
               value={des}
               onChange={(e) => {
                 setDes(e.target.value);
@@ -109,6 +122,7 @@ function ProductAcceptanceForm() {
           <div className="form-group bw">
             <label htmlFor="photo">Proof</label>
             <input
+              required
               name="photo"
               type="file"
               accept="image/*"
@@ -122,6 +136,7 @@ function ProductAcceptanceForm() {
           <div className="form-group bw">
             <label>
               <input
+                required
                 type="checkbox"
                 checked={termsAgreed}
                 onChange={() => setTermsAgreed(!termsAgreed)}

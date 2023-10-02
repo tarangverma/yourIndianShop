@@ -119,7 +119,7 @@ function DispachRequest() {
                       <td>{d.Email}</td>
                       <td>{d.phoneNo}</td>
                       <td>{d.Dinstruct}</td>
-                      <td>{d.Status === 0 ? "Not seen" : "Dispatched"}</td>
+                      <td>{d.Status === 0 ? "Not seen" : d.Status==1? "Dispatched":"In Procedure"}</td>
                     </tr>
                   );
                 })}

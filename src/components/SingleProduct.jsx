@@ -65,7 +65,8 @@ const SingleProduct = () => {
     setIsdp(false);
   }
   const returnReq = async ()=>{
-    if(await window.confirm("Are you Sure to return this Item?")){
+    const str =" Are you Sure to Return this Item? \n And Make sure that you Made the return request to your E-commerse App also.  "
+    if(await window.confirm(str)){
       setIsrp(true);
       const dt = await fetchreq("GET",`getPayableAmount/${wd?.Did}`,{});
       if(dt && dt.result[0].amount==0){
@@ -142,24 +143,24 @@ const SingleProduct = () => {
           <div id="pd-t">
             <h1>{wd?.name}</h1>
             {/* <p className="price">${wd.price}</p> */}
-            <p className="description">Desc: {wd?.Description}</p>
-            <p className="description">Wight: {wd?.Weight}</p>
-            <p className="description">Length: {wd?.length}</p>
+            <p className="description">Description: {wd?.Description}</p>
+            <p className="description">Wight: {wd?.Weight} Kg</p>
+            {/* <p className="description">Length: {wd?.length}</p>
             <p className="description">Width: {wd?.width}</p>
-            <p className="description">Higth: {wd?.height}</p>
+            <p className="description">Higth: {wd?.height}</p> */}
             <p className="description">LokerId: {wd?.LokerId}</p>
             <p className="description">Recive Time: {getDate(wd?.time)}</p>
             <p className="description">Status: {status}</p>
 
             {wd?.status == 0 && pland && (
               <div className="row">
-                <button onClick={navigatesipment} className="btn btn-g">
-                  {isdp ? "Processing..." : "Dispach Now"}
+                <button onClick={navigatesipment} className="btn btn-b">
+                  {isdp ? "Processing..." : "Dispach to Destination"}
                 </button>
-                { (dayDifference<=setbyadmin) && <button onClick={returnReq} className="btn btn-r">
+                { (dayDifference<=setbyadmin) && <button onClick={returnReq} className="btn btn-b">
                   {isrp
                     ? "Processing"
-                    : `Return ${
+                    : `Return back to Source  ${
                         pland?.package_ret == 0 ? "" : pland?.package_ret
                       }`}
                 </button>}
