@@ -105,7 +105,7 @@ const Shop = () => {
           {wd && wd.length == 0 && <p>No data found</p>}
           {!wd && <img src="./videos/Loading_2.gif" alt="Loading..." />}
         </div>
-        <center style={{ marginBottom: "35px", position:'sticky',bottom:'10px',zIndex:'100'}}>
+        <center style={{ marginBottom: "35px", position:'fixed',right:'10px',bottom:'10px',zIndex:'100'}}>
           {selectP.length > 1 && (
             <button className="btn btn-og" onClick={dispactchAll}>
               {isproc ? "Proceding..." : "Dispatch all selected"}

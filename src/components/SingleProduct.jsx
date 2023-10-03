@@ -123,14 +123,19 @@ const SingleProduct = () => {
           <span> ProductId: {wd?.Did} </span>
           <span id="org">{wd?.productName}</span>
         </div>{" "}
-        <a
-          className="description btn btn-o-1"
-          href={`${url}/${wd.proof}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          View Proof
-        </a>
+        <div style={{display:'flex',gap:'10px'}}>
+          { wd?.status == 0 && pland && <button onClick={navigatesipment} className="btn btn-b">
+            {isdp ? "Processing..." : "Dispach to Destination"}
+          </button>}
+          <a
+            className="description btn btn-o-1"
+            href={`${url}/${wd.proof}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View Proof
+          </a>
+        </div>
       </div>
       <div id="single-product">
         {/* <Link style={{position:'absolute',top:'0',scale:'2'}} to={"/warehousedata"}>🔙</Link> */}
@@ -154,10 +159,7 @@ const SingleProduct = () => {
 
             {wd?.status == 0 && pland && (
               <div className="row">
-                <button onClick={navigatesipment} className="btn btn-b">
-                  {isdp ? "Processing..." : "Dispach to Destination"}
-                </button>
-                { (dayDifference<=setbyadmin) && <button onClick={returnReq} className="btn btn-b">
+                { (dayDifference<=setbyadmin) && <button onClick={returnReq} className="btn btn-r">
                   {isrp
                     ? "Processing"
                     : `Return back to Source  ${
