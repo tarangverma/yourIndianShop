@@ -32,3 +32,44 @@
 #vidd {
     padding: 10vh 10vw;
 }
+#ab-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10vh;
+    min-height: 50vh;
+    background-image: url('../../public/imgs/home1-rev-3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-size: 3rem;
+    font-family: var(--font3);
+
+}
+#abt-sec>*{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 25px;
+}
+#abt-sec{
+    display: flex;
+    width: 100%;
+    gap: 5vw;
+    padding: 10vh 5vw;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+.abt-l {
+    justify-content: space-between;
+}
+.abt-l h1{
+font-size: 2.3rem;
+font-family: var(--font4) !important;
+font-weight: 400 !important;
+}
+.abt-l .btn{
+    width: fit-content;
+}

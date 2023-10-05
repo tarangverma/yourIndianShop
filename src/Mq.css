@@ -47,7 +47,35 @@
         flex-direction: column !important;
     }
 }
+@media (max-width: 1400px) {
+    #dp-pl>*{
+        width: 100% !important;
+    }
+    
+    #dp-pl center >*{
+        margin-bottom: 7vh;
+        text-align: center !important;
+    }
+    #dp-pl{
+        flex-direction: column;
+
+    }#pl-ol:nth-child(2)  {
+top: 0px !important;
+}
+#pl-ol {
+    min-width: 300px;
+}
+}
 @media (max-width: 1150px) {
+    #abt-sec>*{
+        width: 100% !important;
+    }
+    #abt-sec{
+        flex-direction: column !important;
+    }
+    #contact-sec{
+        display: none !important;
+    }
     .ser-sec-2 {
         /* background-position: bottom !important; */
     }
@@ -102,7 +130,12 @@
         margin: auto;
         width: fit-content !important;
     }
-
+#pop-ser{
+    bottom: 0 !important;
+}
+.pp2 , .pop-2{
+    margin: 0 !important;
+}
 }
 
 @media only screen and (max-width: 500px) {
@@ -128,13 +161,17 @@ section {
 
 #hero {
     /* background-position: -200px center !important; */
-    min-height: 45vh !important;
+    /* min-height: 45vh !important; */
     padding: 0 !important;
     margin: 0 !important;
     width: 100dvw !important;
     /* margin-top: 50px !important; */
+}#hero-log-pop > h1{
+font-size: 2.5rem !important;    
 }
-
+#logo #dg{
+    font-size: 1.5rem !important;
+}
 #soc>*>* {
     /* color: red !important; */
     font-size: 2rem !important;
@@ -324,6 +361,19 @@ section {
 }
 
 @media only screen and (max-width: 750px) {
+  .cp-hd-title {
+    margin: 35px 0 !important;
+  }
+  .cp-hd-title h1,
+  #con-pop .lg{
+    font-size: 1.3rem !important;
+   } #con-pop{
+        gap: 7px !important;
+        padding: 22px !important;
+    }
+    #hero-log-pop{
+        width: 80% !important;
+    }
     #ab-sec-title {
         text-align: center;
         flex-direction: column;

@@ -8,18 +8,47 @@
 #SpSignIn .left {
   width: 60%;
   overflow: hidden;
-  display: grid;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10vh 0;
+flex-direction: column;
   /* padding-top: 5vh; */
   height: 100%;
-  place-items: center;
-  background-color: var(--sup-lft);
+  gap: 25px;
+  /* border: 5px solid lime; */
+
+  /* background-color: var(--sup-lft); */
 }
 
 .spUp .left img {
-  width: 80% !important;
+  width: 100%;
+}
+#SpSignIn .left #w-ico {  
+font-size: 3rem !important;
+}
+#SpSignIn .left span{
+  display: flex;gap: 5px;
+  align-items: center;}
+#SpSignIn .left .w-pp {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 1.7rem;
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+#SpSignIn .left {
+  color: #fff !important;
+
+}
+#SpSignIn .left {
+
 }
 #SpSignIn .left img {
-  width: 80%;
+  /* width: 80%; */
 }
 
 
@@ -33,18 +62,20 @@
 
 #SpSignIn .right {
   flex-shrink: 0 !important;
-  width: 40%;
+  min-width: 40%;
   display: grid;
-  /* background: #eee; */
+  flex-shrink: 0 !important;
+  background: #fff;
   /* min-height: 5vh; */
   height: 100% !important;
+  padding: 35px ;
   /* overflow: scroll; */
   place-items: center;
 }
 
 #SpSignIn .right .data {
   display: flex;
-  width: 84%;
+  /* width: 84%; */
   min-width: 400px;
   flex-direction: column;
   gap: 13px;
@@ -52,7 +83,7 @@
 }
 
 #SpSignIn header {
-  font-size: 2rem;
+  font-size: 1.7rem !important;
   font-weight: bolder;
   display: flex;
   align-items: center;
@@ -68,34 +99,64 @@
   background: var(--db2);
 } */
 
-#SpSignIn * {
-  color: #fff;
-}
+
 #SpSignIn h1 {
   font-size: 2.5rem;
+  font-weight: 400 !important;
+  font-family: var(--font4) !important;
+  color: #252525;
 }
 
+#SpSignIn h2 >*{
+  color: rgb(88, 171, 254);
+}
 #SpSignIn h2 {
   font-size: 1.3rem;
   margin-bottom: 10px;
+  font-weight: 400 !important;
+  font-family: var(--font4) !important;
+  color: #252525 !important;
 }
 
 #SpSignIn h3 {
   font-size: 0.9rem;
   margin-bottom: 7px;
+  font-weight: 500 !important;
+  font-family: var(--font4) !important;
+  color: #252525 !important;
+}
+
+#other-s-in>*{
+
+  color: #161616 !important;
+}
+#other-s-in{
+  padding: 7.5px 12px;
+  width: fit-content;
+  border: 2px solid #161616;
+}
+#SpSignIn small {
+width: 100%;
+  font-size: 0.9rem;
+  margin-bottom: 7px;
+  font-weight: 500 !important;
+  font-family: var(--font4) !important;
+  color: #252525 !important;
+  padding: 7.5px !important;
 }
 
 #SpSignIn input,
 .otp input {
   font-size: 1.05rem;
-  background-color: var(--db);
+  /* background-color: var(--db); */
   padding: 13px 25px;
   width: 100%;
-  border: 1.05px solid rgba(245, 245, 245, 0.4);
+  border: 1.05px solid rgba(0, 0, 0, 0.918);
   outline: none;
   border-radius: 3px;
   margin-bottom: 13px;
-  color: var(--color2d);
+  color: #252525;
+  /* color: var(--color2d); */
 }
 
 #SpSignIn .right .data input::placeholder,
@@ -103,8 +164,10 @@
   color: var(--color2d);
 }
 
-#SpSignIn .right .data form .btn {
+#SpSignIn .right .data form .btn-blk {
   width: 100%;
+  color: #fff;
+  background: #161616;
   border-radius: 3px;
 }
 
@@ -199,7 +262,11 @@
   display: flex;
   min-height: 100dvh;
   align-items: center;
-  background-color: var(--db2);
+  /* background-color: var(--db2); */
+  background-image: url('../../public//imgs/sin-bc.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0 !important;
   /* overflow: hidden; */
   /* justify-content: space-between; */
@@ -212,4 +279,7 @@
   display: grid;
   place-items: center;
   padding: 5vw 5vw; */
+}#o-g{
+  font-size: 1.5rem !important;
+  color: #161616 !important;
 }

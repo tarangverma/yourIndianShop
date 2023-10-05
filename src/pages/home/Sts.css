@@ -1,0 +1,50 @@
+/* ECommerceSites.css */
+
+.ecommerce-sites {
+  text-align: center;
+  padding: 20px;
+}
+
+.filters {
+  display: flex;
+
+  background: var(--db2);
+  color: #fff;
+  justify-content:space-around;
+  /* padding: 7px ; */
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filters label {
+  margin-right: 10px;
+}
+
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.site {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site:hover {
+  transform: translateY(-5px);
+}
+
+.site img {
+  max-width: 100%;
+  max-height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Add more styling as needed */

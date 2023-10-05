@@ -99,9 +99,12 @@ const Nav = () => {
         <div id="links">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/service">Service</Link>
-          <Link to="/offers">Offers</Link>
           <Link to="/in-sites">Indian Sites</Link>
+
+          <Link to="/disp-plan">Plans</Link>
+          <Link to="/calc">Rate Calc</Link>
+          <Link to="/offers">Offers</Link>
+          {/* <Link to="/comming-soon">Delivery Partners</Link> */}
         </div>
 
         <div onClick={othenticate} id="log" className="btn btn-o">
@@ -124,12 +127,12 @@ const Nav = () => {
           <a id="drop-hd">
             Services
             <div className="drop-list">
-              <Link to="/disp-plan">Plans</Link>
               <Link to="/calc">Shipping Rate Calculator</Link>
               <Link to="/offers">Festive Offers </Link>
-              <Link to="#">Delivery Partners</Link>
+              <Link to="/coming-soon">Delivery Partners</Link>
             </div>
-          </a>
+          </a>{" "}
+          <Link to="/disp-plan">Plans</Link>
           <Link to="/offers">Offers</Link>
           {/* <Link to="/in-sites">Indian Sites</Link> */}
         </div>
@@ -144,14 +147,14 @@ const Nav = () => {
             <Twitter />
           </IconButton>
         </div> */}
-        {/* <a
+        <a
           href="https://www.youtube.com/watch?v=YB67y0NepPs&t=2s&pp=ygUbZHJvcHNoaXBwaW5nIGFuaW1hdGVkIHZpZGVv"
           target="_blank"
         >
           <IconButton id="yt-ico">
             <YouTubeIcon />
           </IconButton>
-        </a> */}
+        </a>
         <div className="nav-right">
           <div onClick={othenticate} id="log" className="btn btn-og">
             <a>{isLogin ? "LogOut" : si}</a>

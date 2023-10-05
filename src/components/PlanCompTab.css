@@ -1,0 +1,67 @@
+/* Add your styling for the PlanCompTab component here */
+.plan-table-container {
+  overflow-x: auto;
+  margin: 10vh 5vw;
+  border:2px solid #252525 ;
+  box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.233);
+}
+
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 16px;
+  /* margin-bottom: 20px; */
+  
+}
+
+.plan-table th, .plan-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.plan-table th {
+  background-color: var(--db2);
+  color: #fff;
+  font-weight: bold;
+}
+
+.plan-table tr td:first-child {
+    background-color: var(--db2);
+    color: #f6f6f6;
+}
+.plan-table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* .plan-table tr:hover {
+  background-color: #fff3ec;
+} */
+.plan-table tr {
+    transition: 0.2s;
+  background-color:#fff;
+}
+.plan-table tr td:nth-child(2) {
+    background-color: rgb(239, 123, 29);
+        background: #fc4a1a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #f6f6f6;
+}.plan-table tr td:nth-child(4) {
+    background-color: rgb(17, 229, 17);background: #11998e;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #f6f6f6;
+}
+@media screen and (max-width: 780px) {
+  .plan-table {
+    display: none;
+  }
+  /* .plan-table {
+    font-size: 14px;
+  } */
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PlanCard from "../../components/Plans";
 import { fetchreq } from "../../Helper/fetch";
+import PlanCompTable from "../../components/PlanCompTab";
 
 const DispPl = () => {
   const [plans, setPlans] = useState([]);
@@ -13,23 +14,29 @@ const DispPl = () => {
     loadplans();
   }, []);
   return (
-    <div>
-      <center>
-        <div className="plan-page-title">
-          <span id="blue">Our </span>
-          <span id="org">Plan</span>
+    <>
+      <div id="dp-pl">
+        <center>
+          <div className="plan-page-title">
+            <div id="pur">Our Plans</div>
+
+            {/* <div id="pur"></div> */}
+          </div>
+          <br />
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem
+            exercitationem laborum.
+          </p>
+        </center>
+        <div id="plan-cards">
+          {plans.length != 0 &&
+            plans.map((plan, index) => (
+              <PlanCard state={false} key={index} plan={plan} />
+            ))}
         </div>
-      </center>
-      <div id="plan-cards">
-        {plans.length !=0 && plans.map((plan, index) => (
-          <PlanCard
-            state={false}
-            key={index}
-            plan={plan}
-          />
-        ))}
-      </div>
-    </div>
+      </div>{" "}
+      <PlanCompTable />
+    </>
   );
 };
 

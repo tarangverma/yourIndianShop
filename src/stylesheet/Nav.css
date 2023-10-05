@@ -112,7 +112,7 @@
 }
 
 #con-pop .lg {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem;
     color: #fff;
     font-family: var(--font9) !important;
 }
@@ -274,7 +274,7 @@ nav .btn-o:hover {
     left: -15px;
 }
 #yt-ico {
-    color: #fff !important;
+    color: crimson !important;
     margin: 0 25px;
 }
 

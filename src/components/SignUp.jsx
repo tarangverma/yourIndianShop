@@ -6,9 +6,10 @@ import AddCardIcon from "@mui/icons-material/AddCard";
 import { fetchreq } from "../Helper/fetch";
 import emailjs from "@emailjs/browser";
 
+import { Google, WhatsApp } from "@mui/icons-material";
 const SignUp = () => {
   const nav = useNavigate();
-  const [otp, setOtp] = useState(true);
+  const [otp, setOtp] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,27 +24,30 @@ const SignUp = () => {
   const [pincode, setPincode] = useState("");
   const [State, setState] = useState("");
   const [inputOTP, setInputOTP] = useState("");
-  const [code,setCode]=useState(null);
+  const [code, setCode] = useState(null);
   const form = useRef();
-  const sendEmail =async (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    if(password!=password2){
-      alert("password not Matched...")
+    if (password != password2) {
+      alert("password not Matched...");
       return;
-    }else if (name != "" && email != "" && password != "" && mobile != "") {
+    } else if (name != "" && email != "" && password != "" && mobile != "") {
       setSubmit("Sending Verification  Mail...");
       let tempcode = Math.round(1000000 * Math.random()).toString();
-      const dt = await fetchreq("POST","sendMail",{email,subject:"Verification Mail",html:`<p>Your Verification Code is ${tempcode}</p>`});
-      if(dt){
+      const dt = await fetchreq("POST", "sendMail", {
+        email,
+        subject: "Verification Mail",
+        html: `<p>Your Verification Code is ${tempcode}</p>`,
+      });
+      if (dt) {
         setSubmit("Submit Otp");
-        setCode(tempcode); 
+        setCode(tempcode);
         setOtp(2);
         alert("email is send to Your Email");
-      }else{
+      } else {
         alert("Something Went Wrong...");
         setSubmit("Continue");
       }
-     
     } else {
       alert("please Fill all Details");
     }
@@ -95,17 +99,30 @@ const SignUp = () => {
 
   return (
     <div id="mcd">
-     
       <section id="SpSignIn" className="spUp">
         <div className="left">
-          <img src="./imgs/sup.png" alt="" />
+          <div className="w-pp">
+            <span>
+              <WhatsApp id="w-ico" /> WhatsApp
+            </span>
+            <br />
+            If you have and queries or doubts
+            <br />
+            Contact us on WhatsApp
+            <br />
+          </div>
+          <div className="qr-img">
+            <img src="./imgs/wqr.jpg" alt="" />
+          </div>
+          <div className="wapp-info">
+            scan above qr code to contact us on whatsapp
+          </div>
+          {/* <img src="./imgs/sup.png" alt="" /> */}
         </div>
         <div className="right">
           <div className="data" id="dataverify">
             <header>
-              <span id="blue">Your</span>
-              <img src="./imgs/6.png" height="50px" alt="" />
-              <span id="org">Shop</span>
+              <span id="dg">YourIndianShop</span>
             </header>
             <h2>It's free to SignUp and only takes a minute.</h2>
             {!otp && otp !== 2 && (
@@ -169,7 +186,7 @@ const SignUp = () => {
                     setMobile(e.target.value);
                   }}
                 />
-                <button type="submit" className="btn btn-b">
+                <button type="submit" className="btn btn-blk">
                   {submit}
                 </button>
               </form>
@@ -184,14 +201,17 @@ const SignUp = () => {
                   }}
                   placeholder="Enter OTP here"
                 />
-                <button onClick={submitOTP} className="btn btn-b">
+                <button onClick={submitOTP} className="btn btn-blk">
                   Submit OTP
                 </button>
               </div>
             )}
           </div>
           <div id="verify">
-            <form style={{ display: otp == true ? "block" : "none" }} onSubmit={handlesubmit}>
+            <form
+              style={{ display: otp == true ? "block" : "none" }}
+              onSubmit={handlesubmit}
+            >
               <h3>Address Line 1</h3>
               <input
                 required
@@ -248,10 +268,7 @@ const SignUp = () => {
                 value={pincode}
                 onChange={(e) => setPincode(e.target.value)}
               />
-              <button
-                type="submit"
-                className="btn btn-b"
-              >
+              <button type="submit" className="btn btn-b">
                 Create Account
               </button>
             </form>

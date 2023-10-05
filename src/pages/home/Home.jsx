@@ -133,7 +133,7 @@ const Home = () => {
               className="mySwiper"
             >
               {photos.map((pt, index) => {
-                console.log(`${url}/${pt}`)
+                console.log(`${url}/${pt}`);
                 return (
                   <SwiperSlide key={index}>
                     <HomeSlide bgimg={`${url}/${pt}`} />
@@ -526,7 +526,7 @@ const Home = () => {
                   dimensions, simplifying cost estimation for efficient shipping
                   and pricing.
                 </div>
-                <Link to="/in-sites" rel="noopener noreferrer">
+                <Link to="/coming-soon" rel="noopener noreferrer">
                   <div className="rm " id="org">
                     | View More |
                   </div>
@@ -545,7 +545,7 @@ const Home = () => {
                   premium and business , ensuring affordability and flexibility.
                 </div>
                 <div className="rm " id="org">
-                  <Link to="/offers" rel="noopener noreferrer">
+                  <Link to="/coming-soon" rel="noopener noreferrer">
                     | Get Now |
                   </Link>
                 </div>
@@ -580,11 +580,11 @@ const Home = () => {
                   WE OFFER A HASSLE FREE, RELIABLE AND LOW-COST COURIER SERVICE
                   FROM INDIA INTERNATIONALLY.{" "}
                 </div>
-                <a href="/comming_soon" rel="noopener noreferrer">
+                <Link to="/coming-soon" rel="noopener noreferrer">
                   <div className="rm " id="org">
                     | View More |
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -670,7 +670,7 @@ const Home = () => {
                 <li>Full Container Load</li>
                 <li>Inter-modal Solutions</li>
               </ul>
-              <a href="/comming_soon" className="btn btn-db">
+              <a href="/coming-soon" className="btn btn-db">
                 {" "}
                 Comming Soon
               </a>
@@ -692,7 +692,7 @@ const Home = () => {
                 <li>Full Container Load</li>
                 <li>Inter-modal Solutions</li>
               </ul>
-              <a href="/comming_soon" className="btn btn-db">
+              <a href="/coming-soon" className="btn btn-db">
                 {" "}
                 Comming Soon
               </a>

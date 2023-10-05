@@ -37,6 +37,7 @@ import Service from "./pages/home/Service";
 import Offer from "./pages/home/Offer";
 import InSites from "./pages/home/InSites";
 import Billing from "./pages/dashboard/Billing";
+import ComingSoon from "./components/ComingSoon";
 
 export const MyContext = createContext();
 
@@ -47,8 +48,8 @@ const App = () => {
   const [wh, setWh] = useState(null);
   const [wd, setWd] = useState(null);
   const [did, setDid] = useState(null);
-  const [muldis,setMuldis]=useState(null);
-  
+  const [muldis, setMuldis] = useState(null);
+
   return (
     <div>
       <MyContext.Provider
@@ -385,6 +386,7 @@ const App = () => {
                 </main>
               }
             />
+            <Route path="/coming-soon" element={<ComingSoon />} />
           </Routes>
         </Router>
       </MyContext.Provider>
