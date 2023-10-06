@@ -56,14 +56,15 @@ const SignUp = () => {
   const submitOTP = () => {
     console.log(code + " " + inputOTP);
     if (code == inputOTP) {
-      setOtp(true);
+      // setOtp(true);
+      handlesubmit();
     } else {
       alert("invalid code...");
     }
   };
 
-  const handlesubmit = async (e) => {
-    e.preventDefault();
+  const handlesubmit = async () => {
+    // e.preventDefault();
     if (submit === "Creating...") {
       return;
     }
@@ -73,13 +74,13 @@ const SignUp = () => {
       email,
       phoneNo: mobile,
       password,
-      Address,
-      Address2,
-      Landmark,
-      City,
-      Contry: Country,
-      State,
-      pincode,
+      Address: "AG",
+      Address2: "Near Bus Stop",
+      Landmark:"Zudio",
+      City: "Rajkot",
+      Contry: "india",
+      State: "Gujarat",
+      pincode: "361245",
     };
     const allKeysAreNotNull = Object.keys(body).every(
       (key) => body[key] !== null && body[key] !== ""
@@ -202,14 +203,15 @@ const SignUp = () => {
                   placeholder="Enter OTP here"
                 />
                 <button onClick={submitOTP} className="btn btn-blk">
-                  Submit OTP
+                  {submit}
                 </button>
               </div>
             )}
           </div>
           <div id="verify">
             <form
-              style={{ display: otp == true ? "block" : "none" }}
+              style={{display:'none'}}
+              // style={{ display: otp == true ? "block" : "none" }}
               onSubmit={handlesubmit}
             >
               <h3>Address Line 1</h3>

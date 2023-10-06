@@ -45,6 +45,7 @@ const Home = () => {
   const loadlandingPhoto = async () => {
     const dt = await fetchreq("GET", "landingpagePhotos", {});
     dt ? setPhotos(JSON.parse(dt.result[0].Details)) : setPhotos([]);
+    // console.log("hi",dt.result[0]?.Details);
   };
   const url = process.env.REACT_APP_URL;
   const temp = ["./imgs/sd1.png", "./imgs/sd2.png"];
@@ -58,6 +59,26 @@ const Home = () => {
       ? 2
       : 3
   );
+  const handelsubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    // Iterate through form data and log each field's name and value
+    const arr = [];
+    formData.forEach((value, key) => {
+      console.log(`${key}: ${value}`);
+      arr.push(value);
+    });
+    // name: adgtafasf 
+    // email: ads@iau.o 
+    // subject: asjdkfjafjajf 
+    // message: 45487547578445
+    const dt =await fetchreq("POST", "sendMail", {
+      email: "connect.qubit@gmail.com",
+      subject: arr[2],
+      html: `<h3>Name: ${arr[0]} \n\n email: ${arr[1]} \n </h3><p>Message: ${arr[3]}</p>`,
+    });
+    if(dt){alert("Submit Successfully...")}
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -1001,19 +1022,22 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="col-r">
-              <input type="text" className="soneri" placeholder="NAME" />
-              <input type="text" placeholder="E-mail" />
-              <input type="text" className="soneri" placeholder="SUBJECT" />
+            <form className="col-r"  onSubmit={handelsubmit}>
+              <input required name="name" minLength={4} maxLength={50} type="text" className="soneri" placeholder="NAME" />
+              <input required name="email" minLength={4} maxLength={50} type="email" placeholder="E-mail" />
+              <input required name="subject" minLength={4} maxLength={30} type="text" className="soneri" placeholder="SUBJECT" />
               <textarea
-                name=""
+                minLength={10}
+                maxLength={500}
+                required
+                name="message"
                 placeholder="MESSAGE"
                 id=""
                 cols="30"
                 rows="10"
               ></textarea>
-              <div className="btn btn-gd">Submit</div>
-            </div>
+              <button type="submit" className="btn btn-gd">Submit</button>
+            </form>
           </div>
         </div>
         <Footer />

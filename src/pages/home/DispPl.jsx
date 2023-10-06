@@ -35,6 +35,9 @@ const DispPl = () => {
             ))}
         </div>
       </div>{" "}
+      <center>
+        <a href="#plan-comp" className="btn btn-og table-cmp-btn">View Plan Details</a>
+      </center>
       <PlanCompTable />
     </>
   );

@@ -3,7 +3,7 @@ import "./PlanCompTab.css";
 
 const PlanCompTab = () => {
   return (
-    <div className="plan-table-container">
+    <div id="plan-comp" className="plan-table-container">
       <table className="plan-table">
         <thead>
           <tr>
