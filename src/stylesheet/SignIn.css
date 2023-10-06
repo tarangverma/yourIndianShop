@@ -10,6 +10,7 @@
   overflow: hidden;
 display: flex;
 align-items: center;
+text-transform: capitalize !important;
 justify-content: center;
 padding: 10vh 0;
 flex-direction: column;

@@ -9,44 +9,44 @@ const PlanCompTab = () => {
           <tr>
             <th></th>
             <th>FREE</th>
-            <th>Half Yearly (Rs 2499)</th>
-            <th>Yearly (Rs 4499)</th>
+            <th>Half Yearly (₹2499)</th>
+            <th>Yearly (₹4499)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>CONSOLIDATION</td>
-            <td>399/SHIPMENT</td>
+            <td>₹399/SHIPMENT</td>
             <td>free</td>
             <td>free</td>
           </tr>
           <tr>
             <td>STORAGE</td>
-            <td>25 DAYS (after 25 days rs 75 per item per day)</td>
-            <td>30 DAYS (after 30 days rs 75 per item per day)</td>
-            <td>40 days (after 40 days rs 75 per item per day)</td>
+            <td>25 DAYS (after 25 days ₹75 per item per day)</td>
+            <td>30 DAYS (after 30 days ₹75 per item per day)</td>
+            <td>40 days (after 40 days ₹75 per item per day)</td>
           </tr>
           <tr>
             <td>PHOTO</td>
-            <td>3 PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, RS 400)</td>
-            <td>3 PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, RS 250)</td>
-            <td>3 PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, RS 250)</td>
+            <td>3 PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, ₹400)</td>
+            <td>3 PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, ₹250)</td>
+            <td>3 PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, ₹250)</td>
           </tr>
           <tr>
             <td>PACKAGE RETURN</td>
-            <td>RS 50 PER ITEM</td>
+            <td>₹50 PER ITEM</td>
             <td>free</td>
             <td>free</td>
           </tr>
           <tr>
             <td>Warehouse Pickup</td>
-            <td>rs 400</td>
+            <td>₹400</td>
             <td>free</td>
             <td>free</td>
           </tr>
           <tr>
             <td>Scanned Copies of Documents</td>
-            <td>rs 80 per page</td>
+            <td>₹80 per page</td>
             <td>40 per page</td>
             <td>40 per page</td>
           </tr>
@@ -69,13 +69,13 @@ const PlanCompTab = () => {
             <td>free</td>
           </tr>
           <tr>
-            <td>Personal Shopper</td>
+            <td>Pe₹nal Shopper</td>
             <td>7% of item value (exclusive of all charges)</td>
             <td>5% of item value (exclusive of all charges)</td>
             <td>5% of item value (exclusive of all charges)</td>
           </tr>
           <tr>
-            <td>Indian Virtual Shipping Address & Personal Locker</td>
+            <td>Indian Virtual Shipping Address & Pe₹nal Locker</td>
             <td>FREE</td>
             <td>free</td>
             <td>FREE</td>

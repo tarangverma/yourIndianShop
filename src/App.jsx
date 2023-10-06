@@ -4,7 +4,7 @@ import "./Mq.css";
 import Home from "./pages/home/Home";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/dashboard/Dashboard";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ArtUp from "./components/SignUp";
 import ArtistSignIn from "./components/SignIn";
 import Shipment from "./pages/dashboard/Shipment";
@@ -38,6 +38,8 @@ import Offer from "./pages/home/Offer";
 import InSites from "./pages/home/InSites";
 import Billing from "./pages/dashboard/Billing";
 import ComingSoon from "./components/ComingSoon";
+import { HomeMaxOutlined, House } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 
 export const MyContext = createContext();
 
@@ -73,8 +75,32 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signUp" element={<SignUp />} />
-            <Route path="/signIn" element={<SignIn />} />
+            <Route
+              path="/signUp"
+              element={
+                <>
+                  <Link to="/" className="btn-house">
+                    <IconButton>
+                      <House />
+                    </IconButton>
+                  </Link>
+                  <SignUp />
+                </>
+              }
+            />
+            <Route
+              path="/signIn"
+              element={
+                <>
+                  <Link to="/" className="btn-house">
+                    <IconButton>
+                      <House />
+                    </IconButton>
+                  </Link>
+                  <SignIn />
+                </>
+              }
+            />
             <Route path="/plan" element={<PlanPage isBill={false} />} />
             <Route path="/select-warehouse" element={<SelectWareHouse />} />
             <Route
@@ -342,6 +368,11 @@ const App = () => {
               path="/calc"
               element={
                 <main>
+                  <Link to="/" className="btn-house">
+                    <IconButton>
+                      <House />
+                    </IconButton>
+                  </Link>
                   <Calc />
                 </main>
               }
@@ -374,6 +405,12 @@ const App = () => {
               path="/in-sites"
               element={
                 <main>
+                  {" "}
+                  <Link to="/" className="btn-house">
+                    <IconButton>
+                      <House />
+                    </IconButton>
+                  </Link>
                   <InSites />
                 </main>
               }
@@ -382,11 +419,29 @@ const App = () => {
               path="/disp-plan"
               element={
                 <main>
+                  {" "}
+                  <Link to="/" className="btn-house">
+                    <IconButton>
+                      <House />
+                    </IconButton>
+                  </Link>
                   <DispPl />
                 </main>
               }
             />
-            <Route path="/coming-soon" element={<ComingSoon />} />
+            <Route
+              path="/coming-soon"
+              element={
+                <>
+                  <Link to="/" className="btn-house">
+                    <IconButton>
+                      <House />
+                    </IconButton>
+                  </Link>
+                  <ComingSoon />
+                </>
+              }
+            />
           </Routes>
         </Router>
       </MyContext.Provider>

@@ -13,16 +13,16 @@
     position: fixed;
     bottom: 100px;
     z-index: 111111;
-    right: 35px;
+    right: 25px;
     /* width: 350px !important; */
     height: auto;
     padding: 35px;
-    border-radius: 35px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 9px;
     background: #F2994A;
-    padding-bottom: 10vh;
+    padding-bottom: 7.5vh;
      /* background: -webkit-linear-gradient(to right, #F2C94C, #F2994A); */
      /* background: linear-gradient(to right, #F2C94C, #F2994A); */
      /* background: #44A08D; */
@@ -62,7 +62,7 @@
 }
 
 .cp-bd .cp-hd-title {
-    margin: 7vh 0;
+    margin: 5vh 0;
     color: #fff;
 }
 
@@ -80,18 +80,35 @@
     align-items: center;
     padding: 22.5px;
     border-radius: 23px;
+    padding: 0 !important;
+    overflow: hidden;
+    padding-bottom: 15px !important;
     justify-content: space-between;
+    flex-direction: column-reverse;
 }
 
 .kh-l {
-    width: 90%;
+    /* width: 90%; */
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 
 }
 
+.kh-r>*{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.kh-r img{
+
+    width: 90%;
+    min-width: 150px;
+}
 .kh-r {
-    width: 10%;
+    /* width: 10%; */
 }
 
 #con-pop .cls {
@@ -242,7 +259,7 @@ nav .btn-o:hover {
     z-index: 111111;
     right: -300px;
     box-shadow: 0 0 35px 1px #0000004d;
-    padding: 5vh 35px;
+    padding: 5vh 35px 0 40px;
     transition: 0.5s ease-in-out;
 }
 
@@ -254,7 +271,8 @@ nav .btn-o:hover {
     display: flex !important;
     flex-direction: column;
     gap: 12.5px;
-    align-items: center;
+    align-items:flex-start !important;
+    justify-content: flex-start;
     margin-bottom: 25px;
 }
 
@@ -269,9 +287,14 @@ nav .btn-o:hover {
 }
 
 .cl {
+    /* background: red; */
+    width: 100%;
     position: relative;
     top: -15px;
     left: -15px;
+    /* text-align: right; */
+    /* right: 0px; */
+    /* float: right; */
 }
 #yt-ico {
     color: crimson !important;

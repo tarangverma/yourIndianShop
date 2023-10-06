@@ -73,7 +73,7 @@ const SignIn = () => {
               <WhatsApp id="w-ico" /> WhatsApp
             </span>
             <br />
-            If you have and queries or doubts
+            If you have any queries or doubts
             <br />
             Contact us on WhatsApp
             <br />

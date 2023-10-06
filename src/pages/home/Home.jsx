@@ -92,14 +92,16 @@ const Home = () => {
         <PopAd />
         <div id="homesec" className="hero-cont">
           <div id="hero-log-pop">
-            <h1>STOP SEARCHING FOR THE PERFECT br INDIAN STORE !</h1>
+            <h1>STOP SEARCHING FOR THE PERFECT INDIAN STORE !!</h1>
             <h2>
               WE PROVIDE YOU WITH THE BEST POSSIBLE ONLINE SHOPPING EXPERIENCE &
               GREAT DEALS ON INTERNATIONAL SHIPPING. SAVE UPTO 80% ON SHIPPING
               CHARGES.
             </h2>
             <div className="lg-btn">
-              <div className="btn btn-og">Sign up</div>
+              <Link to="/signUp">
+                <div className="btn btn-og">Sign up</div>
+              </Link>
               {/* OR */}
               {/* <div className="btn btn-db">Log in</div> */}
             </div>
@@ -522,9 +524,8 @@ const Home = () => {
               <div className="ps-r">
                 <div className="st">Self Costumer</div>
                 <div className="s-txt">
-                  A versatile price calculator, factoring in product weight or
-                  dimensions, simplifying cost estimation for efficient shipping
-                  and pricing.
+                  Simplify your experience with user-friendly features and
+                  hassle-free navigation
                 </div>
                 <Link to="/coming-soon" rel="noopener noreferrer">
                   <div className="rm " id="org">
@@ -541,8 +542,8 @@ const Home = () => {
               <div className="ps-r">
                 <div className="st wt">Drop Shipping</div>
                 <div className="s-txt">
-                  We offer a range of plans to suit your needs, from basic to
-                  premium and business , ensuring affordability and flexibility.
+                  Retail without inventory. Stores sell products and have them
+                  shipped directly from suppliers to customers.{" "}
                 </div>
                 <div className="rm " id="org">
                   <Link to="/coming-soon" rel="noopener noreferrer">
@@ -982,9 +983,23 @@ const Home = () => {
                 nisi ut aliquip ex ea commodo consequat.
               </p>
               <h2 id="dg">
-                E-mail: <br />
-                info@techiota.co.in
-              </h2>
+                {/* E-mail: <br /> */}
+                {/* info@techiota.co.in */}
+              </h2>{" "}
+              <div
+                className="con-ftr"
+                // style={{ justifySelf: "flex-end !important" }}
+              >
+                <Link to="/signUp">
+                  <div className="btn btn-db">SIGN UP</div>
+                </Link>
+                <Link to="/offers">
+                  <div className="btn btn-db">OFFERS</div>
+                </Link>
+                <Link to="/dis-plan">
+                  <div className="btn btn-db">PLANS</div>
+                </Link>
+              </div>
             </div>
             <div className="col-r">
               <input type="text" className="soneri" placeholder="NAME" />
@@ -999,11 +1014,6 @@ const Home = () => {
               ></textarea>
               <div className="btn btn-gd">Submit</div>
             </div>
-          </div>
-          <div className="con-ftr">
-            <div className="btn btn-db">SIGN UP</div>
-            <div className="btn btn-db">OFFERS</div>
-            <div className="btn btn-db">PLANS</div>
           </div>
         </div>
         <Footer />

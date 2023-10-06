@@ -102,7 +102,7 @@ const Nav = () => {
           <Link to="/in-sites">Indian Sites</Link>
 
           <Link to="/disp-plan">Plans</Link>
-          <Link to="/calc">Rate Calc</Link>
+          <Link to="/calc">Calculator</Link>
           <Link to="/offers">Offers</Link>
           {/* <Link to="/comming-soon">Delivery Partners</Link> */}
         </div>

@@ -97,10 +97,13 @@ const PopAd = () => {
                   <small>We are here to help !</small>
                 </div>
                 <div className="kh-r">
-                  <AlternateEmailOutlinedIcon />
+                  <div className="qr-img">
+                    <img src="./imgs/wqr.jpg" alt="" />
+                  </div>
+                  {/* <AlternateEmailOutlinedIcon /> */}
                 </div>
               </div>
-              <div className="khokhu">
+              {/* <div className="khokhu">
                 <div className="kh-l">
                   <strong>FAQ?</strong>
                   <small>Your questions answers !</small>
@@ -108,7 +111,7 @@ const PopAd = () => {
                 <div className="kh-r">
                   <LiveHelpOutlined />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

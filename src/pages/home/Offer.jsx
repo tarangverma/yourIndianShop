@@ -12,11 +12,11 @@ const Offer = () => {
       </header>
       <br />
       <br />
-      <PgTitle
+      {/* <PgTitle
         pageName="Get Amazing Offers"
         tabName="Offers"
         bgImg="./imgs/wh2.jpg"
-      />
+      /> */}
       <section id="offer">
         <div className="t-title">
           <span id="org"> Use </span>

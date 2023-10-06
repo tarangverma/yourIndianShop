@@ -49,9 +49,9 @@ const footer = () => {
           <div className="loc">
             <div className="titl">Transforming Ideas Into Reality</div>
           </div>
-          <div className="tm">
+          {/* <div className="tm">
             info@techiota.co.in <br /> +919903581809
-          </div>
+          </div> */}
         </div>
         {/* <div className="f1l">
           <a href="https://www.instagram.com/_qubit.tech/" target="_blank">
@@ -69,8 +69,10 @@ const footer = () => {
         </div> */}
       </div>
       <center>
-        Copyright © info@techiota.co.in &nbsp;&nbsp;&nbsp; Privacy Policy
-        &nbsp;&nbsp; &nbsp; Terms & Conditions &nbsp;&nbsp; &nbsp;
+        Copyright © 2023
+        {/* info@techiota.co.in */}
+        &nbsp;&nbsp;&nbsp; Privacy Policy &nbsp;&nbsp; &nbsp; Terms & Conditions
+        &nbsp;&nbsp; &nbsp;
       </center>
     </footer>
   );

@@ -581,7 +581,7 @@ section {
         background: #eee;
     }
     .sh1>#dg {
-        text-align: left !important;
+        text-align:center !important;
     }
 #ship {
     background: #fff;
@@ -608,12 +608,20 @@ section {
         color: var(--blue) !important; */
     }
 
+    #cal .btn{
+        width: fit-content !important;
+  min-width: 170px;
+    }
     #cal {
         width: 100dvw !important;
         margin: 0 !important;
         padding: 0 !important;
-        background: linear-gradient(to top, rgba(107, 79, 30, 0.097), rgba(33, 36, 115, 0.426)),
-        url('https://png.pngtree.com/thumb_back/fw800/background/20230525/pngtree-different-brown-paper-shopping-bags-on-a-dark-background-image_2624565.jpg');
+     background: #141E30;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        /* background: linear-gradient(to top, rgba(107, 79, 30, 0.097), rgba(33, 36, 115, 0.426)),
+        url('https://png.pngtree.com/thumb_back/fw800/background/20230525/pngtree-different-brown-paper-shopping-bags-on-a-dark-background-image_2624565.jpg'); */
     }
 
     #lnl {
@@ -1464,7 +1472,7 @@ flex-direction: column-reverse;
     /* width: 0vw; */
     display: flex;
     align-items: center;
-    margin: 20vh 10vw 5vh 10vw;
+    margin: 5vh 5vw;
     background: #fff;
     padding:15px 35px;
     justify-content: space-between;
@@ -1493,6 +1501,7 @@ flex-direction: column-reverse;
 
     .con-l {
         display: flex;
+        position: relative;
         align-items: flex-start;
         gap: 12.5px;
         flex-direction: column;
@@ -1561,5 +1570,6 @@ color: #fff !important;
 
     .con-ftr {
         display: flex;
+        bottom: 0;
         gap: 25px;
 }

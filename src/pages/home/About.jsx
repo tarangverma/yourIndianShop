@@ -4,6 +4,7 @@ import "../../stylesheet/About.css";
 import Nav from "../../components/Nav";
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 import PgTitle from "../../components/PgTitle";
+import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div id="Site" className="sttt">
@@ -27,7 +28,9 @@ const About = () => {
             Alias obcaecati molestias velit beatae unde suscipit neque nobis
             harum dolor illum quaerat nulla quo necessitatibus.
           </p>
-          <div className="btn btn-og">Join Now</div>
+          <Link to="/signUp">
+            <div className="btn btn-og">Join Now</div>
+          </Link>
         </div>
         <div className="abt-r">
           <img src="./imgs/sd3.png" alt="" />
