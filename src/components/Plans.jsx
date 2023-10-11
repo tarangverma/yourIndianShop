@@ -55,30 +55,10 @@ const Plans = ({ plan, state }) => {
     }
   };
   const planDetails = [
-    `Consolidation: Rs ${plan.consolidation}`,
-    `Storage: Up to ${plan.storage} days is free`,
-    `After Rs 75 per item / day.`,
-    // `Photo: ${plan.photo} Photos are free, detailed photo service up to 10 items costs Rs 400.`,
-    `Return fees : Rs ${
-      plan.package_ret == null ? "50" : plan.package_ret
-    } per item.`,
-    // `Warehouse Pickup: Rs ${plan.warehouse_pic}.`,
-    // `Scanned Copies of Documents: Rs ${
-    //   plan.scane_copy == null ? "80" : plan.scane_copy
-    // } per page.`,
-    // `Shipping Address: Up to ${
-    //   plan.shippingAddress == null ? "5" : plan.shippingAddress
-    // } addresses.`,
-    `Real-time Tracking: ${plan.tracking == null ? "Free" : plan.tracking}.`,
-    // `Personal Shopper: 7% of the item value (exclusive of all charges).`,
-    // `Receive Parcels: ${plan.recParcel}.`,
-    // `liquid clearence charge: ${
-    //   plan.liquidCharge == null ? "10" : plan.liquidCharge
-    // }% (EXCLUSIVE OF ALL OTHER CHARGES)`,
-    // `Indian Virtual Shipping Address & Personal Locker: Free.`,
-    // `Set Up a Local Hub for Your Business: Free.`,
-    // `Assisted Purchase: Actual charges + other charges.`,
+  
   ];
+  console.log(plan)
+
   useEffect(() => {
     if (!isLogin && state) {
       nav("/");
@@ -93,6 +73,7 @@ const Plans = ({ plan, state }) => {
             {/* <small> .00</small> */}
           </center>
           <div className="plan-duretion">{plan.Name}</div>
+
           {/* <div className="plan-duretion"></div> */}
         </div>
         <div id="pc-mid">
@@ -104,14 +85,36 @@ const Plans = ({ plan, state }) => {
         </div>
         {state == 0 && (
           <Link to="/signUp" className="btn btn-o">
-            Buy Now
+            Add to Cart
           </Link>
         )}
+        <div style={{marginTop: "4rem"}}>
+          <ul style={{ padding: "25px"}}>
+            
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>CONSOLIDATION</span> ₹{plan.consolidation}</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>STORAGE </span>25 DAYS (after 25 days ₹{plan.storage} per item per day)</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>PHOTO</span> {plan.photo} PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, ₹{plan.photoPrice})</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>PACKAGE RETURN</span> ₹{plan.package_ret} PER ITEM</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Warehouse Pickup </span>₹{plan.warehouse_pic}</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Scanned Copies of Documents</span> ₹{plan.scane_copy}</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Shipping Address upto</span> {plan.shippingAddress}</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Semiliquid/Liquid Clearance Charge</span> {plan.liquidCharge}% (EXCLUSIVE OF ALL OTHER CHARGES)</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Real-time Tracking</span> {plan.detail}</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Personal Shopper </span>{plan.personalShopper}% of item value (exclusive of all charges)</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Indian Virtual Shipping Address & Personal Locker</span> {plan.detail}</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Receive Parcels</span> {plan.detail}</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Set Up a Local Hub for Your Business </span>{plan.detail}</li>
+              <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Assisted Purchase</span> Actual charges + other charges</li> 
+          
+          </ul>
+        </div>
+        
+        
         {state && (
           <div id="pc-bot">
             <div className="choose-plan">
               <button
-                className="btn btn-b"
+                className="btnn"
                 onClick={state == true ? choseplan : upgradeplan}
               >
                 {ispro

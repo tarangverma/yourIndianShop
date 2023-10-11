@@ -27,10 +27,10 @@ const PopAd = () => {
 
   const [currentAdIndex, setCurrentAdIndex] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
-  const [showConPop, setShowConPop] = useState(true); // Add this state
+  const [showConPop, setShowConPop] = useState(false); // Add this state
 
   useEffect(() => {
-    const adDisplayDuration = 5000; // 5 seconds
+    const adDisplayDuration = 30000; // 5 seconds
     const adTransitionDuration = 3000; // 3 seconds
 
     const adTimeout = setTimeout(

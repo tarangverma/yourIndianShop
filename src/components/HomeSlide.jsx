@@ -1,6 +1,4 @@
 import React from "react";
-import WarehouseOutlinedIcon from "@mui/icons-material/WarehouseOutlined";
-import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 
 export const HomeSlide = ({ title, desc, bgimg }) => {
   const sliderStyle = {

@@ -14,6 +14,7 @@ const PlanPage = ({inBill}) => {
   },[]) 
   return (
     <div>
+      
       <center>
         <div className="plan-page-title">
           <span id="blue">Choose </span>

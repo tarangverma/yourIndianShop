@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Sts.css";
+import SearchIcon from '@mui/icons-material/Search';
+import { Link, useLocation } from "react-router-dom";
 
 const Sts = () => {
+  const { pathname } = useLocation();
   const [sites, setSites] = useState([
     {
       id: 1,
@@ -9,7 +12,7 @@ const Sts = () => {
       category: "Sports",
       offers: ["Best Discounts", "Free Shipping"],
       link: "https://www.nike.com",
-      logo: `./logos/1.png`,
+      logo: `./logos/1.jpg`,
     },
     {
       id: 2,
@@ -17,7 +20,7 @@ const Sts = () => {
       category: "Sports",
       offers: ["Best Discounts"],
       link: "https://www.adidas.com",
-      logo: `./logos/2.png`,
+      logo: `./logos/2.jpg`,
     },
     {
       id: 3,
@@ -25,7 +28,7 @@ const Sts = () => {
       category: "General",
       offers: ["Prime Deals", "Flash Sales"],
       link: "https://www.amazon.com",
-      logo: `./logos/3.png`,
+      logo: `./logos/3.jpg`,
     },
     {
       id: 4,
@@ -33,7 +36,7 @@ const Sts = () => {
       category: "General",
       offers: ["Big Billion Days", "Free Shipping"],
       link: "https://www.flipkart.com",
-      logo: `./logos/4.png`,
+      logo: `./logos/4.avif`,
     },
     {
       id: 5,
@@ -289,22 +292,39 @@ const Sts = () => {
     setFilteredSites(filtered);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+
   return (
     <div className="ecommerce-sites">
       <div className="filters">
-        <label>
-          Category:
-          <select onChange={handleCategoryChange} value={selectedCategory}>
+      <div className="search-d">
+          <SearchIcon />
+        <input
+          className="search-p"
+          type="text"
+          placeholder="Search by site name"
+          onChange={handleSearch}
+          value={searchQuery}
+          />
+        </div>
+        <div className="f-1">
+          <label>Category
+          <select className="select-s" onChange={handleCategoryChange} value={selectedCategory}>
             {availableCategories.map((category) => (
               <option key={category} value={category}>
                 {category}
               </option>
             ))}
           </select>
-        </label>
+          </label>
+        </div>
+        <div className="f-1">
         <label>
-          Offer:
-          <select onChange={handleOfferChange} value={selectedOffer}>
+          Offers
+          <select className="select-s" onChange={handleOfferChange} value={selectedOffer}>
             {availableOffers.map((offer) => (
               <option key={offer} value={offer}>
                 {offer}
@@ -312,19 +332,32 @@ const Sts = () => {
             ))}
           </select>
         </label>
-        <input
-          type="text"
-          placeholder="Search by site name"
-          onChange={handleSearch}
-          value={searchQuery}
-        />
+        </div>
       </div>
+     <div className="content">
+      <Link to="/disp-plan">
+     <img src="/banner/banner.png" alt="no img"/>
+     </Link>
+     </div> 
+     <div className="content2">
+     <img src="/banner/Coupon.png" height={80} alt="no img"/>
+     </div> 
+     {/* <div className="content">
+     <img src="/banner/banner2.png" alt="no img"/>
+     </div>  */}
+
       <div className="site-grid">
         {filteredSites.map((site) => (
           <div key={site.id} className="site">
             <a href={site.link} target="_blank" rel="noopener noreferrer">
-              <img src={site.logo} alt={site.name} />
+              <img className="s-img" src={site.logo} alt={site.name} />
             </a>
+            <div className="site-d">
+            <p>{site.name}</p>
+            <h1>30-70% OFF</h1>
+            <p>Shop Now</p>
+            </div>  
+
           </div>
         ))}
       </div>

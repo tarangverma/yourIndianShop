@@ -306,15 +306,18 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 }
 .btn-house{
   position: absolute;
-  top: 25px;
+  top: 10px;
   left: 25px;
-  z-index: 11111111;
+  z-index: 1;
+  height: 100px;
+  width: 100px;
 }
 .btn-house>*{
 
-  background:rgb(254, 109, 20) !important;
 }
 .btn-house>*>*{
   
   color: #fff !important;
 }
+
+

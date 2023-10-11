@@ -5,8 +5,6 @@ import Home from "./pages/home/Home";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import ArtUp from "./components/SignUp";
-import ArtistSignIn from "./components/SignIn";
 import Shipment from "./pages/dashboard/Shipment";
 import Shop from "./pages/dashboard/Shop";
 import WarehouseData from "./pages/dashboard/WarehouseData";
@@ -17,7 +15,6 @@ import AssistedPurchase from "./pages/dashboard/AssistedPurchase";
 import ProductAcceptanceForm from "./pages/dashboard/ProductAcceptanceForm";
 import Profile from "./pages/dashboard/Profile";
 import ProhibitedItems from "./pages/dashboard/ProhibitedItems";
-import Nav from "./components/Nav";
 import Plans from "./components/Plans";
 import PlanPage from "./pages/Plan/PlanPage";
 import SelectWareHouse from "./pages/dashboard/SelectWareHouse";
@@ -407,9 +404,9 @@ const App = () => {
                 <main>
                   {" "}
                   <Link to="/" className="btn-house">
-                    <IconButton>
-                      <House />
-                    </IconButton>
+                    <div className="btn-div">
+                    <img src="/signup-img/logo1.png" ></img>
+                    </div>
                   </Link>
                   <InSites />
                 </main>

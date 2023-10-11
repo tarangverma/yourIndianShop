@@ -102,30 +102,12 @@ const SignUp = () => {
     <div id="mcd">
       <section id="SpSignIn" className="spUp">
         <div className="left">
-          <div className="w-pp">
-            <span>
-              <WhatsApp id="w-ico" /> WhatsApp
-            </span>
-            <br />
-            If you have any queries or doubts
-            <br />
-            Contact us on WhatsApp
-            <br />
-          </div>
-          <div className="qr-img">
-            <img src="./imgs/wqr.jpg" alt="" />
-          </div>
-          <div className="wapp-info">
-            scan above qr code to contact us on whatsapp
-          </div>
-          {/* <img src="./imgs/sup.png" alt="" /> */}
-        </div>
-        <div className="right">
-          <div className="data" id="dataverify">
+
+        <div className="data" id="dataverify">
             <header>
               <span id="dg">YourIndianShop</span>
             </header>
-            <h2>It's free to SignUp and only takes a minute.</h2>
+            <h2>It only takes a minute to SignUp.</h2>
             {!otp && otp !== 2 && (
               <form onSubmit={sendEmail}>
                 <h3>Firstname & Lastname</h3>
@@ -275,10 +257,15 @@ const SignUp = () => {
               </button>
             </form>
           </div>
-          <p>
-            <span>Already have an account?</span>
+          <p className="last-p">
+           Already have an account?
             <Link to="/signIn">Sign In</Link>
           </p>
+          {/* <img src="./imgs/sup.png" alt="" /> */}
+        </div>
+        <div className="right">
+        <img className="img1" src="/signup-img/indian.jpg" alt="no" >
+        </img>  
         </div>
       </section>
     </div>

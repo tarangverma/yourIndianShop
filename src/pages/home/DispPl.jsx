@@ -15,19 +15,9 @@ const DispPl = () => {
   }, []);
   return (
     <>
+      <img src={"/home/festiv.jpg"} width={1700} alt="no"></img>
       <div id="dp-pl">
-        <center>
-          <div className="plan-page-title">
-            <div id="pur">Our Plans</div>
-
-            {/* <div id="pur"></div> */}
-          </div>
-          <br />
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem
-            exercitationem laborum.
-          </p>
-        </center>
+      
         <div id="plan-cards">
           {plans.length != 0 &&
             plans.map((plan, index) => (
@@ -35,10 +25,8 @@ const DispPl = () => {
             ))}
         </div>
       </div>{" "}
-      <center>
-        <a href="#plan-comp" className="btn btn-og table-cmp-btn">View Plan Details</a>
-      </center>
-      <PlanCompTable />
+     
+      
     </>
   );
 };

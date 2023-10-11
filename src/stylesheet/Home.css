@@ -14,12 +14,48 @@
     /* height: 120%; */
 }
 
+.festival img{
+    
+    height: 250px;
+    width: 100%;
+}
+.festival{
+margin-top: 2rem;
+}
+
+.scrolling-element {
+    margin: 4rem;
+    width: 150px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    animation: scroll 5s linear infinite;
+  }
+  
+  
+
+.scroll {
+    display: flex;
+    flex-direction: row;
+}
+
+
 #svg2 {
     /* margin-bottom: -300px !important; */
 }
 
 #svg3 {
     /* margin-top: 0px; */
+}
+
+.calculator img{
+  width: 100%;
+  height: 250px;
+}
+.calculator{
+  margin-top: 2rem;
 }
 
 #pop-svg-b {}
@@ -117,13 +153,13 @@ section {
 }
 
 .swiper-slide {
-    background: #F5f5f5 !important;
+    background: #fff;
 }
 #hero {
     /* border: 5px solid red; */
     width: 100%;
     margin: auto;
-    background: url("../../public//imgs/home1-rev-2.jpg");
+    background: url("../../public/home//home.png");
     height: auto;
     min-height: 90dvh;
     background-size: cover;
@@ -134,7 +170,7 @@ section {
     align-items: center;
     position: static;
     margin-top: 0 !important;
-    margin-top: -25px !important;
+    margin-top: 4rem !important;
     /* margin: 75px 10vw; */
 }
 
@@ -142,8 +178,7 @@ section {
         /* width: 100% !important; */
 }
 .hero-cont {
-    width: 100dvw;
-    height: 90vh;
+
     overflow: hidden !important;
     display: flex;
     /* margin:0 5vw; */
@@ -254,13 +289,10 @@ section {
     font-weight: 300;
     font-family: var(--font6);
 }
-.pp2 {
-    margin-top: 10vh;
-}
+
 .pop-2 {
-    flex-direction: row-reverse;
     /* margin: 0 !important; */
-    padding: 0 10vw !important;
+    
     /* margin-top: 10vh; */
 
     margin-bottom: 10vh ;
@@ -274,10 +306,10 @@ section {
     width: 100%;
     left: 0;
     bottom: -75px;
-    padding: 0 10vw;
+    margin-right: 5vh;
+    margin-left: 5vh;
     /* margin-top: 10vh; */
-    align-items: flex-start;
-    justify-content: space-between;
+    
     z-index: 11;
 }
 
@@ -360,6 +392,10 @@ section {
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 500;
+    border: 1px solid var(--blue);
+    background: var(--blue);
+    padding: 5px;
+    color: #000;
     /* padding: 0 5px; */
 }
 
@@ -806,6 +842,11 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     font-size: 2.5rem;
     margin-top: 60vh;
     transition: all 0.25s ease-in-out;
+    
+}
+
+.blue{
+    background: var(--blue);
 }
 
 .ftr-cd .t-title {
@@ -974,7 +1015,6 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
     #feed {
          /* background: linear-gradient(90deg, rgb(255, 210, 170) 0%, rgba(255, 255, 255, 1) 50%, rgb(158, 255, 157) 100%) !important; */
-        padding-top: 0 !important;
     }
 
     #service {
@@ -1255,7 +1295,6 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     transform: translateZ(45px);
 }
 
-#offer {}
 
 .t-title {
     color: var(--blue);
@@ -1281,16 +1320,15 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     justify-content: space-evenly;
 }
 #feed {
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    background: #f3f3f3;
+    background: #fff;
     background-size: 50% !important;
-
-
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-    url('https://static.vecteezy.com/system/resources/thumbnails/013/867/897/small/online-education-training-with-students-and-tutor-free-vector.jpg');
+    width: 100%;
+    margin: 0;
 }
 #feed-r {
     width: 100%;

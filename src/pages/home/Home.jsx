@@ -48,7 +48,7 @@ const Home = () => {
     // console.log("hi",dt.result[0]?.Details);
   };
   const url = process.env.REACT_APP_URL;
-  const temp = ["./imgs/sd1.png", "./imgs/sd2.png"];
+  const temp = ["./imgs/sd1.png", "./imgs/sd2.png", "/home/home.png"];
   useEffect(() => {
     loadlandingPhoto();
   }, []);
@@ -112,57 +112,17 @@ const Home = () => {
         </header>
         <PopAd />
         <div id="homesec" className="hero-cont">
-          <div id="hero-log-pop">
-            <h1>STOP SEARCHING FOR THE PERFECT INDIAN STORE !!</h1>
-            <h2>
-              WE PROVIDE YOU WITH THE BEST POSSIBLE ONLINE SHOPPING EXPERIENCE &
-              GREAT DEALS ON INTERNATIONAL SHIPPING. SAVE UPTO 80% ON SHIPPING
-              CHARGES.
-            </h2>
-            <div className="lg-btn">
-              <Link to="/signUp">
-                <div className="btn btn-og">Sign up</div>
-              </Link>
-              {/* OR */}
-              {/* <div className="btn btn-db">Log in</div> */}
-            </div>
           </div>
-          {/* <div id="ver-in">
-            <Link to="/signIn">LOG IN </Link>
-            <Link to="/signUp">SIGN UP </Link>
-          </div> */}
-          <div id="main-video">
-            {/* <video
-              src="./imgs/main-vd-1.webm"
-              muted
-              loop
-              autoPlay
-              // controls
-            ></video> */}
-            <Swiper
-              pagination={{
-                dynamicBullets: true,
-                clickable: true,
-              }}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              // spaceBetween={30}
-              slidesPerView={1}
-              navigation
-              loop={true}
-              modules={[Autoplay, Pagination]}
-              className="mySwiper"
-            >
-              {photos.map((pt, index) => {
-                console.log(`${url}/${pt}`);
-                return (
-                  <SwiperSlide key={index}>
-                    <HomeSlide bgimg={`${url}/${pt}`} />
-                  </SwiperSlide>
-                );
-              })}
+          <div class="swiper">
+          <div class="swiper-wrapper">
+          <div class="swiper-slide"><Link to={"/disp-plan"}><img src={"/home/explore.png"} alt="no"></img></Link></div>
+          <div class="swiper-slide"><img src={"/banner/banner.png"} alt="no"></img></div>
+          <div class="swiper-slide"><img src={"/banner/banner2.png"} alt="no"></img></div>
+          </div>
+          </div>
+              <div>
+                
+              </div>
               {/* <SwiperSlide>
                 <HomeSlide bgimg="./imgs/sd1.png" />
               </SwiperSlide>
@@ -172,13 +132,12 @@ const Home = () => {
               <SwiperSlide>
                 <HomeSlide bgimg="./imgs/sd2.png" />
               </SwiperSlide> */}
-            </Swiper>{" "}
-          </div>
-        </div>
+            
+          
         <section>
           <div id="sec-head">
             <div className="t-title" id="dg">
-              HOW IT WORK
+              HOW IT WORKS
             </div>
           </div>
           <div id="steps">
@@ -478,7 +437,7 @@ const Home = () => {
               <center>
                 <h1>
                   Services We
-                  <span id="org"> Offer</span>
+                  <span style={{color: "var(--blue)"}}> Offer</span>
                 </h1>
               </center>
               {/* <p>
@@ -537,43 +496,7 @@ const Home = () => {
             loop
             autoPlay
           ></video> */}
-          <div id="pop-ser" className="pop-2">
-            <div className="ps">
-              <div className="ps-l">
-                <ShoppingCartOutlinedIcon />
-              </div>
-              <div className="ps-r">
-                <div className="st">Self Costumer</div>
-                <div className="s-txt">
-                  Simplify your experience with user-friendly features and
-                  hassle-free navigation
-                </div>
-                <Link to="/coming-soon" rel="noopener noreferrer">
-                  <div className="rm " id="org">
-                    | View More |
-                  </div>
-                </Link>
-              </div>
-            </div>
-            <div className="ps">
-              <div className="ps-l">
-                <CardGiftcardOutlinedIcon />
-                {/* <LocalShippingOutlinedIcon /> */}
-              </div>
-              <div className="ps-r">
-                <div className="st wt">Drop Shipping</div>
-                <div className="s-txt">
-                  Retail without inventory. Stores sell products and have them
-                  shipped directly from suppliers to customers.{" "}
-                </div>
-                <div className="rm " id="org">
-                  <Link to="/coming-soon" rel="noopener noreferrer">
-                    | Get Now |
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          
           <div id="pop-ser">
             <div className="ps">
               <div className="ps-l">
@@ -587,7 +510,7 @@ const Home = () => {
                 </div>
                 <div className="rm " id="org">
                   <Link to="/disp-plan" rel="noopener noreferrer">
-                    | View Plans |
+                     View Plans 
                   </Link>
                 </div>
               </div>
@@ -604,7 +527,7 @@ const Home = () => {
                 </div>
                 <Link to="/coming-soon" rel="noopener noreferrer">
                   <div className="rm " id="org">
-                    | View More |
+                     View More 
                   </div>
                 </Link>
               </div>
@@ -623,7 +546,7 @@ const Home = () => {
                 </div>
                 <Link to="/in-sites" rel="noopener noreferrer">
                   <div className="rm " id="org">
-                    | View Sites |
+                     View Sites
                   </div>
                 </Link>
               </div>
@@ -642,30 +565,18 @@ const Home = () => {
                 </div>
                 <div className="rm " id="org">
                   <Link to="/offers" rel="noopener noreferrer">
-                    | View Coupons |
+                     View Coupons 
                   </Link>
                 </div>
               </div>
             </div>
           </div>
         </section>{" "}
-        <section id="fest-offer">
-          <div className="pop-3">
-            <div className="ps">
-              <div className="ps-l">
-                <ShoppingCartOutlinedIcon />
-                <div className="st wt" id="dgw">
-                  View Festival Offers
-                </div>
-              </div>
-              <div className="ps-r">
-                <Link to="/offers">
-                  <div className="btn btn-b">View Offers</div>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="festival" >
+          <Link to="/in-sites">
+          <img src="/banner/offer.png" alt="no"></img>
+          </Link>
+        </div>
         <section id="service" className="ser-sec-2">
           <div className="ser-head">
             <center className="sh1">
@@ -721,16 +632,11 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section id="cal">
-          <div className="cal-head">
-            <div className="t-title" id="dg">
-              Shipping Rate Calculator{" "}
-            </div>
-            <Link to="/calc" rel="noopener noreferrer">
-              <div className="btn btn-gd">Calculate Now</div>
-            </Link>
-          </div>
-        </section>{" "}
+        <div className="calculator">
+          <Link to="/calc">
+          <img src="/banner/Calculate.png" alt="no"></img>
+          </Link>
+        </div>
         <section id="feed">
           <div id="feed-l">
             <center className="fd-title" id="dg">
@@ -743,7 +649,7 @@ const Home = () => {
               // spaceBetween={120}
               slidesPerView={value}
               autoplay={{
-                delay: 1500,
+                delay: 1000,
                 disableOnInteraction: false,
               }}
               loop={true}
@@ -930,53 +836,36 @@ const Home = () => {
         <section id="fr-in">
           <div className="fr-title">
             <div className="t-title" id="dg">
-              Featured IN{" "}
+              Recognition{" "}
             </div>
           </div>
-          <div id="fr-gal">
-            <Swiper
-              slidesPerView={5}
-              spaceBetween={0}
-              autoplay={{
-                delay: 1500,
-                disableOnInteraction: false,
-              }}
-              loop={true}
-              modules={[Autoplay]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div id="frd-img">
+            
+              
+              <div className="scroll">
+                <div class="scrolling-element ">
                   <img src="./ftrd/1.png" alt="" />
                 </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div id="frd-img">
+                <div class="scrolling-element ">
                   <img src="./ftrd/2.png" alt="" />
                 </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div id="frd-img">
+                <div class="scrolling-element ">
                   <img src="./ftrd/3.png" alt="" />
                 </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div id="frd-img">
+                <div class="scrolling-element ">
                   <img src="./ftrd/4.png" alt="" />
                 </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div id="frd-img">
+              
+                <div class="scrolling-element ">
                   <img src="./ftrd/5.png" alt="" />
                 </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div id="frd-img">
+              
+              
+                <div class="scrolling-element ">
                   <img src="./ftrd/6.png" alt="" />
                 </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
+                </div>
+          
+          
         </section>
         <div id="contact-sec">
           <div id="con-head">

@@ -18,9 +18,6 @@
 #blue{
     color: var(--blue);
 }
-#org{
-    color: var(--blue);
-}
 #side_header .logo {}
 #side_header .logo {
     font-size: 1.55rem;

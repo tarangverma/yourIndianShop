@@ -2,12 +2,30 @@
 
 .ecommerce-sites {
   text-align: center;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.f-1{
+ display: flex;
+ background: #fff;
+ color: #000;
+ border-radius: 20px;
+ overflow: hidden;
+ padding: 0 10px 0 10px;
+}
+
+.select-s{
+  padding: 10px; 
+  color: #000;
+  margin-left: 10px;
+  background: #fff;
+  border-left: 1px solid gray;
 }
 
 .filters {
   display: flex;
-
+  flex-direction: row;
   background: var(--db2);
   color: #fff;
   justify-content:space-around;
@@ -21,17 +39,34 @@
 }
 
 .site-grid {
+  margin-top: 2rem;
+  cursor: pointer;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
   justify-items: center;
+
+
+  background: linear-gradient(90deg, rgba(212,205,53,1) 0%, rgba(67,37,29,1) 100%);
+}
+  .heading-p h1{
+  font-size: 50px;
+  font-weight: 700;
+}
+.heading-p p{
+  color: gray;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .site {
   border: 1px solid #ccc;
   padding: 10px;
+  height: 320px;
+  width: 320px;
+  margin: 20px;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: #ADC4CE;
   transition: transform 0.2s ease;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -39,12 +74,43 @@
 .site:hover {
   transform: translateY(-5px);
 }
+.content2{
+   margin-top: 2rem;
+}
+.content2 img{
+   height: 250px;
+   width: 100%;
+}
 
-.site img {
-  max-width: 100%;
-  max-height: 100px;
-  display: block;
-  margin: 0 auto;
+.s-img{
+  height: 200px;
+  width: 100%;
+}
+
+.site-d {
+  height: 100px;
+  width: 100%;
+  color: #000 ;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, rgba(212,205,53,1) 0%, rgba(208,206,119,1) 100%);}
+  .site-d h1{
+  font-size: 20px;
 }
 
 /* Add more styling as needed */
+
+.search-d{
+  background: #fff;
+  color: #000;
+  border-radius: 20px;
+  padding: 10px;
+ 
+}
+
+.search-p{
+  padding-left: 5px;
+  outline: none;
+  text-decoration: none;
+  border: none;
+}

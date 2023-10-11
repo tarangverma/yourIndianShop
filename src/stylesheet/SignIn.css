@@ -4,18 +4,23 @@
 }
 
 */
+.data{
+  width: 60%;
+}
 
 #SpSignIn .left {
-  width: 60%;
+  width: 30%;
   overflow: hidden;
-display: flex;
+  display: flex;
 align-items: center;
 text-transform: capitalize !important;
 justify-content: center;
 padding: 10vh 0;
+border-radius: 8px;
+background: #fff;
 flex-direction: column;
   /* padding-top: 5vh; */
-  height: 100%;
+  
   gap: 25px;
   /* border: 5px solid lime; */
 
@@ -41,10 +46,7 @@ font-size: 3rem !important;
   justify-content: center;
 
 }
-#SpSignIn .left {
-  color: #fff !important;
 
-}
 #SpSignIn .left {
 
 }
@@ -58,18 +60,25 @@ font-size: 3rem !important;
   height: fit-content;
   max-height: 70vh;
   padding-right: 15px;
-  overflow-y: scroll;
+}
+
+.img1{
+  object-fit: fill;
+  height: 800px;
+  width: 1050px;
 }
 
 #SpSignIn .right {
+  position: absolute;
+  background: gray;
+  right: 80px;
   flex-shrink: 0 !important;
-  min-width: 40%;
-  display: grid;
+  min-width: 60%;
   flex-shrink: 0 !important;
-  background: #fff;
+  border-radius: 1.2rem;
   /* min-height: 5vh; */
-  height: 100% !important;
-  padding: 35px ;
+  height: 95% !important;
+  overflow: hidden;
   /* overflow: scroll; */
   place-items: center;
 }
@@ -127,15 +136,35 @@ font-size: 3rem !important;
   color: #252525 !important;
 }
 
-#other-s-in>*{
+.form-s{
+  margin-top: 2rem;
+}
 
-  color: #161616 !important;
-}
-#other-s-in{
+.btn-signin{
+  margin-top: 1rem;
+  background: #000;
+  color: #fff;
+  width: 100%;
   padding: 7.5px 12px;
-  width: fit-content;
-  border: 2px solid #161616;
+  border-radius: 8px;
 }
+
+#other-s-in{
+  margin-top: 1rem;
+  padding: 7.5px 12px;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+#other-s-in button{
+  padding-left: 10px;
+  font-weight: 500;
+  color: #000;
+}
+
 #SpSignIn small {
 width: 100%;
   font-size: 0.9rem;
@@ -154,7 +183,7 @@ width: 100%;
   width: 100%;
   border: 1.05px solid rgba(0, 0, 0, 0.918);
   outline: none;
-  border-radius: 3px;
+  border-radius: 8px;
   margin-bottom: 13px;
   color: #252525;
   /* color: var(--color2d); */
@@ -169,7 +198,8 @@ width: 100%;
   width: 100%;
   color: #fff;
   background: #161616;
-  border-radius: 3px;
+  border-radius: 5px;
+  margin-top: 2rem;
 }
 
 #SpSignIn .right .data .b-box {
@@ -259,12 +289,11 @@ width: 100%;
   height: auto;
   width: 100%;
   box-shadow: 0 0 50px 1px rgba(45, 45, 45, 0.316);
-  padding: 5vh 5vw !important;
+  padding: 5vh 0 !important;
   display: flex;
   min-height: 100dvh;
   align-items: center;
   /* background-color: var(--db2); */
-  background-image: url('../../public//imgs/sin-bc.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -283,4 +312,16 @@ width: 100%;
 }#o-g{
   font-size: 1.5rem !important;
   color: #161616 !important;
+}
+
+.last-p{
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 12px;
+}
+.last-p a{
+  font-weight: 500;
+}
+.last-p a:hover{
+  color: burlywood;;
 }

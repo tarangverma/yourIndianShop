@@ -10,8 +10,7 @@ const ComingSoon = () => {
           coming soon<span className="dot">.</span>
         </h1>
         <p>
-          In meantime , Signup for our monthly <br /> newsletter to stay up to
-          date
+          In meantime , keep shopping from your favourite website via Your Indian Shop !! 
         </p>
         <div className="dot">
           {/* <input type="Email" placeholder="Email Address" /> */}

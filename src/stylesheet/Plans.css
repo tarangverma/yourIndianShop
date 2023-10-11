@@ -39,11 +39,11 @@
 
 }
 #pl-ol .btn{
-    width: fit-content;
+    width: 100%;
     margin: auto;
-    
+    text-align: center;
     margin-top: 30px;
-    border-radius: 50px;
+    border-radius: 8px;
     background: rgb(81, 3, 159) !important;
 }
 /* #pl-ol:nth-child(2) .btn {
@@ -52,10 +52,15 @@
 
 }
 
+
 #pl-ol:nth-child(2) .btn:hover {
     background-color: var(--blue);
 
 } */
+
+.btn-b{
+    background: #fff;
+}
 
 #pl-ol:nth-child(2)  {
 top: -25px;
@@ -65,9 +70,10 @@ top: -25px;
     /* background-position: right 100px; */
     /* background-repeat: no-repeat; */
           /* background: rgba(82, 19, 107, 0.273) ; */
-          background: #eee;
-          color: black !important;
+          background: #fff;
+          color: #000;
       backdrop-filter: blur(25px);
+      border: 2px solid rgb(81, 3, 159) ;
       
 }
 
@@ -79,11 +85,10 @@ top: -25px;
     background-size: 460px !important; */
       /* background: rgba(34, 13, 49, 0.341) ; */
       /* background: rgb(255, 168, 106); */
-      background: #fc4a1a;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+      background: #fff;
+      color: #000;
       backdrop-filter: blur(25px);
+      border: 2px solid rgb(81, 3, 159) ;
 }
 
 #pl-ol:nth-child(3) .plan-card {
@@ -95,11 +100,10 @@ background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, F
     background-repeat: repeat-x; */
  /* background: rgba(34, 13, 49, 0.164) ; */
  /* background: rgb(113, 255, 113) ; */
- background: #11998e;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-      backdrop-filter: blur(25px);
+    background: #fff;
+    backdrop-filter: blur(25px);
+    color: #000;
+    border: 2px solid rgb(81, 3, 159) ;
 }
 
 #pl-ol:nth-child(2) .plan-name {
@@ -202,7 +206,8 @@ color: #fff !important;
 
 #pc-mid ul {
 
-padding-top: 15px;    border-top: 1px solid rgba(128, 128, 128, 0.563);
+    margin-top: 1rem;
+    padding-top: 15px; 
     list-style: circle;
 
 }
@@ -227,7 +232,7 @@ button {
     margin: 7.5px 0;
     position: relative;
     /* color: #353535; */
-    color: #fff;
+    color: #000;
     justify-content: center;
     align-items: center;
     /* text-align: center !important; */
@@ -251,20 +256,14 @@ button {
 
 #dp-pl{
  
-    /* background: url('https://static.vecteezy.com/system/resources/previews/021/171/659/non_2x/colorful-abstract-wallpaper-modern-background-ai-generated-free-photo.jpg'); */
-    /* background: url('../../public//imgs/scrt.png'); */
-    /* background:
-    linear-gradient(to left , rgba(0, 0, 0, 0.225) , rgba(0, 0, 0, 0.427), rgba(0, 0, 0, 0.175)),
-    url('https://img3.wallspic.com/previews/0/0/3/3/4/143300/143300-sky-star-space-cosmos-pink-x750.jpg'); */
-    background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-display: flex;
-align-items: center;
-padding: 10vh 5vw;
-justify-content: space-between;
-min-height: 100dvh;
-gap: 2.5vw;
+    background: linear-gradient(0deg, rgba(117,216,217,1) 0%,  rgba(238,226,88,1) 100%); 
+     display: flex;
+     flex-direction: column;
+    align-items: center;
+    padding: 10vh 5vw;
+    justify-content: space-between;
+    min-height: 100dvh;
+    gap: 2.5vw;
 }
 #dp-pl>*{
     background: none;
@@ -275,7 +274,8 @@ gap: 2.5vw;
     text-align: left;
 }
 #dp-pl >center{
-    /* margin-top: -15vh; */
+     margin-top: 10vh; 
+     margin-bottom: 10vh;
     width: 30%;
 }
 #pur{

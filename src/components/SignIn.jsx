@@ -1,14 +1,13 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../stylesheet/SignIn.css";
-import AddCardIcon from "@mui/icons-material/AddCard";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import { useEffect } from "react";
 import { fetchreq, uploadImageAws, jwtauth } from "../Helper/fetch";
 import { MyContext } from "../App";
-import { Google, WhatsApp } from "@mui/icons-material";
 import GoogleIcon from "@mui/icons-material/Google";
+import { auth, provider } from "../firebase";
+import { FacebookAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const SignIn = () => {
   const { user, setUser, setIsLogin, setWh, setWd } = useContext(MyContext);
@@ -67,38 +66,15 @@ const SignIn = () => {
   return (
     <div id="mcd">
       <section id="SpSignIn">
-        <div className="left">
-          <div className="w-pp">
-            <span>
-              <WhatsApp id="w-ico" /> WhatsApp
-            </span>
-            <br />
-            If you have any queries or doubts
-            <br />
-            Contact us on WhatsApp
-            <br />
-          </div>
-          <div className="qr-img">
-            <img src="./imgs/wqr.jpg" alt="" />
-          </div>
-          <div className="wapp-info">
-            scan above qr code to contact us on whatsapp
-          </div>
-          {/* <img src="./imgs/sup.png" alt="" /> */}
-        </div>
-        <div className="right">
+        
+        <div className="left ">
           <div className="data">
-            <header>
-              <span id="dg">YourIndianShop</span>
-            </header>
+              <h2>YourIndianShop</h2>
             {!isfp ? (
               <div>
-                <h1>Sign in</h1>
-                <h2>
-                  Don't have account&nbsp;
-                  <Link to="/signUp">Create an Account</Link>
-                </h2>
-                <form onSubmit={handlesubmit}>
+                <h1 >Sign In</h1>
+                
+                <form className="form-s" onSubmit={handlesubmit}>
                   <h3>Email</h3>
                   <input
                     required
@@ -127,11 +103,10 @@ const SignIn = () => {
                     <div
                       style={{
                         display: "flex",
-                        justifyContent: "flex-start",
-                        alignItems: "center",
-                        alignContent: "flex-start",
+                        textAlign: "left"
                       }}
                     >
+                      <div>  
                       <input
                         type="checkbox"
                         checked={check}
@@ -140,24 +115,74 @@ const SignIn = () => {
                         }}
                         style={{ width: "20px" }}
                       />
+                      </div>
+                      <div>
                       <span>Show Password</span>
+                      </div>
                     </div>
                   )}
-                  <button type="submit" className="btn btn-blk">
+                  <button type="submit" className="btn-signin">
                     {signin}
                   </button>
-                  <center>
-                    <small>or sign in with</small>
-                  </center>
 
                   <center>
                     <div id="other-s-in">
                       <GoogleIcon />
+                      <button onClick={async () => {
+                       await signInWithPopup(auth, provider)
+                        .then((result) => {
+                          const credential = GoogleAuthProvider.credentialFromResult(result);
+                          const token = credential.accessToken;
+                          const user = result.user;
+                         
+                        }).catch((error) => {
+                          const errorCode = error.code;
+                          const errorMessage = error.message;
+                          const email = error.customData.email;
+                          const credential = GoogleAuthProvider.credentialFromError(error);
+                          // ...
+                        });
+                      }}>
+                      Sign up with google
+                      </button>
+                    </div>
+                  </center>
+                  <center>
+                    <div id="other-s-in">
+                      <FacebookRoundedIcon />
+                      <button onClick={() => {
+                        signInWithPopup(auth, provider)
+                        .then((result) => {
+                          // The signed-in user info.
+                          const user = result.user;
+                      
+                          // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+                          const credential = FacebookAuthProvider.credentialFromResult(result);
+                          const accessToken = credential.accessToken;
+                      
+                          // IdP data available using getAdditionalUserInfo(result)
+                          // ...
+                        })
+                        .catch((error) => {
+                          // Handle Errors here.
+                          const errorCode = error.code;
+                          const errorMessage = error.message;
+                          // The email of the user's account used.
+                          const email = error.customData.email;
+                          // The AuthCredential type that was used.
+                          const credential = FacebookAuthProvider.credentialFromError(error);
+                      
+                          // ...
+                        });
+                      }}>
+                      Sign up with facebook
+                      </button>
                     </div>
                   </center>
                 </form>
-                <p>
-                  Don't remember your password? &nbsp;
+                <div className="last-p">
+                <p className="last-p">
+                  Don't remember your password?
                   <Link
                     onClick={() => {
                       setIsfp(true);
@@ -166,7 +191,17 @@ const SignIn = () => {
                   >
                     Forget Password
                   </Link>
-                </p>
+                </p> 
+                <p className="last-p">
+                  Don't have an account?
+                  <Link
+                    to={"/signup"}
+                    className="gray"
+                  >
+                    Create Account
+                  </Link>
+                </p> 
+                </div>
               </div>
             ) : (
               <div>
@@ -204,6 +239,10 @@ const SignIn = () => {
               </div>
             )}
           </div>
+        </div>
+        <div className="right">
+        <img className="img1" src="/signup-img/indian.jpg" alt="no" >
+        </img>  
         </div>
       </section>
     </div>

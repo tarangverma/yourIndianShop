@@ -129,7 +129,7 @@ const Nav = () => {
             <div className="drop-list">
               <Link to="/calc">Shipping Rate Calculator</Link>
               <Link to="/offers">Festive Offers </Link>
-              <Link to="/coming-soon">Delivery Partners</Link>
+              <Link to="/coming-soon">Delivery Partners</Link>
             </div>
           </a>{" "}
           <Link to="/disp-plan">Plans</Link>
