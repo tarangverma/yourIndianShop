@@ -104,13 +104,10 @@
 .btn-o-1 {
     display: block;
     color: #fff;
-    background-color: var(--org);
+    background: var(--blue) !important;
 }
 
-.btn-o-1:hover {
-    background-color: var(--blue) !important;
 
-}
 
 #l-title>.plan-page-title {
     color: white;

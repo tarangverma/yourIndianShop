@@ -243,18 +243,21 @@ width: 100%;
   flex: 1 !important;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   #SpSignIn .left {
-    width: 50%;
+    width: 39% !important;
   }
-
+  #SpSignIn .right{
+    min-width: 20%;
+    max-height: 80%;
+  }
   #SpSignIn .right {
     width: 50%;
   }
 }
 
 @media (max-width: 850px) {
-  #SpSignIn .left {
+ .right {
     display: none;
   }
 
@@ -267,10 +270,12 @@ width: 100%;
   #SpSignIn .b-box {
     flex-direction: column;
   }
+  #SpSignIn .left{
+    width: 100% !important;
+  }
 
   #SpSignIn .data {
     width: 80% !important;
-    min-width: 300px !important;
   }
 
   #SpSignIn .b-box>* {
@@ -315,7 +320,6 @@ width: 100%;
 }
 
 .last-p{
-  margin-top: 1rem;
   text-align: center;
   font-size: 12px;
 }

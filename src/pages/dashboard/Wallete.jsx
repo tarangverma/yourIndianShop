@@ -135,9 +135,9 @@ function Wallete() {
               >
                 x
               </button>
-              <h1>Add to Wallet</h1>
+              <h1 style={{textAlign: "center", fontWeight: "900px !important"}}>Add to Wallet</h1>
               <input
-                id="amountIn"
+                style={{color: "#000", borderRadius: "8px", borderBottom: "0 !important"}}
                 value={amount}
                 onChange={(e) => {
                   setAmount(e.target.value);

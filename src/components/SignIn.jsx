@@ -180,7 +180,7 @@ const SignIn = () => {
                     </div>
                   </center>
                 </form>
-                <div className="last-p">
+                <div className="last-p"style={{marginTop: "1rem"}} >
                 <p className="last-p">
                   Don't remember your password?
                   <Link
@@ -192,7 +192,7 @@ const SignIn = () => {
                     Forget Password
                   </Link>
                 </p> 
-                <p className="last-p">
+                <p className="last-p" style={{marginTop: "0.5rem"}}>
                   Don't have an account?
                   <Link
                     to={"/signup"}
