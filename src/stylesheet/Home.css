@@ -16,29 +16,17 @@
 
 .festival img{
     
-    height: 250px;
+    height: 502px;
     width: 100%;
 }
 .festival{
 margin-top: 2rem;
 }
 
-.scrolling-element {
-    margin: 4rem;
-    width: 150px;
-    height: 80px;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    
-    animation: scroll 5s linear infinite;
-  }
-  
-  
-
-.scroll {
+.reco{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 
@@ -144,7 +132,6 @@ html {
 /*===============hero===================*/
 section {
     width: 90vw;
-    overflow-x: hidden;
     height: auto;
     padding: 5vh 5vw;
     margin: 5vh 5vw;
@@ -320,12 +307,13 @@ section {
     justify-content: flex-start;
     width: 47%;
     /* flex: 1 !important; */
-    height: 100% !important;
     /* border: 5px solid red; */
     padding: 35px 22px;
     gap: 25px;
     min-height: 220px;
     box-shadow: 0 0 50px 0px #00000023;
+    margin: 25px;
+    border: 2px solid var(--blue);
 }
 .ps:last-child {
     background: var(--db2);
@@ -618,6 +606,7 @@ section {
     }
     .sh1>#dg {
         text-align:center !important;
+        
     }
 #ship {
     background: #fff;
@@ -661,28 +650,10 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     }
 
     #lnl {
-        width: 100dvw !important;
-        padding: 0 !important;
-        /* min-height: a; */
-        /* height: 151.7vh !important; */
-        margin: 0 !important;
+        overflow: hidden;
         min-height: 80vh;
         position: relative !important;
-        /* background: url('../../public/imgs/ex.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed !important; */
         }
-
-        /* #lnl>div {
-            height: fit-content;
-            width: 100%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            z-index: 111;
-    } */
 
 #steps {
 
@@ -892,16 +863,14 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     cursor: pointer;
 }
 #fr-in {
-    margin: 0 !important;
-    padding: 10vh 0 !important;
-    width: 100%;
+    
 }
 
 /*==================service======================*/
 #service-we-offer {
-    width: 100%;
+    width: 40%;
     margin: 0;
-    padding: 10vh 10vw 0 10vw;
+    padding: 5vh 0 0 0;
     position: relative;
 }
 
@@ -914,8 +883,8 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
  #service-we-offer h1 {
     font-size: 3rem;
-    width: 100%;
-    padding: 35px 0;
+    width: 150%;
+    padding: 0 0 0 0;
     font-weight: 600;
     color: #1e231f;
     font-family: var(--font8);
@@ -988,6 +957,12 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
     }
 
+    .section-m{
+        display: flex;
+        flex-direction: row;
+        margin-top: 5rem;
+    }
+
     .ser-sec-1 {
         background: #eee;
         background: url('https://media.istockphoto.com/id/1281211874/vector/indian-famous-monuments.jpg?s=170667a&w=0&k=20&c=AhJ6iQ7VJiuKXbCnuOP2TxMLgS-BL2fVFH16SVNI4Lc=');
@@ -1019,6 +994,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
     #service {
         padding-bottom: 0 !important;
+        margin-top: 4.5rem;
 }
 
 #service .ser-head {
@@ -1047,6 +1023,48 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     flex: 1;
 }
 
+.service-img{
+    padding-left: 79px;
+    height: 60vh;
+    width: 110vh;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .section-m {
+        display: flex;
+        flex-direction: column;
+    }
+    .btn{
+        width: 45% !important;
+    }
+    .service-img{
+        height: 63vh !important;
+        width: 72vh !important;
+        padding-left: 0 !important;
+        max-width: 200% !important;
+    }
+    #service-we-offer h1{
+        font-family: var(--font6) !important;
+        font-size: 2.1rem !important;
+        font-weight: 600 !important;
+        border-bottom: 1px solid #000;
+        margin-left: 6rem;
+    }
+    #pop-ser{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .ps{
+        margin: 25px auto;
+    }
+    .t-title {
+        font-family: var(--font6) !important;
+    font-size: 2.1rem !important;
+    font-weight: 600 !important;
+    color: rgb(43, 52, 43) !important;
+    }
+}
 
 .sh2 .btn {
     min-width: 150px;
@@ -1059,11 +1077,11 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     display: flex;
     align-items: center;
     gap: 0px;
-    margin: 10vh 0;
+    margin: 10vh 0 0 0;
     margin-top: 12vh;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-between;
-
+    margin-bottom: 3rem;
 
     }
 
@@ -1082,7 +1100,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     border-bottom: 5px solid var(--org);
     gap: 9px !important;
     flex-direction: column;
-    margin-bottom: 10vh;
+    margin-bottom: 8vh;
     min-width: 350px;
 
 }
@@ -1297,14 +1315,20 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
 
 .t-title {
-    color: var(--blue);
-    font-size: 2.5rem;
     text-align: center;
-    font-size: 3rem;
-    font-weight: 400;
     text-transform: uppercase;
-    font-family: var(--font6);
+    font-family: var(--font6) !important;
+    font-size: 2.1rem !important;
+    font-weight: 600 !important;
+    margin: 3rem auto;
+    width: fit-content;
+    color: rgb(43, 52, 43) !important;
 }
+
+.border{
+    border-bottom: 1px solid #000;
+}
+
 
 #of-g img {
     margin-top: 10vh;
@@ -1377,7 +1401,6 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
 #feed-l {
     gap: 25px;
-    width: 100%;
     margin-top: 10vh;
     display: flex;
     align-items: flex-start;
@@ -1414,6 +1437,17 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
 }
 
+.sites{
+        font-family: var(--font6) !important;
+  font-size: 2.1rem !important;
+  font-weight: 600 !important;
+  margin-top: 3rem;
+  border-bottom: 1px solid #000;
+  width: fit-content;
+  margin: 3rem auto;
+  color: rgb(43, 52, 43) !important;
+}
+
 .feed-info {
     width: 330px !important;
     background: rgba(35, 43, 56, 0.838);
@@ -1433,6 +1467,11 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     margin-top: -5vh !important;
     font-size: 3.1rem;
     font-family: var(--font3) !important;
+    font-family: var(--font6) !important;
+    font-size: 2.1rem !important;
+    font-weight: 600 !important;
+    margin-top: 3rem;
+ 
 }
 
 .msg-title {

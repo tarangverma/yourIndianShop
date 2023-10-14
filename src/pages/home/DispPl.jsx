@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import PlanCard from "../../components/Plans";
 import { fetchreq } from "../../Helper/fetch";
 import PlanCompTable from "../../components/PlanCompTab";
+import { Link } from "react-router-dom";
+import "./DispPl.css"
 
 const DispPl = () => {
   const [plans, setPlans] = useState([]);
@@ -15,7 +17,14 @@ const DispPl = () => {
   }, []);
   return (
     <>
-      <img src={"/home/festiv.jpg"} width={1700} alt="no"></img>
+    <div className="ele">
+    <Link to="/">
+    <img id="plan-img" src="/signup-img/logo1.png" alt="."/>              
+    </Link>
+    </div>
+    <Link to={"/signup"}><img src={"/plans/plan.png"} width={1700} alt="no">
+      </img></Link>
+    
       <div id="dp-pl">
       
         <div id="plan-cards">

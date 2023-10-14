@@ -76,16 +76,9 @@ const Plans = ({ plan, state }) => {
 
           {/* <div className="plan-duretion"></div> */}
         </div>
-        <div id="pc-mid">
-          <ul>
-            {planDetails.map((detail, index) => (
-              <li key={index}>{detail}</li>
-            ))}
-          </ul>
-        </div>
         {state == 0 && (
           <Link to="/signUp" className="btn btn-o">
-            Add to Cart
+            Buy Now
           </Link>
         )}
         <div style={{marginTop: "4rem"}}>

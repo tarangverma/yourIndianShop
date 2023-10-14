@@ -14,17 +14,20 @@ const footer = () => {
     <footer>
       {" "}
       <div className="ftr3">
-        <div className="links">
-          {/* <Link */}
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/disp-plan">Our Plans</Link>
-          <Link to="/offers">Offers</Link>
-          <a id="wt" href="#offer">
-            Contact
-          </a>
-        </div>
-        <div className="policy">
+      <div style={{display: "flex",flexDirection: "column", width: "35vh"}}>
+        <p style={{fontSize: "25px"}}>YOUR INDIAN SHOP</p>
+      <p style={{marginTop: "2rem"}}>Our shop provides you with best customer support</p>
+      </div>
+      <div style={{display: "flex",flexDirection: "column"}}>
+      <p style={{fontSize: "25px", marginTop: "2rem"}}></p>
+        <div>FAQ</div>
+        <div>Our Policy</div>
+        <div>Terms of Service</div>
+        <div>Support</div>
+      <h1> Our Works</h1>
+      </div>
+        <div style={{display: "flex",flexDirection: "column", width: "30vh"}}>
+          <p style={{fontSize: "25px"}}>Contact Us</p>
           <span>
             <span className="social-m">
               <IconButton>
@@ -43,9 +46,9 @@ const footer = () => {
       </div>
       <div className="ftr1">
         <div className="f1r">
-          <div className="logo lg">
-            <div id="dg">YOUR INDIAN SHOP</div>
-          </div>
+          
+            <div>we are here to solve your delivery problems</div>
+          
           <div className="loc">
             <div className="titl">Transforming Ideas Into Reality</div>
           </div>

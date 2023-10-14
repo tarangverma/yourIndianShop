@@ -140,9 +140,16 @@ top: 0px !important;
 }
 }
 
-@media only screen and (max-width: 500px) {
-.t-title>* {
-    font-size: 2.5rem !important;
+@media only screen and (max-width: 600px) {
+.t-title{
+    font-family: var(--font6) !important;
+    font-size: 2.1rem !important;
+    font-weight: 600 !important;
+}
+#dg{
+        font-family: var(--font6) !important;
+        color: rgb(43, 52, 43) !important;
+}
 }
 
 
@@ -214,7 +221,6 @@ font-size: 2.5rem !important;
         display: flex;
         /* gap: 1.5px; */
         flex-direction: column;
-        margin: 25px;
         font-size: 2rem !important;
         /* line-height: 2.5rem !important; */
     }
@@ -262,10 +268,12 @@ font-size: 2.5rem !important;
         font-family: var(--font6) !important;
         font-size: 2.1rem !important;
         font-weight: 600 !important;
+        margin: 5rem 0;
+        border-bottom: 1px solid #000;
     }
 
     #steps {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center !important;
         gap: 15px !important;
         margin: 3vh 0 !important;
@@ -360,7 +368,7 @@ font-size: 2.5rem !important;
     .sh-r .MuiFormControl-root {
         min-width: 200px !important;
     }
-}
+
 
 @media only screen and (max-width: 750px) {
   .cp-hd-title {

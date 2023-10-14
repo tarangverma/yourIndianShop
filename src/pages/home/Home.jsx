@@ -115,7 +115,7 @@ const Home = () => {
           </div>
           <div class="swiper">
           <div class="swiper-wrapper">
-          <div class="swiper-slide"><Link to={"/disp-plan"}><img src={"/home/explore.png"} alt="no"></img></Link></div>
+          <div class="swiper-slide"><Link to={"/disp-plan"}><img src={"/home/shop.png"} alt="no"></img></Link></div>
           <div class="swiper-slide"><img src={"/banner/banner.png"} alt="no"></img></div>
           <div class="swiper-slide"><img src={"/banner/banner2.png"} alt="no"></img></div>
           </div>
@@ -211,7 +211,7 @@ const Home = () => {
         <div id="Site" className="bkl">
           <div id="indianshopcart" style={{ padding: "10vh 0px" }}>
             <div className="t-title" style={{ marginBottom: "20px" }}>
-              <span id="dg">Various Indian Sites</span>
+              <span className="sites">Various Indian Sites</span>
             </div>
 
             <div class="client-slider">
@@ -396,61 +396,20 @@ const Home = () => {
             ></path>
           </svg>
         </section>*/}
+      <div className="section-m">
         <div id="service-we-offer">
           <div className="ser-head">
             <center className="sh1">
               <h1 id="dg">
                 Services We
-                <span id="org"> Offer</span>
+                <span id="org" style={{color: "var(--blue)"}}> Offer</span>
               </h1>
+              <img className="service-img" src="/home/service.png" alt="no"></img>
             </center>
           </div>
-          {/* <h1 id="dg">SERVICES WE OFFER</h1> */}
-          {/* <div className="swo">
-            <div className="ck-it">
-              <h2 id="org">CHECK IT</h2>
-              <div className="btn-br">NOW !!!</div>
-            </div>
-            <div id="arow">
-              <img
-                src="https://t3.ftcdn.net/jpg/05/20/63/40/360_F_520634009_bs5CRpewzUQELyzX7uYPzaTLwWGkVNBN.jpg"
-                alt=""
-              />
-            </div>
-            <div className="ser-imgs">
-              <div className="si">
-                <img src="./imgs/ser1.jpg" />
-              </div>
-              <div className="si">
-                <img src="./imgs/ser2.jpg" alt="" />
-              </div>
-              <div className="si">
-                <img src="./imgs/ser3.jpg" alt="" />
-              </div>
-            </div>
-          </div> */}
-          {/* <img src="./imgs/sp-of.png" id="sp-of" alt="" /> */}
         </div>
         <section id="service" className="ser-sec-1" style={{ display: "none" }}>
-          <div className="ser-head">
-            <div className="sh1">
-              <center>
-                <h1>
-                  Services We
-                  <span style={{color: "var(--blue)"}}> Offer</span>
-                </h1>
-              </center>
-              {/* <p>
-                SHIPBOX is the world’s driving worldwide coordinations supplier
-                — we uphold industry and exchange the worldwide trade of
-                merchandise through land transport.
-              </p> */}
-            </div>
-            {/* </div>
-            <Link to="/offers" className="sh2">
-              <div className="btn btn-b">Explore More</div>
-            </Link> */}
-          </div>
+          
           <div className="ser-cards">
             <div className="sc">
               <span>
@@ -572,9 +531,10 @@ const Home = () => {
             </div>
           </div>
         </section>{" "}
-        <div className="festival" >
+        </div>
+        <div className="festival">
           <Link to="/in-sites">
-          <img src="/banner/offer.png" alt="no"></img>
+          <img src="/banner/banner4.png" alt="no"></img>
           </Link>
         </div>
         <section id="service" className="ser-sec-2">
@@ -582,7 +542,7 @@ const Home = () => {
             <center className="sh1">
               <h1 id="dg">
                 Our Enterprise And Business
-                <span id="org"> Plans</span>
+                <span id="org" style={{color: "var(--blue)"}}> Plans</span>
               </h1>
             </center>
           </div>
@@ -632,6 +592,11 @@ const Home = () => {
             </div>
           </div>
         </section>
+        <center>
+              <Link to="/in-sites" className="btn btn-og">
+                Shop Now
+              </Link>
+            </center>
         <div className="calculator">
           <Link to="/calc">
           <img src="/banner/Calculate.png" alt="no"></img>
@@ -835,100 +800,30 @@ const Home = () => {
         </section>
         <section id="fr-in">
           <div className="fr-title">
-            <div className="t-title" id="dg">
+            <div className="t-title border">
               Recognition{" "}
             </div>
           </div>
-            
-              
-              <div className="scroll">
-                <div class="scrolling-element ">
+              <div className="reco">
+                <div>
                   <img src="./ftrd/1.png" alt="" />
                 </div>
-                <div class="scrolling-element ">
-                  <img src="./ftrd/2.png" alt="" />
-                </div>
-                <div class="scrolling-element ">
+                <div class=" ">
                   <img src="./ftrd/3.png" alt="" />
                 </div>
-                <div class="scrolling-element ">
+                <div class=" ">
                   <img src="./ftrd/4.png" alt="" />
                 </div>
               
-                <div class="scrolling-element ">
+                <div class="">
                   <img src="./ftrd/5.png" alt="" />
                 </div>
-              
-              
-                <div class="scrolling-element ">
+                <div class=" ">
                   <img src="./ftrd/6.png" alt="" />
                 </div>
-                </div>
-          
-          
+                </div> 
         </section>
-        <div id="contact-sec">
-          <div id="con-head">
-            <h1 id="dg">YOUR INDIAN SHOP</h1>
-            <div className="s-media">
-              <IconButton>
-                <FacebookIcon />
-              </IconButton>
-              <IconButton>
-                <Twitter />
-              </IconButton>
-              <IconButton>
-                <Instagram />
-              </IconButton>
-            </div>{" "}
-          </div>
-          <div className="con-body">
-            <div className="con-l">
-              <h1 id="dg">Reach Us </h1>
-              <i>Please fill out the form below to send us an email.</i>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <h2 id="dg">
-                {/* E-mail: <br /> */}
-                {/* info@techiota.co.in */}
-              </h2>{" "}
-              <div
-                className="con-ftr"
-                // style={{ justifySelf: "flex-end !important" }}
-              >
-                <Link to="/signUp">
-                  <div className="btn btn-db">SIGN UP</div>
-                </Link>
-                <Link to="/offers">
-                  <div className="btn btn-db">OFFERS</div>
-                </Link>
-                <Link to="/dis-plan">
-                  <div className="btn btn-db">PLANS</div>
-                </Link>
-              </div>
-            </div>
-            <form className="col-r"  onSubmit={handelsubmit}>
-              <input required name="name" minLength={4} maxLength={50} type="text" className="soneri" placeholder="NAME" />
-              <input required name="email" minLength={4} maxLength={50} type="email" placeholder="E-mail" />
-              <input required name="subject" minLength={4} maxLength={30} type="text" className="soneri" placeholder="SUBJECT" />
-              <textarea
-                minLength={10}
-                maxLength={500}
-                required
-                name="message"
-                placeholder="MESSAGE"
-                id=""
-                cols="30"
-                rows="10"
-              ></textarea>
-              <button type="submit" className="btn btn-gd">Submit</button>
-            </form>
-          </div>
-        </div>
+        
         <Footer />
       </div>
     </>

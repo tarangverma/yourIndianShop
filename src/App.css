@@ -46,7 +46,6 @@ footer {
   align-items: center;
  color: #fff !important;
   flex-direction: column;
-  gap: 30px;
 background: var(--db2);
 }
 

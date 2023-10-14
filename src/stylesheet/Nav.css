@@ -190,7 +190,7 @@ nav .btn-o:hover {
 }
 
 .btn-og {
-    background: var(--og) !important;
+    background: var(--blue) !important;
     border-radius: 50px;
     color: #fff;
 }

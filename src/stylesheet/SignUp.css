@@ -2,8 +2,13 @@
     cursor: pointer;
     background: #000;
     color: #fff;
-    width: 100%;
     border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn-o{
+        width: 100% !important;
+    }
 }
 
 .right {

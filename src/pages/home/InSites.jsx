@@ -12,7 +12,7 @@ const Sts = () => {
       category: "Sports",
       offers: ["Best Discounts", "Free Shipping"],
       link: "https://www.nike.com",
-      logo: `./logos/1.jpg`,
+      logo: `./logos/1.png`,
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Sts = () => {
       category: "Sports",
       offers: ["Best Discounts"],
       link: "https://www.adidas.com",
-      logo: `./logos/2.jpg`,
+      logo: `./logos/2.png`,
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const Sts = () => {
       category: "General",
       offers: ["Prime Deals", "Flash Sales"],
       link: "https://www.amazon.com",
-      logo: `./logos/3.jpg`,
+      logo: `./logos/3.png`,
     },
     {
       id: 4,
@@ -36,7 +36,7 @@ const Sts = () => {
       category: "General",
       offers: ["Big Billion Days", "Free Shipping"],
       link: "https://www.flipkart.com",
-      logo: `./logos/4.avif`,
+      logo: `./logos/4.png`,
     },
     {
       id: 5,
@@ -351,12 +351,7 @@ const Sts = () => {
           <div key={site.id} className="site">
             <a href={site.link} target="_blank" rel="noopener noreferrer">
               <img className="s-img" src={site.logo} alt={site.name} />
-            </a>
-            <div className="site-d">
-            <p>{site.name}</p>
-            <h1>30-70% OFF</h1>
-            <p>Shop Now</p>
-            </div>  
+            </a> 
 
           </div>
         ))}

@@ -417,11 +417,6 @@ const App = () => {
               element={
                 <main>
                   {" "}
-                  <Link to="/" className="btn-house">
-                    <IconButton>
-                      <House />
-                    </IconButton>
-                  </Link>
                   <DispPl />
                 </main>
               }

@@ -20,7 +20,7 @@
 
 #dg {
     color: rgb(43, 52, 43) !important;
-    font-family: var(--font9) !important;
+    font-family: var(--font9) 
 }
     :root {
         --font1: 'Anton', sans-serif;
