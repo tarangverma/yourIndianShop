@@ -14,11 +14,11 @@ const footer = () => {
     <footer>
       {" "}
       <div className="ftr3">
-      <div style={{display: "flex",flexDirection: "column", width: "35vh"}}>
+      <div className="footer-main1" style={{display: "flex",flexDirection: "column", width: "35vh"}}>
         <p style={{fontSize: "25px"}}>YOUR INDIAN SHOP</p>
       <p style={{marginTop: "2rem"}}>Our shop provides you with best customer support</p>
       </div>
-      <div style={{display: "flex",flexDirection: "column"}}>
+      <div className="footer-main" style={{display: "flex",flexDirection: "column"}}>
       <p style={{fontSize: "25px", marginTop: "2rem"}}></p>
         <div>FAQ</div>
         <div>Our Policy</div>
@@ -70,6 +70,34 @@ const footer = () => {
             <AlternateEmailIcon />
           </a>
         </div> */}
+      </div>
+      <div className="footer-main" style={{display: "flex",flexDirection: "row" , justifyContent: "space-between"}}>
+       
+     
+      <p style={{fontSize: "25px",marginRight: "35px"}}></p>
+      <div>
+        <div>FAQ</div>
+        <div>Our Policy</div>
+        <div>Terms of Service</div>
+        <div>Support</div>
+      </div>
+      <div style={{display: "flex",flexDirection: "column", width: "30vh"}}>
+          <p style={{fontSize: "20px"}}>Contact Us</p>
+          <span>
+            <span className="social-m">
+              <IconButton>
+                <FacebookRoundedIcon />
+              </IconButton>
+              <IconButton>
+                <InstagramIcon />
+              </IconButton>
+              <IconButton>
+                <TwitterIcon />
+              </IconButton>
+            </span>
+          </span>
+        </div>
+
       </div>
       <center>
         Copyright © 2023

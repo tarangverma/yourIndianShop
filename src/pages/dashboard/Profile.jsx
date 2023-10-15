@@ -41,10 +41,11 @@ const Profile = () => {
 
   return (
     <div className="dashboard-profile">
+      <div className="top">
+          <img src="/imgs1/man-mask.jpg" height={220} width={200} className="img-profile" />
+          <h1 className="name">{userData?.Name}</h1>
+      </div>
       <div id="pfl">
-        <div className="profile-header">
-          <h2>Profile</h2>
-        </div>
         <div className="profile-details">
           <div className="detail-item">
             <span className="detail-label">Id:</span>

@@ -95,7 +95,7 @@ const Home = () => {
  }, []);
 
  // Determine the src for the img element based on the windowWidth
- const imgSrc = windowWidth < 600 ? "/banner/ph-sd.jpg" : "/home/shop.png";
+ const imgSrc = windowWidth <= 600 ? "/home/home.png" : "/home/shop.png";
 
  useEffect(() => {
    const handleResize = () => {
@@ -234,6 +234,105 @@ const Home = () => {
            </Link>
          </center>
        </section>
+       <div className="section-m">
+         <div id="service-we-offer">
+           <div className="ser-head">
+             <center className="sh1">
+               <h1 id="dg">
+                 Services We
+                 <span id="org" style={{ color: "var(--blue)" }}>
+                   {" "}
+                   Offer
+                 </span>
+               </h1>
+               <img
+                 className="service-img"
+                 src="/home/service.png"
+                 alt="no"
+               ></img>
+             </center>
+           </div>
+         </div>
+
+         <div id="lnl">
+           <div id="pop-ser">
+             <div className="ps">
+               <div className="ps-l">
+                 <SellIcon />
+               </div>
+               <div className="ps-r">
+                 <div className="st">Plans We Offer</div>
+                 <div className="s-txt">
+                   We offer a range of plans to suit your needs, from basic to
+                   premium and business , ensuring affordability and
+                   flexibility.
+                 </div>
+                 <div className="rm " id="org">
+                   <Link to="/disp-plan" rel="noopener noreferrer">
+                     View Plans
+                   </Link>
+                 </div>
+               </div>
+             </div>
+             <div className="ps">
+               <div className="ps-l">
+                 <FlightTakeoff />
+               </div>
+               <div className="ps-r">
+                 <div className="st wt">International Courier</div>
+                 <div className="s-txt">
+                   WE OFFER A HASSLE FREE, RELIABLE AND LOW-COST COURIER SERVICE
+                   FROM INDIA INTERNATIONALLY.{" "}
+                 </div>
+                 <Link to="/coming-soon" rel="noopener noreferrer">
+                   <div className="rm " id="org">
+                     View More
+                   </div>
+                 </Link>
+               </div>
+             </div>
+           </div>
+           <div id="pop-ser" className="pop-2 pp2">
+             <div className="ps">
+               <div className="ps-l">
+                 <ShoppingCartOutlinedIcon />
+               </div>
+               <div className="ps-r">
+                 <div className="st">Indian Shop Cart</div>
+                 <div className="s-txt">
+                   SHOP FROM THE BEST OF INDIA’S BRANDS, AND GET THEM DELIVERED
+                   FROM INDIA INTERNATIONALLY.
+                 </div>
+                 <Link to="/in-sites" rel="noopener noreferrer">
+                   <div className="rm " id="org">
+                     View Sites
+                   </div>
+                 </Link>
+               </div>
+             </div>
+             <div className="ps">
+               <div className="ps-l">
+                 <CardGiftcardOutlinedIcon />
+                 {/* <LocalShippingOutlinedIcon /> */}
+               </div>
+               <div className="ps-r">
+                 <div className="st wt">Offer Coupons</div>
+                 <div className="s-txt">
+                   WE PROVIDE SEVERAL OFFER COUPONS. ALL YOU HAVE TO DO IS
+                   BROWSE AND APPLY THE COUPON CODE OF YOUR CHOICE IN ORDER TO
+                   REDEEM IT.{" "}
+                 </div>
+                 <div className="rm " id="org">
+                   <Link to="/offers" rel="noopener noreferrer">
+                     View Coupons
+                   </Link>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
        <div id="Site" className="bkl">
          <div id="indianshopcart" style={{ padding: "10vh 0px" }}>
            <div className="t-title" style={{ marginBottom: "20px" }}>
@@ -357,104 +456,7 @@ const Home = () => {
          </div>
        </div>
 
-       <div className="section-m">
-         <div id="service-we-offer">
-           <div className="ser-head">
-             <center className="sh1">
-               <h1 id="dg">
-                 Services We
-                 <span id="org" style={{ color: "var(--blue)" }}>
-                   {" "}
-                   Offer
-                 </span>
-               </h1>
-               <img
-                 className="service-img"
-                 src="/home/service.png"
-                 alt="no"
-               ></img>
-             </center>
-           </div>
-         </div>
-
-         <div id="lnl">
-           <div id="pop-ser">
-             <div className="ps">
-               <div className="ps-l">
-                 <SellIcon />
-               </div>
-               <div className="ps-r">
-                 <div className="st">Plans We Offer</div>
-                 <div className="s-txt">
-                   We offer a range of plans to suit your needs, from basic to
-                   premium and business , ensuring affordability and
-                   flexibility.
-                 </div>
-                 <div className="rm " id="org">
-                   <Link to="/disp-plan" rel="noopener noreferrer">
-                     View Plans
-                   </Link>
-                 </div>
-               </div>
-             </div>
-             <div className="ps">
-               <div className="ps-l">
-                 <FlightTakeoff />
-               </div>
-               <div className="ps-r">
-                 <div className="st wt">International Courier</div>
-                 <div className="s-txt">
-                   WE OFFER A HASSLE FREE, RELIABLE AND LOW-COST COURIER SERVICE
-                   FROM INDIA INTERNATIONALLY.{" "}
-                 </div>
-                 <Link to="/coming-soon" rel="noopener noreferrer">
-                   <div className="rm " id="org">
-                     View More
-                   </div>
-                 </Link>
-               </div>
-             </div>
-           </div>
-           <div id="pop-ser" className="pop-2 pp2">
-             <div className="ps">
-               <div className="ps-l">
-                 <ShoppingCartOutlinedIcon />
-               </div>
-               <div className="ps-r">
-                 <div className="st">Indian Shop Cart</div>
-                 <div className="s-txt">
-                   SHOP FROM THE BEST OF INDIA’S BRANDS, AND GET THEM DELIVERED
-                   FROM INDIA INTERNATIONALLY.
-                 </div>
-                 <Link to="/in-sites" rel="noopener noreferrer">
-                   <div className="rm " id="org">
-                     View Sites
-                   </div>
-                 </Link>
-               </div>
-             </div>
-             <div className="ps">
-               <div className="ps-l">
-                 <CardGiftcardOutlinedIcon />
-                 {/* <LocalShippingOutlinedIcon /> */}
-               </div>
-               <div className="ps-r">
-                 <div className="st wt">Offer Coupons</div>
-                 <div className="s-txt">
-                   WE PROVIDE SEVERAL OFFER COUPONS. ALL YOU HAVE TO DO IS
-                   BROWSE AND APPLY THE COUPON CODE OF YOUR CHOICE IN ORDER TO
-                   REDEEM IT.{" "}
-                 </div>
-                 <div className="rm " id="org">
-                   <Link to="/offers" rel="noopener noreferrer">
-                     View Coupons
-                   </Link>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
+       
        <div className="festival">
          <Link to="/in-sites">
            <img src="/banner/banner4.png" alt="no"></img>
@@ -525,7 +527,7 @@ const Home = () => {
        </center>
        <div className="calculator">
          <Link to="/calc">
-           <img src="/banner/Calculate.png" alt="no"></img>
+           <img src="/banner/cal.png" height={300} alt="no"></img>
          </Link>
        </div>
        <section id="feed">
@@ -540,7 +542,7 @@ const Home = () => {
              // spaceBetween={120}
              slidesPerView={value}
              autoplay={{
-               delay: 1000,
+               delay: 3000,
                disableOnInteraction: false,
              }}
              loop={true}
@@ -680,6 +682,76 @@ const Home = () => {
                    <div className="zomm-dp">
                      <img
                        src="https://e1.pxfuel.com/desktop-wallpaper/82/1002/desktop-wallpaper-cute-girl-foreign-girl.jpg"
+                       alt=""
+                     />
+                   </div>
+                 </div>
+               </div>
+             </SwiperSlide>
+             <SwiperSlide>
+               <div className="fd-cd">
+                 <div className="feed-info">
+                   <div id="hd-fd">
+                     {" "}
+                     <div id="blue" className="btn btn-b">
+                       Liza Smith 5
+                     </div>
+                     <div className="msg-title">"Great Work"</div>
+                     <div id="org">CLIENT OF COMPANY</div>
+                     <div className="msg-desc">
+                       I work in project management and joined Unicoach because
+                       I get great courses for less. The instructors are
+                       fantastic, interesting, and helpful. I plan to use for a
+                       long time!
+                     </div>
+                     <div className="sitara">
+                       <StarBorder />
+                       <StarHalf />
+                       <Star />
+                       <Star />
+                       <Star />
+                     </div>
+                   </div>{" "}
+                 </div>{" "}
+                 <div className="msg-bot">
+                   <div className="zomm-dp">
+                     <img
+                       src="https://images.unsplash.com/photo-1612383543328-7033bcbaf8a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwbWVufGVufDB8fDB8fHww&w=1000&q=80"
+                       alt=""
+                     />
+                   </div>
+                 </div>
+               </div>
+             </SwiperSlide>
+             <SwiperSlide>
+               <div className="fd-cd">
+                 <div className="feed-info">
+                   <div id="hd-fd">
+                     {" "}
+                     <div id="blue" className="btn btn-b">
+                       Liza Smith 5
+                     </div>
+                     <div className="msg-title">"Great Work"</div>
+                     <div id="org">CLIENT OF COMPANY</div>
+                     <div className="msg-desc">
+                       I work in project management and joined Unicoach because
+                       I get great courses for less. The instructors are
+                       fantastic, interesting, and helpful. I plan to use for a
+                       long time!
+                     </div>
+                     <div className="sitara">
+                       <StarBorder />
+                       <StarHalf />
+                       <Star />
+                       <Star />
+                       <Star />
+                     </div>
+                   </div>{" "}
+                 </div>{" "}
+                 <div className="msg-bot">
+                   <div className="zomm-dp">
+                     <img
+                       src="https://images.unsplash.com/photo-1612383543328-7033bcbaf8a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwbWVufGVufDB8fDB8fHww&w=1000&q=80"
                        alt=""
                      />
                    </div>

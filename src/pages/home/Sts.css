@@ -51,6 +51,9 @@
     width: 100%;
 
   }
+  .content-1{
+    height: fit-content;
+  }
   .filters{
     padding-top: 35px;
   }
@@ -86,6 +89,13 @@ margin: 7px 0;
   font-weight: 400;
 }
 
+@media only screen and (max-width: 600px) {
+  .site{
+    width: 120px !important;
+    display: grid !important;
+  }
+}
+
 .site {
   padding: 10px;
  width: 300px;
@@ -105,20 +115,19 @@ margin: 7px 0;
 }
 .content2{
   background: url("../../../public/banner/banner2.png");
-  height:40vh;
+  height:60vh;
 width: 100%;
 background-size: cover;
 background-position: right;
 background-repeat: no-repeat;
 }
 .content1{
-  background: url("../../../public/banner/banner.png");
-  height: 60vh;
-width: 100%;
+
 background-size: cover;
-background-position: left;
+background-position: right;
 background-repeat: no-repeat;
 }
+
 
 .s-img{
   /* height: 200px; */

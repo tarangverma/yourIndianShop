@@ -35,6 +35,8 @@ export async function fetchreq(type,api,bd){
         }
     } catch (error) {
         alert("server Error");
+        
+        console.log(error)
     }
 }
 // export async function uploadImageAws(name,img){
