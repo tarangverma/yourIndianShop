@@ -40,7 +40,7 @@ margin-top: 2rem;
 
 .calculator img{
   width: 100%;
-  /* height: 250px; */
+  height: 650px;
 }
 .calculator{
   margin-top: 2rem;
@@ -1047,11 +1047,6 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     .section-m {
         display: flex;
         flex-direction: column;
-    }
-    .btn{
-        width: 45% !important;
-    }
-    .service-img{
     }
   
  

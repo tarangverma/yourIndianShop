@@ -1,5 +1,4 @@
 .dashboard-profile {
-    background-color: var(--blue);
     /* background: url('https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/home1-rev-3.jpg'); */
     background-size: cover;
     background-position: center;
@@ -8,17 +7,55 @@
     max-height: 100dvh;
     height: 100dvh;
     overflow-y: scroll;
-    background: linear-gradient(to top, #4389A2, #5C258D) !important;
-    color: White;
+    background: gray;
+    color: black;
     /* border: 1px solid #ccc; */
     /* border-radius: 5px; */
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.top{
+    padding-top: 2rem;
+    background: #fff;
+    margin: 0 30%;
+    border-radius: 8px 8px 0 0;
+}
+
+.name{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .top{
+        margin: 0 !important;
+    }
+    #pfl{
+        margin: 0 !important;
+    }
+}
+
+
+.profile-details{
+    
+    margin: 50px auto;
+}
+
+.img-profile{
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
 }
 
 #pfl {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
+    background: #fff;
+    margin: 0 30%;
+    border-radius: 0 0 8px 8px;
 }
 
 .profile-header {
@@ -54,6 +91,8 @@
     display: flex;
     margin-bottom: 10px;
     align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
 }
 
 .detail-label {

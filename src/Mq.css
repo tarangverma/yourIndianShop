@@ -169,6 +169,7 @@
   .content1{
     height:45vh !important ;
   }
+
   #dg {
     font-family: var(--font6) !important;
     color: rgb(43, 52, 43) !important;
@@ -431,19 +432,20 @@ footer {
   .f1r .lg {
     font-size: 3rem !important;
   }
-
-  .f1r {
-    gap: 5px !important;
-    flex-direction: column !important;
+  .ftr1 {
+    display: none !important;
   }
 
   .ftr2 {
     display: none !important;
   }
-
-  .ftr3 {
+  .ftr3{
     display: none;
   }
+  .footer-main{
+    margin: 2rem 0;
+  }
+
 
   .pop-3.st {
     font-family: var(--font6) !important;

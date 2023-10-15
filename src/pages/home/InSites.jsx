@@ -339,12 +339,10 @@ const Sts = () => {
           </select>
         </div>
       </div>
-      <Link to="/disp-plan" className="content1"></Link>
-
+      <Link to="/disp-plan" className="content-1">
+      <img src="/banner/banner.png" alt="no img"/>
+      </Link>
       <div className="content2"></div>
-      {/* <div className="content">
-     <img src="/banner/banner2.png" alt="no img"/>
-     </div>  */}
 
       <div className="site-grid">
         {filteredSites.map((site) => (
