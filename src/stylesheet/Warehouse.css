@@ -9,6 +9,7 @@
     overflow-y: scroll;
 }
 .warehouse-card {
+    position: relative;
     border: 1px solid #ccc;
     border-radius: 13.5px;
     overflow: hidden;
@@ -19,6 +20,9 @@
     box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.176);
 }
 
+.coupon{
+    position: absolute 
+}
 .w-data {
     padding: 15px 25px;
     /* height: 100%; */
@@ -150,6 +154,25 @@
 
 }
 
+.coupon-input{
+    display: flex;
+    flex-direction: column;
+}
+.coupon-input input{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 8px;
+}
+.coupon-input button{
+    
+    margin-top: 1rem;
+}
+
+.btn-r .btn .cancel{
+    margin-left: 1rem;
+}
+
+
 #drrr:hover {
     border-color: var(--org);
 }
@@ -179,19 +202,18 @@
 }
 
 .btn-g {
-    background: limegreen;
     color: #fff;
 }
 
 .btn-g:hover {
-    background: rgb(61, 184, 61);
+    background: var(--blue);
 }
 
 .btn-r {
-    background: crimson;
+    background: var(--blue);
     color: #fff;
 }
 
 .btn-r:hover {
-    background: rgb(192, 34, 66);
+    background: var(--blue);
 }
