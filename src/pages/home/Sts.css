@@ -1,0 +1,155 @@
+/* ECommerceSites.css */
+
+.ecommerce-sites {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.f-1{
+ display: flex;
+ background: #fff;
+ color: #000;
+ border-radius: 20px;
+ overflow: hidden;
+ align-items: center;
+ /* width: 100%; */
+ padding: 0 10px 0 10px;
+}
+
+.select-s{
+  padding: 10px; 
+  color: #000;
+
+  margin-left: 10px;
+  background: #fff;
+  border-left: 1px solid gray;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  background: var(--db2);
+  color: #fff;
+  justify-content:space-around;
+  /* padding: 7px ; */
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filters label {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .select-s{
+    padding: 7px;
+    /* border :1px solid red; */
+    flex: 1;
+    width: 100%;
+
+  }
+  .filters{
+    padding-top: 35px;
+  }
+  .filters>*{
+width: 100% !important;
+margin: 7px 0;
+    /* height: 200px; */
+  }
+  .search-d{
+    margin-top: 1.5rem;
+  }
+}
+
+.site-grid {
+  margin-top: 2rem;
+  cursor: pointer;
+ display: flex;
+ width: 100%;
+ align-items: center;
+ justify-content: space-evenly;
+ gap: 18px;
+ flex-wrap: wrap;
+  justify-items: center;
+  background: #fff;
+}
+  .heading-p h1{
+  font-size: 50px;
+  font-weight: 700;
+}
+.heading-p p{
+  color: gray;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.site {
+  padding: 10px;
+ width: 300px;
+  margin: 20px;
+  border-radius: 5px;
+  /* background-color: gold; */
+  transition: transform 0.2s ease;
+  border: 0.5px solid rgba(0, 0, 0, 0.325);
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+}
+
+.site:hover {
+  transform: translateY(-5px);
+}
+.content2{
+   margin-top: 2rem;
+}
+.content2{
+  background: url("../../../public/banner/banner2.png");
+  height:40vh;
+width: 100%;
+background-size: cover;
+background-position: right;
+background-repeat: no-repeat;
+}
+.content1{
+  background: url("../../../public/banner/banner.png");
+  height: 60vh;
+width: 100%;
+background-size: cover;
+background-position: left;
+background-repeat: no-repeat;
+}
+
+.s-img{
+  /* height: 200px; */
+  width: 100%;
+}
+
+.site-d {
+  /* height: 100px; */
+  width: 100%;
+  color: #000 ;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, rgba(212,205,53,1) 0%, rgba(208,206,119,1) 100%);}
+  .site-d h1{
+  font-size: 20px;
+}
+
+/* Add more styling as needed */
+
+.search-d{
+  background: #fff;
+  color: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+ 
+}
+
+.search-p{
+  padding-left: 5px;
+  outline: none;
+  text-decoration: none;
+  border: none;
+}

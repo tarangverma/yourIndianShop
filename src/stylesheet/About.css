@@ -1,0 +1,75 @@
+#ab-sec-title h1 {
+    font-size: 3rem;
+    color: #fff;
+
+    font-family: var(--font3) !important;
+    text-shadow: 1px 1px 5px #000;
+}
+#dash-site h1{
+    padding: 0 35px;
+}
+#ab-sec-title>div {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem !important;
+    gap: 9px;
+    text-shadow: 1px 1px 5px #000;
+}
+
+#ab-sec-title {
+    height: 50dvh;
+    background: linear-gradient(to left, white),
+    url('../../public/imgs/home1-section-4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10vh 10vw;
+}
+
+#vidd {
+    padding: 10vh 10vw;
+}
+#ab-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10vh;
+    min-height: 50vh;
+    background-image: url('../../public/imgs/home1-rev-3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-size: 3rem;
+    font-family: var(--font3);
+
+}
+#abt-sec>*{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 25px;
+}
+#abt-sec{
+    display: flex;
+    width: 100%;
+    gap: 5vw;
+    padding: 10vh 5vw;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+.abt-l {
+    justify-content: space-between;
+}
+.abt-l h1{
+font-size: 2.3rem;
+font-family: var(--font4) !important;
+font-weight: 400 !important;
+}
+.abt-l .btn{
+    width: fit-content;
+}

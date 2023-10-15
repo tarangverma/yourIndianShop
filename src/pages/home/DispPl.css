@@ -1,0 +1,14 @@
+#plan-img{
+    position: absolute;
+    top: 10px;
+    left: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .ele{
+        display: none !important;
+    }
+    #plan-img{
+        display: none !important;
+    }
+}
