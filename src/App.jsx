@@ -35,7 +35,7 @@ import Offer from "./pages/home/Offer";
 import InSites from "./pages/home/InSites";
 import Billing from "./pages/dashboard/Billing";
 import ComingSoon from "./components/ComingSoon";
-import { HomeMaxOutlined, House } from "@mui/icons-material";
+import { House } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 
 export const MyContext = createContext();
@@ -364,11 +364,9 @@ const App = () => {
             <Route
               path="/calc"
               element={
-                <main>
-                  <Link to="/" className="btn-house">
-                    <IconButton>
-                      <House />
-                    </IconButton>
+                <main style={{background: 'grey'}}>
+                  <Link to="/" >
+                    <img src="/signup-img/logo1.png" />
                   </Link>
                   <Calc />
                 </main>
@@ -378,6 +376,7 @@ const App = () => {
               path="/about"
               element={
                 <main>
+                  {" "}
                   <About />
                 </main>
               }
@@ -386,6 +385,12 @@ const App = () => {
               path="/service"
               element={
                 <main>
+                  {" "}
+                  <Link to="/" className="btn-house">
+                    <div className="btn-div">
+                    <House />
+                    </div>
+                  </Link>
                   <Service />
                 </main>
               }
@@ -394,6 +399,12 @@ const App = () => {
               path="/offers"
               element={
                 <main>
+                  {" "}
+                  <Link to="/" className="btn-house">
+                    <div className="btn-div">
+                    <House />
+                    </div>
+                  </Link>
                   <Offer />
                 </main>
               }
@@ -405,7 +416,7 @@ const App = () => {
                   {" "}
                   <Link to="/" className="btn-house">
                     <div className="btn-div">
-                    <img src="/signup-img/logo1.png" ></img>
+                    <House />
                     </div>
                   </Link>
                   <InSites />
@@ -417,6 +428,11 @@ const App = () => {
               element={
                 <main>
                   {" "}
+                  <Link to="/" className="btn-house">
+                    <div className="btn-div">
+                    <House />
+                    </div>
+                  </Link>
                   <DispPl />
                 </main>
               }

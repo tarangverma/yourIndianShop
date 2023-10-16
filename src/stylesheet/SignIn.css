@@ -243,7 +243,7 @@ width: 100%;
   flex: 1 !important;
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1100px) {
   #SpSignIn .left {
     width: 39% !important;
   }
@@ -256,13 +256,14 @@ width: 100%;
   }
 }
 
-@media (max-width: 850px) {
+
+@media only screen and (max-width: 850px) {
  .right {
     display: none;
   }
 
-  #SpSignIn .right {
-    width: 100%;
+  #SpSignIn .left{
+    width: 100% !important;
   }
 }
 

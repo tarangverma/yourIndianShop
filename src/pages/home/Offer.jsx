@@ -16,6 +16,8 @@ const Offer = () => {
   useEffect(()=>{
     getOffer();
   },[])
+
+  const img = ["/banner/coupon02.png","/banner/coupon01.png" , "/banner/coupon0.png"   ]
   return (
     <div id="Site" className="sttt">
       <header>
@@ -28,7 +30,7 @@ const Offer = () => {
         tabName="Offers"
         bgImg="./imgs/wh2.jpg"
       /> */}
-      <section id="offer">
+      <div>
         <div className="t-title">
           <span id="org"> Use </span>
           exclusive
@@ -36,16 +38,18 @@ const Offer = () => {
           for
           <span id="org"> offers</span>
         </div>
-        <div id="of-g">
-          {coupens && coupens.map((c)=>{
+        <div id="of-g" style={{display: 'flex'}} >
+          {coupens && coupens.map((c, i)=>{
             const timestamp = new Date(c.date);
             const currentDate = new Date();
             const timeDifference = timestamp - currentDate;
             const diff= Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
             const days = c.days-diff;
             return <div key={c.Cid}>
+              <div className="offers-s">
+
               <h1>{c.Name}</h1>
-              <img src={`${url}/${c.img}`}  />
+              <img src={`${img[i]}`} style={{height: "30vh"}}  />
               {c.isPercentage==1 ? <p> Amount:  {c.amount}%  </p> : <p>Coupen Amount: ₹{c.amount}</p>}
               {c.isPercentage==1 && <p>Get Upto: ₹{c.maxamount}</p>}
               <p>Min Amount To Apply Coupen: ₹{c.minamount}  </p>
@@ -53,11 +57,12 @@ const Offer = () => {
               <p>Status: {c.isOn ? "On": "Off" } </p>
               <p>Expire In : {days} Days </p>
               <p>Coupen Add Date: {getDate(c.date)} </p>
+              </div>
             </div>
           })}
           
         </div>
-      </section>
+      </div>
     </div>
   );
 };

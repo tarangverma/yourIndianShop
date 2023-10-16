@@ -38,6 +38,26 @@ margin-top: 2rem;
     /* margin-top: 0px; */
 }
 
+
+@media only screen and (min-width: 1100px){
+    
+    #steps .s-cd{
+        width: 250px !important;
+    }
+    .footer-main{
+        display: none !important;
+    }
+    #of-g{
+       display: flex;
+    }
+}
+
+.offer-s{
+    display: grid;
+    width: 60vh ;
+    margin: auto;
+}
+
 .calculator img{
   width: 100%;
   height: 650px;
@@ -1048,7 +1068,12 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
         display: flex;
         flex-direction: column;
     }
-  
+    
+    #of-g{
+        display: flex !important;
+        flex-direction: column !important;
+        margin-left: 10vh !important;
+    }
  
     .ps{
         margin: 15px auto;
@@ -1345,9 +1370,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
 #of-g {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+   margin-left: 20vh;
 }
 #feed {
     margin-top: 2rem;
