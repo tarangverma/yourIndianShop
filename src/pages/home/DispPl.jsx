@@ -16,12 +16,7 @@ const DispPl = () => {
     loadplans();
   }, []);
   return (
-    <>
-    <div className="ele">
-    <Link to="/">
-    <img id="plan-img" src="/signup-img/logo1.png" alt="."/>              
-    </Link>
-    </div>
+    <>  
     <Link to={"/signup"}><img src={"/plans/plan.png"} width={1700} alt="no">
       </img></Link>
     
