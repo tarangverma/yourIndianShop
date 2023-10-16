@@ -90,7 +90,7 @@ const Profile = () => {
             )}
           </div>
           
-          <h1>Your Virtual address</h1>
+          <h1 style={{paddingLeft: '15px'}}>Your Virtual address</h1>
 
           { ad && ad.length!=0 && ad.map((a)=>{
             return <>

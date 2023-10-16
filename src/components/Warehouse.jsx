@@ -110,7 +110,7 @@ const Warehouse = ({ warehouse }) => {
       {ispayment  && <div style={{position:'absolute',borderRadius: '8px',margin: 'auto',height:'70vh', width: '80vh',padding:'100px',backgroundColor:'white',border:'1px solid black'}}>
         <div>
           
-        <h1>Payment Portal</h1>
+        <h1>Payment portal</h1>
         <p>Payment Amount: ₹{planId.Price}</p>
         <p style={{marginBottom: '1rem'}}>WareHouse: {warehouse.Name}</p>
         { !ca && final!=0 &&  
