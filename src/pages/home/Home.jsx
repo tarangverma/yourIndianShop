@@ -456,12 +456,26 @@ const Home = () => {
          </div>
        </div>
 
-       
        <div className="festival">
          <Link to="/in-sites">
            <img src="/banner/banner4.png" alt="no"></img>
          </Link>
        </div>
+       <section id="fest-offer">
+         <div className="pp">
+           <div className=" ps-fo">
+             <div className="ps-l">
+               <ShoppingCartOutlinedIcon />
+               <div className="st wt">View Festival Offers</div>
+             </div>
+             <div className="ps-r">
+               <Link to="/offers">
+                 <div className="btn btn-o">View Offers</div>
+               </Link>
+             </div>
+           </div>
+         </div>
+       </section>
        <div id="service" className="ser-sec-2">
          <div className="ser-head">
            <center className="sh1">
@@ -525,11 +539,23 @@ const Home = () => {
            Shop Now
          </Link>
        </center>
-       <div className="calculator">
+
+       {/* <div className="calculator">
          <Link to="/calc">
            <img src="/banner/cal.png" height={300} alt="no"></img>
          </Link>
-       </div>
+       </div> */}
+       <br />
+       <section id="cal">
+         <div className="cal-head">
+           <div className="t-title" id="dg">
+             Shipping Rate Calculator{" "}
+           </div>
+           <Link to="/calc" rel="noopener noreferrer">
+             <div className="btn btn-o">Calculate Now</div>
+           </Link>
+         </div>
+       </section>
        <section id="feed">
          <div id="feed-l">
            <center className="fd-title" id="dg">
