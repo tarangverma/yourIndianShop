@@ -386,7 +386,6 @@ nav .btn-o:hover {
         display: flex;
         flex-direction: column;
     }
-
     .nav-default {
         position: fixed;
         width: 100%;

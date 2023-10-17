@@ -72,10 +72,12 @@ margin: 7px 0;
   margin-top: 2rem;
   cursor: pointer;
  display: flex;
- width: 80%;
- margin-top: 13vh;
- position: absolute;
- right: 0 !important;
+ width: 100%;
+ margin-top: 10vh;
+ padding: 15px;
+ margin-right:300px ;
+ /* position: absolute; */
+ /* right: 0 !important; */
  /* float: right !important; */
  align-items: center;
  justify-content: space-evenly;
