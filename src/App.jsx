@@ -37,6 +37,7 @@ import Billing from "./pages/dashboard/Billing";
 import ComingSoon from "./components/ComingSoon";
 import { House } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
+import Nav from "./components/Nav";
 
 export const MyContext = createContext();
 
@@ -364,8 +365,8 @@ const App = () => {
             <Route
               path="/calc"
               element={
-                <main style={{background: 'grey'}}>
-                  <Link to="/" >
+                <main style={{ background: "grey" }}>
+                  <Link to="/">
                     <img src="/signup-img/logo1.png" />
                   </Link>
                   <Calc />
@@ -388,7 +389,7 @@ const App = () => {
                   {" "}
                   <Link to="/" className="btn-house">
                     <div className="btn-div">
-                    <House />
+                      <House />
                     </div>
                   </Link>
                   <Service />
@@ -402,7 +403,7 @@ const App = () => {
                   {" "}
                   <Link to="/" className="btn-house">
                     <div className="btn-div">
-                    <House />
+                      <House />
                     </div>
                   </Link>
                   <Offer />
@@ -412,15 +413,13 @@ const App = () => {
             <Route
               path="/in-sites"
               element={
-                <main>
-                  {" "}
-                  <Link to="/" className="btn-house">
-                    <div className="btn-div">
-                    <House />
-                    </div>
-                  </Link>
-                  <InSites />
-                </main>
+                <>
+                  <Nav />
+                  <main>
+                    {" "}
+                    <InSites />
+                  </main>
+                </>
               }
             />
             <Route
@@ -430,7 +429,7 @@ const App = () => {
                   {" "}
                   <Link to="/" className="btn-house">
                     <div className="btn-div">
-                    <House />
+                      <House />
                     </div>
                   </Link>
                   <DispPl />

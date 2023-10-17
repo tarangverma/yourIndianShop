@@ -57,7 +57,7 @@ const Home = () => {
       ? 1
       : window.innerWidth >= 900 && window.innerWidth <= 1300
       ? 2
-      : 3
+      : 4
   );
   const handelsubmit = async (e) => {
     e.preventDefault();

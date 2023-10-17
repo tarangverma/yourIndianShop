@@ -18,10 +18,11 @@
 }
 
 .select-s{
-  padding: 10px; 
-  color: #000;
+  padding: 3px 10px; 
+  width: 100%;
+  color: #000 !important;
 
-  margin-left: 10px;
+  /* margin-left: 10px; */
   background: #fff;
   border-left: 1px solid gray;
 }
@@ -71,10 +72,14 @@ margin: 7px 0;
   margin-top: 2rem;
   cursor: pointer;
  display: flex;
- width: 100%;
+ width: 80%;
+ margin-top: 13vh;
+ position: absolute;
+ right: 0 !important;
+ /* float: right !important; */
  align-items: center;
  justify-content: space-evenly;
- gap: 18px;
+ gap: 35px;
  flex-wrap: wrap;
   justify-items: center;
   background: #fff;
@@ -91,15 +96,15 @@ margin: 7px 0;
 
 @media only screen and (max-width: 600px) {
   .site{
-    width: 120px !important;
+    width: 100px !important;
     display: grid !important;
   }
 }
 
 .site {
   padding: 10px;
- width: 300px;
-  margin: 20px;
+ width: 200px;
+  /* margin: 20px; */
   border-radius: 5px;
   /* background-color: gold; */
   transition: transform 0.2s ease;
@@ -147,18 +152,76 @@ background-repeat: no-repeat;
 
 /* Add more styling as needed */
 
+.search-d>*{
+
+  background:#ddd !important;
+}
+.search-d input::placeholder{
+  color: #252525;
+}
 .search-d{
-  background: #fff;
+  border-bottom: 1.5px solid black;
   color: #000;
-  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  /* border-radius: 20px; */
   overflow: hidden;
-  padding: 10px;
+  padding: 3px 7px;
+  margin-top: 10vh;
+  width: 100%;
  
 }
-
+.mt-2{
+  margin-top: 15px;
+}
 .search-p{
   padding-left: 5px;
   outline: none;
   text-decoration: none;
   border: none;
+}/* Apply styles to all elements with the class "side-filt" */
+.side-filt {
+  /* Common styles for elements with the "side-filt" class */
+  /* color: #fff; */
+display: flex;
+flex-direction: column;
+align-items: baseline;
+justify-content: flex-start;
+  /* margin-bottom: 15px; */
+  cursor: pointer;
+
+}
+#linn{
+  margin: 15px 0 !important;
+}
+/* Apply styles to the "Category" and "Offers" headings */
+.side-filt h3 {
+  /* font-size: 16px; */
+  font-size: 1rem;
+}
+.ctgr{  font-size: 0.9rem;
+  
+  font-family: var(--font8) !important ;
+}
+/* Apply styles to checkboxes within the filter */
+.side-filt input[type="radio"] {
+  margin-right: 7px;
+}
+
+/* Apply styles to the filter container */
+.side-filt-container {
+  /* background-color: #fff;  */
+   background: #ddd;
+   /* background: var(--db2); */
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+  padding: 10px;
+  width: 270px;
+  height: 100dvh;
+  /* overflow-y: scroll; */
+  position: fixed;
+  box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.262);
+  top: 0;
+  z-index: 11;
+  left: 0;
 }

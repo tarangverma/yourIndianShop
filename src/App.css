@@ -308,7 +308,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
   position: absolute;
   top: 12px;
   left: 25px;
-  z-index: 1;
+  z-index: 111111111;
   padding: 10px;
   border-radius: 8px;
 }

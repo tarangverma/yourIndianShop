@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Sts.css";
 import SearchIcon from '@mui/icons-material/Search';
 import { Link, useLocation } from "react-router-dom";
-
+import Nav from "../../components/Nav";
 const Sts = () => {
   const { pathname } = useLocation();
   const [sites, setSites] = useState([
@@ -254,11 +254,11 @@ const Sts = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const availableCategories = [
-    "All",
+    "Choose Available Offer ",
     ...new Set(sites.map((site) => site.category)),
   ];
   const availableOffers = [
-    "All",
+    "Choose Available Offer ",
     ...new Set(sites.flatMap((site) => site.offers)),
   ];
 
@@ -296,38 +296,26 @@ const Sts = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-
   return (
     <div className="ecommerce-sites">
-      <div className="filters">
-        <div className="search-d">
-          <SearchIcon />
-          <input
-            className="search-p"
-            type="text"
-            placeholder="Search by site name"
-            onChange={handleSearch}
-            value={searchQuery}
-          />
+      <div className="side-filt-container">
+        <div className="side-filt">
+          <div className="search-d">
+            <SearchIcon />
+            <input
+              className="search-p"
+              type="text"
+              placeholder="Search by site name"
+              onChange={handleSearch}
+              value={searchQuery}
+            />
+          </div>
         </div>
-        <div className="f-1">
-          <label>Category </label>
+        <div className="side-filt mt-2">
+          {/* <h3>Offers</h3> */}
+          {/* Apply "side-filt" class to the select element */}
           <select
-            className="select-s"
-            onChange={handleCategoryChange}
-            value={selectedCategory}
-          >
-            {availableCategories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="f-1">
-          <label>Offers </label>
-          <select
-            className="select-s"
+            className="select-s side-filt"
             onChange={handleOfferChange}
             value={selectedOffer}
           >
@@ -338,11 +326,28 @@ const Sts = () => {
             ))}
           </select>
         </div>
+        <div className="side-filt">
+          <span id="linn">-------------------------------------</span>
+          <h3>Category</h3>
+
+          {/* Apply "side-filt" class to labels and checkboxes */}
+          {availableCategories.map((category) => (
+            <label key={category} className="side-filt-cb">
+              <input
+                type="radio"
+                value={category}
+                checked={selectedCategory === category}
+                onChange={handleCategoryChange}
+              />
+              <span className="ctgr">{category}</span>
+            </label>
+          ))}
+        </div>
+        <span id="linn">-------------------------------------</span>
       </div>
-      <Link to="/disp-plan" className="content-1">
-      <img src="/banner/banner.png" alt="no img"/>
-      </Link>
-      <div className="content2"></div>
+      {/* <Link to="/disp-plan" className="content-1">
+        <img src="/banner/banner.png" alt="no img" />
+      </Link> */}
 
       <div className="site-grid">
         {filteredSites.map((site) => (
@@ -353,6 +358,7 @@ const Sts = () => {
           </div>
         ))}
       </div>
+      {/* <div className="content2"></div> */}
     </div>
   );
 };
