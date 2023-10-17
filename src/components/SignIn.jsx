@@ -134,7 +134,13 @@ const SignIn = () => {
                           const credential = GoogleAuthProvider.credentialFromResult(result);
                           const token = credential.accessToken;
                           const user = result.user;
-                         
+                          const name= user.displayName;
+                          const email = user.email;
+                          const profileUrl= user.profileUrl;
+                          const emailAuth= user.emailVerified;
+                          console.log(name);
+                          console.log(email);
+                          console.log(emailAuth);
                         }).catch((error) => {
                           const errorCode = error.code;
                           const errorMessage = error.message;
@@ -147,7 +153,7 @@ const SignIn = () => {
                       </button>
                     </div>
                   </center>
-                  <center>
+                  {/* <center>
                     <div id="other-s-in">
                       <FacebookRoundedIcon />
                       <button onClick={() => {
@@ -178,9 +184,9 @@ const SignIn = () => {
                       Sign up with facebook
                       </button>
                     </div>
-                  </center>
+                  </center> */}
                 </form>
-                <div className="last-p"style={{marginTop: "1rem"}} >
+                <div className="last-p">
                 <p className="last-p">
                   Don't remember your password?
                   <Link
@@ -192,7 +198,7 @@ const SignIn = () => {
                     Forget Password
                   </Link>
                 </p> 
-                <p className="last-p" style={{marginTop: "0.5rem"}}>
+                <p className="last-p">
                   Don't have an account?
                   <Link
                     to={"/signup"}
