@@ -18,7 +18,7 @@ const footer = () => {
         <p style={{fontSize: "25px"}}>YOUR INDIAN SHOP</p>
       <p style={{marginTop: "2rem"}}>Our shop provides you with best customer support</p>
       </div>
-      <div className="footer-main" style={{display: "flex",flexDirection: "column"}}>
+      <div className="footer-main3" style={{display: "flex",flexDirection: "column"}}>
       <p style={{fontSize: "25px", marginTop: "2rem"}}></p>
         <div>FAQ</div>
         <div>Our Policy</div>

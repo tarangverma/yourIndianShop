@@ -106,7 +106,28 @@ const Warehouse = ({ warehouse }) => {
           <br />
         </p>
         </div>
+<<<<<<< HEAD
         <button className="btn btn-b" onClick={handleSelectfirst}>
+=======
+      </div>
+      {ispayment  && <div style={{position:'absolute',borderRadius: '8px',margin: 'auto',height:'70vh', width: '80vh',padding:'100px',backgroundColor:'white',border:'1px solid black'}}>
+        <div>
+          
+        <h1>Payment portal</h1>
+        <p>Payment Amount: ₹{planId.Price}</p>
+        <p style={{marginBottom: '1rem'}}>WareHouse: {warehouse.Name}</p>
+        { !ca && final!=0 &&  
+        <div className="coupon-input">
+        <input value={cc} onChange={(e)=>setCc(e.target.value)} type="text" placeholder="Enter Coupen Code" />
+        <button className="btn-g btn" onClick={applyCoupen}>Apply Coupon</button>
+        </div>}
+        <p style={{fontWeight:'bold',marginTop: '1rem',marginBottom: '1rem'}}>final Payment amount : ₹{final}</p>
+        <div style={{display: 'flex', justifyContent: 'space-between', margin: '1rem 0'}}>
+        <button className="btn btn-r" onClick={handleSelect}>{final<=0?"Proceed To Select":"Proceed to Payment"}</button>
+        <button className="btn-r btn" onClick={()=>setIspayment(false)}>Cancel payment</button>
+        </div>
+      <button className="btn btn-b" onClick={handleSelectfirst}>
+>>>>>>> 8eb2394193d2141f281c6b00530c0d21f59efb6a
         Select {planId.Price != 0 && `And Pay from Wallet ₹${planId.Price}`}
       </button>
       </div>

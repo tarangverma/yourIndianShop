@@ -38,6 +38,26 @@ margin-top: 2rem;
     /* margin-top: 0px; */
 }
 
+
+@media only screen and (min-width: 1100px){
+    
+    #steps .s-cd{
+        width: 250px !important;
+    }
+    .footer-main{
+        display: none !important;
+    }
+    #of-g{
+       display: flex;
+    }
+}
+
+.offer-s{
+    display: grid;
+    width: 60vh ;
+    margin: auto;
+}
+
 .calculator img{
   width: 100%;
   height: 650px;
@@ -1048,7 +1068,12 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
         display: flex;
         flex-direction: column;
     }
-  
+    
+    #of-g{
+        display: flex !important;
+        flex-direction: column !important;
+        margin-left: 10vh !important;
+    }
  
     .ps{
         margin: 15px auto;
@@ -1345,9 +1370,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
 #of-g {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+   margin-left: 20vh;
 }
 #feed {
     margin-top: 2rem;
@@ -1370,7 +1393,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 }
 
 .fd-cd {
-
+background: gold;
     box-shadow: 0 0 25px 0px rgba(128, 128, 128, 0.591) !important;
 }
 
@@ -1387,6 +1410,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 #feed-r .swiper-slide #feed-r .swiper-slide-next {
     background-color: transparent !important;
     width: 250px !important;
+    /* background: red; */
     /* height: fit-content !important; */
 }
 
@@ -1398,7 +1422,21 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     /* gap: 25px; */
 
 }
-
+#fest-offer>*{
+    width: 100% !important;
+}
+#fest-offer{
+    padding: 0 !important;
+    width: 100%;
+    background: red;
+}
+.ps-fo{
+    background: var(--db2);
+    padding: 5vh 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 #feed-l p {
     font-size: 1rem;
     font-family: var(--font4);
@@ -1455,7 +1493,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 }
 
 .feed-info {
-    width: 330px !important;
+    width: 250px !important;
     background: rgba(35, 43, 56, 0.838);
     bottom: -500px;
     transition: 0.3s ease;
@@ -1471,7 +1509,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     width: 100%;
     margin-bottom: 35px;
     margin-top: -5vh !important;
-    font-size: 3.1rem;
+    font-size: 2.6rem;
     font-family: var(--font3) !important;
     font-family: var(--font6) !important;
     font-size: 2.1rem !important;
@@ -1483,11 +1521,12 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 .msg-title {
     color: var(--blue);
         padding: 5px 22px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .msg-desc {
         padding: 5px 22px;
+        font-size: 0.93rem !important;
     color: #6c6c6c;
     font-family: var(--font4);
 }
@@ -1496,7 +1535,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     display: flex;
     flex-direction: column;
     gap: 12px;
-    width: 330px !important;
+    width: 250px !important;
     height: 330px;
     overflow: hidden;
     background: #fff;
@@ -1551,12 +1590,16 @@ flex-direction: column-reverse;
     gap: 25px;
 }
 
+#cal .cal-head #dg {
+    color: #fff  !important;
+}
 #cal .cal-head {
     /* width: 0vw; */
     display: flex;
     align-items: center;
-    margin: 5vh 5vw;
-    background: #fff;
+    margin: 0vh 5vw;
+    /* background: #fff; 
+    color*/
     padding:15px 35px;
     justify-content: space-between;
     }

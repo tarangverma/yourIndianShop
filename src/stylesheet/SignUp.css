@@ -11,11 +11,24 @@
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1100px) {
    .img1{
-    width: 200px;
+    width: 200px !important;
    }
 }
+
+@media (min-width: 1100px) {
+    #SpSignIn .left {
+      width: 39% !important;
+    }
+    #SpSignIn .right{
+      min-width: 20%;
+      max-height: 80%;
+    }
+    #SpSignIn .right {
+      width: 50%;
+    }
+  }
 
 
 .right {
