@@ -577,9 +577,16 @@ const Home = () => {
                <div className="fd-cd">
                  <div className="feed-info">
                    <div id="hd-fd">
-                     <div id="blue" className="btn btn-b">
+                     <div style={{borderBottom: "1px solid black",width: 'fit-content', margin: 'auto'}}>
                        Liza Smith 1
                      </div>
+                     <div className="sitara">
+                       <StarBorder />
+                       <StarHalf />
+                       <Star />
+                       <Star />
+                       <Star />
+                     </div>{" "}
                      <div className="msg-title">"Great Work"</div>
                      <div id="org">CLIENT OF COMPANY</div>
                      <div className="msg-desc">
@@ -588,23 +595,9 @@ const Home = () => {
                        fantastic, interesting, and helpful. I plan to use for a
                        long time!
                      </div>
-                     <div className="sitara">
-                       <StarBorder />
-                       <StarHalf />
-                       <Star />
-                       <Star />
-                       <Star />
-                     </div>{" "}
                    </div>{" "}
                  </div>{" "}
-                 <div className="msg-bot">
-                   <div className="zomm-dp">
-                     <img
-                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9aZ69I4WPZL_Cc4m890a_QgDjr2iR_BuNYg"
-                       alt=""
-                     />
-                   </div>
-                 </div>
+                 
                </div>
              </SwiperSlide>
              <SwiperSlide>
@@ -612,9 +605,16 @@ const Home = () => {
                  <div className="feed-info">
                    <div id="hd-fd">
                      {" "}
-                     <div id="blue" className="btn btn-b">
+                     <div style={{borderBottom: "1px solid black",width: 'fit-content', margin: 'auto'}}>
                        Liza Smith 2
                      </div>
+                     <div className="sitara">
+                       <StarBorder />
+                       <StarHalf />
+                       <Star />
+                       <Star />
+                       <Star />
+                     </div>{" "}
                      <div className="msg-title">"Great Work"</div>
                      <div id="org">CLIENT OF COMPANY</div>
                      <div className="msg-desc">
@@ -623,32 +623,25 @@ const Home = () => {
                        fantastic, interesting, and helpful. I plan to use for a
                        long time!
                      </div>
-                     <div className="sitara">
-                       <StarBorder />
-                       <StarHalf />
-                       <Star />
-                       <Star />
-                       <Star />
-                     </div>{" "}
                    </div>{" "}
                  </div>{" "}
-                 <div className="msg-bot">
-                   <div className="zomm-dp">
-                     <img
-                       src="https://images.statusfacebook.com/profile_pictures/indian_boys/indian_boys_24.jpg"
-                       alt=""
-                     />
-                   </div>
-                 </div>
+                
                </div>
              </SwiperSlide>
              <SwiperSlide>
                <div className="fd-cd">
                  <div className="feed-info">
                    <div id="hd-fd">
-                     <div id="blue" className="btn btn-b">
+                     <div style={{borderBottom: "1px solid black",width: 'fit-content', margin: 'auto'}}>
                        Liza Smith 3
                      </div>
+                     <div className="sitara">
+                       <StarBorder />
+                       <StarHalf />
+                       <Star />
+                       <Star />
+                       <Star />
+                     </div>{" "}
                      <div className="msg-title">"Great Work"</div>
                      <div id="org">CLIENT OF COMPANY</div>
                      <div className="msg-desc">
@@ -657,23 +650,9 @@ const Home = () => {
                        fantastic, interesting, and helpful. I plan to use for a
                        long time!
                      </div>
-                     <div className="sitara">
-                       <StarBorder />
-                       <StarHalf />
-                       <Star />
-                       <Star />
-                       <Star />
-                     </div>{" "}
                    </div>
                  </div>{" "}
-                 <div className="msg-bot">
-                   <div className="zomm-dp">
-                     <img
-                       src="https://images.statusfacebook.com/profile_pictures/indian_boys/indian_boys_13.jpg"
-                       alt=""
-                     />
-                   </div>
-                 </div>
+                 
                </div>
              </SwiperSlide>
              <SwiperSlide>
@@ -681,17 +660,9 @@ const Home = () => {
                  <div className="feed-info">
                    <div id="hd-fd">
                      {" "}
-                     <div id="blue" className="btn btn-b">
+                     <div style={{borderBottom: "1px solid black",width: 'fit-content', margin: 'auto'}}>
                        Liza Smith 4
                      </div>
-                     <div className="msg-title">"Great Work"</div>
-                     <div id="org">CLIENT OF COMPANY</div>
-                     <div className="msg-desc">
-                       I work in project management and joined Unicoach because
-                       I get great courses for less. The instructors are
-                       fantastic, interesting, and helpful. I plan to use for a
-                       long time!
-                     </div>
                      <div className="sitara">
                        <StarBorder />
                        <StarHalf />
@@ -699,16 +670,17 @@ const Home = () => {
                        <Star />
                        <Star />
                      </div>{" "}
+                     <div className="msg-title">"Great Work"</div>
+                     <div id="org">CLIENT OF COMPANY</div>
+                     <div className="msg-desc">
+                       I work in project management and joined Unicoach because
+                       I get great courses for less. The instructors are
+                       fantastic, interesting, and helpful. I plan to use for a
+                       long time!
+                     </div>
                    </div>{" "}
                  </div>{" "}
-                 <div className="msg-bot">
-                   <div className="zomm-dp">
-                     <img
-                       src="https://e1.pxfuel.com/desktop-wallpaper/82/1002/desktop-wallpaper-cute-girl-foreign-girl.jpg"
-                       alt=""
-                     />
-                   </div>
-                 </div>
+                 
                </div>
              </SwiperSlide>
              <SwiperSlide>
@@ -716,8 +688,15 @@ const Home = () => {
                  <div className="feed-info">
                    <div id="hd-fd">
                      {" "}
-                     <div id="blue" className="btn btn-b">
+                     <div style={{borderBottom: "1px solid black",width: 'fit-content', margin: 'auto'}}>
                        Liza Smith 5
+                     </div>
+                     <div className="sitara">
+                       <StarBorder />
+                       <StarHalf />
+                       <Star />
+                       <Star />
+                       <Star />
                      </div>
                      <div className="msg-title">"Great Work"</div>
                      <div id="org">CLIENT OF COMPANY</div>
@@ -727,23 +706,9 @@ const Home = () => {
                        fantastic, interesting, and helpful. I plan to use for a
                        long time!
                      </div>
-                     <div className="sitara">
-                       <StarBorder />
-                       <StarHalf />
-                       <Star />
-                       <Star />
-                       <Star />
-                     </div>
                    </div>{" "}
                  </div>{" "}
-                 <div className="msg-bot">
-                   <div className="zomm-dp">
-                     <img
-                       src="https://images.unsplash.com/photo-1612383543328-7033bcbaf8a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwbWVufGVufDB8fDB8fHww&w=1000&q=80"
-                       alt=""
-                     />
-                   </div>
-                 </div>
+                
                </div>
              </SwiperSlide>
              <SwiperSlide>
@@ -751,8 +716,15 @@ const Home = () => {
                  <div className="feed-info">
                    <div id="hd-fd">
                      {" "}
-                     <div id="blue" className="btn btn-b">
+                     <div style={{borderBottom: "1px solid black",width: 'fit-content', margin: 'auto'}}>
                        Liza Smith 5
+                     </div>
+                     <div className="sitara">
+                       <StarBorder />
+                       <StarHalf />
+                       <Star />
+                       <Star />
+                       <Star />
                      </div>
                      <div className="msg-title">"Great Work"</div>
                      <div id="org">CLIENT OF COMPANY</div>
@@ -762,23 +734,9 @@ const Home = () => {
                        fantastic, interesting, and helpful. I plan to use for a
                        long time!
                      </div>
-                     <div className="sitara">
-                       <StarBorder />
-                       <StarHalf />
-                       <Star />
-                       <Star />
-                       <Star />
-                     </div>
                    </div>{" "}
                  </div>{" "}
-                 <div className="msg-bot">
-                   <div className="zomm-dp">
-                     <img
-                       src="https://images.unsplash.com/photo-1612383543328-7033bcbaf8a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwbWVufGVufDB8fDB8fHww&w=1000&q=80"
-                       alt=""
-                     />
-                   </div>
-                 </div>
+                 
                </div>
              </SwiperSlide>
              <SwiperSlide>
@@ -786,8 +744,15 @@ const Home = () => {
                  <div className="feed-info">
                    <div id="hd-fd">
                      {" "}
-                     <div id="blue" className="btn btn-b">
+                     <div style={{borderBottom: "1px solid black",width: 'fit-content', margin: 'auto'}}>
                        Liza Smith 5
+                     </div>
+                     <div className="sitara">
+                       <StarBorder />
+                       <StarHalf />
+                       <Star />
+                       <Star />
+                       <Star />
                      </div>
                      <div className="msg-title">"Great Work"</div>
                      <div id="org">CLIENT OF COMPANY</div>
@@ -797,23 +762,10 @@ const Home = () => {
                        fantastic, interesting, and helpful. I plan to use for a
                        long time!
                      </div>
-                     <div className="sitara">
-                       <StarBorder />
-                       <StarHalf />
-                       <Star />
-                       <Star />
-                       <Star />
-                     </div>
+                     
                    </div>{" "}
                  </div>{" "}
-                 <div className="msg-bot">
-                   <div className="zomm-dp">
-                     <img
-                       src="https://images.unsplash.com/photo-1612383543328-7033bcbaf8a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwbWVufGVufDB8fDB8fHww&w=1000&q=80"
-                       alt=""
-                     />
-                   </div>
-                 </div>
+                 
                </div>
              </SwiperSlide>
            </Swiper>

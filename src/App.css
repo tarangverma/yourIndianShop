@@ -313,12 +313,12 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
   padding: 10px;
   border-radius: 8px;
 }
-.btn-house>*{
-
+.btn-house:hover{
+   background: var(--blue);
 }
 .btn-house>*>*{
   
-  color: #fff !important;
+
 }
 
 

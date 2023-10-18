@@ -72,15 +72,15 @@ margin: 7px 0;
   margin-top: 2rem;
   cursor: pointer;
  display: flex;
- width: 100%;
+ width: 80%;
  margin-top: 10vh;
  padding: 15px;
- margin-right:300px ;
+ margin-left:40vh ;
+ margin-right: 20vh;
  /* position: absolute; */
  /* right: 0 !important; */
  /* float: right !important; */
  align-items: center;
- justify-content: space-evenly;
  gap: 35px;
  flex-wrap: wrap;
   justify-items: center;
@@ -101,7 +101,13 @@ margin: 7px 0;
     width: 100px !important;
     display: grid !important;
   }
+  .site-grid{
+    width: 30% !important;
+    margin-left: 62vh !important;
+    
+  }
 }
+
 
 .site {
   padding: 10px;

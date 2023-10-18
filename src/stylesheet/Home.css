@@ -1462,7 +1462,7 @@ background: gold;
 
 .feed-info .msg-desc {
     /* margin-top: 50px; */
-    color: #fff !important;
+   
 }
 
 .feed-info #blue {
@@ -1472,7 +1472,7 @@ background: gold;
 }
 
 .sitara>* {
-    color: var(--org);
+    color: gold;
 }
 
 .sitara {
@@ -1495,12 +1495,9 @@ background: gold;
 
 .feed-info {
     width: 250px !important;
-    background: rgba(35, 43, 56, 0.838);
-    bottom: -500px;
-    transition: 0.3s ease;
-
+    background: white;
+    border: 1px solid grey;
     height: 330px;
-    position: absolute !important;
 }
 
 .fd-title {
@@ -1520,7 +1517,7 @@ background: gold;
 }
 
 .msg-title {
-    color: var(--blue);
+    color: black;
         padding: 5px 22px;
     font-size: 1.2rem;
 }
@@ -1528,7 +1525,7 @@ background: gold;
 .msg-desc {
         padding: 5px 22px;
         font-size: 0.93rem !important;
-    color: #6c6c6c;
+    color: black;
     font-family: var(--font4);
 }
 
