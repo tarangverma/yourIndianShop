@@ -40,9 +40,10 @@ footer .logo {
 }
 
 footer {
-  width: 100%;
+  width: 100vw !important;
   padding: 5vh 10vw;
   display: flex;
+  margin: 0 !important;
   align-items: center;
  color: #fff !important;
   flex-direction: column;

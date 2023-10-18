@@ -1,6 +1,7 @@
 import React from "react";
 import "./PlanCompTab.css";
-
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 const PlanCompTab = () => {
   return (
     <div id="plan-comp" className="plan-table-container">
@@ -8,9 +9,18 @@ const PlanCompTab = () => {
         <thead>
           <tr>
             <th></th>
-            <th>FREE</th>
-            <th>Half Yearly (₹2499)</th>
-            <th>Yearly (₹4499)</th>
+            <th>
+              Trial <br />
+              <strong>Free</strong>
+            </th>
+            <th>
+              Half Yearly <br />
+              <strong>₹2499</strong>
+            </th>
+            <th>
+              Yearly <br />
+              <strong>₹4499</strong>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -69,7 +79,7 @@ const PlanCompTab = () => {
             <td>free</td>
           </tr>
           <tr>
-            <td>Pe₹nal Shopper</td>
+            <td>Personal Shopper</td>
             <td>7% of item value (exclusive of all charges)</td>
             <td>5% of item value (exclusive of all charges)</td>
             <td>5% of item value (exclusive of all charges)</td>
@@ -97,6 +107,33 @@ const PlanCompTab = () => {
             <td>Actual charges + other charges</td>
             <td>Actual charges + other charges</td>
             <td>Actual charges + other charges</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div className="bt-gn">
+                <span>Get Started</span>
+                <span>
+                  <KeyboardArrowRightIcon />
+                </span>
+              </div>
+            </td>
+            <td>
+              <div className="bt-gn bt-gn-r">
+                <span>Get Started</span>
+                <span>
+                  <KeyboardArrowRightIcon />
+                </span>
+              </div>
+            </td>
+            <td>
+              <div className="bt-gn">
+                <span>Get Started</span>
+                <span>
+                  <KeyboardArrowRightIcon />
+                </span>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

@@ -16,21 +16,19 @@ const DispPl = () => {
     loadplans();
   }, []);
   return (
-    <>  
-    <Link to={"/signup"}><img src={"/plans/plan.png"} width={1700} alt="no">
-      </img></Link>
-    
+    <>
+      {/* <Link to={"/signup"}>
+        <img src={"/plans/plan.png"} width={1700} alt="no"></img>
+      </Link> */}
       <div id="dp-pl">
-      
-        <div id="plan-cards">
+        <PlanCompTable />
+        {/* <div id="plan-cards">
           {plans.length != 0 &&
             plans.map((plan, index) => (
               <PlanCard state={false} key={index} plan={plan} />
             ))}
-        </div>
+        </div> */}
       </div>{" "}
-     
-      
     </>
   );
 };

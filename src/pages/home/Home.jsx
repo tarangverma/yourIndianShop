@@ -333,7 +333,7 @@ const Home = () => {
          </div>
        </div>
 
-       <div id="Site" className="bkl">
+       <section id="Site" className="bkl">
          <div id="indianshopcart" style={{ padding: "10vh 0px" }}>
            <div className="t-title" style={{ marginBottom: "20px" }}>
              <span className="sites">Various Indian Sites</span>
@@ -454,14 +454,14 @@ const Home = () => {
            </center>
            <br />
          </div>
-       </div>
+       </section>
 
-       <div className="festival">
+       {/* <div className="festival">
          <Link to="/in-sites">
            <img src="/banner/banner4.png" alt="no"></img>
          </Link>
-       </div>
-       <section id="fest-offer">
+       </div> */}
+       <div id="fest-offer">
          <div className="pp">
            <div className=" ps-fo">
              <div className="ps-l">
@@ -475,8 +475,8 @@ const Home = () => {
              </div>
            </div>
          </div>
-       </section>
-       <div id="service" className="ser-sec-2">
+       </div>
+       <section id="service" className="ser-sec-2">
          <div className="ser-head">
            <center className="sh1">
              <h1 id="dg">
@@ -533,12 +533,9 @@ const Home = () => {
              </a>
            </div>
          </div>
-       </div>
-       <center>
-         <Link to="/in-sites" className="btn btn-og">
-           Shop Now
-         </Link>
-       </center>
+         <br />
+         <br />
+       </section>
 
        {/* <div className="calculator">
          <Link to="/calc">
@@ -845,9 +842,8 @@ const Home = () => {
            </div>
          </div>
        </section>
-
-       <Footer />
      </div>
+     <Footer />
    </>
  );
 };
